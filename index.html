@@ -477,36 +477,48 @@
         daysContainer.insertAdjacentHTML('beforeend', cardHtml);
       });
 
-      // 渲染友人 12/15 上山交通專案 (直達2班 + 轉乘2班 + 計程車)
+      // 渲染友人 12/15 上山交通專案 (目標最晚 18:30 到飯店・精算每人與計程車花費)
       const friendToYokoteContainer = document.getElementById('friend-to-yokote-container');
       if (data.friend_dec15_to_yokoteyama) {
         const fy = data.friend_dec15_to_yokoteyama;
         let fyHtml = '';
         (fy.direct_options || []).forEach(d => {
           fyHtml += `
-            <div class="transit-card transit-card-direct">
+            <div class="transit-card transit-card-direct" style="margin-bottom:10px;">
               <div class="transit-card-header"><span class="transit-card-badge badge-direct">${d.badge}</span></div>
-              <div class="transit-card-body"><strong>${d.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${d.desc}</p></div>
+              <div class="transit-card-body">
+                <strong>${d.timeline}</strong>
+                ${d.cost ? `<div style="font-size:0.82rem; font-weight:700; color:#34d399; margin-top:4px;">💵 ${d.cost}</div>` : ''}
+                <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${d.desc}</p>
+              </div>
             </div>
           `;
         });
         (fy.transfer_options || []).forEach(t => {
           fyHtml += `
-            <div class="transit-card transit-card-transfer">
+            <div class="transit-card transit-card-transfer" style="margin-bottom:10px;">
               <div class="transit-card-header"><span class="transit-card-badge badge-transfer">${t.badge}</span></div>
-              <div class="transit-card-body"><strong>${t.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${t.desc}</p></div>
+              <div class="transit-card-body">
+                <strong>${t.timeline}</strong>
+                ${t.cost ? `<div style="font-size:0.82rem; font-weight:700; color:#c084fc; margin-top:4px;">💵 ${t.cost}</div>` : ''}
+                <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${t.desc}</p>
+              </div>
             </div>
           `;
         });
         if (fy.taxi_low_cost_option) {
           const tx = fy.taxi_low_cost_option;
           fyHtml += `
-            <div class="transit-card" style="background:rgba(234,179,8,0.08); border-color:rgba(234,179,8,0.4); border-left:4px solid #eab308; margin-bottom:10px;">
+            <div class="transit-card" style="background:rgba(234,179,8,0.1); border-color:rgba(234,179,8,0.45); border-left:4px solid #eab308; margin-bottom:10px;">
               <div class="transit-card-header"><span class="transit-card-badge" style="background:rgba(234,179,8,0.25); color:#fde047;">${tx.badge}</span></div>
               <div class="transit-card-body">
                 <strong>${tx.timeline}</strong>
-                <p style="font-size:0.8rem; color:#fde047; margin-top:4px;">💰 ${tx.cost_breakdown}</p>
-                <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">💡 ${tx.highlights}</p>
+                <div style="background:rgba(15,23,42,0.6); padding:8px 12px; border-radius:6px; margin:6px 0; border:1px solid rgba(234,179,8,0.3);">
+                  <div style="font-size:0.82rem; color:#fde047; font-weight:700;">💰 4 人共乘每人花費：${tx.cost_4_persons || ''}</div>
+                  <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">👤 1 人搭乘每人花費：${tx.cost_1_person || ''}</div>
+                  <div style="font-size:0.76rem; color:#94a3b8; margin-top:4px;">📉 ${tx.comparison || ''}</div>
+                </div>
+                <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">💡 ${tx.desc || tx.highlights || ''}</p>
               </div>
             </div>
           `;
