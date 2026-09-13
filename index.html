@@ -1,1 +1,21 @@
-New
+
+<!-- 範例：前端 Accordion 點擊收合與外部連結結構 -->
+<div class="day-card" id="day-1">
+  <div class="category-toggle" onclick="toggleSection('day1-rec')">
+    🍽️ 在地推薦清單 (正餐 / 甜點 / 地酒 / 伴手禮) <span>▼ 點擊展開</span>
+  </div>
+  <div id="day1-rec" class="recommendations-content" style="display: none;">
+    <h4>正餐</h4>
+    <ul>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=Mizusawa+Udon+Suikouen+Takasaki+Montres" target="_blank" rel="noopener">水香苑 高崎 Montres 店 (水澤烏龍麵)</a></li>
+    </ul>
+    <!-- 甜點、飲品、伴手禮依此類推 -->
+  </div>
+</div>
+
+<script>
+function toggleSection(elementId) {
+  const el = document.getElementById(elementId);
+  el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+}
+</script>
