@@ -431,7 +431,7 @@
               ${day.ski_resort.map_image_url ? `
                 <button class="ski-toggle-map-btn" onclick="toggleMapPreview(this)">🗺️ 檢視雪道地圖截圖 [▼ 點擊展開]</button>
                 <div class="ski-map-preview-box">
-                  <img src="${day.ski_resort.map_image_url}" referrerpolicy="no-referrer" alt="${day.ski_resort.name} 官方雪道圖" class="ski-map-img" loading="lazy" onerror="this.onerror=null; this.src='https://asama2000.com/wp-content/themes/asama/assets/img/access/map_01.png';" />
+                  <img src="${day.ski_resort.map_image_url}" referrerpolicy="no-referrer" alt="${day.ski_resort.name} 官方雪道圖" class="ski-map-img" loading="lazy" onerror="this.onerror=null; this.src='https://asama2000.com/wp-content/themes/asama/assets/img/slope/map_04.jpg';" />
                 </div>
               ` : ''}
             </div>
@@ -498,6 +498,19 @@
             </div>
           `;
         });
+        if (fy.taxi_low_cost_option) {
+          const tx = fy.taxi_low_cost_option;
+          fyHtml += `
+            <div class="transit-card" style="background:rgba(234,179,8,0.08); border-color:rgba(234,179,8,0.4); border-left:4px solid #eab308; margin-bottom:10px;">
+              <div class="transit-card-header"><span class="transit-card-badge" style="background:rgba(234,179,8,0.25); color:#fde047;">${tx.badge}</span></div>
+              <div class="transit-card-body">
+                <strong>${tx.timeline}</strong>
+                <p style="font-size:0.8rem; color:#fde047; margin-top:4px;">💰 ${tx.cost_breakdown}</p>
+                <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">💡 ${tx.highlights}</p>
+              </div>
+            </div>
+          `;
+        }
         if (fy.emergency_option) {
           fyHtml += `
             <div class="transit-card transit-card-optionB">
@@ -547,4 +560,3 @@
   </script>
 </body>
 </html>
-
