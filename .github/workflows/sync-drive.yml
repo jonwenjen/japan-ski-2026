@@ -1,14 +1,15 @@
 name: Sync Itinerary and UI from Google Drive
 
 on:
-  workflow_dispatch: # 支援隨時手動點擊一鍵同步
+  workflow_dispatch:
   schedule:
-    # 每天台灣時間 05:00 (UTC 21:00) 自動自 Google Drive 拉取最新資料發布
-    - cron: '0 21 * * *'
+    - cron: '0 21 * * *' # 每天台灣時間 05:00 自動同步
 
 jobs:
+  # 第一輪同步（10 分鐘超時終止保護）
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
 
@@ -20,20 +21,51 @@ jobs:
 
       - name: Sync and Push Latest Files
         run: |
-          # 1. 設置身分並確保本地與遠端最新狀態同步
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B main origin/main
 
-          # 2. 從 Google Drive 下載最新檔案
-          curl -sL "https://drive.google.com/uc?export=download&id=1hu8B1gQO-3m0-F4Wk55DAQO5BKN_kQVs" -o itinerary.json
-          curl -sL "https://drive.google.com/uc?export=download&id=13w50oLxHiPdB5VPSIAsZLdRUOxWFvgHN" -o index.html
+          # 下載本次最新檔案 ID
+          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1rLaNETQjgxJ2shkWM9TUgeLy0Opqt5iP" -o itinerary.json
+          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1IaXQKhG_jaKLuBhGupKe2geLD1vBnfn0" -o index.html
 
-          # 3. 檢查變更並提交推送
           git add itinerary.json index.html
           if git diff --staged --quiet; then
             echo "No changes in files"
           else
-            git commit -m "Auto-sync: update itinerary.json and index.html from Google Drive"
+            git commit -m "Auto-sync: update itinerary.json and index.html with new features"
+            git push origin main
+          fi
+
+  # 備援重試（若第一輪超時終止或失敗則自動重新跑一次）
+  retry-sync:
+    needs: sync
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Retry Sync and Push
+        run: |
+          echo "主要任務超時或失敗，正在啟動自動重試..."
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B main origin/main
+
+          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1rLaNETQjgxJ2shkWM9TUgeLy0Opqt5iP" -o itinerary.json
+          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1IaXQKhG_jaKLuBhGupKe2geLD1vBnfn0" -o index.html
+
+          git add itinerary.json index.html
+          if git diff --staged --quiet; then
+            echo "No changes in files"
+          else
+            git commit -m "Auto-sync (retry): update itinerary.json and index.html"
             git push origin main
           fi
