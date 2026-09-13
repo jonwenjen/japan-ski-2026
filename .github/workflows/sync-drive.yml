@@ -1,9 +1,9 @@
 name: Sync Itinerary and UI from Google Drive
 
 on:
-  workflow_dispatch: # 支援網頁隨時一鍵手動同步
+  workflow_dispatch:
   schedule:
-    - cron: '0 21 * * *' # 每天台灣時間 05:00 自動同步
+    - cron: '0 21 * * *' # 每天台灣時間 05:00 自動定時執行
 
 jobs:
   sync:
@@ -24,22 +24,37 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B main origin/main
 
-          # 安裝最新版 gdown
           pip install --upgrade gdown
 
-          # 直接以固定資料夾 ID 下載整份目錄（資料夾 ID 永遠固定，已移除報錯參數）
-          gdown --folder "https://drive.google.com/drive/folders/1MmCMoyD-I3IntGxLl0vHpVFIDYW3uqXY" -O drive_download
+          # 1. 第一優先：以固定資料夾 ID 同步整份目錄
+          gdown --folder "https://drive.google.com/drive/folders/1MmCMoyD-I3IntGxLl0vHpVFIDYW3uqXY" -O drive_download || true
 
-          # 精準找出檔案並複製至根目錄
-          find drive_download -name "itinerary.json" -exec cp {} . \;
-          find drive_download -name "index.html" -exec cp {} . \;
-          rm -rf drive_download
+          if [ -d "drive_download" ]; then
+            find drive_download -name "itinerary.json" -exec cp {} . \;
+            find drive_download -name "index.html" -exec cp {} . \;
+            rm -rf drive_download
+          fi
+
+          # 2. 第二道保險：若資料夾抓取受限未達完整檔案 (最新版為 124KB)，自動啟動直連備援下載
+          JSON_SIZE=$(wc -c itinerary.json 2>/dev/null | awk '{print $1}')
+          JSON_SIZE=${JSON_SIZE:-0}
+          if [ "$JSON_SIZE" -lt 80000 ]; then
+            echo "itinerary.json 未達預期大小，啟動直連備援下載..."
+            curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1LlsVUa_qlsb6m9CT9NDMTCgYFKqwEvrE" -o itinerary.json
+          fi
+
+          HTML_SIZE=$(wc -c index.html 2>/dev/null | awk '{print $1}')
+          HTML_SIZE=${HTML_SIZE:-0}
+          if [ "$HTML_SIZE" -lt 20000 ]; then
+            echo "index.html 未達預期大小，啟動直連備援下載..."
+            curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1-bQh_W7I6z_reHFpL1nI3pUUl1Y3Wm6x" -o index.html
+          fi
 
           git add itinerary.json index.html
           if git diff --staged --quiet; then
             echo "No changes in files"
           else
-            git commit -m "Auto-sync: update itinerary.json and index.html from Travel/Sb_2026 folder"
+            git commit -m "Auto-sync: update itinerary.json (124KB) and index.html with all features"
             git push origin main
           fi
 
@@ -64,12 +79,8 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B main origin/main
 
-          pip install --upgrade gdown
-          gdown --folder "https://drive.google.com/drive/folders/1MmCMoyD-I3IntGxLl0vHpVFIDYW3uqXY" -O drive_download
-
-          find drive_download -name "itinerary.json" -exec cp {} . \;
-          find drive_download -name "index.html" -exec cp {} . \;
-          rm -rf drive_download
+          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1LlsVUa_qlsb6m9CT9NDMTCgYFKqwEvrE" -o itinerary.json
+          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1-bQh_W7I6z_reHFpL1nI3pUUl1Y3Wm6x" -o index.html
 
           git add itinerary.json index.html
           if git diff --staged --quiet; then
