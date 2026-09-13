@@ -33,74 +33,819 @@
   "friend_dec15_options": [
     {
       "option_id": "opt1",
-      "title": "選項 1：成田山表參道古街散策（江戶風情與鰻魚飯名門）",
-      "location": "成田山表參道",
-      "transit": "成田機場搭乘京成本線（車程約 10 分鐘）直達「京成成田站」，出站即抵達表參道入口。",
-      "highlights": "造訪超過千年歷史的成田山新勝寺，漫步古色古香的江戶風街廓。上午 10:00 前往老字號名店「駿河屋」或「川豐」品嚐炭烤醬香鰻魚飯；11:15 漫步回京成成田站，搭乘京成電鐵約 11:30 抵達日暮里轉乘山手線至上野（12:00），銜接下午北陸新幹線直達長野。",
-      "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Omotesando"
+      "title": "選項 1：成田山表參道（江戶千禧古街・炭烤鰻魚飯・新勝寺參拜）",
+      "transit_summary": "成田機場搭乘京成本線（10 分鐘）直達「京成成田站」，出站即抵達表參道入口。",
+      "transit_details": [
+        "06:35 友人降落成田 T3，通關出境提領行李後，步行至 T2 B1 車站",
+        "07:40 成田第 2 航廈搭乘 京成本線 ➔ 07:50 抵達「京成成田站」，大件行李寄放站內置物櫃",
+        "漫遊：沿表參道散步，10:00 前往老字號「川豐」或「駿河屋」品嚐現烤醬香鰻魚飯，參拜成田山新勝寺與平和大塔",
+        "銜接新幹線：11:18 京成成田搭乘 京成本線特急 ➔ 12:15 抵日暮里 ➔ 12:25 抵上野 ➔ 銜接 12:50 或 13:20 北陸新幹線直達長野"
+      ],
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Omotesando",
+      "recommendations": {
+        "restaurant": [
+          {
+            "name": "川豐 本店 (Kawachiyo)",
+            "rating": "★★★★★",
+            "distance": "成田山表參道中段 (步行 10 分)",
+            "highlights": "天保三年創業！現宰現烤炭火蒲燒鰻魚飯，秘傳百年老醬汁香氣四溢",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kawatoyo+Honten+Narita"
+          },
+          {
+            "name": "駿河屋 (Surugaya)",
+            "rating": "★★★★★",
+            "distance": "新勝寺總門旁 (步行 12 分)",
+            "highlights": "採用下總醬油與三河味醂慢火精烤白燒與蒲燒鰻魚重",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Surugaya+Naritasan"
+          },
+          {
+            "name": "近江屋 (Omiya)",
+            "rating": "★★★★☆",
+            "distance": "表參道仲之町 (步行 8 分)",
+            "highlights": "江戶時期旅籠老舖，提供傳統鰻魚定食與季節現炸天婦羅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Omiya+Naritasan"
+          },
+          {
+            "name": "長命庵 (蕎麥麵)",
+            "rating": "★★★★☆",
+            "distance": "成田山參道旁 (步行 7 分)",
+            "highlights": "手打純十割蕎麥麵搭配現炸日本大蔥鴨肉沾湯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chomeian+Soba+Narita"
+          },
+          {
+            "name": "成田 江戶子壽司 參道店",
+            "rating": "★★★★☆",
+            "distance": "京成成田站前參道口 (步行 3 分)",
+            "highlights": "銚子漁港每日直送新鮮鮪魚大腹、炙燒星鰻大份量握壽司",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Edokko+Sushi+Narita"
+          }
+        ],
+        "dessert_pastry": [
+          {
+            "name": "後藤だんご屋 (Goto Dango)",
+            "rating": "★★★★★",
+            "distance": "成田山表參道 (步行 8 分)",
+            "highlights": "文政年間創業炭烤現做醬油糰子、烤紅豆麻糬與抹茶善哉",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Goto+Dangoya+Narita"
+          },
+          {
+            "name": "米屋 總本店 甘味處",
+            "rating": "★★★★★",
+            "distance": "表參道中央 (步行 7 分)",
+            "highlights": "成田代表性名店，現做生栗蒸羊羹與和三盆豆花冰品",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yoneya+Honten+Naritasan"
+          },
+          {
+            "name": "三芳家 (Miyoshiya)",
+            "rating": "★★★★☆",
+            "distance": "表參道幽靜內庭 (步行 10 分)",
+            "highlights": "日式庭園茶屋！手工抹茶巴菲、白玉紅豆湯與現刷抹茶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Miyoshiya+Cafe+Narita"
+          },
+          {
+            "name": "林田のおせんべい (手燒仙貝)",
+            "rating": "★★★★☆",
+            "distance": "表參道 (步行 6 分)",
+            "highlights": "現烤熱騰騰醬油菱形米仙貝與七味辣椒仙貝串",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hayashida+Senbei+Narita"
+          },
+          {
+            "name": "下總醬油冰淇淋 (成田夢牧場)",
+            "rating": "★★★★☆",
+            "distance": "成田參道店 (步行 5 分)",
+            "highlights": "牧場直送超濃生乳霜淇淋淋上在地釀造甘醇醬油",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yume+Bokujo+Naritasan"
+          }
+        ],
+        "beverage": [
+          {
+            "name": "長命泉 藏元直營酒藏 (鍋店)",
+            "rating": "★★★★★",
+            "distance": "表參道中段 (步行 6 分)",
+            "highlights": "三百年生產之成田在地名酒「長命泉」，現場提供純米吟釀與酒粕生酒試飲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chomeisen+Nabedana+Narita"
+          },
+          {
+            "name": "Brewery 成田精釀啤酒",
+            "rating": "★★★★☆",
+            "distance": "京成成田站周邊 (步行 4 分)",
+            "highlights": "在地自釀新鮮生啤酒與限定小麥白啤酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Narita+Beer+Brewery"
+          },
+          {
+            "name": "成田山 門前甘酒茶屋",
+            "rating": "★★★★☆",
+            "distance": "新勝寺總門前 (步行 11 分)",
+            "highlights": "長命泉米麴純天然釀造熱甘酒，冬季暖身必喝",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Amazake"
+          },
+          {
+            "name": "大野屋 旅館附設喫茶",
+            "rating": "★★★★☆",
+            "distance": "表參道登山口 (步行 9 分)",
+            "highlights": "登錄有形文化財四層望樓老建築內享用手沖熱咖啡",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ohnoya+Ryokan+Narita"
+          },
+          {
+            "name": "珈琲屋 房の駅",
+            "rating": "★★★★☆",
+            "distance": "成田站參道口 (步行 3 分)",
+            "highlights": "千葉產花生拿鐵與特調手沖深焙黑咖啡",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Fusanoeki+Narita"
+          }
+        ],
+        "souvenir": [
+          {
+            "name": "米屋 栗蒸羊羹 禮盒",
+            "rating": "★★★★★",
+            "distance": "米屋 總本店",
+            "highlights": "整顆飽滿蜜漬栗子鑲嵌於綿密羊羹，成田山最指標伴手禮",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yoneya+Honten+Naritasan"
+          },
+          {
+            "name": "成田山開運不動明王 交通安全御守",
+            "rating": "★★★★★",
+            "distance": "新勝寺大本堂授與所",
+            "highlights": "千手觀音與不動明王護佑行車與滑雪平安御守",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Shinshoji+Temple"
+          },
+          {
+            "name": "川豐 特製真空蒲燒鰻魚禮盒",
+            "rating": "★★★★☆",
+            "distance": "川豐本店外帶專櫃",
+            "highlights": "真空冷藏封裝直烤鰻魚，附秘傳醬汁與和歌山山椒粉",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kawatoyo+Honten+Narita"
+          },
+          {
+            "name": "長命泉 純米大吟釀 銘柄瓶裝",
+            "rating": "★★★★☆",
+            "distance": "鍋店直營門市",
+            "highlights": "引成田靈泉釀造之大吟釀，口感細膩柔滑",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chomeisen+Nabedana+Narita"
+          },
+          {
+            "name": "藤倉商店 手工竹編生活器物",
+            "rating": "★★★★☆",
+            "distance": "表參道竹木工藝老舖",
+            "highlights": "日本國產純竹編蒸籠、瀝水籃與木作便當盒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Fujikura+Shouten+Narita"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "成田山新勝寺 (大本堂與三重塔)",
+            "rating": "★★★★★",
+            "distance": "表參道底 (步行 12 分)",
+            "highlights": "關東三大本山之一，天慶三年(940年)開山，境內擁有五棟國家重要文化財",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Shinshoji+Temple"
+          },
+          {
+            "name": "成田山公園 (平和大塔下西洋與日本庭園)",
+            "rating": "★★★★★",
+            "distance": "新勝寺本堂後方 (步行 15 分)",
+            "highlights": "廣達 165,000 平方公尺之壯闊名園，冬景清幽，池水錦鯉悠游",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Park"
+          },
+          {
+            "name": "成田山表參道 (千禧江戶街廓)",
+            "rating": "★★★★★",
+            "distance": "自車站延綿 800 公尺",
+            "highlights": "保留江戶至明治時期門前町商賈老建築，沿途 150 家特色小店林立",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Omotesando"
+          },
+          {
+            "name": "光明堂 (愛染明王良緣堂)",
+            "rating": "★★★★☆",
+            "distance": "新勝寺境內 (步行 14 分)",
+            "highlights": "元祿十四年(1701年)建造之舊本堂，建築雕刻極富歷史價值",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Naritasan+Komyodo"
+          },
+          {
+            "name": "出世稻荷神社 (佐倉藩主信奉之開運靈地)",
+            "rating": "★★★★☆",
+            "distance": "新勝寺境內高台 (步行 13 分)",
+            "highlights": "祈求商賣繁盛、事業出世與開運的古老神社，俯瞰參道全景",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shusse+Inari+Naritasan"
+          }
+        ]
+      }
     },
     {
       "option_id": "opt2",
-      "title": "選項 2：上野阿美橫丁與恩賜公園（交通樞紐・雪具藥妝採買）",
-      "location": "上野 (Ueno)",
-      "transit": "成田第 2・3 航廈搭乘 07:30 發車之「京成 Skyliner 4 號」，08:06 直達日暮里，08:16 抵達上野站。",
-      "highlights": "行李直接寄放於 JR 上野站置物櫃。早晨至阿美橫丁體驗熱鬧市街、採買個人防寒保暖裝備與藥妝，或走訪上野恩賜公園與不忍池。午間於上野品嚐正統拉麵或洋食，直接於 JR 上野站新幹線月台搭乘 11:26 或 12:26 北陸新幹線直達長野。",
-      "map_url": "https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+Street+Ueno"
+      "title": "選項 2：上野阿美橫丁與恩賜公園（交通樞紐・雪具藥妝採買・新幹線直連）",
+      "transit_summary": "成田第 2・3 航廈搭乘 07:30 發車之「京成 Skyliner 4 號」，08:06 直達日暮里，08:16 抵達上野站。",
+      "transit_details": [
+        "07:30 成田搭乘 京成 Skyliner 4 號 ➔ 08:06 抵日暮里 ➔ 08:16 抵京成上野站",
+        "大件行李直接寄放於 JR 上野站新幹線剪票口旁置物櫃（12/15 上野直上新幹線前往長野）",
+        "漫遊：阿美橫丁採買滑雪手套、護目鏡防霧噴霧、防寒內著與藥妝，漫步上野恩賜公園與不忍池弁天堂",
+        "銜接新幹線：11:26 搭乘 Hakutaka 561 號 或 12:26 Asama 613 號直達長野站"
+      ],
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+Street+Ueno",
+      "recommendations": {
+        "restaurant": [
+          {
+            "name": "名代 宇奈とと 上野店 (平價厚切鰻魚飯)",
+            "rating": "★★★★☆",
+            "distance": "阿美橫丁入口旁 (步行 2 分)",
+            "highlights": "炭火直烤厚片鰻魚重，CP值稱霸東京，出餐快速",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Unatoto+Ueno"
+          },
+          {
+            "name": "一蘭拉麵 上野山下口店",
+            "rating": "★★★★★",
+            "distance": "JR 上野站山下口出站即達 (步行 30 秒)",
+            "highlights": "24 小時營業！經典天然豚骨湯頭、特製秘傳辣醬與特製細麵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Ueno"
+          },
+          {
+            "name": "蓬萊屋 (洋食炸豬排老舖)",
+            "rating": "★★★★★",
+            "distance": "上野御徒町 (步行 6 分)",
+            "highlights": "大正時期創立，日本首創高溫一口炸菲力豬排 (ヒレカツ) 誕生地",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Horaiya+Tonkatsu+Ueno"
+          },
+          {
+            "name": "大山肉店 (肉の大山)",
+            "rating": "★★★★☆",
+            "distance": "阿美橫丁內 (步行 3 分)",
+            "highlights": "肉品專賣店現炸特大和牛炸肉餅 (メンチカツ) 與炸里肌串",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Niku+no+Oyama+Ueno"
+          },
+          {
+            "name": "鴨to蔥 (拉麵 鴨to葱)",
+            "rating": "★★★★★",
+            "distance": "JR 御徒町站旁 (步行 4 分)",
+            "highlights": "僅用鴨肉與水熬煮清甜湯頭，自選兩種日本在地蔥段之超人氣排隊拉麵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ramen+Kamo+to+Negi+Ueno"
+          }
+        ],
+        "dessert_pastry": [
+          {
+            "name": "兔屋 (うさぎや Usagiya)",
+            "rating": "★★★★★",
+            "distance": "上野黑門町 (步行 7 分)",
+            "highlights": "東京三大銅鑼燒之首！大正二年創業，剛出爐鬆軟如蛋糕之餅皮包裹頂級十勝紅豆粒餡",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Usagiya+Dorayaki+Ueno"
+          },
+          {
+            "name": "みはし 上野本店 (Mihashi 餡蜜)",
+            "rating": "★★★★★",
+            "distance": "京成上野站對面 (步行 3 分)",
+            "highlights": "昭和二十三年老字號白玉餡蜜、抹茶冰淇淋與伊豆黑糖蜜",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Mihashi+Ueno+Honten"
+          },
+          {
+            "name": "上野風月堂 本店",
+            "rating": "★★★★☆",
+            "distance": "上野中央通 (步行 6 分)",
+            "highlights": "法式法蘭酥餅 (Gaufres) 發祥老舖，現烤特大夾心法蘭酥",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ueno+Fugetsudo+Honten"
+          },
+          {
+            "name": "花園萬頭 (Hanazono Manju)",
+            "rating": "★★★★☆",
+            "distance": "JR 上野站 ecute 3F",
+            "highlights": "日本宮內廳御用黑糖紅豆蒸饅頭與生栗大福",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hanazono+Manju+Ueno"
+          },
+          {
+            "name": "Domremy Outlet 上野甜點暢貨中心",
+            "rating": "★★★★☆",
+            "distance": "不忍池畔 (步行 4 分)",
+            "highlights": "知名蛋糕工廠直送！半價可麗餅捲、草莓千層與布丁杯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Domremy+Outlet+Ueno"
+          }
+        ],
+        "beverage": [
+          {
+            "name": "THE COFFEE SHOP 上野公園店",
+            "rating": "★★★★☆",
+            "distance": "上野恩賜公園噴泉旁 (步行 4 分)",
+            "highlights": "精品單品手沖咖啡，坐在林蔭露天座位遠眺美術館群",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Coffee+Shop+Ueno+Park"
+          },
+          {
+            "name": "吉池 地酒專賣館 (Yoshiike)",
+            "rating": "★★★★★",
+            "distance": "JR 御徒町站前吉池大樓 B1 (步行 5 分)",
+            "highlights": "全東京最齊全新潟與長野清酒地酒展售，隨選冷藏純米生原酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yoshiike+Ueno+Sake"
+          },
+          {
+            "name": "古城 喫茶 (Coffee Shop Kojo)",
+            "rating": "★★★★☆",
+            "distance": "上野東上野 (步行 3 分)",
+            "highlights": "昭和三十八年純喫茶，華麗彩繪玻璃與維也納熱咖啡",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Coffee+Shop+Kojo+Ueno"
+          },
+          {
+            "name": "大統領 支店 (居酒屋立飲生啤)",
+            "rating": "★★★★☆",
+            "distance": "高架橋下阿美橫丁 (步行 3 分)",
+            "highlights": "老字號高架橋下居酒屋，現煮牛雜燉豆腐配冰生啤酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Daitoryo+Ueno"
+          },
+          {
+            "name": "椿屋珈琲 上野茶寮",
+            "rating": "★★★★☆",
+            "distance": "上野站前 (步行 2 分)",
+            "highlights": "大正浪漫復古咖啡館，虹吸式現煮極品綜合熱咖啡",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tsubakiya+Coffee+Ueno"
+          }
+        ],
+        "souvenir": [
+          {
+            "name": "兔屋 經典紅豆銅鑼燒 (當日食用)",
+            "rating": "★★★★★",
+            "distance": "兔屋 門市",
+            "highlights": "外皮鬆軟蜂蜜香醇，無防腐劑，東京手信天花板",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Usagiya+Dorayaki+Ueno"
+          },
+          {
+            "name": "志村商店 巧克力抓抓樂 (1000円大特賣)",
+            "rating": "★★★★☆",
+            "distance": "阿美橫丁高架下 (步行 3 分)",
+            "highlights": "鐵路高架下著名的喊價送巧克力奇景，大袋進口零食滿載",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shimura+Shoten+Ameyoko"
+          },
+          {
+            "name": "二木菓子 零食特產批發大樓",
+            "rating": "★★★★★",
+            "distance": "阿美橫丁摩利支天旁 (步行 4 分)",
+            "highlights": "全日本伴手禮、限定 KitKat、仙貝零嘴免稅批發第一站",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Niki+no+Kashi+Ameyoko"
+          },
+          {
+            "name": "上野動物園 大貓熊造型紀念甜點盒",
+            "rating": "★★★★☆",
+            "distance": "JR 上野站 ecute 3F",
+            "highlights": "上野站限定熊貓造型夾心餅乾與手工瑪德蓮禮盒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ueno+Station+ecute"
+          },
+          {
+            "name": "ロンドンスポーツ (London Sports 雪具店)",
+            "rating": "★★★★☆",
+            "distance": "阿美橫丁體育用品街 (步行 3 分)",
+            "highlights": "出發滑雪前最後補給！超低價滑雪襪、防寒脖圍與保暖手套",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=London+Sports+Ameyoko"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "阿美橫丁 (Ameyoko 商業街)",
+            "rating": "★★★★★",
+            "distance": "JR 上野站至御徒町站高架下",
+            "highlights": "戰後黑市演變至今的繁華平民街町，充滿乾貨、海鮮、體育用品與熱絡叫賣聲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+Street+Ueno"
+          },
+          {
+            "name": "上野恩賜公園 (不忍池與弁天堂)",
+            "rating": "★★★★★",
+            "distance": "京成上野站旁 (步行 2 分)",
+            "highlights": "日本第一座市立公園，林木蓊鬱，冬季不忍池水鳥成群，風景寧靜",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ueno+Onshi+Park"
+          },
+          {
+            "name": "上野東照宮 (德川家康神社與牡丹苑)",
+            "rating": "★★★★★",
+            "distance": "上野公園內 (步行 6 分)",
+            "highlights": "1627 年建立之江戶初期權現造建築奇蹟，金碧輝煌的金色殿躲過二次大戰轟炸",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ueno+Toshogu+Shrine"
+          },
+          {
+            "name": "國立西洋美術館 (柯比意建築遺產)",
+            "rating": "★★★★★",
+            "distance": "JR 上野站公園口 (步行 1 分)",
+            "highlights": "世界文化遺產！建築大師勒·柯比意設計，常設展收藏羅丹雕塑與莫內睡蓮",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=National+Museum+of+Western+Art+Tokyo"
+          },
+          {
+            "name": "摩利支天 德大寺 (守護力勝祈願寺)",
+            "rating": "★★★★☆",
+            "distance": "阿美橫丁高架橋上方 (步行 4 分)",
+            "highlights": "建於四百年前，供奉開運與除災之摩利支天，雪友可祈求滑雪平安不摔傷",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tokudaiji+Temple+Ueno"
+          }
+        ]
+      }
     },
     {
       "option_id": "opt3",
-      "title": "選項 3：淺草雷門・仲見世通・隅田川（清晨經典地標巡禮）",
-      "location": "淺草 (Asakusa)",
-      "transit": "成田機場搭乘 07:27 發車之「京成 Access 特急（直通都營淺草線）」，08:24 免換車直達淺草站。",
-      "highlights": "享受清晨遊客最少、最舒適的淺草雷門大紅燈籠與仲見世通。參拜淺草寺觀音堂、品嚐現烤人形燒與淺草花月堂巨型波蘿麵包，沿隅田川公園遠眺東京晴空塔（Skytree）。11:15 自淺草搭乘銀座線僅需 5 分鐘抵達上野站，銜接北陸新幹線前往長野。",
-      "map_url": "https://www.google.com/maps/search/?api=1&query=Sensouji+Temple+Asakusa"
+      "title": "選項 3：淺草雷門・仲見世通・隅田川（清晨經典地標巡禮・晴空塔遠眺）",
+      "transit_summary": "成田機場搭乘 07:27 發車之「京成 Access 特急（直通都營淺草線）」，08:24 免換車直達淺草站。",
+      "transit_details": [
+        "07:27 成田 T2 搭乘 京成 Access 特急（直通都營淺草線）➔ 08:24 免換車直達淺草站",
+        "大件行李寄放於淺草站或東武淺草站寄物櫃",
+        "漫遊：清晨遊人稀少之雷門大紅燈籠拍照、漫步仲見世通買現烤仙貝、淺草寺觀音本堂祈福抽籤、漫步至隅田川公園遠眺晴空塔",
+        "銜接新幹線：11:15 淺草搭乘東京地鐵銀座線（5 分鐘）➔ 11:20 抵達上野站 ➔ 11:46 或 12:26 搭乘北陸新幹線直達長野"
+      ],
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Sensouji+Temple+Asakusa",
+      "recommendations": {
+        "restaurant": [
+          {
+            "name": "淺草今半 國際通本店 (壽喜燒百年名門)",
+            "rating": "★★★★★",
+            "distance": "筑波快線淺草站 (步行 3 分)",
+            "highlights": "明治二十八年創業，黑毛和牛壽喜燒老店，特選午間壽喜燒丼極富盛名",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asakusa+Imahan+Honten"
+          },
+          {
+            "name": "大黑家 天婦羅 本店 (Daikokuya)",
+            "rating": "★★★★☆",
+            "distance": "淺草傳法院通旁 (步行 4 分)",
+            "highlights": "明治二十年創立！濃黑甘醇胡麻油香現炸海老海鮮天丼",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Daikokuya+Tempura+Asakusa"
+          },
+          {
+            "name": "尾張屋 本店 (蕎麥麵老舖)",
+            "rating": "★★★★★",
+            "distance": "雷門通 (步行 3 分)",
+            "highlights": "安政三年創業！特大天然明蝦天婦羅蕎麥麵，湯頭柴魚香氣清冽甘醇",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Owariya+Soba+Asakusa"
+          },
+          {
+            "name": "淺草 鰻 鐵 (Hitsumabushi 鰻魚三吃)",
+            "rating": "★★★★☆",
+            "distance": "東武淺草站旁 (步行 2 分)",
+            "highlights": "自製特選鰻魚飯三吃，附清甜高湯、青蔥、山葵做茶泡飯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asakusa+Unatetsu"
+          },
+          {
+            "name": "淺草 メンチ (炸和牛洋蔥餅)",
+            "rating": "★★★★★",
+            "distance": "傳法院通 (步行 4 分)",
+            "highlights": "排隊第一外帶美食！神奈川縣高座豚與和牛黃金比例多汁炸肉餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asakusa+Menchi"
+          }
+        ],
+        "dessert_pastry": [
+          {
+            "name": "淺草 花月堂 本店 (巨型巨菠蘿麵包)",
+            "rating": "★★★★★",
+            "distance": "淺草寺西參道商店街 (步行 5 分)",
+            "highlights": "發酵低溫熟成 3 小時！剛出爐比臉還大的酥脆香軟波蘿麵包，外脆內如雲朵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asakusa+Kagetsudo+Honten"
+          },
+          {
+            "name": "壽々喜園 淺草本店 (世界最濃抹茶冰淇淋)",
+            "rating": "★★★★★",
+            "distance": "淺草寺後方言問通 (步行 8 分)",
+            "highlights": "與靜岡丸七製茶合作，提供 No.1 至 No.7 七種濃度，必吃極致深綠 No.7",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Suzukien+Asakusa"
+          },
+          {
+            "name": "龜十 (Kameju 銅鑼燒)",
+            "rating": "★★★★★",
+            "distance": "雷門通正對面 (步行 1 分)",
+            "highlights": "東京三大銅鑼燒之一！如鬆餅般不規則焦香鬆軟外皮，白餡與紅豆餡極品",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kameju+Dorayaki+Asakusa"
+          },
+          {
+            "name": "木村家 本店 (人形燒發祥老舖)",
+            "rating": "★★★★☆",
+            "distance": "仲見世通底 (步行 4 分)",
+            "highlights": "明治元年創業！五重塔、雷門、提燈造型現烤香脆紅豆人形燒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kimuraya+Ningyoyaki+Asakusa"
+          },
+          {
+            "name": "舟和 本店 (Funawa 芋金津)",
+            "rating": "★★★★☆",
+            "distance": "新仲見世通交口 (步行 3 分)",
+            "highlights": "純番薯蒸製自然甘甜芋羊羹 (芋ようかん) 與五彩寒天餡蜜",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Funawa+Honten+Asakusa"
+          }
+        ],
+        "beverage": [
+          {
+            "name": "神谷吧 (Kamiya Bar 淺草地標)",
+            "rating": "★★★★★",
+            "distance": "淺草站 3 號出口前 (步行 1 分)",
+            "highlights": "日本第一間西式酒吧！明治時期發明之名酒「電氣白蘭 (Denki Bran)」發祥地",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kamiya+Bar+Asakusa"
+          },
+          {
+            "name": "FUGLEN ASAKUSA (挪威精品咖啡)",
+            "rating": "★★★★★",
+            "distance": "淺草寺西側 (步行 6 分)",
+            "highlights": "奧斯陸設計復古名店，淺焙北歐果香手沖咖啡與現烤熱鬆餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Fuglen+Asakusa"
+          },
+          {
+            "name": "Asahi 啤酒朝日超爽大樓頂樓 LOUNGE",
+            "rating": "★★★★☆",
+            "distance": "跨越吾妻橋 (步行 6 分)",
+            "highlights": "22F 俯瞰隅田川與淺草全景，享用零下低溫 Extra Cold 朝日生啤酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asahi+Beer+Tower+Asakusa"
+          },
+          {
+            "name": "常盤堂 雷門抹茶茶房",
+            "rating": "★★★★☆",
+            "distance": "雷門旁 (步行 1 分)",
+            "highlights": "現刷宇治抹茶與冰鎮抹茶拿鐵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tokiwado+Asakusa"
+          },
+          {
+            "name": "Sukemasa Coffee (スケマサ コーヒー)",
+            "rating": "★★★★☆",
+            "distance": "淺草觀音裏 (步行 7 分)",
+            "highlights": "由和服咖啡師萃取的極致拿鐵與季節水果厚三明治",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sukemasa+Coffee+Asakusa"
+          }
+        ],
+        "souvenir": [
+          {
+            "name": "龜十 特製手作銅鑼燒禮盒",
+            "rating": "★★★★★",
+            "distance": "龜十門市 (雷門通)",
+            "highlights": "每日限量排隊伴手禮，柔軟餅皮伴手禮送禮體面絕倫",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kameju+Dorayaki+Asakusa"
+          },
+          {
+            "name": "常盤堂 雷門名物 雷おこし (雷米香)",
+            "rating": "★★★★☆",
+            "distance": "雷門右側 (步行 30 秒)",
+            "highlights": "江戶傳統米果裹上麥芽糖、花生與抹茶，象徵除災招福",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tokiwado+Kaminari+Okoshi"
+          },
+          {
+            "name": "犬印鞄製作所 淺草帆布包",
+            "rating": "★★★★★",
+            "distance": "淺草雷門通 (步行 4 分)",
+            "highlights": "純日本國產高密織純棉帆布包，質地厚實耐磨防水，滑雪裝備收納極合適",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Inujirushi+Kaban+Asakusa"
+          },
+          {
+            "name": "淺草寺 蓮花厄除金屬開運御守",
+            "rating": "★★★★★",
+            "distance": "淺草寺本堂授與所",
+            "highlights": "淺草寺觀音菩薩加持除厄與旅行安全護身符",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sensouji+Temple+Asakusa"
+          },
+          {
+            "name": "やげん堀 七味唐辛子 本店",
+            "rating": "★★★★☆",
+            "distance": "新仲見世通 (步行 3 分)",
+            "highlights": "寬永二年創業！日本七味唐辛子三大名門，現場依喜好調配辣度比例",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yagenbori+Asakusa"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "淺草寺 (金龍山淺草寺本堂與五重塔)",
+            "rating": "★★★★★",
+            "distance": "淺草站出站 (步行 5 分)",
+            "highlights": "東京都內最古老寺廟(西元628年建)，晨間光影灑落本堂與五重塔極其莊嚴",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sensouji+Temple+Asakusa"
+          },
+          {
+            "name": "雷門 (風雷神門與巨大紅燈籠)",
+            "rating": "★★★★★",
+            "distance": "淺草地標入口 (步行 2 分)",
+            "highlights": "重達 700 公斤的巨型松下幸之助提獻大紅燈籠，清晨無人潮拍照黃金時段",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kaminarimon+Gate+Asakusa"
+          },
+          {
+            "name": "仲見世商店街 (江戶江戶風參道商店街)",
+            "rating": "★★★★★",
+            "distance": "雷門直通至寶藏門 (長 250m)",
+            "highlights": "日本最古老的商店街之一，晨間朱紅壁畫鐵捲門與老店開門風情",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Nakamise+Shopping+Street+Asakusa"
+          },
+          {
+            "name": "隅田公園 (吾妻橋畔晴空塔絕景展望)",
+            "rating": "★★★★★",
+            "distance": "東武淺草站旁水岸 (步行 3 分)",
+            "highlights": "沿隅田川河岸漫步，欣賞朝日啤酒金色火焰雕塑與晴空塔（Skytree）全貌",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sumida+Park+Asakusa"
+          },
+          {
+            "name": "淺草文化觀光中心 8F 頂樓免費展望台",
+            "rating": "★★★★★",
+            "distance": "雷門正對面 (步行 1 分)",
+            "highlights": "建築名家隈研吾設計積木結構大樓，8F 露台免費俯瞰仲見世通全景與淺草寺",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asakusa+Culture+Tourist+Information+Center"
+          }
+        ]
+      }
     },
     {
       "option_id": "opt4",
-      "title": "選項 4：東京車站丸之內與皇居外苑（現代都會與新幹線直連）",
-      "location": "東京站周邊 (Tokyo Station & Marunouchi)",
-      "transit": "成田機場搭乘 07:44 發車之「JR 成田特快 N'EX 6 號」，08:48 免換車直達東京站地下總武月台。",
-      "highlights": "漫步丸之內站前廣場，欣賞 1914 年文藝復興紅磚建築壯麗風采；步行至皇居外苑二重橋感受綠意開闊視野；參觀 KITTE 大樓屋頂花園俯瞰新幹線交會。午餐於「東京拉麵街」品嚐六厘舍沾麵，11:20 直接於東京站搭乘最速達之北陸新幹線 Kagayaki 511 號（12:44 抵長野）。",
-      "map_url": "https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Marunouchi+Building"
+      "title": "選項 4：東京車站丸之內與皇居外苑（現代都會・文藝復興紅磚・最速新幹線直連）",
+      "transit_summary": "成田機場搭乘 07:44 發車之「JR 成田特快 N'EX 6 號」，08:48 免換車直達東京站地下總武月台。",
+      "transit_details": [
+        "07:44 成田搭乘 JR 成田特快 N'EX 6 號 ➔ 08:48 直達東京站地下月台",
+        "行李寄放於東京站 1F 丸之內中央口置物櫃",
+        "漫遊：丸之內站前廣場拍攝 1914 年文藝復興紅磚車站壯麗立面、漫步皇居外苑欣賞二重橋與黑松林、登上 KITTE 大樓 6F 屋頂花園俯瞰新幹線交會穿梭",
+        "銜接新幹線：午間品嚐六厘舍沾麵，11:20 於東京站搭乘最速達之北陸新幹線 Kagayaki 511 號（12:44 抵長野）"
+      ],
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Marunouchi+Building",
+      "recommendations": {
+        "restaurant": [
+          {
+            "name": "六厘舍 (Rokurinsha 東京拉麵街店)",
+            "rating": "★★★★★",
+            "distance": "東京站 B1 一番街拉麵街 (步行 2 分)",
+            "highlights": "東京沾麵傳奇！超濃厚豚骨魚介高湯、極粗彈牙麵體，早晨提供晨間拉麵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Rokurinsha+Tokyo+Station"
+          },
+          {
+            "name": "根室花丸 迴轉壽司 (KITTE 丸之內店)",
+            "rating": "★★★★★",
+            "distance": "東京站丸之內南口 KITTE 5F (步行 3 分)",
+            "highlights": "北海道根室漁港直送極鮮紅鮭筋子、炙燒比目魚緣側、活扇貝握壽司",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+KITTE+Tokyo"
+          },
+          {
+            "name": "利久牛舌 (牛たん炭焼 利久 東京站店)",
+            "rating": "★★★★☆",
+            "distance": "東京站剪票口內 Gransta B1 (步行 1 分)",
+            "highlights": "仙台炭烤厚切牛舌定食，佐麥飯、山藥泥與牛尾清湯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Rikyu+Gyutan+Tokyo+Station"
+          },
+          {
+            "name": "釀造 豚汁專賣店 (ごちとん 東京站店)",
+            "rating": "★★★★☆",
+            "distance": "東京站八重洲地下街 (步行 3 分)",
+            "highlights": "冬季必喝熱湯定食！超厚五花肉片搭配九州黑味噌大盛豬肉蔬菜味噌湯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Gochiton+Tokyo+Station"
+          },
+          {
+            "name": "T's たんたん (純素健康擔擔麵)",
+            "rating": "★★★★☆",
+            "distance": "JR 東京站內 Keiyo Street 1F (步行 2 分)",
+            "highlights": "全素濃郁胡麻辣湯擔擔麵，清爽無負擔，外國旅客極受好評",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ts+Tantan+Tokyo+Station"
+          }
+        ],
+        "dessert_pastry": [
+          {
+            "name": "GARIGUETTE 東京 (現烤圓形千層酥派)",
+            "rating": "★★★★★",
+            "distance": "丸之內仲通旁 (步行 6 分)",
+            "highlights": "現場特製熱壓薄酥餅皮夾入特濃卡士達醬與新鮮福岡草莓",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Gariguette+Tokyo"
+          },
+          {
+            "name": "ECHIRE MAISON DU BEURRE (艾許奶油坊)",
+            "rating": "★★★★★",
+            "distance": "丸之內 Brick Square 1F (步行 5 分)",
+            "highlights": "法國頂級發酵奶油第一名店！限量現烤艾許奶油可頌與瑪德蓮酥餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Echire+Maison+du+Beurre+Marunouchi"
+          },
+          {
+            "name": "Toraya Edition (虎屋咖啡 東京車站店)",
+            "rating": "★★★★★",
+            "distance": "東京車站丸之內南口 2F (步行 1 分)",
+            "highlights": "百年和菓子老舖與現代設計結合，招牌紅豆泥吐司佐熱煎茶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Toraya+Cafe+Tokyo+Station"
+          },
+          {
+            "name": "Press Butter Sand (現烤焦糖奶油夾心餅)",
+            "rating": "★★★★★",
+            "distance": "JR 東京站內南通通路 1F",
+            "highlights": "雙層鐵板現烤酥脆餅皮，包裹雙層流心北海道生奶油與生焦糖醬",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Press+Butter+Sand+Tokyo+Station"
+          },
+          {
+            "name": "Pierre Hermé 丸之內店",
+            "rating": "★★★★☆",
+            "distance": "二重橋前新國際大樓 1F (步行 6 分)",
+            "highlights": "法國甜點界畢卡索！日本在地柚子、抹茶結合的世界級馬卡龍與磅蛋糕",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Pierre+Herme+Marunouchi"
+          }
+        ],
+        "beverage": [
+          {
+            "name": "長谷川酒店 (Hasegawa Saketen Gransta 東京店)",
+            "rating": "★★★★★",
+            "distance": "JR 東京站內 Gransta B1 (步行 1 分)",
+            "highlights": "全日本地酒指標旗艦館！常備數百款名酒，內設角打立飲吧台提供十四代、新政等銘柄單杯品飲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hasegawa+Sake+Gransta+Tokyo+Station"
+          },
+          {
+            "name": "丸之內 Cafe 会 (Tully's x 伊藤園聯名茶寮)",
+            "rating": "★★★★☆",
+            "distance": "KITTE 1F (步行 2 分)",
+            "highlights": "本格宇治抹茶拿鐵與手沖和風咖啡，天花板挑高舒適",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Marunouchi+Cafe+Kai+KITTE"
+          },
+          {
+            "name": "The Tokyo Station Hotel 經典酒吧 Oak",
+            "rating": "★★★★★",
+            "distance": "東京車站飯店 2F (車站直結)",
+            "highlights": "歷史悠久的古雅紅磚拱門酒吧，由名調酒師調製原創「Tokyo Station」雞尾酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Bar+Oak+Tokyo+Station+Hotel"
+          },
+          {
+            "name": "Blue Bottle Coffee (藍瓶咖啡 大手町店)",
+            "rating": "★★★★☆",
+            "distance": "大手町 Financial City (步行 7 分)",
+            "highlights": "現萃單品手沖咖啡與冷萃冰咖啡，現代玻璃帷幕明亮空間",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Blue+Bottle+Otemachi"
+          },
+          {
+            "name": "Sarabeth's (紐約早餐女王 東京店)",
+            "rating": "★★★★☆",
+            "distance": "東京站八重洲北口 Tekko 大樓 2F (步行 3 分)",
+            "highlights": "現榨四花綜合果汁與英式現煮大吉嶺熱紅茶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sarabeths+Tokyo+Station"
+          }
+        ],
+        "souvenir": [
+          {
+            "name": "東京香蕉蛋糕 (Tokyo Banana) 經典禮盒",
+            "rating": "★★★★★",
+            "distance": "東京站一番街各大禮品專賣店",
+            "highlights": "鬆軟海綿蛋糕包覆濃郁香蕉卡士達醬，東京第一代名產",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tokyo+Banana+Tokyo+Station"
+          },
+          {
+            "name": "New York Perfect Cheese (完美起司夾心餅)",
+            "rating": "★★★★★",
+            "distance": "JR 東京站內南通通路 1F",
+            "highlights": "前白宮甜點主廚監修！薄脆貓舌餅包裹高達起司條與白巧克力生奶油，開店即秒殺",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=New+York+Perfect+Cheese+Tokyo+Station"
+          },
+          {
+            "name": "Sugar Butter Sand Tree (砂糖奶油白巧克力夾心脆餅)",
+            "rating": "★★★★☆",
+            "distance": "東京站 Gransta 1F",
+            "highlights": "七種穀物穀物揉製黑麥酥脆餅乾，夾入滑順牛奶白巧克力",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sugar+Butter+Tree+Tokyo+Station"
+          },
+          {
+            "name": "東京鈴最中 (銀之鈴限定香袋最中餅)",
+            "rating": "★★★★☆",
+            "distance": "東京站 Gransta B1 銀之鈴廣場旁",
+            "highlights": "以東京站會合地標「銀之鈴」為造型之豆沙紅豆最中餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Gin+no+Suzu+Tokyo+Station"
+          },
+          {
+            "name": "ECHIRE 艾許藍色金屬罐裝純牛油曲奇餅乾",
+            "rating": "★★★★★",
+            "distance": "丸之內 Brick Square 1F",
+            "highlights": "每日限量！純艾許發酵奶油手工烘焙之頂級法式酥餅 (Sablé Échiré)",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Echire+Maison+du+Beurre+Marunouchi"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "東京車站丸之內紅磚站房 (重要文化財)",
+            "rating": "★★★★★",
+            "distance": "東京站丸之內出口",
+            "highlights": "辰野金吾於 1914 年設計之文藝復興雙穹頂紅磚建築，復原戰前宏偉原貌",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Marunouchi+Building"
+          },
+          {
+            "name": "KITTE 屋頂空中花園 (KITTE Garden 6F)",
+            "rating": "★★★★★",
+            "distance": "東京站丸之內南口旁 (步行 2 分)",
+            "highlights": "免費開放露天空中草坪，居高臨下俯瞰紅磚車站全貌與新幹線疾駛交錯的絕佳攝影點",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=KITTE+Garden+Tokyo"
+          },
+          {
+            "name": "皇居外苑與二重橋 (Kōkyo Gaien)",
+            "rating": "★★★★★",
+            "distance": "丸之內廣場往西直行 (步行 8 分)",
+            "highlights": "開闊的江戶城護城河、古典二重石橋與 2000 多株蒼勁修剪黑松林美景",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Nijubashi+Bridge+Tokyo"
+          },
+          {
+            "name": "丸之內仲通 (Marunouchi Naka-dori 歐風林蔭大道)",
+            "rating": "★★★★★",
+            "distance": "丸之內大樓後方 (步行 3 分)",
+            "highlights": "兩旁名牌旗艦店、街頭當代藝術雕塑，冬季滿山滿谷香檳金 LED 聖誕璀璨點燈",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Marunouchi+Naka+dori"
+          },
+          {
+            "name": "和田倉噴水公園 (現代都會水景庭園)",
+            "rating": "★★★★☆",
+            "distance": "皇居外苑旁 (步行 7 分)",
+            "highlights": "為紀念明仁天皇大婚所建，大型人工水幕噴泉與平靜水景倒映現代玻璃摩天樓",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Wadakura+Fountain+Park"
+          }
+        ]
+      }
     }
   ],
   "friend_dec19_return": [
     {
       "method_id": "m1",
-      "title": "方式 1：JR 成田特快 N'EX 直達（最省力・免搬運行李首選）",
+      "badge": "方案 1：JR 成田特快 N'EX 直達",
+      "badge_type": "primary",
+      "title": "JR 成田特快 N'EX 47 號直達（最省力・免搬運行李首選）",
       "timeline": "17:28 JR 橫濱站 9/10 號月台搭乘「JR 成田特快 N'EX 47 號」 ➔ 18:54 直達「空港第 2・第 3 航廈站」",
       "buffer_time": "18:54 抵達月台，出站沿 T3 專用藍色 PU 跑道步行約 300 公尺（約 7-9 分鐘），19:05 順利進入 T3 報到大廳。距離 20:00 關櫃底線足足保留 55 分鐘超充裕緩衝！",
-      "highlights": "直達車全程無須換車、全車指定席配備大型行李電子密碼鎖與充電插座，平穩舒適。"
+      "highlights": "直達車全程無須轉乘、全車指定席配備大型行李電子密碼鎖、免費高速 WiFi 與座位充電插座，平穩舒適。"
     },
     {
       "method_id": "m2",
-      "title": "方式 2：京急本線快特 ➔ 日暮里轉乘京成 Skyliner（極速高架抗風備案）",
+      "badge": "方案 2：京急快特 ➔ 日暮里轉 Skyliner 極速",
+      "badge_type": "accent",
+      "title": "京急本線快特 ➔ 日暮里轉乘京成 Skyliner 59 號（極速高架抗風避險備案）",
       "timeline": "16:48 橫濱站搭乘京急本線快特 ➔ 17:09 抵品川 ➔ 17:15 轉 JR 山手線 ➔ 17:35 抵日暮里 ➔ 17:47 搭乘京成 Skyliner 59 號 ➔ 18:23 抵成田第 2 航廈",
       "buffer_time": "18:23 抵達第 2 航廈，步行前往 T3 約 18:35 抵達，比預定 20:00 提早近 1.5 小時！",
-      "highlights": "Skyliner 行駛最高時速達 160 km/h，走成田 SKY ACCESS 高架專用路廊，抗強風雨能力極佳，是天候不佳或 JR 路線號誌故障時的最佳避險方案。"
-    }
-  ],
-  "friend_transits": [
-    {
-      "date": "2026-12-15",
-      "type": "inbound_join",
-      "title": "友人 12/15 上山會合交通精算（成田 T3 ➔ 志賀高原橫手山）",
-      "key_steps": [
-        "06:35 抵達成田 T3 通關入境提領行李，步行至 T2 B1 車站（約 07:15）",
-        "白天東京小巡遊 4 選 1（成田山表參道 / 上野 / 淺草 / 東京站周邊）",
-        "【最晚直達巴士方案】：東京站搭乘 11:20 北陸新幹線 Kagayaki 511 號 ➔ 12:44 抵長野站（轉乘緩衝 26 分鐘） ➔ 長野站東口 23 號站牌搭乘 13:10 發車之長電急行巴士 ➔ 14:52 直達ほたる温泉（Hotel 2307 門口）",
-        "【最早轉接巴士方案】：07:30 Skyliner 4 號至日暮里 ➔ 上野 08:35 Hakutaka 555 號 ➔ 09:58 抵長野 ➔ 長野東口 10:15 急行巴士至「志賀高原山の駅」(11:25) ➔ 站內轉乘 11:35 路線巴士 ➔ 11:58 抵達ほたる温泉",
-        "【夜間計程車備案】：若延誤至傍晚，自東京搭新幹線至長野 ➔ 轉長野電鐵特急至湯田中站 ➔ 預約 4WD 雪地計程車（長電ハイヤー 0269-33-3161 直達飯店）"
-      ]
-    },
-    {
-      "date": "2026-12-19",
-      "type": "outbound_departure",
-      "title": "友人 12/19 返國交通動線（橫濱 ➔ 成田 T3 20:00 前抵達）",
-      "key_steps": [
-        "方案 1 (JR 直達)：17:28 JR 橫濱站 9/10 號月台搭乘 JR 成田特快 N'EX 47 號 ➔ 18:54 抵空港第 2・第 3 航廈站 ➔ 沿 PU 專屬跑道步行約 300 公尺 ➔ 19:05 進入 T3 報到大廳（距 20:00 餘裕 55 分鐘）",
-        "方案 2 (Skyliner 極速)：16:48 橫濱搭京急快特 ➔ 品川轉山手線至日暮里 ➔ 17:47 日暮里搭乘京成 Skyliner 59 號 ➔ 18:23 抵成田 T2 ➔ 18:35 抵 T3 報到大廳"
-      ]
+      "highlights": "Skyliner 行駛最高時速達 160 km/h，走成田 SKY ACCESS 高架專用路廊，抗強風雨能力極佳，是天候不佳或 JR 號誌故障時的最佳避險方案。"
     }
   ],
   "days": [
@@ -1422,5 +2167,38 @@
         ]
       }
     }
-  ]
+  ],
+  "friend_dec15_to_yokoteyama": {
+    "title": "友人 12/15 東京/長野 ➔ 志賀高原橫手山會合交通（直達與非直達各 2 班）",
+    "summary": "成田入境後或晨間市區漫遊後，前往志賀高原 Hotel & Onsen 2307 會合",
+    "direct_options": [
+      {
+        "badge": "🚌 直達首選 1（最晚直達巴士・熱門首選）",
+        "timeline": "東京站 11:20 搭乘 北陸新幹線 Kagayaki 511 號 ➔ 12:44 抵長野站（轉乘緩衝 26 分鐘） ➔ 長野站東口 23 號站牌搭乘 13:10 直達急行巴士 ➔ 14:52 直達ほたる温泉門口！",
+        "desc": "此班車為下午直達 Hotel 2307 門口之最晚直達班次，免搬行李免換車，中下午從容入住開滑。"
+      },
+      {
+        "badge": "🚌 直達次選 2（中午提早直達・充裕午餐）",
+        "timeline": "東京站 10:33 搭乘 北陸新幹線 Hakutaka 559 號 ➔ 12:00 抵長野站（轉乘緩衝 70 分鐘於長野站 MIDORI 享用午餐） ➔ 長野東口搭乘 13:10 直達急行巴士 ➔ 14:52 抵達ほたる温泉",
+        "desc": "時間最為寬裕，可在長野站品嚐手打信州蕎麥麵或購買小布施栗子點心後再行上山。"
+      }
+    ],
+    "transfer_options": [
+      {
+        "badge": "🔄 轉乘方案 1（晨間最早轉乘上山・搶滑半日）",
+        "timeline": "成田搭 07:30 Skyliner 4 號 ➔ 上野 08:35 Hakutaka 555 號 ➔ 09:58 抵長野 ➔ 長野東口 10:15 急行巴士 ➔ 11:25 抵志賀高原山の駅 ➔ 站內轉乘 11:35 路線巴士 ➔ 11:58 直達ほたる温泉",
+        "desc": "適合不在東京市區停留、出關直接殺上雪場之友人，中午前即可抵達飯店與我方會合。"
+      },
+      {
+        "badge": "🔄 轉乘方案 2（午後市區小遊後轉乘）",
+        "timeline": "東京站 12:52 搭乘 Hakutaka 565 號 ➔ 14:19 抵長野 ➔ 長野東口 14:30 急行巴士 ➔ 15:40 抵志賀高原山の駅 ➔ 站內轉乘 15:45 路線巴士 ➔ 16:15 抵達ほたる温泉",
+        "desc": "適合在淺草或上野多停留購物之友人，午後轉乘上山正好趕上晚餐宴席與溫泉。"
+      }
+    ],
+    "emergency_option": {
+      "badge": "🚕 傍晚/夜間極限備案（長電電車轉雪地計程車）",
+      "timeline": "東京新幹線至長野 ➔ 轉長野電鐵特急 Snow Monkey 號至湯田中站 ➔ 站前搭乘預約制 4WD 雪地計程車（長電ハイヤー 0269-33-3161）直達飯店",
+      "desc": "若因航班延誤超過下午 15:00 才離開東京，可利用此備案於晚間抵達飯店。"
+    }
+  }
 }
