@@ -1,12 +1,11 @@
 name: Sync Itinerary and UI from Google Drive
 
 on:
-  workflow_dispatch: # 支援網頁隨時一鍵手動同步
+  workflow_dispatch:
   schedule:
-    - cron: '0 21 * * *' # 每天台灣時間 05:00 (UTC 21:00) 自動定時執行
+    - cron: '0 21 * * *' # 每天台灣時間 05:00 自動同步
 
 jobs:
-  # 第一輪同步（10 分鐘超時終止保護）
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -19,25 +18,31 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Sync and Push Latest Files
+      - name: Sync and Push from Travel/Sb_2026 Folder
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B main origin/main
 
-          # 下載 Travel/Sb_2026 資料夾內的最新檔案
-          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1W9l7d-lqkH9JvABxYEW2Gls2c8m7XIiE" -o itinerary.json
-          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1B5GIeR42ZpLt88xuyV-QQaLApADTbvbN" -o index.html
+          # 安裝 Google Drive 雲端資料夾同步工具
+          pip install --upgrade gdown
+
+          # 直接以「資料夾 ID」同步整份 Travel/Sb_2026（資料夾 ID 永遠固定！）
+          gdown --folder "https://drive.google.com/drive/folders/1MmCMoyD-I3IntGxLl0vHpVFIDYW3uqXY" -O drive_download/ --remaining-ok
+
+          # 複製檔案至儲存庫根目錄
+          cp drive_download/itinerary.json .
+          cp drive_download/index.html .
+          rm -rf drive_download
 
           git add itinerary.json index.html
           if git diff --staged --quiet; then
             echo "No changes in files"
           else
-            git commit -m "Auto-sync: update itinerary.json and index.html (5 categories + attractions)"
+            git commit -m "Auto-sync: update itinerary.json and index.html from Travel/Sb_2026 folder"
             git push origin main
           fi
 
-  # 備援重試（若第一輪超時終止或失敗則自動重新跑一次）
   retry-sync:
     needs: sync
     if: failure()
@@ -59,8 +64,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B main origin/main
 
-          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1W9l7d-lqkH9JvABxYEW2Gls2c8m7XIiE" -o itinerary.json
-          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1B5GIeR42ZpLt88xuyV-QQaLApADTbvbN" -o index.html
+          pip install --upgrade gdown
+          gdown --folder "https://drive.google.com/drive/folders/1MmCMoyD-I3IntGxLl0vHpVFIDYW3uqXY" -O drive_download/ --remaining-ok
+          cp drive_download/itinerary.json .
+          cp drive_download/index.html .
+          rm -rf drive_download
 
           git add itinerary.json index.html
           if git diff --staged --quiet; then
