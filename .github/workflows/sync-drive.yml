@@ -1,9 +1,10 @@
 name: Sync Itinerary and UI from Google Drive
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # 支援隨時手動點擊一鍵同步
   schedule:
-    - cron: '0 0 * * *'
+    # 每天台灣時間 05:00 (UTC 21:00) 自動自 Google Drive 拉取最新資料發布
+    - cron: '0 21 * * *'
 
 jobs:
   sync:
@@ -19,10 +20,10 @@ jobs:
 
       - name: Sync and Push Latest Files
         run: |
-          # 1. 設置身分並確保本地與遠端最新分支同步
+          # 1. 設置身分並確保本地與遠端最新狀態同步
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin main
+          git checkout -B main origin/main
 
           # 2. 從 Google Drive 下載最新檔案
           curl -sL "https://drive.google.com/uc?export=download&id=1hu8B1gQO-3m0-F4Wk55DAQO5BKN_kQVs" -o itinerary.json
