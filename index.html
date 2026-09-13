@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2027 東北滑雪・極致粉雪與冬奧入瀨秘境行</title>
+  <title>2026 日本滑雪・志賀橫手極致粉雪行</title>
   <style>
     :root {
       --primary: #0284c7;
@@ -17,6 +17,8 @@
       --accent: #38bdf8;
       --border: #334155;
       --gold: #fbbf24;
+      --green: #10b981;
+      --purple: #a855f7;
       --tag-restaurant: #f97316;
       --tag-dessert: #ec4899;
       --tag-beverage: #8b5cf6;
@@ -31,23 +33,22 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding-bottom: 60px;
+      padding-bottom: 70px;
     }
 
     header {
       background: linear-gradient(135deg, #0369a1 0%, #0f172a 100%);
-      padding: 32px 20px 24px;
+      padding: 30px 20px 20px;
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
     .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
-    h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 8px; color: #fff; letter-spacing: -0.01em; }
-    .subtitle { font-size: 0.95rem; color: var(--accent); margin-bottom: 16px; }
+    h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 14px; color: #fff; letter-spacing: -0.01em; }
 
     /* 快捷導覽列 */
     .day-nav {
       display: flex; gap: 8px; overflow-x: auto; padding: 12px 0;
-      position: sticky; top: 0; background: rgba(15, 23, 42, 0.95);
+      position: sticky; top: 0; background: rgba(15, 23, 42, 0.94);
       backdrop-filter: blur(10px); z-index: 100;
       border-bottom: 1px solid var(--border); scrollbar-width: none;
     }
@@ -61,48 +62,20 @@
     .day-nav-btn:hover, .day-nav-btn:active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
     /* 班機卡片 */
-    .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 6px; }
+    .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 4px; }
     @media (max-width: 640px) { .flight-grid { grid-template-columns: 1fr; } }
     .flight-card {
       background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+      border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; gap: 12px;
     }
     .flight-icon { font-size: 1.8rem; }
-    .flight-details h4 { font-size: 0.92rem; color: #fff; margin-bottom: 4px; }
+    .flight-details h4 { font-size: 0.92rem; color: #fff; margin-bottom: 2px; }
     .flight-details p { font-size: 0.8rem; color: var(--text-muted); }
-
-    /* 雪場速覽區塊 */
-    .resorts-bar {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px; margin: 20px 0 24px;
-    }
-    .resorts-bar h3 {
-      font-size: 0.95rem; color: var(--accent); margin-bottom: 12px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .resorts-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;
-    }
-    .resort-btn-card {
-      background: var(--card-sub); border-radius: 10px; padding: 12px 14px;
-      display: flex; flex-direction: column; gap: 8px; border: 1px solid rgba(255,255,255,0.08);
-    }
-    .resort-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
-    .resort-elev { font-size: 0.78rem; color: var(--accent); }
-    .resort-links { display: flex; gap: 6px; flex-wrap: wrap; }
-    .resort-link {
-      font-size: 0.72rem; padding: 4px 10px; border-radius: 6px; text-decoration: none;
-      font-weight: 600; display: inline-block; transition: background 0.2s;
-    }
-    .link-forecast { background: rgba(56, 189, 248, 0.25); color: #38bdf8; border: 1px solid var(--primary); }
-    .link-map { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
-    .link-web { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid var(--border); }
-    .link-forecast:hover, .link-map:hover, .link-web:hover { background: var(--primary); color: #fff; }
 
     /* 每日行程卡片 */
     .day-card {
       background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
-      margin-bottom: 24px; overflow: hidden; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 26px; overflow: hidden; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
     }
     .day-header {
       background: linear-gradient(90deg, #1e293b 0%, #334155 100%);
@@ -114,10 +87,10 @@
       padding: 4px 10px; border-radius: 6px; text-transform: uppercase; margin-right: 8px;
     }
     .day-date { font-size: 0.88rem; font-weight: 600; color: var(--accent); }
-    .day-title { font-size: 1.12rem; font-weight: 700; color: #fff; margin-top: 6px; width: 100%; }
+    .day-title { font-size: 1.15rem; font-weight: 700; color: #fff; margin-top: 6px; width: 100%; }
     .day-body { padding: 18px 20px; }
 
-    /* 住宿與按鈕 */
+    /* 住宿 */
     .stay-box {
       background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(51, 65, 85, 0.7);
       border-radius: 10px; padding: 10px 14px; margin-bottom: 16px;
@@ -143,38 +116,55 @@
     
     .ski-toggle-map-btn {
       background: rgba(14, 165, 233, 0.25); color: #38bdf8; border: 1px solid var(--primary);
-      padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer;
-      display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s;
+      padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 4px;
     }
     .ski-toggle-map-btn:hover { background: var(--primary); color: #fff; }
 
+    /* 雪道地圖截圖預設隱藏 */
     .ski-map-preview-box {
-      display: none; margin-top: 12px; padding: 12px;
-      background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border);
-      border-radius: 8px; text-align: center;
+      display: none; margin-top: 10px; padding: 10px; background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border); border-radius: 8px; text-align: center;
     }
     .ski-map-img {
-      max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      display: block; margin: 0 auto;
-    }
-    .ski-map-caption {
-      font-size: 0.76rem; color: var(--text-muted); margin-top: 6px;
+      max-width: 100%; max-height: 550px; height: auto; border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6); object-fit: contain;
     }
 
-    /* 交通動線 */
-    .transit-box { background: var(--card-sub); border-radius: 10px; padding: 14px 16px; margin-bottom: 16px; }
-    .transit-summary { font-size: 0.88rem; font-weight: 700; color: #f1f5f9; margin-bottom: 10px; }
-    .transit-timeline { list-style: none; position: relative; padding-left: 18px; }
-    .transit-timeline::before {
-      content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--primary); opacity: 0.6;
+    /* 交通動線：顯著卡片分隔設計 */
+    .transit-box {
+      background: var(--card-sub); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px;
     }
-    .transit-step { position: relative; font-size: 0.82rem; color: #cbd5e1; margin-bottom: 8px; line-height: 1.5; }
-    .transit-step:last-child { margin-bottom: 0; }
-    .transit-step::before {
-      content: ''; position: absolute; left: -16px; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    .transit-summary { font-size: 0.9rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .transit-options-grid { display: flex; flex-direction: column; gap: 10px; }
+    .transit-card {
+      border-radius: 8px; padding: 12px 14px; border: 1px solid;
     }
+    .transit-card-direct {
+      background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.4); border-left: 4px solid var(--green);
+    }
+    .transit-card-transfer {
+      background: rgba(168, 85, 247, 0.08); border-color: rgba(168, 85, 247, 0.4); border-left: 4px solid var(--purple);
+    }
+    .transit-card-optionA {
+      background: rgba(2, 132, 199, 0.08); border-color: rgba(2, 132, 199, 0.4); border-left: 4px solid var(--primary);
+    }
+    .transit-card-optionB {
+      background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.4); border-left: 4px solid var(--warning);
+    }
+    .transit-card-header {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;
+    }
+    .transit-card-badge {
+      font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;
+    }
+    .badge-direct { background: rgba(16, 185, 129, 0.25); color: #34d399; }
+    .badge-transfer { background: rgba(168, 85, 247, 0.25); color: #c084fc; }
+    .badge-optionA { background: rgba(2, 132, 199, 0.25); color: #38bdf8; }
+    .badge-optionB { background: rgba(245, 158, 11, 0.25); color: #fbbf24; }
+    .transit-card-body { font-size: 0.82rem; color: #e2e8f0; line-height: 1.5; }
 
-    /* Accordion 折疊規範 (5大子類別，每類滿額10項) */
+    /* Accordion 折疊規範 (5 大分類) */
     .recs-container { margin-top: 16px; border-top: 1px solid var(--border); padding-top: 14px; }
     .recs-header-toggle { font-size: 0.92rem; font-weight: 700; color: #e2e8f0; margin-bottom: 10px; }
     .recs-sub-group { margin-bottom: 8px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: rgba(15, 23, 42, 0.4); }
@@ -190,6 +180,7 @@
     .tag-beverage { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
     .tag-souvenir { background: rgba(16, 185, 129, 0.2); color: #34d399; }
     .tag-attractions { background: rgba(6, 182, 212, 0.2); color: #22d3ee; }
+    
     .arrow { font-size: 0.72rem; color: var(--text-muted); transition: transform 0.2s ease; }
     .sub-toggle.active .arrow { transform: rotate(180deg); }
     .sub-content { display: none; padding: 10px 14px 14px; border-top: 1px solid var(--border); background: rgba(15, 23, 42, 0.25); }
@@ -205,21 +196,30 @@
     }
     .rec-desc { font-size: 0.78rem; color: #cbd5e1; line-height: 1.45; }
 
-    /* 應急備案卡片 */
-    .contingency-section {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
-      padding: 20px; margin-top: 28px;
+    /* 友人專案 */
+    .special-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 28px; }
+    .special-section h2 { font-size: 1.15rem; color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    
+    .options-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+    .option-card {
+      background: var(--card-sub); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 16px;
     }
-    .contingency-section h2 { font-size: 1.15rem; color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .contingency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
-    .contingency-card {
-      background: var(--card-sub); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 14px 16px;
+    .option-card h4 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; }
+    .option-meta { font-size: 0.82rem; color: #e2e8f0; margin-bottom: 8px; font-weight: 600; line-height: 1.45; }
+    .option-transit-steps { list-style: none; margin-bottom: 12px; padding-left: 14px; position: relative; }
+    .option-transit-steps::before {
+      content: ''; position: absolute; left: 4px; top: 4px; bottom: 4px; width: 2px; background: var(--primary);
     }
-    .contingency-card h4 { font-size: 0.95rem; color: var(--warning); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
-    .contingency-scenario { font-size: 0.8rem; color: #fde68a; margin-bottom: 8px; font-weight: 600; }
-    .contingency-actions { list-style: none; padding-left: 0; }
-    .contingency-action-item { font-size: 0.78rem; color: #cbd5e1; margin-bottom: 6px; line-height: 1.45; position: relative; padding-left: 14px; }
-    .contingency-action-item::before { content: '•'; position: absolute; left: 0; color: var(--warning); }
+    .option-step-li { font-size: 0.78rem; color: #cbd5e1; margin-bottom: 4px; }
+
+    .return-card {
+      background: var(--card-sub); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid;
+    }
+    .return-card-1 { border-color: rgba(2, 132, 199, 0.5); border-left: 4px solid var(--primary); }
+    .return-card-2 { border-color: rgba(56, 189, 248, 0.5); border-left: 4px solid var(--accent); }
+    .return-card h4 { font-size: 0.95rem; color: #fff; margin-bottom: 6px; }
+    .return-timeline { font-size: 0.85rem; color: var(--accent); margin-bottom: 4px; font-weight: 600; }
+    .return-buffer { font-size: 0.8rem; color: #cbd5e1; line-height: 1.45; }
 
     footer { text-align: center; padding: 30px 20px 10px; font-size: 0.78rem; color: var(--text-muted); }
   </style>
@@ -228,8 +228,7 @@
 
   <header>
     <div class="container">
-      <h1 id="trip-title">❄️ 2027 東北滑雪・極致粉雪與冬奧入瀨秘境行</h1>
-      <p class="subtitle">16 日青森・八甲田・八戶・十和田湖・網張溫泉・奧中山高原・東京全方位規劃</p>
+      <h1 id="trip-title">❄️ 2026 日本滑雪・志賀橫手極致粉雪行</h1>
       <div class="flight-grid" id="flight-container"></div>
     </div>
   </header>
@@ -238,29 +237,35 @@
 
   <main class="container" style="margin-top: 20px;">
     
-    <!-- 雪場速覽區塊 (含官方雪道圖截圖展開) -->
-    <section class="resorts-bar" id="resorts-bar">
-      <h3>⛷️ 本次行程 5 大滑雪場速覽與雪道地圖</h3>
-      <div class="resorts-grid" id="resorts-grid"></div>
-    </section>
-
-    <!-- 16 日行程主容器 -->
+    <!-- 10 日行程主容器 -->
     <div id="days-container">
       <div style="text-align: center; padding: 40px; color: var(--text-muted);">
         ⏳ 正在載入行程資料 (itinerary.json)...
       </div>
     </div>
 
-    <!-- 4 大天候與交通應急備案 -->
-    <section class="contingency-section" id="contingency-section">
-      <h2>🛡️ 4 大天候暴風雪、降雪不足與交通延誤之動態替代應變方案</h2>
-      <div class="contingency-grid" id="contingency-grid"></div>
-    </section>
+    <!-- 友人 12/15 上山交通精算 (直達2班 + 非直達2班) -->
+    <div class="special-section" id="friend-to-yokote-section">
+      <h2>🚍 友人 12/15 東京/長野 ➔ 志賀高原橫手山會合交通（直達 2 班 ＋ 非直達 2 班）</h2>
+      <div class="transit-options-grid" id="friend-to-yokote-container"></div>
+    </div>
+
+    <!-- 友人 12/15 機場 4 大選項 -->
+    <div class="special-section" id="friend-dec15-section">
+      <h2>🏮 友人 12/15 成田抵達東京晨間漫遊（4 大選項・各附 5 類在地推薦與景點）</h2>
+      <div class="options-grid" id="friend-options-container"></div>
+    </div>
+
+    <!-- 友人 12/19 返國 2 大交通方式 -->
+    <div class="special-section" id="friend-dec19-section">
+      <h2>✈️ 友人 12/19 橫濱至成田 T3 返國專案（2 大交通方式・20:00 前抵達）</h2>
+      <div id="friend-return-container"></div>
+    </div>
 
   </main>
 
   <footer>
-    <p>2027 Japan Tohoku Ski Itinerary • Fully Automated Cloud Pipeline via Google Apps Script & GitHub Actions</p>
+    <p>2026 Japan Ski Itinerary • Fully Automated Cloud Pipeline via GitHub Actions & Google Drive</p>
   </footer>
 
   <script>
@@ -295,6 +300,94 @@
       }
     }
 
+    function renderRecommendations(recs, containerTitle) {
+      if (!recs) return '';
+      const categoryLabels = {
+        restaurant: { name: '正餐名物', tagClass: 'tag-restaurant', icon: '🍱' },
+        dessert_pastry: { name: '甜點糕點', tagClass: 'tag-dessert', icon: '🍰' },
+        beverage: { name: '特色飲品・地酒', tagClass: 'tag-beverage', icon: '🍶' },
+        souvenir: { name: '必買伴手禮', tagClass: 'tag-souvenir', icon: '🎁' },
+        attractions: { name: '必訪景點推薦', tagClass: 'tag-attractions', icon: '⛩️' }
+      };
+
+      let subGroups = '';
+      for (const [catKey, catMeta] of Object.entries(categoryLabels)) {
+        const items = recs[catKey] || [];
+        if (items.length > 0) {
+          const itemsList = items.map(item => `
+            <div class="rec-item">
+              <div class="rec-item-header">
+                <div class="rec-title-wrap">
+                  <span class="rec-name">${item.name || ''}</span>
+                  ${item.rating ? `<span class="rating-stars">${item.rating}</span>` : ''}
+                  ${item.distance ? `<span class="dist-badge">📍 ${item.distance}</span>` : ''}
+                </div>
+                <a href="${item.map_url || '#'}" target="_blank" rel="noopener" class="map-btn">📍 Google 搜尋</a>
+              </div>
+              <div class="rec-desc">${item.highlights || ''}</div>
+            </div>
+          `).join('');
+
+          subGroups += `
+            <div class="recs-sub-group">
+              <button class="sub-toggle" onclick="toggleAccordion(this)">
+                <span>
+                  <span class="tag-badge ${catMeta.tagClass}">${catMeta.icon} ${catMeta.name}</span>
+                  <small style="color: var(--text-muted);">(${items.length} 選)</small>
+                </span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="sub-content">${itemsList}</div>
+            </div>
+          `;
+        }
+      }
+
+      if (!subGroups) return '';
+      return `
+        <div class="recs-container">
+          <div class="recs-header-toggle">${containerTitle || '🍽️ 在地推薦名單（預設折疊・點選展開）'}</div>
+          ${subGroups}
+        </div>
+      `;
+    }
+
+    function renderTransitOptions(details) {
+      if (!details || details.length === 0) return '';
+      return details.map(step => {
+        let cardClass = 'transit-card-optionA';
+        let badgeClass = 'badge-optionA';
+        let badgeText = '班次規劃';
+
+        if (step.includes('直達巴士') || step.includes('直達方案') || step.includes('直達車') || step.includes('直達 1') || step.includes('直達 2')) {
+          cardClass = 'transit-card-direct';
+          badgeClass = 'badge-direct';
+          badgeText = '🚌 直達首選';
+        } else if (step.includes('非直達') || step.includes('轉乘') || step.includes('備案')) {
+          cardClass = 'transit-card-transfer';
+          badgeClass = 'badge-transfer';
+          badgeText = '🔄 轉乘備案';
+        } else if (step.includes('選項 A') || step.includes('早班')) {
+          cardClass = 'transit-card-optionA';
+          badgeClass = 'badge-optionA';
+          badgeText = '⏱️ 早班 / 首選';
+        } else if (step.includes('選項 B') || step.includes('次班') || step.includes('充裕')) {
+          cardClass = 'transit-card-optionB';
+          badgeClass = 'badge-optionB';
+          badgeText = '⏱️ 次班 / 彈性';
+        }
+
+        return `
+          <div class="transit-card ${cardClass}">
+            <div class="transit-card-header">
+              <span class="transit-card-badge ${badgeClass}">${badgeText}</span>
+            </div>
+            <div class="transit-card-body">${step}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
     function renderPage(data) {
       if (data.trip_title) document.getElementById('trip-title').innerText = '❄️ ' + data.trip_title;
 
@@ -311,48 +404,10 @@
         `).join('');
       }
 
-      // 渲染雪場速覽
-      const resortsGrid = document.getElementById('resorts-grid');
-      if (data.ski_resorts_overview && data.ski_resorts_overview.length > 0) {
-        resortsGrid.innerHTML = data.ski_resorts_overview.map(r => `
-          <div class="resort-btn-card">
-            <div class="resort-name">⛷️ ${r.name}</div>
-            <div class="resort-elev">📍 標高：${r.elevation}</div>
-            <div class="resort-links">
-              <a href="${r.snow_forecast_url}" target="_blank" rel="noopener" class="resort-link link-forecast">❄️ 即時雪報</a>
-              <a href="${r.official_website}" target="_blank" rel="noopener" class="resort-link link-web">🌐 官方網站</a>
-              <a href="${r.course_map_url}" target="_blank" rel="noopener" class="resort-link link-map">🗺️ 官方雪道圖</a>
-            </div>
-            ${r.map_image_url ? `
-              <button class="ski-toggle-map-btn" style="margin-top: 4px;" onclick="toggleMapPreview(this)">🗺️ 檢視雪道地圖截圖 [▼ 點擊展開]</button>
-              <div class="ski-map-preview-box">
-                <img src="${r.map_image_url}" alt="${r.name} 雪道全圖" class="ski-map-img" loading="eager" referrerpolicy="no-referrer" onerror="if(this.src!='https://surfsnow.jp/real_img/r0699/course_pic_r0699.jpg'){this.src='https://surfsnow.jp/real_img/r0699/course_pic_r0699.jpg';}" />
-              <div class="ski-map-error-box" style="display:none !important; padding:10px; margin:8px 0; background:rgba(239,68,68,0.15); border:1px dashed #ef4444; border-radius:8px; text-align:center;">
-                <p style="font-size:0.8rem; color:#fca5a5; margin-bottom:6px;">⚠️ 官方伺服器限制跨站圖片載入，請直接點擊下方連結：</p>
-                <a href="${r.map_image_url}" target="_blank" rel="noopener" class="map-btn" style="background:#0284c7; color:#fff; font-weight:700;">🌐 在新分頁直接開啟官方原圖</a>
-              </div>
-              <div class="ski-map-caption" style="margin-top:6px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
-                <a href="${r.map_image_url}" target="_blank" rel="noopener" class="map-btn" style="background:rgba(2,132,199,0.25); border-color:var(--accent); color:#38bdf8;">🖼️ 開啟官方原圖連結</a>
-                <a href="${r.course_map_url}" target="_blank" rel="noopener" class="map-btn" style="background:rgba(148,163,184,0.15); border-color:var(--border); color:#cbd5e1;">🌐 官方雪道導覽頁</a>
-              </div>
-              </div>
-            ` : ''}
-          </div>
-        `).join('');
-      }
-
       const navContainer = document.getElementById('day-nav');
       const daysContainer = document.getElementById('days-container');
       navContainer.innerHTML = '';
       daysContainer.innerHTML = '';
-
-      const categoryLabels = {
-        restaurant: { name: '正餐名物', tagClass: 'tag-restaurant', icon: '🍱' },
-        dessert_pastry: { name: '甜點糕點', tagClass: 'tag-dessert', icon: '🍰' },
-        beverage: { name: '特色飲品・地酒', tagClass: 'tag-beverage', icon: '🍶' },
-        souvenir: { name: '必買伴手禮', tagClass: 'tag-souvenir', icon: '🎁' },
-        attractions: { name: '必訪景點推薦', tagClass: 'tag-attractions', icon: '📍' }
-      };
 
       data.days.forEach(day => {
         const navBtn = document.createElement('a');
@@ -369,22 +424,14 @@
               <div class="ski-banner-elev">📍 標高：${day.ski_resort.elevation}</div>
               <div class="ski-banner-desc">${day.ski_resort.highlights}</div>
               <div class="ski-banner-actions">
-                ${day.ski_resort.snow_forecast_url ? `<a href="${day.ski_resort.snow_forecast_url}" target="_blank" rel="noopener" class="map-btn" style="background: rgba(56, 189, 248, 0.25); border-color: var(--accent); color: #fff;">❄️ Snow-Forecast 即時雪報</a>` : ''}
+                ${day.ski_resort.snow_forecast_url ? `<a href="${day.ski_resort.snow_forecast_url}" target="_blank" rel="noopener" class="map-btn" style="background: rgba(56, 189, 248, 0.25); border-color: var(--accent); color: #fff;">❄️ Snow-Forecast 6日雪報</a>` : ''}
+                ${day.ski_resort.course_map_url ? `<a href="${day.ski_resort.course_map_url}" target="_blank" rel="noopener" class="map-btn">🌐 官方全景雪道圖</a>` : ''}
                 ${day.ski_resort.official_website ? `<a href="${day.ski_resort.official_website}" target="_blank" rel="noopener" class="map-btn" style="border-color: var(--border); color: #cbd5e1;">🌐 雪場官網</a>` : ''}
-                ${day.ski_resort.course_map_url ? `<a href="${day.ski_resort.course_map_url}" target="_blank" rel="noopener" class="map-btn">🗺️ 官方全景雪道圖</a>` : ''}
               </div>
               ${day.ski_resort.map_image_url ? `
                 <button class="ski-toggle-map-btn" onclick="toggleMapPreview(this)">🗺️ 檢視雪道地圖截圖 [▼ 點擊展開]</button>
                 <div class="ski-map-preview-box">
-                  <img src="${day.ski_resort.map_image_url}" alt="${day.ski_resort.name} 官方雪道圖" class="ski-map-img" loading="eager" referrerpolicy="no-referrer" onerror="if(this.src!='https://surfsnow.jp/real_img/r0699/course_pic_r0699.jpg'){this.src='https://surfsnow.jp/real_img/r0699/course_pic_r0699.jpg';}" />
-                <div class="ski-map-error-box" style="display:none !important; padding:10px; margin:8px 0; background:rgba(239,68,68,0.15); border:1px dashed #ef4444; border-radius:8px; text-align:center;">
-                  <p style="font-size:0.8rem; color:#fca5a5; margin-bottom:6px;">⚠️ 官方伺服器限制跨站圖片載入，請直接點擊下方連結：</p>
-                  <a href="${day.ski_resort.map_image_url}" target="_blank" rel="noopener" class="map-btn" style="background:#0284c7; color:#fff; font-weight:700;">🌐 在新分頁直接開啟官方原圖</a>
-                </div>
-                <div class="ski-map-caption" style="margin-top:6px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
-                  <a href="${day.ski_resort.map_image_url}" target="_blank" rel="noopener" class="map-btn" style="background:rgba(2,132,199,0.25); border-color:var(--accent); color:#38bdf8;">🖼️ 開啟官方原圖連結</a>
-                  <a href="${day.ski_resort.course_map_url}" target="_blank" rel="noopener" class="map-btn" style="background:rgba(148,163,184,0.15); border-color:var(--border); color:#cbd5e1;">🌐 官方雪道導覽頁</a>
-                </div>
+                  <img src="${day.ski_resort.map_image_url}" referrerpolicy="no-referrer" alt="${day.ski_resort.name} 官方雪道圖" class="ski-map-img" loading="lazy" onerror="this.onerror=null; this.src='https://asama2000.com/wp-content/themes/asama/assets/img/access/map_01.png';" />
                 </div>
               ` : ''}
             </div>
@@ -393,59 +440,17 @@
 
         let transitHtml = '';
         if (day.transit) {
-          const stepsHtml = (day.transit.details || []).map(step => `<li class="transit-step">${step}</li>`).join('');
           transitHtml = `
             <div class="transit-box">
-              <div class="transit-summary">🚊 交通動線：${day.transit.summary}</div>
-              <ul class="transit-timeline">${stepsHtml}</ul>
+              <div class="transit-summary">🚄 交通動線精算：${day.transit.summary || ''}</div>
+              <div class="transit-options-grid">
+                ${renderTransitOptions(day.transit.details)}
+              </div>
             </div>
           `;
         }
 
-        let recsHtml = '';
-        if (day.recommendations) {
-          let subGroups = '';
-          for (const [catKey, catMeta] of Object.entries(categoryLabels)) {
-            const items = day.recommendations[catKey] || [];
-            if (items.length > 0) {
-              const itemsList = items.map(item => `
-                <div class="rec-item">
-                  <div class="rec-item-header">
-                    <div class="rec-title-wrap">
-                      <span class="rec-name">${item.name}</span>
-                      ${item.rating ? `<span class="rating-stars">${item.rating}</span>` : ''}
-                      ${item.distance ? `<span class="dist-badge">${item.distance}</span>` : ''}
-                    </div>
-                    <a href="${item.map_url}" target="_blank" rel="noopener" class="map-btn">📍 Google 搜尋</a>
-                  </div>
-                  <div class="rec-desc">${item.highlights}</div>
-                </div>
-              `).join('');
-
-              subGroups += `
-                <div class="recs-sub-group">
-                  <button class="sub-toggle" onclick="toggleAccordion(this)">
-                    <span>
-                      <span class="tag-badge ${catMeta.tagClass}">${catMeta.icon} ${catMeta.name}</span>
-                      <small style="color: var(--text-muted);">(${items.length} 選)</small>
-                    </span>
-                    <span class="arrow">▼</span>
-                  </button>
-                  <div class="sub-content">${itemsList}</div>
-                </div>
-              `;
-            }
-          }
-
-          if (subGroups) {
-            recsHtml = `
-              <div class="recs-container">
-                <div class="recs-header-toggle">🍽️ 在地推薦名單（5 大子類別・每類 10 項滿額推薦・點選展開）</div>
-                ${subGroups}
-              </div>
-            `;
-          }
-        }
+        const recsHtml = renderRecommendations(day.recommendations, '🍽️ 在地推薦名單（餐飲・甜點・伴手禮・景點 5 大類折疊）');
 
         const cardHtml = `
           <article class="day-card" id="day-${day.day_number}">
@@ -472,16 +477,67 @@
         daysContainer.insertAdjacentHTML('beforeend', cardHtml);
       });
 
-      // 渲染應急備案
-      const contingencyGrid = document.getElementById('contingency-grid');
-      if (data.contingency_plans && data.contingency_plans.length > 0) {
-        contingencyGrid.innerHTML = data.contingency_plans.map(c => `
-          <div class="contingency-card">
-            <h4>${c.icon} ${c.title}</h4>
-            <div class="contingency-scenario">⚠️ 觸發情境：${c.scenario}</div>
-            <ul class="contingency-actions">
-              ${c.actions.map(act => `<li class="contingency-action-item">${act}</li>`).join('')}
-            </ul>
+      // 渲染友人 12/15 上山交通專案 (直達2班 + 轉乘2班 + 計程車)
+      const friendToYokoteContainer = document.getElementById('friend-to-yokote-container');
+      if (data.friend_dec15_to_yokoteyama) {
+        const fy = data.friend_dec15_to_yokoteyama;
+        let fyHtml = '';
+        (fy.direct_options || []).forEach(d => {
+          fyHtml += `
+            <div class="transit-card transit-card-direct">
+              <div class="transit-card-header"><span class="transit-card-badge badge-direct">${d.badge}</span></div>
+              <div class="transit-card-body"><strong>${d.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${d.desc}</p></div>
+            </div>
+          `;
+        });
+        (fy.transfer_options || []).forEach(t => {
+          fyHtml += `
+            <div class="transit-card transit-card-transfer">
+              <div class="transit-card-header"><span class="transit-card-badge badge-transfer">${t.badge}</span></div>
+              <div class="transit-card-body"><strong>${t.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${t.desc}</p></div>
+            </div>
+          `;
+        });
+        if (fy.emergency_option) {
+          fyHtml += `
+            <div class="transit-card transit-card-optionB">
+              <div class="transit-card-header"><span class="transit-card-badge badge-optionB">${fy.emergency_option.badge}</span></div>
+              <div class="transit-card-body"><strong>${fy.emergency_option.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${fy.emergency_option.desc}</p></div>
+            </div>
+          `;
+        }
+        friendToYokoteContainer.innerHTML = fyHtml;
+      }
+
+      // 渲染友人 12/15 四大選項
+      const friendOptContainer = document.getElementById('friend-options-container');
+      if (data.friend_dec15_options && data.friend_dec15_options.length > 0) {
+        friendOptContainer.innerHTML = data.friend_dec15_options.map(opt => {
+          const stepsHtml = (opt.transit_details || []).map(s => `<li class="option-step-li">🔹 ${s}</li>`).join('');
+          const optRecsHtml = renderRecommendations(opt.recommendations, '🏛️ 本區域在地推薦（美食・甜點・伴手禮・景點 5 大類）');
+          return `
+            <div class="option-card">
+              <h4>${opt.title || ''}</h4>
+              <div class="option-meta">🚇 交通概要：${opt.transit_summary || opt.transit || ''}</div>
+              <ul class="option-transit-steps">${stepsHtml}</ul>
+              ${optRecsHtml}
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 渲染友人 12/19 返國 2 大方式
+      const friendReturnContainer = document.getElementById('friend-return-container');
+      if (data.friend_dec19_return && data.friend_dec19_return.length > 0) {
+        friendReturnContainer.innerHTML = data.friend_dec19_return.map((ret, idx) => `
+          <div class="return-card ${idx === 0 ? 'return-card-1' : 'return-card-2'}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <h4>${ret.title || ''}</h4>
+              <span class="transit-card-badge ${ret.badge_type === 'primary' ? 'badge-direct' : 'badge-transfer'}">${ret.badge || ''}</span>
+            </div>
+            <div class="return-timeline">⏱️ 路線車次：${ret.timeline || ''}</div>
+            <div class="return-buffer">🛡️ 緩衝時效：${ret.buffer_time || ''}</div>
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">💡 方案特色：${ret.highlights || ''}</div>
           </div>
         `).join('');
       }
@@ -491,3 +547,4 @@
   </script>
 </body>
 </html>
+
