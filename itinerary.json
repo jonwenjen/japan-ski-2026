@@ -876,7 +876,7 @@
           },
           {
             "name": "はらっぱ 高崎 Montres 店 (高崎湯義大利麵)",
-            "rating": "★★★★☆",
+            "rating": "★★★★★",
             "distance": "與高崎站共構 (Montres 5F 步行 1 分)",
             "highlights": "高崎名物湯義大利麵！招牌紅唐辛子大蒜番茄起司湯麵，起司濃郁牽絲、辛香驅寒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Spaghetti+Senka+Harappa+Station+Building+Montres"
@@ -887,6 +887,20 @@
             "distance": "高崎站西口共構商場 (步行 2 分)",
             "highlights": "上州群馬靈魂鄉土名物！秘傳甘醇醬汁浸漬嫩煎上州地雞，肉質細嫩多汁",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Torihei+Takasaki+Montres"
+          },
+          {
+            "name": "朝鮮飯店 高崎站前店 (上州和牛炭火燒肉)",
+            "rating": "★★★★☆",
+            "distance": "高崎站東口 (步行 3 分)",
+            "highlights": "群馬老字號炭火燒肉名門，嚴選群馬縣產上州黑毛和牛五花與牛舌",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chosen+Hanten+Takasaki"
+          },
+          {
+            "name": "清仁軒 (高崎王道拉麵)",
+            "rating": "★★★★☆",
+            "distance": "高崎市本町 (車程 5 分)",
+            "highlights": "手打極粗彈牙自製麵，濃郁清澄醬油高湯搭配厚切炭燒叉燒肉",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Seijinken+Ramen+Takasaki"
           }
         ],
         "dessert_pastry": [
@@ -900,9 +914,30 @@
           {
             "name": "成田屋 糸切り団子 (Naritaya)",
             "rating": "★★★★☆",
-            "distance": "高崎市田町 (距車站約 650m 步行 8 分)",
+            "distance": "高崎市田町 (步行 8 分)",
             "highlights": "創業超過百年傳統和菓子老舖，純手工製作醬油烤糰子與生紅豆麻糬",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Naritaya+Dango+Takasaki"
+          },
+          {
+            "name": "原嶋屋總本家 烤饅頭 (焼きまんじゅう)",
+            "rating": "★★★★★",
+            "distance": "高崎市平和町 (車程 6 分)",
+            "highlights": "群馬第一鄉土甜點！蒸烤白饅頭刷上濃黑焦香甘甜紅味噌醬現烤",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Harashimaya+Takasaki"
+          },
+          {
+            "name": "丸福珈琲店 高崎蛋糕工房",
+            "rating": "★★★★☆",
+            "distance": "高崎 Montres 2F (步行 1 分)",
+            "highlights": "大正時期經典厚烤鬆餅與濃縮卡士達生乳捲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Marufuku+Coffee+Takasaki"
+          },
+          {
+            "name": "和菓子處 萬壽屋 本舖",
+            "rating": "★★★★☆",
+            "distance": "高崎站西口大街 (步行 6 分)",
+            "highlights": "群馬在地產糯米揉製之紅豆草餅與季節栗大福",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Manjuya+Takasaki"
           }
         ],
         "beverage": [
@@ -916,9 +951,30 @@
           {
             "name": "Bar Lugall (高崎經典酒吧)",
             "rating": "★★★★☆",
-            "distance": "高崎市通町 (距車站 350m 步行 5 分)",
+            "distance": "高崎市通町 (步行 5 分)",
             "highlights": "群馬資深調酒師調製冬季威士忌熱調酒與在地伏流水琴酒特調",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Bar+Lugall+Takasaki"
+          },
+          {
+            "name": "高崎 淺間酒造 直營專櫃",
+            "rating": "★★★★☆",
+            "distance": "高崎站銘品館 2F",
+            "highlights": "草津白根山脈伏流水釀製之「淺間山」純米生原酒品飲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Asama+Shuzo+Takasaki"
+          },
+          {
+            "name": "群馬 結人・大盃 銘柄沙龍",
+            "rating": "★★★★☆",
+            "distance": "高崎站西口居酒屋街 (步行 3 分)",
+            "highlights": "群馬限定超人氣銘柄「結人 (Musubito)」季節生酒試飲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Gunma+Sake+Bar+Takasaki"
+          },
+          {
+            "name": "丸福珈琲店 高崎昭和特調黑咖啡",
+            "rating": "★★★★☆",
+            "distance": "高崎站共構商場 2F",
+            "highlights": "濃縮深焙黑咖啡佐厚烤土司，昭和懷舊風味",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Marufuku+Coffee+Takasaki"
           }
         ],
         "souvenir": [
@@ -935,6 +991,27 @@
             "distance": "高崎站銘品館 2F",
             "highlights": "群馬名湯傳統黑糖蒸烤薄皮溫泉饅頭，北海道紅豆餡綿密不甜膩",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Seigetsudo+Takasaki+Station"
+          },
+          {
+            "name": "GATEAU FESTA HARADA 經典藍白紅禮盒",
+            "rating": "★★★★★",
+            "distance": "Esite 高崎 2F",
+            "highlights": "群馬限定法國脆餅禮盒，送禮自用第一指標伴手禮",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=GATEAU+FESTA+HARADA+Esite+Takasaki"
+          },
+          {
+            "name": "高崎開運福入達磨不倒翁 (木作手繪)",
+            "rating": "★★★★★",
+            "distance": "高崎站名產館 2F",
+            "highlights": "工藝師親手手繪之日本第一開運達磨，滑雪出發祈求平安順遂",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takasaki+Daruma+Souvenir"
+          },
+          {
+            "name": "磯部煎餅 (上州名物礦泉酥脆薄餅)",
+            "rating": "★★★★☆",
+            "distance": "高崎站銘品館 2F",
+            "highlights": "利用磯部溫泉含天然碳酸礦泉水烘烤之香脆薄片煎餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Isobe+Senbei+Takasaki"
           }
         ],
         "attractions": [
@@ -1022,6 +1099,20 @@
             "distance": "丸沼高原滑雪場底 (出雪道即達)",
             "highlights": "滑雪中繼名店！熱騰騰上州黑豚炸豬排咖哩與暖胃信州味噌拉麵",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Marunuma+Kogen+Center+Station+Restaurant"
+          },
+          {
+            "name": "レストラン とんちんかん (Tonchinkan 炸豬排)",
+            "rating": "★★★★☆",
+            "distance": "佐久平中込 (車程 7 分)",
+            "highlights": "佐久在地評分第一厚切炸豬排定食，外酥內嫩多汁肉香濃郁",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tonchinkan+Saku"
+          },
+          {
+            "name": "文蔵 佐久平總店 (豚骨醬油拉麵)",
+            "rating": "★★★★☆",
+            "distance": "佐久平站蓼科口 (步行 5 分)",
+            "highlights": "長野在地極濃豚骨拉麵名店，自製厚麵佐大片叉燒與青蔥",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Bunzo+Ramen+Saku"
           }
         ],
         "dessert_pastry": [
@@ -1033,11 +1124,32 @@
             "map_url": "https://www.google.com/maps/search/?api=1&query=Patisserie+Peters+Saku"
           },
           {
-            "name": "和泉屋 菓子工房",
+            "name": "和泉屋 菓子工房 本店",
             "rating": "★★★★☆",
             "distance": "佐久平站南側 (步行 8 分)",
             "highlights": "在地水果烘焙坊，招牌信州蘋果磅蛋糕與手工焦糖烤布蕾",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Izumiya+Sweets+Saku"
+          },
+          {
+            "name": "お菓子処 丸山製菓",
+            "rating": "★★★★☆",
+            "distance": "佐久平站淺間口 (步行 6 分)",
+            "highlights": "信州產白桃夾心蛋糕與傳統草大福",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Maruyama+Seika+Saku"
+          },
+          {
+            "name": "高原の駅丸沼 燒起司塔專櫃",
+            "rating": "★★★★☆",
+            "distance": "丸沼雪場大廳 1F",
+            "highlights": "高原牧場生乳現烤熱起司塔，滑雪中繼甜點首選",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Marunuma+Kogen+Sweets"
+          },
+          {
+            "name": "ちゃたまや (Chatamaya 雞蛋甜點)",
+            "rating": "★★★★★",
+            "distance": "佐久市桑山 (車程 12 分)",
+            "highlights": "淺間高原新鮮有機土雞蛋製成之濃厚卡士達生乳泡芙與雞蛋布丁",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chatamaya+Saku"
           }
         ],
         "beverage": [
@@ -1049,11 +1161,32 @@
             "map_url": "https://www.google.com/maps/search/?api=1&query=Plaza+Saku+Sakudaira+Station"
           },
           {
-            "name": "大澤酒造 伴野酒造特選品",
-            "rating": "★★★★☆",
+            "name": "伴野酒造 Beau Michelle 專櫃",
+            "rating": "★★★★★",
             "distance": "佐久平站前特產店 (步行 2 分)",
-            "highlights": "佐久著名「明鏡止水」與「Beau Michelle」微酸微甜白葡萄酒風味清酒",
+            "highlights": "釀造時播放披頭四音樂熟成之白葡萄酒風味超人氣微酸甜清酒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Tomono+Shuzo+Saku"
+          },
+          {
+            "name": "大澤酒造 明鏡止水 純米本釀造",
+            "rating": "★★★★☆",
+            "distance": "Plaza Saku 地酒館",
+            "highlights": "千曲川清澈伏流水釀造，酒體透明感極高之佐久代表名柄",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Osawa+Shuzo+Saku"
+          },
+          {
+            "name": "千曲錦酒造 帰山 (Kizan) 蕎麥酒",
+            "rating": "★★★★☆",
+            "distance": "佐久平站賣店 2F",
+            "highlights": "信州產蕎麥蒸餾純米原酒，香氣深沉甘醇",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chikumanishiki+Saku"
+          },
+          {
+            "name": "尾澤酒造 十九 (Juku) 清酒專區",
+            "rating": "★★★★☆",
+            "distance": "佐久平地酒專營門市",
+            "highlights": "少量手工釀造之季節限定生原酒，微氣泡感極佳",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ozawa+Shuzo+Saku"
           }
         ],
         "souvenir": [
@@ -1070,6 +1203,27 @@
             "distance": "佐久平站各大土產販賣部",
             "highlights": "超人氣凹凸波浪麵體蕎麥乾麵，沾醬吸附力絕佳，信州自用伴手禮首選",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Komoro+Shichibei+Soba"
+          },
+          {
+            "name": "信州蘋果乙女 (薄烤煎餅禮盒)",
+            "rating": "★★★★★",
+            "distance": "佐久平站 2F 土產店",
+            "highlights": "整顆新鮮信州蘋果切片壓製烘烤，曾獲 iTQi 頂級美味三星大獎",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ringo+Otome+Nagano"
+          },
+          {
+            "name": "信州安曇野山葵醬菜罐裝",
+            "rating": "★★★★☆",
+            "distance": "佐久平站伴手禮中心",
+            "highlights": "高山冷泉山葵莖葉醬油醃漬，拌飯配麵極其下飯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Wasabi+Pickles+Nagano"
+          },
+          {
+            "name": "白根開運 根曲竹工藝筷盒",
+            "rating": "★★★★☆",
+            "distance": "丸沼高原賣店",
+            "highlights": "群馬片品在地職人手工編製天然竹筷與餐具盒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Marunuma+Craft+Shop"
           }
         ],
         "attractions": [
@@ -1124,7 +1278,7 @@
         "course_map_url": "https://asama2000.com/slope.html",
         "official_website": "https://asama2000.com/",
         "snow_forecast_url": "https://www.snow-forecast.com/resorts/Asama-2000-Park/6day/mid",
-        "map_image_url": "https://snowline.jp/ja/location/asama-2000"
+        "map_image_url": "https://asama2000.com/wp-content/themes/asama/assets/img/slope/map_04.jpg"
       },
       "transit": {
         "summary": "佐久平站蓼科口 ➔ JR 巴士關東高峰高原線直達雪場 (單程 55-60 分，提供 2 組班次選項)",
@@ -1157,6 +1311,20 @@
             "distance": "佐久平站淺間口 (步行 5 分)",
             "highlights": "在地深耕四十年手打烏龍麵與炸什錦天婦羅冷熱雙吃套餐",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Banseian+Saku"
+          },
+          {
+            "name": "安養寺拉麵 本店 (Anyoji Ramen)",
+            "rating": "★★★★★",
+            "distance": "佐久市岩村田 (車程 6 分)",
+            "highlights": "佐久起源之安養寺熟成大豆味噌湯頭，濃稠甘醇搭配特製絞肉",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Anyoji+Ramen+Saku"
+          },
+          {
+            "name": "若鶏料理 鳥忠 (小諸炸雞肉排)",
+            "rating": "★★★★☆",
+            "distance": "小諸站前 (車程 12 分)",
+            "highlights": "酥炸整隻無骨嫩土雞腿排，蒜香與黑胡椒秘汁入味",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Torichu+Komoro"
           }
         ],
         "dessert_pastry": [
@@ -1173,6 +1341,27 @@
             "distance": "佐久平站周邊商場 (步行 4 分)",
             "highlights": "純糯米現舂信州核桃大福與紅豆草餅",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Ide+Confectionery+Saku"
+          },
+          {
+            "name": "御菓子司 富士屋 (小諸百年和菓子)",
+            "rating": "★★★★☆",
+            "distance": "小諸市本町 (車程 14 分)",
+            "highlights": "文久年間創業，小諸特產白土馬鈴薯羊羹與核桃最中餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Fujiya+Komoro"
+          },
+          {
+            "name": "高峰高原ホテル 雲上起司蛋糕",
+            "rating": "★★★★★",
+            "distance": "車坂峠高峰高原飯店內 (步行 3 分)",
+            "highlights": "標高 2000 公尺眺望八岳雲海享用的特濃烤起司蛋糕",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takamine+Kogen+Hotel"
+          },
+          {
+            "name": "佐久乃餅処 白樺堂",
+            "rating": "★★★★☆",
+            "distance": "佐久平站商場",
+            "highlights": "手打信州黃豆粉艾草麻糬與黑蜜葛餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shirakabado+Saku"
           }
         ],
         "beverage": [
@@ -1189,6 +1378,27 @@
             "distance": "佐久平站各便利超商與特產店",
             "highlights": "Yona Yona Ale (よなよなエール) 與印度青鬼 (青鬼 IPA) 罐裝冷藏生啤酒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Yona+Yona+Ale+Nagano"
+          },
+          {
+            "name": "高峰高原湧水 手沖深焙咖啡",
+            "rating": "★★★★★",
+            "distance": "高峰高原ビジターセンター 內",
+            "highlights": "使用車坂峠天然伏流水萃取之深焙熱咖啡，香氣醇厚無雜味",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takamine+Kogen+Visitor+Center"
+          },
+          {
+            "name": "武重酒造 御園竹 純米大吟釀",
+            "rating": "★★★★☆",
+            "distance": "Plaza Saku 2F",
+            "highlights": "長野縣名水百選釀造之傳統手造信州地酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takeshige+Shuzo+Saku"
+          },
+          {
+            "name": "長野信州白樺高山草本茶",
+            "rating": "★★★★☆",
+            "distance": "佐久平健康物產店",
+            "highlights": "天然乾燥野生熊笹、柿葉與蕎麥葉調配之無咖啡因暖茶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shinshu+Herbal+Tea+Saku"
           }
         ],
         "souvenir": [
@@ -1205,6 +1415,27 @@
             "distance": "佐久平站購物中心特產店",
             "highlights": "高原牧場生乳濃縮烘焙的雙層重乳酪蛋糕禮盒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Asama+Cheesecake+Saku"
+          },
+          {
+            "name": "安養寺味噌 (熟成兩年木桶裝)",
+            "rating": "★★★★★",
+            "distance": "佐久平物產館",
+            "highlights": "信州味噌發祥寺廟古法釀造之極深色赤味噌，燉湯拌煮極佳",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Anyoji+Miso+Saku"
+          },
+          {
+            "name": "車坂峠 標高 1973m 紀念登山徽章",
+            "rating": "★★★★☆",
+            "distance": "高峰高原遊客中心",
+            "highlights": "淺間山與黑斑山登頂金屬徽章，極受雪友與登山客喜愛",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takamine+Kogen+Visitor+Center"
+          },
+          {
+            "name": "小諸八幡屋七味特製香辣仙貝",
+            "rating": "★★★★☆",
+            "distance": "佐久平站 2F 賣店",
+            "highlights": "長野七味粉大廠特製大片醬油香辣煎餅禮盒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yawataya+Isogoro+Senbei"
           }
         ],
         "attractions": [
@@ -1259,7 +1490,7 @@
         "course_map_url": "https://asama2000.com/slope.html",
         "official_website": "https://asama2000.com/",
         "snow_forecast_url": "https://www.snow-forecast.com/resorts/Asama-2000-Park/6day/mid",
-        "map_image_url": "https://snowline.jp/ja/location/asama-2000"
+        "map_image_url": "https://asama2000.com/wp-content/themes/asama/assets/img/slope/map_04.jpg"
       },
       "transit": {
         "summary": "高峰巴士返佐久平 ➔ 北陸新幹線直達長野站 (車程僅 22 分，提供 2 組新幹線選項)",
@@ -1293,6 +1524,20 @@
             "distance": "長野站 MIDORI 3F 餐廳街 (步行 1 分)",
             "highlights": "駒之根名物！厚切炸里肌豬排浸泡秘傳旨甜醬汁，鋪於滿滿爽脆高麗菜絲上",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Meijitei+MIDORI+Nagano"
+          },
+          {
+            "name": "門前茶寮 彌生座 (長野蒸籠御膳)",
+            "rating": "★★★★☆",
+            "distance": "善光寺大門町 (公車 8 分)",
+            "highlights": "以木蒸籠蒸熟長野黑豚、信州牛肉與當季高山野菜，健康原汁原味",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yayoi+za+Nagano"
+          },
+          {
+            "name": "信州手打蕎麥 小菅亭 (明治百年老舖)",
+            "rating": "★★★★☆",
+            "distance": "長野市東町 (步行 10 分)",
+            "highlights": "明治三十一年創業，傳統純手工手打二八蕎麥麵與現炸山菜天婦羅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kosugete+Nagano"
           }
         ],
         "dessert_pastry": [
@@ -1309,6 +1554,27 @@
             "distance": "長野站 MIDORI 2F (步行 1 分)",
             "highlights": "長野開創二百年洋菓子老舖，信州產蘋果千層酥派與生乳銅鑼燒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Futabado+MIDORI+Nagano"
+          },
+          {
+            "name": "竹風堂 (Chikufudo 長野站前店)",
+            "rating": "★★★★★",
+            "distance": "長野站善光寺口 (步行 3 分)",
+            "highlights": "小布施栗菓子三巨頭之一，必嚐「栗子糯米飯 (栗おこわ)」與栗子銅鑼燒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chikufudo+Nagano+Station"
+          },
+          {
+            "name": "小布施堂 長野 MIDORI 店",
+            "rating": "★★★★★",
+            "distance": "長野站 MIDORI 2F (步行 1 分)",
+            "highlights": "純栗蓉製作「朱雀」蒙布朗與栗鹿之子，栗香無比濃郁",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Obusedo+MIDORI+Nagano"
+          },
+          {
+            "name": "平五郎 (HEIGORO 長野本店)",
+            "rating": "★★★★☆",
+            "distance": "善光寺大門町 (公車 8 分)",
+            "highlights": "藤屋御本陳附設法式烘焙甜點店，招牌「福朗」法式烤常溫蛋糕",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Heigoro+Nagano"
           }
         ],
         "beverage": [
@@ -1325,6 +1591,27 @@
             "distance": "長野市大門町 (善光寺參道步行 12 分)",
             "highlights": "使用長野木曾漆器品味純米釀造生原酒，環境雅緻幽靜",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Nishizawa+Shikkiten+Nagano"
+          },
+          {
+            "name": "丸山珈琲 (長野站 MIDORI 店)",
+            "rating": "★★★★★",
+            "distance": "長野站 MIDORI 3F (步行 1 分)",
+            "highlights": "世界盃咖啡大師冠軍品牌，現萃頂級單品手沖咖啡與季節拿鐵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Maruyama+Coffee+Nagano+MIDORI"
+          },
+          {
+            "name": "善光寺門前 酒乃生茂 (地酒角打專門)",
+            "rating": "★★★★☆",
+            "distance": "善光寺參道 (公車 7 分)",
+            "highlights": "長野在地隱藏版地酒老舖，提供「大信州」與「明鏡止水」限定生酒試飲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Sake+no+Ikumo+Nagano"
+          },
+          {
+            "name": "長野原創精釀啤酒 BAR (Craft Beer Bar)",
+            "rating": "★★★★☆",
+            "distance": "長野站善光寺口 (步行 4 分)",
+            "highlights": "常備志賀高原麥酒、松本啤酒與木曾啤酒等信州新鮮生啤生拉杯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Craft+Beer+Nagano+Station"
           }
         ],
         "souvenir": [
@@ -1341,6 +1628,27 @@
             "distance": "長野站 MIDORI 2F (步行 1 分)",
             "highlights": "無添加防腐劑與色素之純栗蓉栗子蜜餞，小布施代表性頂級伴手禮",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Sakurai+Kanseido+MIDORI+Nagano"
+          },
+          {
+            "name": "小布施堂 栗之小徑 栗鹿之子羊羹",
+            "rating": "★★★★★",
+            "distance": "長野站 MIDORI 2F",
+            "highlights": "濃縮栗泥精製方塊一口羊羹，方便隨身攜帶滑雪熱量補給",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Obusedo+MIDORI+Nagano"
+          },
+          {
+            "name": "信州善光寺 戒壇開運金屬御札",
+            "rating": "★★★★☆",
+            "distance": "善光寺本堂授與所",
+            "highlights": "善光寺如來本尊加持之開運與旅行健康長壽御守",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Zenkoji+Temple+Nagano"
+          },
+          {
+            "name": "根元 八幡屋礒五郎 七味巧克力豆",
+            "rating": "★★★★☆",
+            "distance": "八幡屋礒五郎 門市",
+            "highlights": "七味香料與濃黑純巧克力大膽撞擊之得獎創意名產",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yawataya+Isogoro+Nagano+MIDORI"
           }
         ],
         "attractions": [
@@ -1400,10 +1708,14 @@
       "transit": {
         "summary": "長野站 ➔ 志賀高原橫手山ほたる温泉（直達與非直達各提供 2 班完整班次）",
         "details": [
-          "【直達巴士・方案 1（晨間早班首選）】：08:15 長野站東口 23 號站牌搭乘長電急行志賀高原線 ➔ 09:35 直達ほたる温泉（Hotel 2307 門口，開滑黃金期）",
-          "【直達巴士・方案 2（上午充裕班次）】：08:50 長野站東口 23 號站牌搭乘長電急行志賀高原線 ➔ 10:12 直達ほたる温泉（或 13:10 直達班次 ➔ 14:52 抵達）",
-          "【非直達巴士・方案 1（長電鐵路轉公車）】：06:40 長野站搭乘長野電鐵長野線 ➔ 07:33 抵湯田中站 ➔ 站前轉乘 07:45 長電公車【白根火山線】➔ 08:25 抵達ほたる温泉",
-          "【非直達巴士・方案 2（急行巴士至山の駅轉乘）】：10:15 長野站東口搭乘長電急行巴士 ➔ 11:25 抵志賀高原山の駅 ➔ 站內轉乘 11:35 志賀高原路線公車 ➔ 11:58 抵達ほたる温泉"
+          "【我方・最早直達巴士】：長野站東口 23 號站牌搭乘 08:15 發車之長電急行巴士 ➔ 09:35 直達ほたる温泉（Hotel 2307 門口）",
+          "【我方・最早轉接巴士】：長野站 06:40 搭長野電鐵長野線 ➔ 07:33 抵湯田中站 ➔ 轉乘 07:45 長電公車【白根火山線】➔ 08:25 抵達ほたる温泉",
+          "【友人・最晚直達巴士 1（全日直達末班車）】：東京 11:20 Kagayaki 511 號 ➔ 12:44 抵長野 ➔ 長野東口 23 號站牌搭乘 13:10 直達急行 ➔ 14:52 直達ほたる温泉門口",
+          "【友人・最晚直達巴士 2（上午直達次晚班次）】：東京 07:52 Kagayaki 503 號 ➔ 09:12 抵長野 ➔ 長野東口 10:00 發車直達急行 ➔ 11:22 直達ほたる温泉門口",
+          "【友人・最晚非直達巴士 1（全日轉乘末班車）】：東京 14:24 Kagayaki 513 號 ➔ 15:46 抵長野 ➔ 長野東口 16:00 急行巴士至山の駅(17:10) ➔ 轉乘 17:15 路線巴士 ➔ 17:40 抵ほたる温泉",
+          "【友人・最晚非直達巴士 2（午後次晚轉乘班次）】：東京 12:52 Hakutaka 565 號 ➔ 14:19 抵長野 ➔ 長野東口 14:30 急行巴士至山の駅(15:40) ➔ 轉乘 15:45 路線巴士 ➔ 16:15 抵ほたる温泉",
+          "【友人・夜間計程車備案】：東京 16:04 Kagayaki ➔ 長野 17:52 特急電車 ➔ 湯田中站 ➔ 4WD 雪地計程車 (0269-33-3161) 直達飯店",
+          "【最低花費計程車方案】：長野站搭長電特急至湯田中 (¥1,290/45分) ➔ 轉長電 4WD 計程車 (約¥7,500/車/25分) ➔ 直達 Hotel 2307。4人共乘每人僅約 ¥3,165，比長野直搭計程車省下 ¥15,000 以上！(預約電話: 0269-33-3161)"
         ]
       },
       "recommendations": {
@@ -1428,6 +1740,20 @@
             "distance": "志賀高原山の駅 1F",
             "highlights": "轉乘樞紐熱食！熱呼呼信州味噌山菜烏龍麵與酥炸野菜天婦羅",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Shiga+Kogen+Yamanoeki+Restaurant"
+          },
+          {
+            "name": "山本莊 鄉土食堂 (Yamamotoso)",
+            "rating": "★★★★☆",
+            "distance": "ほたる温泉巴士站旁 (步行 2 分)",
+            "highlights": "老字號高山民宿食堂，熱騰騰手工信州野菇麵疙瘩 (すいとん) 與烤岩魚",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yamamotoso+Shiga+Kogen"
+          },
+          {
+            "name": "石の湯 ロッジ (Ishinoyu Lodge)",
+            "rating": "★★★★☆",
+            "distance": "石之湯溫泉 (車程 5 分)",
+            "highlights": "滑雪友祕境食堂！石鍋燉牛肉與手工高山披薩",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Ishinoyu+Lodge+Shiga"
           }
         ],
         "dessert_pastry": [
@@ -1444,6 +1770,27 @@
             "distance": "Hotel 2307 對面 (步行 1 分)",
             "highlights": "利用天然硫磺溫泉高溫蒸氣現炊的黑糖豆沙溫泉饅頭",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "志賀高原 山の駅 信州蘋果霜淇淋",
+            "rating": "★★★★☆",
+            "distance": "山の駅 1F 咖啡吧",
+            "highlights": "100% 富士蘋果鮮榨果汁調和生乳，酸甜爽口",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shiga+Kogen+Yamanoeki+Cafe"
+          },
+          {
+            "name": "小布施栗子生乳大福 (冷藏)",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "柔軟冰涼糯米皮包裹整顆小布施蜜漬栗子與生乳鮮奶油",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "志賀高原 高山手工焦糖布丁",
+            "rating": "★★★★☆",
+            "distance": "熊之湯木屋咖啡部",
+            "highlights": "低溫慢火蒸焙之苦甜焦糖高原生乳布丁",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Resort+Cafe"
           }
         ],
         "beverage": [
@@ -1459,6 +1806,27 @@
             "rating": "★★★★☆",
             "distance": "Hotel 2307 溫泉大廳",
             "highlights": "雪窖低溫熟成純米吟釀，溫潤甘甜，泡湯後絕佳搭配",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "志賀高原 湧水手沖熱黑咖啡",
+            "rating": "★★★★☆",
+            "distance": "Crumpet Cafe 2307",
+            "highlights": "高海拔純淨天然雪融伏流水萃取，口感格外純淨無苦澀",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJFcf2Ea7vHWARMMxD9Zp94X4"
+          },
+          {
+            "name": "信州巨峰葡萄 100% 原汁氣泡飲",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 飲品部",
+            "highlights": "長野縣產頂級巨峰葡萄鮮榨，果香極其濃醇",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "ほたる溫泉 生薑熱柚子湯",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 溫泉休息區",
+            "highlights": "信州黃金生薑慢熬高知柚子茶，滑雪後全身熱透驅風寒",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
           }
         ],
@@ -1476,6 +1844,27 @@
             "distance": "志賀高原各賣店與 Hotel 2307",
             "highlights": "經典美式啤酒花 IPA 與生啤酒 4 入紀念禮盒組",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Tamamura+Honten+Shiga+Kogen+Beer"
+          },
+          {
+            "name": "志賀高原 2307m 標高紀念木作鑰匙圈",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 櫃台",
+            "highlights": "使用信州冷杉木雷射雕刻日本最高滑雪場標高紀念印記",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "信州野澤菜油炒辣味真空包",
+            "rating": "★★★★☆",
+            "distance": "志賀高原山の駅 賣店",
+            "highlights": "高山傳統醃漬野澤菜搭配芝麻油與唐辛子翻炒，下酒拌飯絕品",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Nozawana+Shiga+Kogen"
+          },
+          {
+            "name": "志賀高原天然白樺樹汁保濕肥皂",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "高山白樺樹春季樹汁萃取精油皂，溫和滋潤防雪場乾燥乾裂",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
           }
         ],
         "attractions": [
@@ -1562,6 +1951,20 @@
             "distance": "群馬與長野縣界 (澀峠滑雪道底)",
             "highlights": "長野與群馬交界指標地標！招牌暖心鍋燒烏龍麵與人氣店狗秋田犬迎賓",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Shibutoge+Hotel"
+          },
+          {
+            "name": "橫手山ドライブイン (展望食堂)",
+            "rating": "★★★★☆",
+            "distance": "國道 292 號旁的觀景休息站",
+            "highlights": "超大碗信州山菜野菇烏龍麵與酥炸厚切里肌豬排飯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokoteyama+Drive+In"
+          },
+          {
+            "name": "硯川ホテル 展望餐廳 (Suzurikawa)",
+            "rating": "★★★★☆",
+            "distance": "ほたる温泉街 (步行 3 分)",
+            "highlights": "滑雪午餐推薦！特濃豚骨叉燒拉麵定食配熱麥茶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Suzurikawa+Hotel+Restaurant"
           }
         ],
         "dessert_pastry": [
@@ -1578,6 +1981,27 @@
             "distance": "2307 滿天展望台內",
             "highlights": "現烤熱呼呼英式鬆餅抹上長野產百花蜂蜜與生奶油",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJFcf2Ea7vHWARMMxD9Zp94X4"
+          },
+          {
+            "name": "澀峠飯店 自製藍莓冰淇淋鬆餅",
+            "rating": "★★★★☆",
+            "distance": "澀峠飯店 餐廳",
+            "highlights": "高山野生藍莓熬煮果醬淋上現做熱比利時鬆餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shibutoge+Hotel"
+          },
+          {
+            "name": "橫手山頂 窯烤核桃肉桂麵包",
+            "rating": "★★★★★",
+            "distance": "橫手山頂ヒュッテ",
+            "highlights": "肉桂香氣濃郁，酥脆核桃碎粒口感扎實豐富",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJ42GGB67vHWARlgNWtFsPeYg"
+          },
+          {
+            "name": "志賀高原 栗子銅鑼燒",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "信州產栗子切片揉入鬆軟蜂蜜銅鑼燒餅皮",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
           }
         ],
         "beverage": [
@@ -1594,6 +2018,27 @@
             "distance": "Crumpet Cafe 內",
             "highlights": "在高海拔低沸點特調的手沖深焙熱咖啡，香氣濃醇悠長",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJFcf2Ea7vHWARMMxD9Zp94X4"
+          },
+          {
+            "name": "澀峠飯店 熱可可棉花糖杯",
+            "rating": "★★★★☆",
+            "distance": "澀峠飯店 喫茶",
+            "highlights": "濃縮瑞士純可可粉調和熱生乳，頂層浮滿鬆軟棉花糖",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shibutoge+Hotel"
+          },
+          {
+            "name": "信州七味唐辛子 暖身番茄熱湯",
+            "rating": "★★★★☆",
+            "distance": "Rest House Akari",
+            "highlights": "番茄濃湯加入微量八幡屋礒五郎七味粉，微辣開胃驅風寒",
+            "map_url": "https://www.google.com/maps/place/?q=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E3%81%82%E3%81%8B%E3%82%8A+%E5%BF%97%E8%B3%80%E9%AB%98%E5%8E%9F"
+          },
+          {
+            "name": "志賀高原 玉村本店 雪猴限定啤酒",
+            "rating": "★★★★★",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "Snow Monkey DIPA 雙倍啤酒花混濁型 IPA，果香極度奔放",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tamamura+Honten+Shiga+Kogen+Beer"
           }
         ],
         "souvenir": [
@@ -1610,6 +2055,27 @@
             "distance": "澀峠飯店 櫃台",
             "highlights": "蓋印國道最高點標高 2,172m 與兩縣交界認證之紀念證明書",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Shibutoge+Hotel"
+          },
+          {
+            "name": "橫手山頂ヒュッテ 窯烤麵包外帶盒",
+            "rating": "★★★★★",
+            "distance": "山頂ヒュッテ",
+            "highlights": "密封包裝手工酵母麵包，下山後微波依然酥軟",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJ42GGB67vHWARlgNWtFsPeYg"
+          },
+          {
+            "name": "志賀高原樹冰群 3D 雷射水晶紀念方塊",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "內部雷射雕刻 2,307m 橫手山頂樹冰與纜車立體景觀",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "志賀高原高山冷杉精油噴霧",
+            "rating": "★★★★☆",
+            "distance": "滿天展望台 賣店",
+            "highlights": "純天然萃取冷杉森林芬多精，舒緩放鬆安眠",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJFcf2Ea7vHWARMMxD9Zp94X4"
           }
         ],
         "attractions": [
@@ -1696,6 +2162,20 @@
             "distance": "ほたる温泉巴士站前 (步行 3 分)",
             "highlights": "熱騰騰信州野沢菜煎餃、關東煮與烤岩魚",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Suzurikawa+Onsen+Restaurant"
+          },
+          {
+            "name": "志賀高原プリンスホテル 餐廳街",
+            "rating": "★★★★☆",
+            "distance": "燒額山 (巴士接駁 20 分)",
+            "highlights": "中餐及洋食自助百匯，提供雪場高級餐飲體驗",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shiga+Kogen+Prince+Hotel+Restaurant"
+          },
+          {
+            "name": "熊之湯レストハウス 綠之風",
+            "rating": "★★★★☆",
+            "distance": "熊之湯第 2 纜車站底",
+            "highlights": "信州黑豚生薑燒定食與熱味噌湯，出菜快速",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Rest+House"
           }
         ],
         "dessert_pastry": [
@@ -1712,6 +2192,27 @@
             "distance": "Hotel 2307 櫃台販售處",
             "highlights": "登山滑雪高熱量補給聖品，百年名店純栗泥蒸製羊羹",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "熊之湯 烤核桃甘納豆麻糬",
+            "rating": "★★★★☆",
+            "distance": "熊之湯販賣部",
+            "highlights": "糯米皮包覆蜜漬大豆與香脆核桃碎，古樸美味",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Resort"
+          },
+          {
+            "name": "信州產白桃果凍杯 (信州巨峰雙拼)",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "天然果肉大塊看得見，冰涼爽口高維他命補給",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "志賀山麓 手工焦糖核桃派",
+            "rating": "★★★★☆",
+            "distance": "志賀高原木屋",
+            "highlights": "濃郁焦糖漿均勻裹滿香烤核桃，派皮酥香脆口",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shiga+Kogen+Walnut+Pie"
           }
         ],
         "beverage": [
@@ -1728,6 +2229,27 @@
             "distance": "熊之湯售票處旁攤位",
             "highlights": "米麴天然發酵無酒精熱甜酒，驅寒補氣極受雪友歡迎",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Resort"
+          },
+          {
+            "name": "志賀高原 精釀 IPA 樽生生啤酒",
+            "rating": "★★★★★",
+            "distance": "Belle Cour 餐廳生啤吧",
+            "highlights": "低溫現拉志賀高原美式啤酒花 IPA 生啤酒，苦味扎實麥香澎湃",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Tamamura+Honten+Shiga+Kogen+Beer"
+          },
+          {
+            "name": "信州黃金生薑 暖胃熱紅茶",
+            "rating": "★★★★☆",
+            "distance": "熊之湯木屋",
+            "highlights": "在地辛香老生薑片沖泡大吉嶺熱紅茶，滑雪祛濕必備",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Resort"
+          },
+          {
+            "name": "志賀高原 硯川天然湧泉礦泉水",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 各樓層",
+            "highlights": "富含天然礦物之高山天然冷泉，甘美順口",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
           }
         ],
         "souvenir": [
@@ -1744,6 +2266,27 @@
             "distance": "Hotel 2307 賣店",
             "highlights": "在地職人利用志賀高原疏伐白樺木手工雕琢之工藝品",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "熊之湯朝北粉雪 紀念滑雪板止滑貼",
+            "rating": "★★★★★",
+            "distance": "熊之湯雪具店",
+            "highlights": "專業單板專用防滑止滑墊 (Stomp Pad)，圖案為熊之湯經典雪熊",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Shop"
+          },
+          {
+            "name": "ほたる溫泉 天然手工硫磺洗面皂",
+            "rating": "★★★★☆",
+            "distance": "Hotel 2307 賣店",
+            "highlights": "天然溫泉礦泥精煉，深層清潔毛孔油垢與雪地防曬殘留",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "信州一味/七味味噌醃漬醬菜組合",
+            "rating": "★★★★☆",
+            "distance": "志賀高原賣店",
+            "highlights": "野澤菜、牛蒡、小黃瓜三色信州味噌醬菜真空禮盒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shinshu+Miso+Pickles"
           }
         ],
         "attractions": [
@@ -1823,6 +2366,20 @@
             "distance": "橫濱站東口 (步行 2 分)",
             "highlights": "百年老舖崎陽軒旗艦餐廳，品嚐剛出爐熱氣騰騰多汁干貝燒賣定食",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Kiyoken+Honten+Yokohama"
+          },
+          {
+            "name": "勝烈庵 總本店 (橫濱炸豬排元祖)",
+            "rating": "★★★★★",
+            "distance": "關內站 (步行 4 分)",
+            "highlights": "昭和二年創業！特製麵包粉酥炸黃金豬排搭配秘傳果香濃厚醬汁",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Katsuretsuan+Yokohama"
+          },
+          {
+            "name": "吉村家 總本山 (家系拉麵發祥元祖)",
+            "rating": "★★★★★",
+            "distance": "橫濱站西口 (步行 7 分)",
+            "highlights": "全日本橫濱家系拉麵之祖！濃厚豚骨醬油湯頭、煙燻大片叉燒與菠菜海苔經典組合",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yoshimuraya+Yokohama"
           }
         ],
         "dessert_pastry": [
@@ -1834,11 +2391,32 @@
             "map_url": "https://maps.google.com/?cid=15220677567702867399"
           },
           {
-            "name": "橫濱文明堂 咖啡館",
+            "name": "橫濱文明堂 咖啡館 (Pastry Cafe)",
             "rating": "★★★★☆",
             "distance": "伊勢佐木町 (關內站步行 5 分)",
             "highlights": "現烤熱三笠山銅鑼燒與特製長崎蜂蜜蛋糕佐冰淇淋",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Bunmeido+Cafe+Yokohama"
+          },
+          {
+            "name": "馬車道十番館 喫茶部",
+            "rating": "★★★★★",
+            "distance": "馬車道站 (步行 3 分)",
+            "highlights": "橫濱開港復古洋館！招牌「十番館布丁 (Pudding a la mode)」與焦糖法式脆餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Bashamichi+Jyubankan"
+          },
+          {
+            "name": "橫濱水信 港未來 水果水果帕菲",
+            "rating": "★★★★☆",
+            "distance": "櫻木町 CIAL 1F",
+            "highlights": "大正四年創始高級水果老舖，季節特選草莓與白桃帕菲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Mizunobu+Fruit+Parlor+Yokohama"
+          },
+          {
+            "name": "ガトー・ド・ボワイヤージュ 橫濱馬車道店",
+            "rating": "★★★★☆",
+            "distance": "馬車道 (步行 4 分)",
+            "highlights": "窯烤泡芙與法式白桃塔，法式傳統優雅風格",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Gateaux+de+Voyage+Yokohama"
           }
         ],
         "beverage": [
@@ -1855,6 +2433,27 @@
             "distance": "野毛町 (櫻木町站步行 6 分)",
             "highlights": "世界冠軍調酒師調製經典「Great Sunrise」特調與單一麥芽威士忌",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Bar+Noble+Yokohama"
+          },
+          {
+            "name": "橫濱啤酒 (Yokohama Brewery 驛之食卓)",
+            "rating": "★★★★★",
+            "distance": "櫻木町/馬車道 (步行 6 分)",
+            "highlights": "日本最古老啤酒發祥地之在地精釀皮爾森 (Pilsner) 與白啤酒 (Weizen)",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokohama+Brewery"
+          },
+          {
+            "name": "Bar Sea Guardian II",
+            "rating": "★★★★★",
+            "distance": "Hotel New Grand 1F (步行 2 分)",
+            "highlights": "傳奇歷史酒吧，品嚐原創雞尾酒「橫濱 (Yokohama Cocktail)」與「Bamboo」",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Bar+Sea+Guardian+II+Yokohama"
+          },
+          {
+            "name": "野毛末廣 冰鎮生啤酒專櫃",
+            "rating": "★★★★☆",
+            "distance": "野毛小路內",
+            "highlights": "大杯現拉朝日生啤，泡沫綿密細膩，炭烤雞肉串完美搭配",
+            "map_url": "https://maps.google.com/?cid=2108741369344476668"
           }
         ],
         "souvenir": [
@@ -1871,6 +2470,27 @@
             "distance": "橫濱站各大剪票口前賣店",
             "highlights": "常溫可保存數日之橫濱標誌性名物燒賣，常客必買伴手禮",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Kiyoken+Yokohama+Station"
+          },
+          {
+            "name": "馬車道十番館 ビスカウト (焦糖夾心餅乾)",
+            "rating": "★★★★★",
+            "distance": "馬車道十番館 本店",
+            "highlights": "自西元 1550 年傳入長崎葡萄牙酥餅演變而來，厚酥餅夾入檸檬、巧克力與花生奶油",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Bashamichi+Jyubankan"
+          },
+          {
+            "name": "橫濱阿里亞克 (Ariake Harbor) 雙重栗子蛋糕",
+            "rating": "★★★★☆",
+            "distance": "橫濱各車站商場專櫃",
+            "highlights": "橫濱港都百年船型栗子蛋糕，薄蛋糕皮包覆顆粒感栗子餡",
+            "map_url": "https://maps.google.com/?query=Ariake+Harbor+Yokohama"
+          },
+          {
+            "name": "霧笛樓 橫濱煉瓦 (濃厚黑巧克力蛋糕禮盒)",
+            "rating": "★★★★☆",
+            "distance": "橫濱站高島屋 B1",
+            "highlights": "向橫濱開港西洋磚瓦致敬之深厚核桃黑巧克力生蛋糕",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Mutekiro+Yokohama"
           }
         ],
         "attractions": [
@@ -1950,6 +2570,20 @@
             "distance": "關內站 (步行 3 分)",
             "highlights": "昭和二年創立！以特製生麵包粉酥炸之極嫩菲力豬排佐特調果香蔬菜醬汁",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Katsuretsuan+Yokohama"
+          },
+          {
+            "name": "謝朋閣 中華街總店 (正宗廣東老火靚湯)",
+            "rating": "★★★★☆",
+            "distance": "橫濱中華街關帝廟旁 (步行 4 分)",
+            "highlights": "傳統廣東脆皮燒鴨、蜜汁叉燒與乾燒蝦仁，口味經典道地",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shahoen+Yokohama+Chinatown"
+          },
+          {
+            "name": "橫濱 崎陽軒 中華食堂",
+            "rating": "★★★★☆",
+            "distance": "橫濱站地下街 Porta (步行 2 分)",
+            "highlights": "熱騰騰現蒸燒賣拉麵定食配炒飯，庶民排隊名店",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kiyoken+Porta+Yokohama"
           }
         ],
         "dessert_pastry": [
@@ -1966,6 +2600,27 @@
             "distance": "橫濱元町商店街 (步行 5 分)",
             "highlights": "橫濱法式煉瓦黑巧克力蛋糕 (橫濱煉瓦)，濃厚綿密苦甜口感極富深度",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Mutekiro+Motomachi+Yokohama"
+          },
+          {
+            "name": "同發 本館 (橫濱中華街傳統糕點老舖)",
+            "rating": "★★★★☆",
+            "distance": "中華街大通 (步行 4 分)",
+            "highlights": "現烤酥皮蛋塔 (蛋撻)、合桃酥與鳳梨豆沙月餅",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Dohatsu+Yokohama+Chinatown"
+          },
+          {
+            "name": "紅棉 (Koumen 中華傳統糕點)",
+            "rating": "★★★★★",
+            "distance": "中華街關帝廟通 (步行 3 分)",
+            "highlights": "純手工現烤千層酥皮蛋塔與白蓮蓉蛋黃月餅，老饕口袋名單",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Koumen+Yokohama+Chinatown"
+          },
+          {
+            "name": "橫濱元町 近澤蕾絲館 附設甜點茶寮",
+            "rating": "★★★★☆",
+            "distance": "元町商業街 (步行 5 分)",
+            "highlights": "精緻英式司康佐德文郡濃縮奶油與自家熬煮草莓果醬",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chikazawa+Lace+Motomachi"
           }
         ],
         "beverage": [
@@ -1982,6 +2637,27 @@
             "distance": "Hotel New Grand 1F",
             "highlights": "昭和作家太宰治與石原裕次郎鍾愛的傳奇酒吧，品嚐原創名酒「橫濱雞尾酒 (Yokohama)」",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Bar+Sea+Guardian+II+Yokohama"
+          },
+          {
+            "name": "悟空茶莊 (中華街正統茶藝館)",
+            "rating": "★★★★★",
+            "distance": "中華街中山路 (步行 4 分)",
+            "highlights": "二樓古雅木造茶寮，品嚐頂級東方美人茶、白毫銀針與普洱散茶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Goku+Teahouse+Yokohama"
+          },
+          {
+            "name": "Uni Coffee Roastery 橫濱紅磚倉庫店",
+            "rating": "★★★★☆",
+            "distance": "紅磚倉庫 1F (步行 8 分)",
+            "highlights": "水岸露天座位享用冷萃冰滴黑咖啡與可麗露",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Uni+Coffee+Roastery+Yokohama"
+          },
+          {
+            "name": "港未來 萬葉俱樂部 展望足湯茶飲吧",
+            "rating": "★★★★☆",
+            "distance": "Cosmo World 旁 (步行 5 分)",
+            "highlights": "邊泡足湯俯瞰大摩天輪與海灣夜景，邊品嚐冰鎮煎茶或生啤酒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Manyo+Club+Yokohama"
           }
         ],
         "souvenir": [
@@ -1998,6 +2674,27 @@
             "distance": "橫濱各大商場與車站專櫃",
             "highlights": "橫濱港都百年船型栗子蛋糕，薄蛋糕皮包覆顆粒感栗子餡",
             "map_url": "https://maps.google.com/?query=Ariake+Harbor+Yokohama"
+          },
+          {
+            "name": "近澤蕾絲 (Chikazawa Lace) 橫濱限定刺繡蕾絲手帕",
+            "rating": "★★★★★",
+            "distance": "元町總店",
+            "highlights": "明治三十四年創立，精緻細膩橫濱港都水手、摩天輪圖案刺繡蕾絲手帕",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Chikazawa+Lace+Motomachi"
+          },
+          {
+            "name": "重慶飯店 經典白蓮蓉蛋黃大月餅",
+            "rating": "★★★★☆",
+            "distance": "中華街重慶飯店賣店",
+            "highlights": "傳統廣式油皮包覆細膩白蓮蓉與鹹蛋黃，香濃可口",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Jukeihanten+Yokohama"
+          },
+          {
+            "name": "橫濱海紅磚 焦糖堅果巧克力磚",
+            "rating": "★★★★☆",
+            "distance": "紅磚倉庫 1F 賣店",
+            "highlights": "仿紅磚倉庫外觀之巧克力脆磚，濃郁酥脆口感",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokohama+Red+Brick+Warehouse"
           }
         ],
         "attractions": [
@@ -2078,6 +2775,20 @@
             "distance": "橫濱 SOGO 10F",
             "highlights": "筷子即可切斷之軟嫩黑豚炸豬排與招牌腰內豬排三明治",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Maisen+Yokohama+Sogo"
+          },
+          {
+            "name": "すし 魚がし日本一 (橫濱 Porta 立食壽司)",
+            "rating": "★★★★☆",
+            "distance": "橫濱站地下 Porta (步行 2 分)",
+            "highlights": "築地與豐洲市場直送，快速享用現點現握新鮮生魚片握壽司",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Uogashi+Nihonichi+Yokohama"
+          },
+          {
+            "name": "成田機場 T1 唐朝刀削麵・和食海鮮亭",
+            "rating": "★★★★☆",
+            "distance": "成田機場第 1 航廈 4F 出境前美食廣場",
+            "highlights": "登機前享用暖心現拉拉麵、天婦羅烏龍麵或生魚片海鮮丼",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Narita+Airport+Terminal+1+Restaurant"
           }
         ],
         "dessert_pastry": [
@@ -2094,6 +2805,27 @@
             "distance": "橫濱高島屋 B1 (步行 2 分)",
             "highlights": "日本五百年宮廷御用和菓子名門！「夜之梅」小倉紅豆羊羹經典禮盒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Toraya+Yokohama+Takashimaya"
+          },
+          {
+            "name": "AUDREY (奧黛麗草莓花束夾心餅) 橫濱高島屋",
+            "rating": "★★★★★",
+            "distance": "橫濱高島屋 B1 (排隊第一名門)",
+            "highlights": "薄脆貓舌餅捲成迷你花束造型，包裹白巧克力奶油與完整冷凍乾燥草莓",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Audrey+Strawberry+Sweets+Yokohama"
+          },
+          {
+            "name": "FOUNDRY (輕井澤水果塔) 橫濱 SOGO 店",
+            "rating": "★★★★☆",
+            "distance": "橫濱 SOGO B2",
+            "highlights": "旬果專賣！巨無霸福岡甘王草莓塔與長野麝香葡萄水果塔",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Foundry+Yokohama+Sogo"
+          },
+          {
+            "name": "ROYCE 生巧克力 (成田機場免稅店)",
+            "rating": "★★★★★",
+            "distance": "成田機場 T1 出境管制區內",
+            "highlights": "北海道生乳融入頂級可可，原味抹茶香檳生巧克力冷藏帶回國",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=FaSoLa+TAX+FREE+Narita+Airport"
           }
         ],
         "beverage": [
@@ -2110,6 +2842,27 @@
             "distance": "橫濱站周邊咖啡館",
             "highlights": "輕井澤精品手沖咖啡單品豆與掛耳包",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Maruyama+Coffee"
+          },
+          {
+            "name": "成田機場 免稅清酒名柄專櫃 (Fa-So-La)",
+            "rating": "★★★★★",
+            "distance": "成田 T1 出境免稅區",
+            "highlights": "獺祭二割三分、久保田萬壽、十四代低溫冷藏庫免稅品購",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=FaSoLa+TAX+FREE+Narita+Airport"
+          },
+          {
+            "name": "Dean & Deluca (橫濱 SOGO 咖啡沙龍)",
+            "rating": "★★★★☆",
+            "distance": "SOGO B2 甜點街旁",
+            "highlights": "美式大杯熱拿鐵與季節濃縮熱可可",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Dean+Deluca+Yokohama+Sogo"
+          },
+          {
+            "name": "星巴克 成田機場 T1 門市",
+            "rating": "★★★★☆",
+            "distance": "成田 T1 出境管制區 3F",
+            "highlights": "登機前最後一杯冰美式咖啡與日本限定星巴克保溫杯採買",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Starbucks+Narita+Airport+Terminal+1"
           }
         ],
         "souvenir": [
@@ -2126,6 +2879,27 @@
             "distance": "成田機場免稅店",
             "highlights": "免稅優惠款法國奶油脆餅禮盒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Narita+Airport+Duty+Free"
+          },
+          {
+            "name": "東京晴空戀人 (Tokyo Campana) 巧克力夾心薄餅",
+            "rating": "★★★★☆",
+            "distance": "成田機場 T1 免稅店",
+            "highlights": "三層深黑法芙娜巧克力脆餅夾入特濃白巧克力生奶油",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=FaSoLa+TAX+FREE+Narita+Airport"
+          },
+          {
+            "name": "白色戀人 (Shiroi Koibito 機場免稅版)",
+            "rating": "★★★★★",
+            "distance": "成田機場 T1 免稅專櫃",
+            "highlights": "北海道經典貓舌餅乾夾牛奶白巧克力，全亞洲旅客最愛手信",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=FaSoLa+TAX+FREE+Narita+Airport"
+          },
+          {
+            "name": "日本限定 KitKat 各地名產大集合禮盒 (抹茶/芥末/酒粕)",
+            "rating": "★★★★☆",
+            "distance": "成田 T1 免稅店",
+            "highlights": "一次收集全日本各地區代表性限定口味之巨大綜合伴手禮盒",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=FaSoLa+TAX+FREE+Narita+Airport"
           }
         ],
         "attractions": [
@@ -2169,37 +2943,44 @@
     }
   ],
   "friend_dec15_to_yokoteyama": {
-    "title": "友人 12/15 東京/長野 ➔ 志賀高原橫手山會合交通（直達與非直達各 2 班）",
-    "summary": "成田入境後或晨間市區漫遊後，前往志賀高原 Hotel & Onsen 2307 會合",
+    "title": "友人 12/15 東京/長野 ➔ 志賀高原橫手山會合交通（各 2 班最晚直達與非直達方式）",
+    "summary": "12/15 友人成田入境與晨間漫遊後，前往志賀高原 Hotel & Onsen 2307 會合之最晚班次精算",
     "direct_options": [
       {
-        "badge": "🚌 直達首選 1（最晚直達巴士・熱門首選）",
+        "badge": "🚌 最晚直達巴士・第 1 班（下午直達末班車・全日最晚直達）",
         "timeline": "東京站 11:20 搭乘 北陸新幹線 Kagayaki 511 號 ➔ 12:44 抵長野站（轉乘緩衝 26 分鐘） ➔ 長野站東口 23 號站牌搭乘 13:10 直達急行巴士 ➔ 14:52 直達ほたる温泉門口！",
-        "desc": "此班車為下午直達 Hotel 2307 門口之最晚直達班次，免搬行李免換車，中下午從容入住開滑。"
+        "desc": "此班為長野站東口當日開往ほたる温泉（Hotel 2307 門口）的最後一班直達巴士！中途完全免搬雪具免換車。"
       },
       {
-        "badge": "🚌 直達次選 2（中午提早直達・充裕午餐）",
-        "timeline": "東京站 10:33 搭乘 北陸新幹線 Hakutaka 559 號 ➔ 12:00 抵長野站（轉乘緩衝 70 分鐘於長野站 MIDORI 享用午餐） ➔ 長野東口搭乘 13:10 直達急行巴士 ➔ 14:52 抵達ほたる温泉",
-        "desc": "時間最為寬裕，可在長野站品嚐手打信州蕎麥麵或購買小布施栗子點心後再行上山。"
+        "badge": "🚌 最晚直達巴士・第 2 班（上午直達次晚班次・午後提早開滑）",
+        "timeline": "東京站 07:52 搭乘 Kagayaki 503 號 ➔ 09:12 抵長野站（轉乘緩衝 48 分鐘） ➔ 長野站東口 23 號站牌搭乘 10:00 直達急行巴士 ➔ 11:22 直達ほたる温泉門口！",
+        "desc": "此班為上午最後一班直達車，中午前即可順利抵達飯店簽收雪具，搶先滑下午半天。"
       }
     ],
     "transfer_options": [
       {
-        "badge": "🔄 轉乘方案 1（晨間最早轉乘上山・搶滑半日）",
-        "timeline": "成田搭 07:30 Skyliner 4 號 ➔ 上野 08:35 Hakutaka 555 號 ➔ 09:58 抵長野 ➔ 長野東口 10:15 急行巴士 ➔ 11:25 抵志賀高原山の駅 ➔ 站內轉乘 11:35 路線巴士 ➔ 11:58 直達ほたる温泉",
-        "desc": "適合不在東京市區停留、出關直接殺上雪場之友人，中午前即可抵達飯店與我方會合。"
+        "badge": "🔄 最晚非直達巴士・第 1 班（全日轉乘末班車・最晚大眾運輸）",
+        "timeline": "東京站 14:24 搭乘 北陸新幹線 Kagayaki 513 號 ➔ 15:46 抵長野站（轉乘緩衝 14 分鐘） ➔ 長野東口搭乘 16:00 急行巴士 ➔ 17:10 抵達「志賀高原山の駅」 ➔ 站內無縫轉乘 17:15 路線公車【白根火山線】 ➔ 17:40 抵達ほたる温泉門口！",
+        "desc": "此為全日所有大眾交通工具中，抵達ほたる温泉之最晚末班公車！適合在東京市區遊玩至午後 14:00 的友人。"
       },
       {
-        "badge": "🔄 轉乘方案 2（午後市區小遊後轉乘）",
-        "timeline": "東京站 12:52 搭乘 Hakutaka 565 號 ➔ 14:19 抵長野 ➔ 長野東口 14:30 急行巴士 ➔ 15:40 抵志賀高原山の駅 ➔ 站內轉乘 15:45 路線巴士 ➔ 16:15 抵達ほたる温泉",
-        "desc": "適合在淺草或上野多停留購物之友人，午後轉乘上山正好趕上晚餐宴席與溫泉。"
+        "badge": "🔄 最晚非直達巴士・第 2 班（午後次晚轉乘班次・從容上山）",
+        "timeline": "東京站 12:52 搭乘 北陸新幹線 Hakutaka 565 號 ➔ 14:19 抵長野站（轉乘緩衝 11 分鐘） ➔ 長野東口搭乘 14:30 急行巴士 ➔ 15:40 抵達「志賀高原山の駅」 ➔ 站內轉乘 15:45 路線公車【白根火山線】 ➔ 16:15 抵達ほたる温泉門口！",
+        "desc": "傍晚天黑前順利抵達飯店，正好趕上溫泉放鬆與主廚宴席晚宴。"
       }
     ],
     "emergency_option": {
-      "badge": "🚕 傍晚/夜間極限備案（長電電車轉雪地計程車）",
-      "timeline": "東京新幹線至長野 ➔ 轉長野電鐵特急 Snow Monkey 號至湯田中站 ➔ 站前搭乘預約制 4WD 雪地計程車（長電ハイヤー 0269-33-3161）直達飯店",
-      "desc": "若因航班延誤超過下午 15:00 才離開東京，可利用此備案於晚間抵達飯店。"
+      "badge": "🚕 傍晚/夜間極限備案（新幹線 ➔ 長電電車 ➔ 4WD雪地計程車）",
+      "timeline": "東京站 16:04 搭乘 Kagayaki 515 號 ➔ 17:28 抵長野 ➔ 長野電鐵 17:52 特急 Snow Monkey 號 ➔ 18:38 抵湯田中站 ➔ 站前搭乘預約制 4WD 雪地計程車（長電ハイヤー 0269-33-3161）直達飯店大門",
+      "desc": "若因航班延誤超過下午 15:00 才離開東京，可利用此備案於晚間順利抵達飯店。"
+    },
+    "taxi_low_cost_option": {
+      "badge": "🚕 最低花費計程車接駁方案（長電特急 ➔ 湯田中短程4WD計程車）",
+      "timeline": "長野站搭長野電鐵特急 Snow Monkey 號 (45分/¥1,290) ➔ 抵湯田中站 ➔ 站前搭乘長電 4WD 雪地計程車 (25分/約¥7,500/車) ➔ 直達ほたる温泉 Hotel 2307 門口！",
+      "cost_breakdown": "【最低花費精算】：若自長野站直接叫計程車上山需 ¥22,000～¥28,000。改由湯田中站轉乘計程車，整車僅約 ¥7,500！若 2 人共乘每人僅約 ¥5,040；若 4 人滿載共乘每人僅約 ¥3,165，足足現省超過 ¥15,000！",
+      "highlights": "長電ハイヤー (TEL: 0269-33-3161) 營業至深夜 24:00，車況均配備雪胎與 4WD，是錯過巴士或不想搬運行李時兼顧荷包與舒適的最省錢計程車首選！"
     }
   },
-  "last_synced": "2026-09-13 07:31:48 UTC"
+  "last_updated": "2026-09-13T15:25:00+08:00",
+  "last_synced": "2026-09-13 07:30:27 UTC"
 }
