@@ -191,6 +191,43 @@
             "highlights": "群馬名湯傳統黑糖蒸烤薄皮溫泉饅頭，北海道紅豆餡綿密不甜膩",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Seigetsudo+Takasaki+Station"
           }
+        ],
+        "attractions": [
+          {
+            "name": "高崎白衣大觀音 (慈眼院)",
+            "rating": "★★★★★",
+            "distance": "觀音山頂 (高崎站西口巴士約 15 分)",
+            "highlights": "標高 41.8 公尺之巨大白衣觀音聖相，可登入觀音體內俯瞰高崎市容與上毛三山",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takasaki+Byakue+Dai-Kannon"
+          },
+          {
+            "name": "少林山達磨寺 (Daruma-ji)",
+            "rating": "★★★★★",
+            "distance": "群馬八幡站 (車程約 5 分)",
+            "highlights": "日本緣起達磨不倒翁之發祥聖地，境內堆疊數萬座信眾奉納之開運達磨，極其壯觀",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shorinzan+Darumaji+Takasaki"
+          },
+          {
+            "name": "高崎城址公園 (三之丸外圍與水堀)",
+            "rating": "★★★★☆",
+            "distance": "高崎站西口 (步行 10 分)",
+            "highlights": "德川四天王井伊直政築造之古城遺構，護城河水波與江戶時代石垣風情",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takasaki+Castle+Ruins+Park"
+          },
+          {
+            "name": "群馬音樂中心 (安東尼·雷蒙設計建築遺產)",
+            "rating": "★★★★☆",
+            "distance": "高崎市役所旁 (步行 10 分)",
+            "highlights": "入選 DOCOMOMO 日本近代建築百選，折板構造前衛優雅，日本現代建築瑰寶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Gunma+Music+Center"
+          },
+          {
+            "name": "高崎市役所 21F 免費展望大廳",
+            "rating": "★★★★☆",
+            "distance": "高崎市高松町 (步行 9 分)",
+            "highlights": "免費開放高空展望層，360 度眺望赤城山、榛名山與上越新幹線疾駛交會",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takasaki+City+Hall+Observation+Lounge"
+          }
         ]
       }
     },
@@ -289,6 +326,43 @@
             "highlights": "超人氣凹凸波浪麵體蕎麥乾麵，沾醬吸附力絕佳，信州自用伴手禮首選",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Komoro+Shichibei+Soba"
           }
+        ],
+        "attractions": [
+          {
+            "name": "日光白根山空中纜車 (標高 2,000m 天空平台)",
+            "rating": "★★★★★",
+            "distance": "丸沼高原滑雪場內",
+            "highlights": "搭乘空中纜車直攻群馬最高峰山頂，飽覽連綿雪峰、天空之足湯與純白雲海",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Nikko+Shirane+Ropeway+Marunuma"
+          },
+          {
+            "name": "小諸城址 懷古園 (日本百名城)",
+            "rating": "★★★★★",
+            "distance": "小諸站旁 (佐久平搭小海線 15 分)",
+            "highlights": "全日本罕見低於城下町之「穴城」，苔蘚青石垣與古樸三之門雪景古意盎然",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Komoro+Castle+Ruins+Kaikoyen"
+          },
+          {
+            "name": "舊小諸本陣 (江戶參勤交代宿場遺構)",
+            "rating": "★★★★☆",
+            "distance": "小諸站前老街 (步行 5 分)",
+            "highlights": "江戶時期大名諸侯投宿之正統御殿建築，完整保留茅草屋頂與御成門",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kyu+Komoro+Honjin"
+          },
+          {
+            "name": "佐久平 鼻顏稻荷神社 (日本五大稻荷)",
+            "rating": "★★★★☆",
+            "distance": "岩村田站旁 (距佐久平車程 5 分)",
+            "highlights": "京都清水寺懸造木柱結構工法，懸空架於湯川峽谷懸崖之上，極具視覺張力",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hanagao+Inari+Shrine+Saku"
+          },
+          {
+            "name": "吹割瀑布 (東洋尼加拉瓜巨瀑)",
+            "rating": "★★★★☆",
+            "distance": "沼田往鎌田途中 (關越巴士可達)",
+            "highlights": "片品川河床花崗岩崩落形成之千疊敷奇岩巨瀑，冬季水勢奔騰冰雪交織",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Fukiware+Falls+Gunma"
+          }
         ]
       }
     },
@@ -386,6 +460,43 @@
             "distance": "佐久平站購物中心特產店",
             "highlights": "高原牧場生乳濃縮烘焙的雙層重乳酪蛋糕禮盒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Asama+Cheesecake+Saku"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "車坂峠 (標高 1,973m 淺間山登山口全景)",
+            "rating": "★★★★★",
+            "distance": "高峰雪場門口 (步行 2 分)",
+            "highlights": "長野與群馬縣界分水嶺，晨間眺望壯闊雲海、富士山與八岳連峰之天然觀景台",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kurumazaka+Pass+Takamine"
+          },
+          {
+            "name": "高峰高原ビジターセンター (高山生態資料館)",
+            "rating": "★★★★☆",
+            "distance": "車坂峠站旁 (步行 1 分)",
+            "highlights": "展出淺間山火山地質模型、雪地野生動物足跡圖鑑，提供雪靴出租與保暖補給",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Takamine+Kogen+Visitor+Center"
+          },
+          {
+            "name": "淺間火山熔岩觀測所與火山口全景",
+            "rating": "★★★★☆",
+            "distance": "高峰山登山步道口",
+            "highlights": "遠眺活火山淺間山白煙裊裊與前掛山黑色火成岩雪白披覆壯觀景緻",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Mount+Asama+Lookout"
+          },
+          {
+            "name": "淺間 Cherry Park Line (高山絕景彎道雪景)",
+            "rating": "★★★★☆",
+            "distance": "小諸至高峰高原山道",
+            "highlights": "落差達 1,000 公尺之險峻高山全景公路，隨海拔爬升穿梭針葉林與雲霧帶",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Cherry+Park+Line+Komoro"
+          },
+          {
+            "name": "佐久市 平尾溫泉 みっぷる (展望露天風呂)",
+            "rating": "★★★★☆",
+            "distance": "佐久平站車程 8 分 (Parada 雪場旁)",
+            "highlights": "高台天然碳酸氫鈉泉，滑雪下山後浸泡於天然暖湯中遠眺淺間山連峰",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hirao+Onsen+Mippuru+Saku"
           }
         ]
       }
@@ -486,6 +597,43 @@
             "highlights": "無添加防腐劑與色素之純栗蓉栗子蜜餞，小布施代表性頂級伴手禮",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Sakurai+Kanseido+MIDORI+Nagano"
           }
+        ],
+        "attractions": [
+          {
+            "name": "信州善光寺 (國寶本堂・戒壇巡禮)",
+            "rating": "★★★★★",
+            "distance": "長野站善光寺口搭公車 8 分",
+            "highlights": "日本不分宗派之古老靈場，一生必訪一次！晨間參拜大本堂並體驗暗夜摸索光明戒壇巡禮",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Zenkoji+Temple+Nagano"
+          },
+          {
+            "name": "善光寺 仲見世通 (百年宿坊石疊參道)",
+            "rating": "★★★★★",
+            "distance": "仁王門至山門之間 (長 400m)",
+            "highlights": "7700 枚石疊古道，兩側保留數十間江戶宿坊、茶寮與名物七味粉專賣店",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Zenkoji+Nakamise+Street"
+          },
+          {
+            "name": "長野縣立美術館・東山魁夷館",
+            "rating": "★★★★★",
+            "distance": "城山公園內 (善光寺本堂旁步行 3 分)",
+            "highlights": "水景與景觀建築大獎名作，典藏大師東山魁夷「白馬之森」等經典日本畫珍品",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Nagano+Prefectural+Art+Museum"
+          },
+          {
+            "name": "城山公園 (長野市最古老名園)",
+            "rating": "★★★★☆",
+            "distance": "善光寺東側 (步行 4 分)",
+            "highlights": "明治時期開闢公園，冬季古松白雪相映，噴水池倒映北信五岳雪嶺",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Joyama+Park+Nagano"
+          },
+          {
+            "name": "MIDORI 長野 (信州物產生活美學大樓)",
+            "rating": "★★★★☆",
+            "distance": "與 JR 長野站共構",
+            "highlights": "長野第一物產門戶！網羅信州七十三酒造清酒、小布施栗菓子與木曾工藝品",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=MIDORI+Nagano+Station"
+          }
         ]
       }
     },
@@ -505,13 +653,12 @@
         "map_image_url": "https://shigakogen-ski.or.jp/assets/images/lift/area/yokoteshibu-02.svg"
       },
       "transit": {
-        "summary": "長野站 ➔ 志賀高原橫手山ほたる温泉（我的交通提供最早直達與最早轉接；友人提供最晚直達與最早轉接）",
+        "summary": "長野站 ➔ 志賀高原橫手山ほたる温泉（直達與非直達各提供 2 班完整班次）",
         "details": [
-          "【我的交通・最早直達巴士】：長野站東口 23 號站牌搭乘 08:15 發車之長電急行巴士 ➔ 09:35 直達ほたる温泉（Hotel 2307 門口）",
-          "【我的交通・最早轉接巴士】：長野站 06:40 搭長野電鐵長野線 ➔ 07:33 抵湯田中站 ➔ 轉乘 07:45 長電路線巴士【白根火山線】➔ 08:25 直抵ほたる温泉",
-          "【友人交通・最晚直達巴士】：東京搭乘 11:20 Kagayaki 511 號 ➔ 12:44 抵長野站 ➔ 長野東口搭乘 13:10 直達急行巴士 ➔ 14:52 直達ほたる温泉門口",
-          "【友人交通・最早轉接巴士】：07:30 Skyliner 4 號至日暮里 ➔ 上野 08:35 Hakutaka 555 號 ➔ 09:58 抵長野 ➔ 長野東口 10:15 急行巴士至山の駅 (11:25) ➔ 轉 11:35 路線巴士 ➔ 11:58 抵ほたる温泉",
-          "飯店大廳會合並領取 12/11 由成田直寄之主力雪板裝備"
+          "【直達巴士・方案 1（晨間早班首選）】：08:15 長野站東口 23 號站牌搭乘長電急行志賀高原線 ➔ 09:35 直達ほたる温泉（Hotel 2307 門口，開滑黃金期）",
+          "【直達巴士・方案 2（上午充裕班次）】：08:50 長野站東口 23 號站牌搭乘長電急行志賀高原線 ➔ 10:12 直達ほたる温泉（或 13:10 直達班次 ➔ 14:52 抵達）",
+          "【非直達巴士・方案 1（長電鐵路轉公車）】：06:40 長野站搭乘長野電鐵長野線 ➔ 07:33 抵湯田中站 ➔ 站前轉乘 07:45 長電公車【白根火山線】➔ 08:25 抵達ほたる温泉",
+          "【非直達巴士・方案 2（急行巴士至山の駅轉乘）】：10:15 長野站東口搭乘長電急行巴士 ➔ 11:25 抵志賀高原山の駅 ➔ 站內轉乘 11:35 志賀高原路線公車 ➔ 11:58 抵達ほたる温泉"
         ]
       },
       "recommendations": {
@@ -584,6 +731,43 @@
             "distance": "志賀高原各賣店與 Hotel 2307",
             "highlights": "經典美式啤酒花 IPA 與生啤酒 4 入紀念禮盒組",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Tamamura+Honten+Shiga+Kogen+Beer"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "志賀高原 滿天展望台 (標高 2,307m 雲上平台)",
+            "rating": "★★★★★",
+            "distance": "橫手山第 3 纜車站旁",
+            "highlights": "日本海拔最高之觀景平台！可 360 度俯瞰北阿爾卑斯槍岳、富士山與壯麗雲海",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJFcf2Ea7vHWARMMxD9Zp94X4"
+          },
+          {
+            "name": "ほたる溫泉 天然翡翠綠濁硫磺溫泉源泉",
+            "rating": "★★★★★",
+            "distance": "Hotel 2307 門口 (出門即達)",
+            "highlights": "日本罕見高溫噴氣翡翠綠色天然硫磺泉，泉質細膩，療癒肌肉痠痛神效",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
+          },
+          {
+            "name": "志賀高原 山の駅 (志賀高原纜車中樞)",
+            "rating": "★★★★☆",
+            "distance": "蓮池地區 (巴士接駁 15 分)",
+            "highlights": "志賀高原谷地樞紐，連通山之內各大滑雪場，具備完整高山雪具租借與伴手禮大廳",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shiga+Kogen+Yamanoeki"
+          },
+          {
+            "name": "澀峠 日本國道最高地點標石 (標高 2,172m)",
+            "rating": "★★★★★",
+            "distance": "橫手山滑雪道群馬側出口",
+            "highlights": "全日本最高國道標石紀念地碑，跨越長野縣與群馬縣分水嶺界線",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Japan+Highest+Highway+Point+Shibutoge"
+          },
+          {
+            "name": "地獄谷野猿公苑 (雪猴泡湯・備案景點)",
+            "rating": "★★★★★",
+            "distance": "山之內町 (自ほたる温泉搭車約 40 分)",
+            "highlights": "世界知名奇景！野生日本獼猴在冰天雪地中舒服浸泡天然露天溫泉的療癒畫面",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Jigokudani+Monkey+Park"
           }
         ]
       }
@@ -682,6 +866,43 @@
             "highlights": "蓋印國道最高點標高 2,172m 與兩縣交界認證之紀念證明書",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Shibutoge+Hotel"
           }
+        ],
+        "attractions": [
+          {
+            "name": "橫手山頂天然樹冰原 (Snow Monsters)",
+            "rating": "★★★★★",
+            "distance": "橫手山 2,307m 山頂雪道旁",
+            "highlights": "強烈西風與零下低溫將過冷水滴凝結於針葉樹上形成的壯麗天然雪怪樹冰群",
+            "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJFcf2Ea7vHWARMMxD9Zp94X4"
+          },
+          {
+            "name": "澀峠雪道分水嶺 (跨越群馬・長野雙縣滑行)",
+            "rating": "★★★★★",
+            "distance": "橫手山頂翻越至澀峠",
+            "highlights": "右腳在長野、左腳在群馬的獨特地形，積雪乾燥如羽毛的朝北背風雪道",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shibutoge+Ski+Area"
+          },
+          {
+            "name": "橫手山神社 (日本最高海拔神社奧宮)",
+            "rating": "★★★★☆",
+            "distance": "橫手山頂第 3 吊椅旁",
+            "highlights": "祈求山岳安全與航行順利的雲上神社，鳥居積雪厚達數公尺",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokoteyama+Shrine"
+          },
+          {
+            "name": "志賀パレス溫泉 (硯川源泉巡禮)",
+            "rating": "★★★★☆",
+            "distance": "ほたる温泉街 (步行 3 分)",
+            "highlights": "豐富硫磺沉澱物與天然礦物質之高山溫泉浴場",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Shiga+Palace+Hotel+Onsen"
+          },
+          {
+            "name": "笠岳 (標高 2,076m 火山圓錐山峰全景)",
+            "rating": "★★★★☆",
+            "distance": "熊之湯與橫手山眺望點",
+            "highlights": "志賀高原代表性金字塔型獨立峰，冬季白雪披覆輪廓銳利宛如富士山",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Mount+Kasagatake+Shiga"
+          }
         ]
       }
     },
@@ -779,6 +1000,43 @@
             "highlights": "在地職人利用志賀高原疏伐白樺木手工雕琢之工藝品",
             "map_url": "https://www.google.com/maps/place/?q=place_id:ChIJLYhmER_uHWARBE-4JWmXjPM"
           }
+        ],
+        "attractions": [
+          {
+            "name": "熊之湯研缽狀朝北粉雪道 (極致粉雪天然殿堂)",
+            "rating": "★★★★★",
+            "distance": "熊之湯滑雪場全區",
+            "highlights": "全日避開陽光直射，保雪能力稱霸本州，輕盈鬆軟微細『熊粉』馳名全日本",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Resort"
+          },
+          {
+            "name": "熊之湯第 2 高速雙人吊椅 (Carving 走刃特選路線)",
+            "rating": "★★★★★",
+            "distance": "熊之湯滑雪場中央",
+            "highlights": "均勻坡度與無盲彎平整大面壓雪，進階單板練習大角度貼地走刃首選雪道",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Ski+Resort"
+          },
+          {
+            "name": "熊之湯 熊之湯飯店 翡翠名湯日歸溫泉",
+            "rating": "★★★★★",
+            "distance": "熊之湯雪場底 (步行 5 分)",
+            "highlights": "幕末思想家佐久間象山發現之名湯，含硫磺量極高之純天然草綠色濁湯",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Kumanoyu+Hotel+Onsen"
+          },
+          {
+            "name": "平床大噴泉 (天然地熱噴氣孔景觀)",
+            "rating": "★★★★☆",
+            "distance": "ほたる温泉上方 (步行 10 分)",
+            "highlights": "終年白煙蒸氣直衝雲霄之天然地熱奇觀，冬日雪地中展現大地澎湃活力",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hiradoko+Geyser+Shiga"
+          },
+          {
+            "name": "琵琶池與一沼 (冬日冰封鏡面湖景)",
+            "rating": "★★★★☆",
+            "distance": "蓮池往熊之湯途中 (巴士 8 分)",
+            "highlights": "群山環抱的高原天然冰湖，針葉林白雪覆蓋如北歐童話森林",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Biwa+Pond+Shiga"
+          }
         ]
       }
     },
@@ -790,12 +1048,12 @@
       "stay_map": "https://www.google.com/maps/search/?api=1&query=The+Yokohama+Bay+Hotel+Tokyu",
       "ski_resort": null,
       "transit": {
-        "summary": "志賀急行巴士至長野 ➔ 北陸新幹線至東京 ➔ JR 東海道線至橫濱 (提供 2 組下午位移時程)",
+        "summary": "志賀高原橫手山 ➔ 長野站 ➔ 北陸新幹線直達橫濱（直達與非直達各提供 2 班完整班次）",
         "details": [
-          "橫手山可享受最後半日滑行至 13:30，整裝退房",
-          "【移動時間選項 A（早班從容・19:02 抵橫濱）】：15:00 飯店接駁至山の駅 ➔ 15:35 長電急行巴士 ➔ 16:40 抵長野站東口 (轉乘緩衝 29 分) ➔ 17:09 北陸新幹線 Kagayaki 512 號 ➔ 18:28 抵東京站 ➔ 18:36 JR 東海道線 ➔ 19:02 準時抵達橫濱站！",
-          "【移動時間選項 B（次班彈性・20:00 抵橫濱）】：16:00 飯店接駁至山の駅 ➔ 16:35 長電急行巴士 ➔ 17:40 抵長野站東口 ➔ 18:09 北陸新幹線 Kagayaki 514 號 ➔ 19:28 抵東京站 ➔ 19:36 JR 東海道線 ➔ 20:00 抵達橫濱站",
-          "入住橫濱灣東急飯店，展開橫濱港灣夜生活"
+          "【直達巴士・方案 1（早班直達）】：ほたる温泉站牌 10:45 發車（長電急行巴士） ➔ 12:05 直達長野站東口 ➔ 銜接 12:44 北陸新幹線 Kagayaki 508 號直達東京",
+          "【直達巴士・方案 2（午後直達首選）】：ほたる温泉站牌 14:00 發車（長電急行巴士） ➔ 15:20 直達長野站東口 ➔ 15:53 搭 Kagayaki 510 號 ➔ 17:12 抵東京 ➔ 17:42 抵橫濱",
+          "【非直達巴士・方案 1（下午標準接駁・19:02 抵橫濱）】：15:00 飯店專車接駁至志賀高原山の駅 ➔ 15:35 山の駅搭長電急行巴士 ➔ 16:40 抵長野站東口 (轉乘緩衝 29 分) ➔ 17:09 Kagayaki 512 號 ➔ 18:28 抵東京 ➔ 18:36 JR 東海道線 ➔ 19:02 抵橫濱！",
+          "【非直達巴士・方案 2（傍晚次班接駁・20:00 抵橫濱）】：16:00 飯店接駁至山の駅 ➔ 16:35 山の駅搭長電急行巴士 ➔ 17:40 抵長野站東口 ➔ 18:09 Kagayaki 514 號 ➔ 19:28 抵東京 ➔ 19:36 JR 東海道線 ➔ 20:00 抵橫濱"
         ]
       },
       "recommendations": {
@@ -868,6 +1126,43 @@
             "distance": "橫濱站各大剪票口前賣店",
             "highlights": "常溫可保存數日之橫濱標誌性名物燒賣，常客必買伴手禮",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Kiyoken+Yokohama+Station"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "橫濱港未來 21 (Minato Mirai 21 水岸天際線)",
+            "rating": "★★★★★",
+            "distance": "飯店門口 (港未來站直結)",
+            "highlights": "橫濱最具代表性的現代都會水岸，Landmark Tower、帆船飯店與摩天輪璀璨夜景",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Minato+Mirai+21+Yokohama"
+          },
+          {
+            "name": "橫濱紅磚倉庫 (Yokohama Red Brick Warehouse)",
+            "rating": "★★★★★",
+            "distance": "港未來水岸 (步行 12 分)",
+            "highlights": "明治與大正時期開港保稅倉庫，冬季節慶限定聖誕市集與戶外大型溜冰場",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokohama+Red+Brick+Warehouse"
+          },
+          {
+            "name": "野毛小路 (戰後昭和復古居酒屋街)",
+            "rating": "★★★★★",
+            "distance": "JR 櫻木町站西側 (步行 5 分)",
+            "highlights": "超過 600 家傳統串燒、關東煮、小料理與爵士酒吧林立的昭和風情夜生活聖地",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Noge+Koji+Yokohama"
+          },
+          {
+            "name": "橫濱 Cosmo Clock 21 大摩天輪",
+            "rating": "★★★★☆",
+            "distance": "Cosmo World 園區內 (步行 5 分)",
+            "highlights": "直徑 100 公尺之巨型都市時鐘摩天輪，搭乘俯瞰 360 度港灣夜光美景",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Cosmo+Clock+21+Yokohama"
+          },
+          {
+            "name": "臨港公園 (Rinko Park 潮風海濱長廊)",
+            "rating": "★★★★☆",
+            "distance": "PACIFICO 橫濱外側海濱 (步行 6 分)",
+            "highlights": "橫濱港最大海濱綠地公園，開闊水岸視野遠眺橫濱跨海大橋 (Bay Bridge)",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Rinko+Park+Yokohama"
           }
         ]
       }
@@ -959,6 +1254,43 @@
             "highlights": "橫濱港都百年船型栗子蛋糕，薄蛋糕皮包覆顆粒感栗子餡",
             "map_url": "https://maps.google.com/?query=Ariake+Harbor+Yokohama"
           }
+        ],
+        "attractions": [
+          {
+            "name": "YOKOHAMA AIR CABIN (都市型高空空中纜車)",
+            "rating": "★★★★★",
+            "distance": "櫻木町站至運河公園 (步行 1 分可搭乘)",
+            "highlights": "日本第一座常設都市高空循環纜車，穿梭於摩天高樓與運河之間，視野極為前衛震撼",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokohama+Air+Cabin"
+          },
+          {
+            "name": "橫濱中華街 (善鄰門與關帝廟)",
+            "rating": "★★★★★",
+            "distance": "元町・中華街站 (出站即達)",
+            "highlights": "東亞最大唐人街！十座華麗牌樓、五百多家餐館小吃，熱鬧蒸氣與香氣瀰漫",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokohama+Chinatown"
+          },
+          {
+            "name": "日清合味道杯麵博物館 (CUPNOODLES MUSEUM)",
+            "rating": "★★★★★",
+            "distance": "紅磚倉庫旁 (步行 6 分)",
+            "highlights": "安藤百福發明世界第一碗泡麵的歷史展覽，可親手塗鴉彩繪杯身並自選湯頭配料製作專屬杯麵",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Cup+Noodles+Museum+Yokohama"
+          },
+          {
+            "name": "山下公園與冰川丸郵輪 (Yamashita Park)",
+            "rating": "★★★★★",
+            "distance": "橫濱港沿岸 (元町站步行 4 分)",
+            "highlights": "關東大地震瓦礫填海建立之海濱公園，岸邊繫留戰前傳奇西雅圖航線豪華郵輪冰川丸",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yamashita+Park+Yokohama"
+          },
+          {
+            "name": "港見之丘公園與英國館 (Minato-no-Mieru Oka Park)",
+            "rating": "★★★★☆",
+            "distance": "元町山丘高台 (步行 10 分)",
+            "highlights": "橫濱居留地洋館群，居高臨下俯瞰橫濱港大棧橋國際客船碼頭全景",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Minato-no-Mieru-Oka+Park"
+          }
         ]
       }
     },
@@ -1049,6 +1381,43 @@
             "distance": "成田機場免稅店",
             "highlights": "免稅優惠款法國奶油脆餅禮盒",
             "map_url": "https://www.google.com/maps/search/?api=1&query=Narita+Airport+Duty+Free"
+          }
+        ],
+        "attractions": [
+          {
+            "name": "橫濱站西口 JR 橫濱 Tower 空中屋頂庭園",
+            "rating": "★★★★☆",
+            "distance": "JR 橫濱站直結 (12F)",
+            "highlights": "免費開放高空木質甲板庭園，遠眺橫濱海灣與市區景緻，臨行前吹風放鬆首選",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=JR+Yokohama+Tower+Roof+Garden"
+          },
+          {
+            "name": "原鐵道模型博物館 (Hara Model Railway Museum)",
+            "rating": "★★★★☆",
+            "distance": "橫濱三井 Building 2F (步行 5 分)",
+            "highlights": "收藏世界最大級精密鐵道模型陣容，小火車行駛鐵軌發出逼真金屬撞擊聲",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Hara+Model+Railway+Museum+Yokohama"
+          },
+          {
+            "name": "橫濱高島屋與 SOGO 地下洋菓子殿堂",
+            "rating": "★★★★★",
+            "distance": "橫濱站東西口直結",
+            "highlights": "全日本最頂級甜點美食街，登機前最後採買法式費南雪、生巧克力與和菓子",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Yokohama+Takashimaya"
+          },
+          {
+            "name": "成田機場第 1 航廈 5F 展望觀景台",
+            "rating": "★★★★★",
+            "distance": "成田機場 T1 出境大廳 5F",
+            "highlights": "戶外開闊防護網觀景台，近距離欣賞各國長程巨鳥客機衝刺升空震撼場面",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=Narita+Airport+Terminal+1+Observation+Deck"
+          },
+          {
+            "name": "成田機場 Fa-So-La 免稅精品旗艦街",
+            "rating": "★★★★★",
+            "distance": "成田 T1 出境管制區內",
+            "highlights": "最後免稅採買！日本銘酒獺祭、山崎威士忌、各地限定零嘴手信一網打盡",
+            "map_url": "https://www.google.com/maps/search/?api=1&query=FaSoLa+TAX+FREE+Narita+Airport"
           }
         ]
       }
