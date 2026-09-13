@@ -1,7 +1,7 @@
 name: Sync Itinerary and UI from Google Drive
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # 支援網頁隨時一鍵手動同步
   schedule:
     - cron: '0 21 * * *' # 每天台灣時間 05:00 自動同步
 
@@ -27,10 +27,10 @@ jobs:
           # 安裝最新版 gdown
           pip install --upgrade gdown
 
-          # 直接以固定資料夾 ID 同步（移除無效參數）
+          # 直接以固定資料夾 ID 下載整份目錄（資料夾 ID 永遠固定，已移除報錯參數）
           gdown --folder "https://drive.google.com/drive/folders/1MmCMoyD-I3IntGxLl0vHpVFIDYW3uqXY" -O drive_download
 
-          # 精準找出檔案並複製到根目錄
+          # 精準找出檔案並複製至根目錄
           find drive_download -name "itinerary.json" -exec cp {} . \;
           find drive_download -name "index.html" -exec cp {} . \;
           rm -rf drive_download
