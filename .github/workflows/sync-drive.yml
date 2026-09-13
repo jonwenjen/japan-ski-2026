@@ -1,9 +1,9 @@
-name: Sync Itinerary from Google Drive
+name: Sync Itinerary and UI from Google Drive
 
 on:
-  workflow_dispatch: # 支援在 GitHub 網頁上手動點擊一鍵同步
+  workflow_dispatch: # 支援網頁一鍵手動同步
   schedule:
-    - cron: '0 0 * * *' # 每天 UTC 00:00 自動執行一次同步
+    - cron: '0 0 * * *' # 每天固定自動同步
 
 jobs:
   sync:
@@ -15,19 +15,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Download Latest JSON from Google Drive
+      - name: Download Latest Files from Google Drive
         run: |
-          # 您的 Google Drive 檔案 ID: 1hu8B1gQO-3m0-F4Wk55DAQO5BKN_kQVs
+          # 1. 下載最新行程資料 itinerary.json
           curl -sL "https://drive.google.com/uc?export=download&id=1hu8B1gQO-3m0-F4Wk55DAQO5BKN_kQVs" -o itinerary.json
+          # 2. 下載最新網頁版面 index.html
+          curl -sL "https://drive.google.com/uc?export=download&id=13w50oLxHiPdB5VPSIAsZLdRUOxWFvgHN" -o index.html
 
       - name: Commit and Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add itinerary.json
+          git add itinerary.json index.html
           if git diff --staged --quiet; then
-            echo "No changes in itinerary.json"
+            echo "No changes in files"
           else
-            git commit -m "Auto-sync: update itinerary.json from Google Drive"
+            git commit -m "Auto-sync: update itinerary.json and index.html from Google Drive"
             git push
           fi
