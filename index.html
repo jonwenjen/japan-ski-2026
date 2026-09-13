@@ -244,9 +244,15 @@
       </div>
     </div>
 
+    <!-- 友人 12/15 上山交通精算 (直達2班 + 非直達2班) -->
+    <div class="special-section" id="friend-to-yokote-section">
+      <h2>🚍 友人 12/15 東京/長野 ➔ 志賀高原橫手山會合交通（直達 2 班 ＋ 非直達 2 班）</h2>
+      <div class="transit-options-grid" id="friend-to-yokote-container"></div>
+    </div>
+
     <!-- 友人 12/15 機場 4 大選項 -->
     <div class="special-section" id="friend-dec15-section">
-      <h2>🏮 友人 12/15 成田抵達東京晨間漫遊（4 大選項・各附在地推薦與景點）</h2>
+      <h2>🏮 友人 12/15 成田抵達東京晨間漫遊（4 大選項・各附 5 類在地推薦與景點）</h2>
       <div class="options-grid" id="friend-options-container"></div>
     </div>
 
@@ -312,13 +318,13 @@
             <div class="rec-item">
               <div class="rec-item-header">
                 <div class="rec-title-wrap">
-                  <span class="rec-name">${item.name}</span>
+                  <span class="rec-name">${item.name || ''}</span>
                   ${item.rating ? `<span class="rating-stars">${item.rating}</span>` : ''}
                   ${item.distance ? `<span class="dist-badge">📍 ${item.distance}</span>` : ''}
                 </div>
-                <a href="${item.map_url}" target="_blank" rel="noopener" class="map-btn">📍 Google 搜尋</a>
+                <a href="${item.map_url || '#'}" target="_blank" rel="noopener" class="map-btn">📍 Google 搜尋</a>
               </div>
-              <div class="rec-desc">${item.highlights}</div>
+              <div class="rec-desc">${item.highlights || ''}</div>
             </div>
           `).join('');
 
@@ -353,7 +359,7 @@
         let badgeClass = 'badge-optionA';
         let badgeText = '班次規劃';
 
-        if (step.includes('直達巴士') || step.includes('直達方案') || step.includes('直達車')) {
+        if (step.includes('直達巴士') || step.includes('直達方案') || step.includes('直達車') || step.includes('直達 1') || step.includes('直達 2')) {
           cardClass = 'transit-card-direct';
           badgeClass = 'badge-direct';
           badgeText = '🚌 直達首選';
@@ -425,7 +431,7 @@
               ${day.ski_resort.map_image_url ? `
                 <button class="ski-toggle-map-btn" onclick="toggleMapPreview(this)">🗺️ 檢視雪道地圖截圖 [▼ 點擊展開]</button>
                 <div class="ski-map-preview-box">
-                  <img src="${day.ski_resort.map_image_url}" alt="${day.ski_resort.name} 官方雪道圖" class="ski-map-img" loading="lazy" onerror="this.onerror=null; this.src='https://asama2000.com/wp-content/themes/asama/assets/img/access/map_01.png';" />
+                  <img src="${day.ski_resort.map_image_url}" referrerpolicy="no-referrer" alt="${day.ski_resort.name} 官方雪道圖" class="ski-map-img" loading="lazy" onerror="this.onerror=null; this.src='https://asama2000.com/wp-content/themes/asama/assets/img/access/map_01.png';" />
                 </div>
               ` : ''}
             </div>
@@ -436,7 +442,7 @@
         if (day.transit) {
           transitHtml = `
             <div class="transit-box">
-              <div class="transit-summary">🚄 交通動線精算：${day.transit.summary}</div>
+              <div class="transit-summary">🚄 交通動線精算：${day.transit.summary || ''}</div>
               <div class="transit-options-grid">
                 ${renderTransitOptions(day.transit.details)}
               </div>
@@ -471,16 +477,48 @@
         daysContainer.insertAdjacentHTML('beforeend', cardHtml);
       });
 
+      // 渲染友人 12/15 上山交通專案 (直達2班 + 轉乘2班 + 計程車)
+      const friendToYokoteContainer = document.getElementById('friend-to-yokote-container');
+      if (data.friend_dec15_to_yokoteyama) {
+        const fy = data.friend_dec15_to_yokoteyama;
+        let fyHtml = '';
+        (fy.direct_options || []).forEach(d => {
+          fyHtml += `
+            <div class="transit-card transit-card-direct">
+              <div class="transit-card-header"><span class="transit-card-badge badge-direct">${d.badge}</span></div>
+              <div class="transit-card-body"><strong>${d.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${d.desc}</p></div>
+            </div>
+          `;
+        });
+        (fy.transfer_options || []).forEach(t => {
+          fyHtml += `
+            <div class="transit-card transit-card-transfer">
+              <div class="transit-card-header"><span class="transit-card-badge badge-transfer">${t.badge}</span></div>
+              <div class="transit-card-body"><strong>${t.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${t.desc}</p></div>
+            </div>
+          `;
+        });
+        if (fy.emergency_option) {
+          fyHtml += `
+            <div class="transit-card transit-card-optionB">
+              <div class="transit-card-header"><span class="transit-card-badge badge-optionB">${fy.emergency_option.badge}</span></div>
+              <div class="transit-card-body"><strong>${fy.emergency_option.timeline}</strong><p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">${fy.emergency_option.desc}</p></div>
+            </div>
+          `;
+        }
+        friendToYokoteContainer.innerHTML = fyHtml;
+      }
+
       // 渲染友人 12/15 四大選項
       const friendOptContainer = document.getElementById('friend-options-container');
       if (data.friend_dec15_options && data.friend_dec15_options.length > 0) {
         friendOptContainer.innerHTML = data.friend_dec15_options.map(opt => {
           const stepsHtml = (opt.transit_details || []).map(s => `<li class="option-step-li">🔹 ${s}</li>`).join('');
-          const optRecsHtml = renderRecommendations(opt.recommendations, '🏛️ 本區域在地推薦（美食・甜點・伴手禮・景點）');
+          const optRecsHtml = renderRecommendations(opt.recommendations, '🏛️ 本區域在地推薦（美食・甜點・伴手禮・景點 5 大類）');
           return `
             <div class="option-card">
-              <h4>${opt.title}</h4>
-              <div class="option-meta">🚇 交通概要：${opt.transit_summary}</div>
+              <h4>${opt.title || ''}</h4>
+              <div class="option-meta">🚇 交通概要：${opt.transit_summary || opt.transit || ''}</div>
               <ul class="option-transit-steps">${stepsHtml}</ul>
               ${optRecsHtml}
             </div>
@@ -494,12 +532,12 @@
         friendReturnContainer.innerHTML = data.friend_dec19_return.map((ret, idx) => `
           <div class="return-card ${idx === 0 ? 'return-card-1' : 'return-card-2'}">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-              <h4>${ret.title}</h4>
-              <span class="transit-card-badge ${ret.badge_type === 'primary' ? 'badge-direct' : 'badge-transfer'}">${ret.badge}</span>
+              <h4>${ret.title || ''}</h4>
+              <span class="transit-card-badge ${ret.badge_type === 'primary' ? 'badge-direct' : 'badge-transfer'}">${ret.badge || ''}</span>
             </div>
-            <div class="return-timeline">⏱️ 路線車次：${ret.timeline}</div>
-            <div class="return-buffer">🛡️ 緩衝時效：${ret.buffer_time}</div>
-            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">💡 方案特色：${ret.highlights}</div>
+            <div class="return-timeline">⏱️ 路線車次：${ret.timeline || ''}</div>
+            <div class="return-buffer">🛡️ 緩衝時效：${ret.buffer_time || ''}</div>
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">💡 方案特色：${ret.highlights || ''}</div>
           </div>
         `).join('');
       }
