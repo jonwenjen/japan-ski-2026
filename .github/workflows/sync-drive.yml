@@ -24,17 +24,22 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B main origin/main
 
-          # 無條件直接抓取 100% 公開之最新 124KB 完整資料庫與前端
-          echo "Downloading latest itinerary.json (124KB)..."
+          echo "=== 1. 開始下載雲端檔案 ==="
           curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1LlsVUa_qlsb6m9CT9NDMTCgYFKqwEvrE" -o itinerary.json
-
-          echo "Downloading latest index.html (26KB)..."
           curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1-bQh_W7I6z_reHFpL1nI3pUUl1Y3Wm6x" -o index.html
 
+          echo "=== 2. 檢視下載檔案大小與內容 ==="
+          ls -lh itinerary.json index.html
+          head -n 5 itinerary.json
+
+          echo "=== 3. 檢查 Git 狀態並提交 ==="
           git add itinerary.json index.html
           if git diff --staged --quiet; then
-            echo "No changes in files"
+            echo "Git 偵測到無內容差異，強制提交刷新時間戳記..."
+            git commit --allow-empty -m "Auto-sync: force refresh [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
+            git push origin main
           else
+            echo "Git 偵測到檔案變更，提交更新..."
             git commit -m "Auto-sync: update to latest 124KB itinerary.json and 26KB index.html"
             git push origin main
           fi
@@ -64,9 +69,5 @@ jobs:
           curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1-bQh_W7I6z_reHFpL1nI3pUUl1Y3Wm6x" -o index.html
 
           git add itinerary.json index.html
-          if git diff --staged --quiet; then
-            echo "No changes in files"
-          else
-            git commit -m "Auto-sync (retry): update itinerary.json and index.html"
-            git push origin main
-          fi
+          git commit -m "Auto-sync (retry): update itinerary.json and index.html"
+          git push origin main
