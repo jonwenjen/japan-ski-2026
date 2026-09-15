@@ -1,4 +1,4 @@
-name: Sync Itinerary and UI from Google Drive
+name: Sync Itinerary from Google Drive
 
 on:
   workflow_dispatch: # 支援手動一鍵同步
@@ -26,16 +26,15 @@ jobs:
 
           echo "=== 1. 開始下載雲端檔案 ==="
           curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1LlsVUa_qlsb6m9CT9NDMTCgYFKqwEvrE" -o itinerary.json
-          curl -sL --max-time 120 "https://drive.google.com/uc?export=download&id=1-bQh_W7I6z_reHFpL1nI3pUUl1Y3Wm6x" -o index.html
+          # index.html 改由 repo 直接維護（2307 Carve Log 新版首頁），不再從 Google Drive 覆蓋
 
           echo "=== 2. 注入即時時間戳記 (保證檔案每次必有實質變更) ==="
           python3 -c "import json, datetime; f=open('itinerary.json','r'); d=json.load(f); f.close(); d['last_synced']=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'); f=open('itinerary.json','w'); json.dump(d,f,ensure_ascii=False,indent=2); f.close()"
-          echo "" >> index.html
 
           echo "=== 3. 檢視檔案大小 ==="
-          ls -lh itinerary.json index.html
+          ls -lh itinerary.json
 
           echo "=== 4. 提交並推送至 main ==="
-          git add itinerary.json index.html
-          git commit -m "Auto-sync: update itinerary.json and index.html [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
+          git add itinerary.json
+          git commit -m "Auto-sync: update itinerary.json [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
           git push origin main
