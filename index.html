@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>2307 Carve Log</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,8 +215,6 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
 </style>
 </head>
 <body>
-
-
 <div class="wrap">
 
 <header class="hero">
@@ -942,6 +941,5 @@ document.getElementById('checkList').innerHTML=CK.map((t,i)=>`<div><input type="
 CK.forEach((_,i)=>document.getElementById('ck'+i).onchange=e=>{ck[i]=e.target.checked;try{localStorage.setItem('c2307ck',JSON.stringify(ck))}catch(err){}});
 })();
 </script>
-
 </body>
 </html>
