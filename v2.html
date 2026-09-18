@@ -252,9 +252,20 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
 .dc-body .ad{font-size:clamp(16px,3.6vw,22px);line-height:1.5}
 .dc-body .tel{font-family:var(--mono);font-size:clamp(18px,4vw,26px)}
 .dc-body .zh{font-size:13px;color:var(--muted)}
-.dc-ph{display:grid;gap:8px;font-size:clamp(15px,3.4vw,19px);line-height:1.5}
-.dc-ph div{border-top:1px solid var(--line);padding-top:8px}
-.dc-ph small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.dc-sel{display:flex;flex-wrap:wrap;gap:8px}
+.dc-mode{flex:0 0 auto}
+.dc-voice{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.dc-voice.bad{color:var(--warn)}
+.dc-hint{font-size:12.5px;color:var(--muted);margin:0}
+#dcSpeak{width:100%;font-size:clamp(15px,3.6vw,18px);padding:14px 12px}
+.spk{font:inherit;font-size:17px;line-height:1;cursor:pointer;border:1px solid var(--line);background:var(--ground);color:var(--ink);border-radius:3px;padding:9px 11px;flex:0 0 auto}
+.spk:hover{border-color:var(--ink)}
+.spk[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
+.dc-ph{display:grid;gap:0}
+.ph-row{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);padding:10px 0}
+.ph-row .t{flex:1 1 auto;min-width:0}
+.ph-row .jp{font-size:clamp(16px,3.8vw,21px);font-weight:700;line-height:1.45;word-break:break-word}
+.ph-row small{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
 </style>
 </head>
 <body>
@@ -562,7 +573,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
   <div class="sec-head">
     <span class="code">KIT</span>
     <h2>行前工具</h2>
-    <p>行事曆、分享連結、給司機看的日文大字卡、緊急聯絡。都在這一頁裡，山上沒訊號也能用（大字卡與電話不需連線）。</p>
+    <p>行事曆、分享連結、日文大字卡與情境短句、緊急聯絡。都在這一頁裡，山上沒訊號也能用——大字卡、短句、語音播放和電話都不需要連線。</p>
   </div>
   <div class="tools">
     <div class="tool">
@@ -573,9 +584,10 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
       <p class="note" id="toolMsg" aria-live="polite"></p>
     </div>
     <div class="tool">
-      <h3>給司機看的大字卡</h3>
-      <p>叫車或上車時全螢幕顯示目的地日文名、地址、電話，另附雪板袋和後車廂的日文短句。</p>
-      <button class="btn pri" type="button" id="dcBtn">開啟日文大字卡</button>
+      <h3>日文大字卡與短句</h3>
+      <p>全螢幕顯示目的地日文名、地址、電話，另有 7 種情境、89 句日文短句。每一句都能按 🔊 用日語念出來，直接放給對方聽。</p>
+      <button class="btn pri" type="button" id="dcBtn">目的地大字卡</button>
+      <button class="btn" type="button" id="phBtn">情境短句 ＋ 語音</button>
     </div>
     <div class="tool">
       <h3>緊急與洽詢電話</h3>
@@ -666,18 +678,27 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
     <li><a href="https://tabelog.com/nagano/C20217/rstLst/RC/">食べログ · 佐久平周邊</a></li>
   </ul>
 
-<div class="dcard" id="dcard" hidden role="dialog" aria-modal="true" aria-label="給司機看的目的地卡">
+<div class="dcard" id="dcard" hidden role="dialog" aria-modal="true" aria-label="日文大字卡與情境短句">
   <div class="dc-top">
-    <div class="dc-sel" id="dcSel" role="group" aria-label="目的地" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+    <div class="dc-sel dc-mode" id="dcMode" role="group" aria-label="模式">
+      <button class="btn" type="button" data-m="dest" aria-pressed="true">目的地</button>
+      <button class="btn" type="button" data-m="ph" aria-pressed="false">情境短句</button>
+    </div>
+    <span class="dc-voice" id="dcVoice" aria-live="polite"></span>
     <button class="btn" type="button" id="dcClose" style="margin-left:auto">關閉 ✕</button>
   </div>
-  <div class="dc-body" id="dcBody"></div>
-  <div class="dc-ph">
-    <div>ここまでお願いします。<small>請載我到這裡。</small></div>
-    <div>スノーボードのケースが6本あります。積めますか？<small>我們有 6 個雪板袋，裝得下嗎？</small></div>
-    <div>トランクを開けてください。<small>請開後車廂。</small></div>
-    <div>ジャンボタクシーを予約しています。<small>我有預約大型計程車。</small></div>
-    <div>カードで払えますか？<small>可以刷卡嗎？</small></div>
+
+  <div id="dcDest">
+    <div class="dc-sel" id="dcSel" role="group" aria-label="目的地"></div>
+    <div class="dc-body" id="dcBody"></div>
+    <button class="btn pri" type="button" id="dcSpeak">🔊 用日語念出目的地</button>
+    <p class="dc-hint" id="dcHint"></p>
+  </div>
+
+  <div id="dcPh" hidden>
+    <div class="dc-sel" id="dcCat" role="group" aria-label="情境"></div>
+    <div class="dc-ph" id="dcPhList"></div>
+    <p class="dc-hint">按 🔊 用日語念出該句。音量開大直接放給對方聽；沒有網路也能用（用手機內建的日語語音）。</p>
   </div>
 </div>
 
@@ -1220,34 +1241,231 @@ document.getElementById('copyBtn').onclick=async()=>{
   catch(e){toolMsg.textContent=location.href}
 };
 
-/* ---------- 給司機看的大字卡 ---------- */
+/* ---------- 日文大字卡與情境短句 ---------- */
+/* 地址與電話只填有來源的；空白處出發前自行補上（頁面會提示） */
 const DEST=[
- ['2307','ホテル＆オンセン2307 志賀高原','〒381-0401 長野県下高井郡山ノ内町大字平穏7148','0269-34-2905','志賀高原 ほたる溫泉，橫手山山麓'],
+ ['2307','ホテル＆オンセン2307 志賀高原','〒381-0401 長野県下高井郡山ノ内町大字平穏7148','0269-34-2905','12/15–18 住宿 · 志賀高原ほたる溫泉，橫手山山麓'],
+ ['熊の湯','熊の湯スキー場','','','12/15・12/17 雪場 · 從 2307 走得到'],
+ ['橫手山','横手山・渋峠スキー場','','0269-34-2600','12/16・12/18 雪場 · 頂部 2,307 m'],
+ ['一の瀬','ヴィラ一乃瀬（TEPPA ROOM）','','','12/15–17 想出去吃晚餐時'],
+ ['ビジター','志賀高原ビジターセンター','','','雪鞋導覽集合點'],
+ ['山の駅','志賀高原 山の駅','','','志賀高原轉運中心 · 急行巴士'],
+ ['ほたる','ほたる温泉バス停','','','2307 最近的巴士站'],
  ['丸沼','丸沼高原スキー場','〒378-0414 群馬県利根郡片品村東小川4658-58','0278-58-2211','12/12 雪場'],
+ ['鎌田','鎌田バス停（片品村）','','','12/12 在這裡轉計程車上丸沼'],
+ ['沼田駅','沼田駅','','','12/12 上越線轉關越交通巴士'],
  ['高峰','高峰マウンテンパーク（旧アサマ2000パーク）','〒384-0000 長野県小諸市高峰高原','','12/13–14 雪場'],
- ['長野站','長野駅 東口','','','急行巴士乘車處在東口'],
+ ['小諸駅','小諸駅','','','12/13–14 JR 巴士轉乘'],
  ['佐久平','佐久平駅 蓼科口','','','JR 巴士 3 號乘車處'],
+ ['長野駅','長野駅 東口','','','急行巴士乘車處在東口'],
  ['湯田中','湯田中駅','','','長電特急終點'],
- ['山の駅','志賀高原 山の駅','','','志賀高原轉運中心'],
- ['ほたる','ほたる温泉バス停','','','2307 最近的巴士站']
+ ['地獄谷','地獄谷野猿公苑','','','雪猴 · 上林溫泉步行約 30 分'],
+ ['高崎駅','高崎駅','','','12/11 住宿 · 12/12 上越線'],
+ ['橫濱駅','横浜駅','','','12/18 抵達 · 12/19–20 出發']
 ];
-const dcard=document.getElementById('dcard'),dcBody=document.getElementById('dcBody'),dcSel=document.getElementById('dcSel');
+
+const PH=[
+ ['taxi','計程車',[
+  ['ここまでお願いします。','請載我到這裡。'],
+  ['スノーボードのケースが6本あります。積めますか？','我們有 6 個雪板袋，裝得下嗎？'],
+  ['トランクを開けてください。','請開後車廂。'],
+  ['ジャンボタクシーを予約しています。','我有預約大型計程車。'],
+  ['四駆でスタッドレスタイヤの車をお願いします。','麻煩給我四輪驅動＋雪胎的車。'],
+  ['ここまで、だいたいいくらかかりますか？','到這裡大概要多少錢？'],
+  ['どのくらい時間がかかりますか？','大概要開多久？'],
+  ['雪道なので、ゆっくりで大丈夫です。','是雪路，開慢一點沒關係。'],
+  ['ここで降ろしてください。','請在這裡讓我下車。'],
+  ['少しここで待っていてもらえますか？','可以在這裡稍等一下嗎？'],
+  ['カードで払えますか？','可以刷卡嗎？'],
+  ['領収書をください。','請給我收據。'],
+  ['帰りも予約できますか？','回程也可以預約嗎？'],
+  ['電話番号を教えてください。','請給我你的電話號碼。']
+ ]],
+ ['hotel','住宿',[
+  ['チェックインをお願いします。','我要辦入住。'],
+  ['チェックインまで荷物を預かってもらえますか？','可以先幫我寄放行李嗎？'],
+  ['チェックアウトのあとも荷物を預かってもらえますか？','退房後行李可以繼續寄放嗎？'],
+  ['チェックアウト後も温泉に入れますか？','退房後還可以泡溫泉嗎？'],
+  ['夕食は何時からですか？','晚餐幾點開始？'],
+  ['夕食の時間を早めにできますか。ナイターに行きたいです。','晚餐可以排早一點嗎？我們想去夜滑。'],
+  ['朝食は何時からですか？','早餐幾點開始？'],
+  ['スノーボードはどこに置けばいいですか？','雪板要放哪裡？'],
+  ['乾燥室はありますか？','有烘乾室嗎？'],
+  ['宅急便を受け取ってもらえますか？','可以幫我代收宅急便嗎？'],
+  ['荷物を宅急便で送りたいです。','我想用宅急便寄行李。'],
+  ['タクシーを呼んでもらえますか？','可以幫我叫計程車嗎？'],
+  ['バス停まではどう行きますか？','到巴士站怎麼走？'],
+  ['お湯が出ません。','沒有熱水。']
+ ]],
+ ['ski','雪場',[
+  ['一日券を六枚ください。','請給我 6 張一日券。'],
+  ['二日券はありますか？','有兩日券嗎？'],
+  ['シーズン初めの割引はまだ使えますか？','初滑期的優惠票價還能用嗎？'],
+  ['ナイターのチケットをください。','請給我夜滑的票。'],
+  ['今日はどのリフトが動いていますか？','今天哪些纜車有開？'],
+  ['風でリフトは止まりますか？','風大纜車會停嗎？'],
+  ['今どのコースが滑れますか？','現在哪些雪道可以滑？'],
+  ['最終のリフトは何時ですか？','最後一班纜車是幾點？'],
+  ['ここから熊の湯まで滑って行けますか？','從這裡可以滑到熊之湯嗎？'],
+  ['ロッカーはありますか？','有置物櫃嗎？'],
+  ['板を預かってもらえますか？','可以寄放雪板嗎？'],
+  ['レンタルはできますか？','可以租借裝備嗎？'],
+  ['シャトルバスはどこから出ますか？','接駁巴士在哪裡搭？'],
+  ['スノーシューのツアーを予約したいです。','我想預約雪鞋健行的行程。']
+ ]],
+ ['transit','電車・巴士',[
+  ['この電車はどこ行きですか？','這班電車開往哪裡？'],
+  ['このバスは志賀高原に行きますか？','這班巴士有到志賀高原嗎？'],
+  ['ほたる温泉で降ります。','我在ほたる溫泉下車。'],
+  ['切符を六枚ください。','請給我 6 張票。'],
+  ['指定席を六席お願いします。','請給我 6 個指定席。'],
+  ['スノーボードを持って乗れますか？','可以帶雪板上車嗎？'],
+  ['大きい荷物はどこに置けますか？','大件行李可以放哪裡？'],
+  ['何番のりばですか？','是幾號月台（乘車處）？'],
+  ['次は何時ですか？','下一班是幾點？'],
+  ['終電は何時ですか？','末班車是幾點？'],
+  ['コインロッカーはどこですか？','投幣式置物櫃在哪裡？'],
+  ['遅れていますか？','有誤點嗎？']
+ ]],
+ ['emg','緊急・受傷',[
+  ['助けてください。','請幫幫我。'],
+  ['救急車を呼んでください。','請叫救護車。'],
+  ['けがをしました。','我受傷了。'],
+  ['足を痛めました。','我的腳受傷了。'],
+  ['頭を打ちました。','我撞到頭了。'],
+  ['動けません。','我沒辦法動。'],
+  ['パトロールを呼んでください。','請叫雪場巡邏隊。'],
+  ['一番近い病院はどこですか？','最近的醫院在哪裡？'],
+  ['海外旅行保険に入っています。','我有保海外旅遊保險。'],
+  ['友だちとはぐれました。','我跟朋友走散了。'],
+  ['このホテルに電話してもらえますか？','可以幫我打電話給這間飯店嗎？'],
+  ['財布をなくしました。','我的錢包不見了。'],
+  ['台湾から来ました。','我從台灣來的。']
+ ]],
+ ['food','餐廳',[
+  ['六人ですが、入れますか？','我們 6 個人，有位子嗎？'],
+  ['予約していません。','我們沒有預約。'],
+  ['どのくらい待ちますか？','要等多久？'],
+  ['おすすめは何ですか？','有什麼推薦的？'],
+  ['これをください。','請給我這個。'],
+  ['同じものを六つお願いします。','一樣的請給我 6 份。'],
+  ['アレルギーがあります。','我有食物過敏。'],
+  ['辛くしないでください。','請不要做辣的。'],
+  ['お会計をお願いします。','請結帳。'],
+  ['別々に払えますか？','可以分開付嗎？'],
+  ['持ち帰りできますか？','可以外帶嗎？']
+ ]],
+ ['misc','其他',[
+  ['すみません。','不好意思。'],
+  ['ありがとうございます。','謝謝。'],
+  ['日本語は少ししか話せません。','我只會說一點日文。'],
+  ['ゆっくり話してもらえますか？','可以說慢一點嗎？'],
+  ['ここに書いてもらえますか？','可以寫在這裡嗎？'],
+  ['もう一度お願いします。','麻煩再說一次。'],
+  ['トイレはどこですか？','廁所在哪裡？'],
+  ['エーティーエムはどこですか？','ATM 在哪裡？'],
+  ['コンビニはどこですか？','便利商店在哪裡？'],
+  ['ワイファイはありますか？','有 Wi-Fi 嗎？'],
+  ['写真を撮ってもらえますか？','可以幫我拍張照嗎？']
+ ]]
+];
+
+/* --- 日語語音（Web Speech API · 用裝置內建語音，不需連線） --- */
+const TTS_OK=typeof window!=='undefined'&&'speechSynthesis'in window&&typeof window.SpeechSynthesisUtterance==='function';
+let jaVoice=null,voiceChecked=false;
+const dcVoice=document.getElementById('dcVoice');
+function pickVoice(){
+  if(!TTS_OK)return null;
+  let vs=[];try{vs=speechSynthesis.getVoices()||[]}catch(e){return null}
+  if(!vs.length)return null;
+  return vs.find(v=>/^ja[-_]JP$/i.test(v.lang))||vs.find(v=>/^ja\b/i.test(v.lang))||vs.find(v=>/japanese/i.test(v.name))||null;
+}
+function voiceStatus(){
+  if(!TTS_OK){dcVoice.textContent='此瀏覽器不支援語音';dcVoice.className='dc-voice bad';return}
+  jaVoice=pickVoice();
+  if(jaVoice){dcVoice.textContent='語音 ja-JP ✓';dcVoice.className='dc-voice'}
+  else if(voiceChecked){dcVoice.textContent='找不到日語語音，發音可能不準';dcVoice.className='dc-voice bad'}
+  else{dcVoice.textContent='語音載入中…';dcVoice.className='dc-voice'}
+}
+if(TTS_OK){
+  try{speechSynthesis.getVoices()}catch(e){}
+  try{speechSynthesis.addEventListener('voiceschanged',()=>{voiceChecked=true;voiceStatus()})}catch(e){}
+  setTimeout(()=>{voiceChecked=true;voiceStatus()},1200);
+}
+let speakingBtn=null;
+function clearSpeaking(){if(speakingBtn){speakingBtn.setAttribute('aria-pressed','false');speakingBtn=null}}
+function speak(text,btn){
+  if(!TTS_OK){dcVoice.textContent='此瀏覽器不支援語音';dcVoice.className='dc-voice bad';return}
+  try{speechSynthesis.cancel()}catch(e){}
+  clearSpeaking();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='ja-JP';u.rate=.85;u.pitch=1;u.volume=1;
+  const v=jaVoice||pickVoice();if(v){u.voice=v;jaVoice=v}
+  if(btn){btn.setAttribute('aria-pressed','true');speakingBtn=btn}
+  u.onend=clearSpeaking;u.onerror=clearSpeaking;
+  try{speechSynthesis.speak(u)}catch(e){clearSpeaking()}
+}
+function stopSpeak(){try{speechSynthesis.cancel()}catch(e){}clearSpeaking()}
+
+/* --- 目的地大字卡 --- */
+const dcard=document.getElementById('dcard'),dcBody=document.getElementById('dcBody'),dcSel=document.getElementById('dcSel'),dcHint=document.getElementById('dcHint');
 let dci=0;
+const esc2=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 function dcRender(){
   const d=DEST[dci];
-  dcBody.innerHTML=`<div class="jp">${d[1]}</div>${d[2]?`<div class="ad">${d[2]}</div>`:''}${d[3]?`<div class="tel">TEL ${d[3]}</div>`:''}<div class="zh">${d[4]}</div>`;
+  dcBody.innerHTML='<div class="jp">'+esc2(d[1])+'</div>'
+    +(d[2]?'<div class="ad">'+esc2(d[2])+'</div>':'')
+    +(d[3]?'<div class="tel">TEL '+esc2(d[3])+'</div>':'')
+    +'<div class="zh">'+esc2(d[4])+'</div>';
+  dcHint.textContent=d[2]?'':'這張卡還沒填地址，出發前建議補上，或直接讓司機看日文名稱。';
   [...dcSel.children].forEach((b,i)=>b.setAttribute('aria-pressed',i===dci));
 }
 DEST.forEach((d,i)=>{
   const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=d[0];
-  b.onclick=()=>{dci=i;dcRender()};dcSel.appendChild(b);
+  b.setAttribute('aria-pressed',i===0);
+  b.onclick=()=>{dci=i;stopSpeak();dcRender()};dcSel.appendChild(b);
 });
-function dcOpen(v){
+const dcSpeakBtn=document.getElementById('dcSpeak');
+dcSpeakBtn.onclick=()=>{
+  const d=DEST[dci];
+  const addr=(d[2]||'').replace(/^〒\d{3}-?\d{4}\s*/,'');
+  speak('ここまでお願いします。'+d[1]+(addr?'、'+addr:'')+'。',dcSpeakBtn);
+};
+
+/* --- 情境短句 --- */
+const dcCat=document.getElementById('dcCat'),dcPhList=document.getElementById('dcPhList');
+let pci=0;
+function phRender(){
+  const list=PH[pci][2];
+  dcPhList.innerHTML=list.map((x,i)=>'<div class="ph-row"><div class="t"><div class="jp">'+esc2(x[0])+'</div><small>'+esc2(x[1])+'</small></div><button class="spk" type="button" data-i="'+i+'" aria-pressed="false" aria-label="播放日語：'+esc2(x[1])+'">🔊</button></div>').join('');
+  [...dcPhList.querySelectorAll('.spk')].forEach(b=>{
+    b.onclick=()=>speak(list[+b.dataset.i][0],b);
+  });
+  [...dcCat.children].forEach((b,i)=>b.setAttribute('aria-pressed',i===pci));
+}
+PH.forEach((c,i)=>{
+  const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=c[1];
+  b.setAttribute('aria-pressed',i===0);
+  b.onclick=()=>{pci=i;stopSpeak();phRender()};dcCat.appendChild(b);
+});
+
+/* --- 模式切換與開關 --- */
+const dcDest=document.getElementById('dcDest'),dcPh=document.getElementById('dcPh'),dcMode=document.getElementById('dcMode');
+function setMode(m){
+  dcDest.hidden=(m!=='dest');dcPh.hidden=(m!=='ph');
+  [...dcMode.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));
+  stopSpeak();
+  if(m==='ph')phRender();else dcRender();
+}
+[...dcMode.children].forEach(b=>{b.onclick=()=>setMode(b.dataset.m)});
+function dcOpen(v,mode){
   dcard.hidden=!v;
   document.body.style.overflow=v?'hidden':'';
-  if(v){dcRender();document.getElementById('dcClose').focus()}
+  if(v){voiceStatus();setMode(mode||'dest');document.getElementById('dcClose').focus()}
+  else stopSpeak();
 }
-document.getElementById('dcBtn').onclick=()=>dcOpen(true);
+document.getElementById('dcBtn').onclick=()=>dcOpen(true,'dest');
+document.getElementById('phBtn').onclick=()=>dcOpen(true,'ph');
 document.getElementById('dcClose').onclick=()=>dcOpen(false);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dcard.hidden)dcOpen(false)});
 })();
