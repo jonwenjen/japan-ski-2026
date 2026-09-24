@@ -33,6 +33,9 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+:root{color-scheme: light dark}
+:root[data-theme="light"]{color-scheme: light}
+:root[data-theme="dark"]{color-scheme: dark}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.7;margin:0}
@@ -95,6 +98,7 @@ section{padding-block:56px 8px}
 .seg button .tag{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.08em}
 .seg button[aria-pressed="true"] .tag{color:var(--accent)}
 .board-body{display:grid;grid-template-columns:1.35fr 1fr}
+@media (max-width:860px){.board-body .side{order:-1;border-top:0;border-bottom:1px solid var(--line)}}
 @media (max-width:860px){.board-body{grid-template-columns:1fr}}
 .tl{padding:22px 20px;display:grid;gap:0}
 .step{display:grid;grid-template-columns:58px 18px 1fr;gap:0 12px}
@@ -121,7 +125,7 @@ section{padding-block:56px 8px}
 .field{display:grid;gap:4px}
 .field label{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between}
 input[type=range]{width:100%;accent-color:var(--accent)}
-input[type=number]{font:inherit;font-family:var(--mono);width:72px;padding:4px 6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px}
+input[type=number]{font:inherit;font-family:var(--mono);font-size:16px;width:72px;padding:4px 6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px}
 .note{font-size:12.5px;color:var(--muted);margin:0;line-height:1.6}
 .compare{overflow-x:auto;border-top:1px solid var(--line)}
 table{border-collapse:collapse;width:100%;font-size:13.5px}
@@ -129,11 +133,24 @@ th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vert
 th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
 td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+@media (max-width:640px){
+  .compare table,.compare tbody,.compare tr,.compare td{display:block;width:100%}
+  .compare thead{display:none}
+  .compare tr{padding:12px 16px;border-bottom:1px solid var(--line)}
+  .compare tr.on{box-shadow:inset 3px 0 0 var(--accent)}
+  .compare tr.on td:first-child{box-shadow:none}
+  .compare td{border:0;padding:2px 0;display:grid;grid-template-columns:96px 1fr;gap:8px}
+  .compare td:first-child{display:block;font-size:15px;padding-bottom:6px}
+  .compare td::before{content:attr(data-label);font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:2px}
+  .compare td:first-child::before{content:none}
+  .compare td.n{white-space:normal}
+}
 
 /* DAYS */
-.days{display:grid;gap:0;border-top:1px solid var(--line)}
-.day{display:grid;grid-template-columns:150px 1fr;gap:10px 28px;padding-block:22px;border-bottom:1px solid var(--line)}
-@media (max-width:640px){.day{grid-template-columns:1fr}}
+.days{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+.day{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 28px;padding-block:22px;border-bottom:1px solid var(--line)}
+.day>*{min-width:0}
+@media (max-width:640px){.day{grid-template-columns:minmax(0,1fr)}}
 .day .when{display:grid;align-content:start;gap:2px}
 .day .when .d{font-family:var(--display);font-weight:900;font-size:44px;line-height:.9}
 .day .when .alt{font-family:var(--mono);font-size:12px;color:var(--accent)}
@@ -141,7 +158,7 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .day ul{margin:0;padding-left:0;list-style:none;display:grid;gap:6px;max-width:72ch}
 .day li{display:grid;grid-template-columns:52px 1fr;gap:10px}
 .day li .t{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:1px}
-.day .opt{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.day .opt{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px}
 .optcard{border:1px solid var(--line);border-radius:4px;padding:12px 14px;background:var(--surface);font-size:13.5px}
 .optcard .label{display:block;margin-bottom:4px}
 .optcard.a .label{color:var(--accent)} .optcard.b .label{color:var(--alt)}
@@ -184,7 +201,7 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chips button{font:inherit;font-size:13px;padding:4px 11px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .chips button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:12px}
 .rec{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:6px}
 .rec .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
 .rec .cat{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--accent)}
@@ -206,7 +223,7 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .count{font-family:var(--mono);font-size:12px;color:var(--muted)}
 
 /* CHECK */
-.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 32px}
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:0 32px}
 .check div{display:grid;grid-template-columns:auto 1fr;gap:10px;padding-block:10px;border-bottom:1px solid var(--line);font-size:14px}
 .check input{accent-color:var(--accent);margin-top:6px}
 .sources{font-size:12.5px;color:var(--muted);columns:2 280px;column-gap:32px;padding-left:18px}
@@ -230,7 +247,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
 .strip li.today .d,.strip li.today .place,.strip li.today .who,.strip li.today .w{color:var(--accent-ink)}
 
 /* TOOLS */
-.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:12px;margin-top:22px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(258px,100%),1fr));gap:12px;margin-top:22px}
 .tool{border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:14px 16px;display:grid;gap:9px;align-content:start}
 .tool h3{font-size:15px;font-weight:900}
 .tool>p{font-size:12.5px;color:var(--muted);line-height:1.5}
@@ -240,6 +257,38 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
 .emg{display:grid;gap:5px;font-size:13px}
 .emg div{display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid var(--line);padding-bottom:5px}
 .emg a,.emg span.n{font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--alt);white-space:nowrap}
+
+/* NAV ACTIVE · STRIP LINKS · CHECK PROGRESS */
+nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);font-weight:700}
+.strip li>a{display:grid;gap:2px;color:inherit}
+.strip li:has(>a):hover{background:var(--surface-2)}
+.strip-hint{display:none}
+@media (max-width:1000px){.strip-hint{display:block}}
+.ck-progress{display:flex;align-items:center;gap:12px;margin:0 0 12px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.ck-progress .bar2{flex:1;max-width:260px;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.ck-progress .bar2 i{display:block;height:100%;background:var(--ok);width:0}
+.day{scroll-margin-top:76px}
+/* touch targets on phones */
+@media (pointer:coarse){
+  nav.jump a{padding:9px 12px}
+  .chips button{padding:8px 14px}
+  .rlinks a{padding:9px 12px}
+  .btn{padding:11px 14px}
+  .dc-top .btn{padding:10px 12px}
+  .check div{padding-block:12px}
+  .check input{width:20px;height:20px;margin-top:3px}
+  .rec a{display:inline-block;padding:8px 0}
+  .emg a{display:inline-block;padding:6px 0}
+}
+
+/* PLAN PICK · NEXT BAR */
+.plan-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;background:var(--surface);font-size:14px}
+.plan-pick b{font-weight:900}
+.plan-pick .off{color:var(--warn);font-size:12.5px}
+.nextbar{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-top:14px;padding:10px 14px;border:1px solid var(--accent);border-radius:6px;background:var(--surface);font-size:14px}
+.nextbar .label{color:var(--accent)}
+.nextbar b{font-weight:900}
+.nextbar .eta{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
 
 /* DRIVER CARD */
 .dcard{position:fixed;inset:0;z-index:50;background:var(--ground);overflow:auto;padding:16px;display:grid;gap:14px;align-content:start}
@@ -253,8 +302,12 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
 .dc-body .tel{font-family:var(--mono);font-size:clamp(18px,4vw,26px)}
 .dc-body .zh{font-size:13px;color:var(--muted)}
 .dc-sel{display:flex;flex-wrap:wrap;gap:8px}
+#dcSel,#dcCat{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding:2px 16px 4px;-webkit-overflow-scrolling:touch}
+#dcSel::-webkit-scrollbar,#dcCat::-webkit-scrollbar{display:none}
+#dcSel .btn,#dcCat .btn{flex:0 0 auto;white-space:nowrap}
+#dcDest,#dcPh{display:grid;gap:12px;align-content:start}
 .dc-mode{flex:0 0 auto}
-.dc-voice{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.dc-voice{font-family:var(--mono);font-size:11px;color:var(--muted);order:3;flex-basis:100%}
 .dc-voice.bad{color:var(--warn)}
 .dc-hint{font-size:12.5px;color:var(--muted);margin:0}
 #dcSpeak{width:100%;font-size:clamp(15px,3.6vw,18px);padding:14px 12px}
@@ -299,6 +352,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
     <li><a href="#check">出發前覆核</a></li>
   </ul>
 </nav>
+<div class="nextbar" id="nextBar" hidden aria-live="polite"></div>
 
 <section id="route" style="padding-top:28px">
   <div class="strip" role="region" aria-label="10 日路線" tabindex="0">
@@ -310,21 +364,27 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
       <li class="snow"><span class="d">15</span><span class="w">TUE</span><span class="place">長野 → 2307 · 熊之湯</span><span class="who">友人 5 人 06:35 NRT T3 著陸</span></li>
       <li class="snow"><span class="d">16</span><span class="w">WED</span><span class="place">橫手山・澀峠</span><span class="who">全員 · 雪板日</span></li>
       <li class="snow"><span class="d">17</span><span class="w">THU</span><span class="place">熊之湯</span><span class="who">全員 · 雪板日</span></li>
-      <li class="snow"><span class="d">18</span><span class="w">FRI</span><span class="place">2307 → 橫濱</span><span class="who">滑到 14:30 · 約 19:50 抵橫濱</span></li>
+      <li class="snow"><span class="d">18</span><span class="w">FRI</span><span class="place">2307 → 橫濱</span><span class="who">滑到 14:15 · 約 19:05 抵橫濱 · 聖誕市集</span></li>
       <li><span class="d">19</span><span class="w">SAT</span><span class="place">橫濱 → NRT T3</span><span class="who">友人 22:25 起飛</span></li>
       <li><span class="d">20</span><span class="w">SUN</span><span class="place">橫濱 → 成田 T1</span><span class="who">Robin · UA837 NRT→KHH</span></li>
     </ol>
   </div>
-  <p class="note" style="margin-top:10px">12/11–12/13 沿用你的第一版行程（高崎 → 丸沼高原 → 高峰山），12/14 改成再滑一天高峰山，搭末班巴士下山後住長野。目前確定的住宿只有 Hotel &amp; Onsen 2307，其他住宿都還沒訂，頁面上都標了「未定」。UA838 14:45 抵 NRT T1，UA837 17:30 從 T1 南翼起飛，時刻沿用第一版；航班時刻在 2026 年會隨日期變動，出發前請再核對一次。</p>
+  <p class="note strip-hint" style="margin-top:6px">← 左右滑動看完 10 天，點任一天跳到當天行程 →</p>
+  <p class="note" style="margin-top:10px">12/11–12/14 是 Robin 先出發的前段：高崎 → 丸沼高原一天 → 高峰山兩天，12/14 搭末班巴士下山後住長野。目前確定的住宿只有 Hotel &amp; Onsen 2307，其他住宿都還沒訂，頁面上都標了「未定」。UA838 14:45 抵 NRT T1，UA837 17:30 從 T1 南翼起飛，時刻沿用第一版；航班時刻在 2026 年會隨日期變動，出發前請再核對一次。</p>
 </section>
 
 <section id="d15">
   <div class="sec-head">
     <span class="code">12.15</span>
-    <h2>友人 NRT T3 06:35 → 2307，18:30 前抵達</h2>
-    <p>選一個早上漫遊的地點，再選上山方式。時間鏈、漫遊可用分鐘數、抵達緩衝和每人分攤都會即時重算。</p>
+    <h2>友人 NRT T3 06:35 → 東京多留 → 2307，19:00 前抵達</h2>
+    <p>選一個早上漫遊的地點，再選上山方式。時間鏈、漫遊可用分鐘數、抵達緩衝和每人分攤都會即時重算。目標是在東京待久一點、19:00 前到飯店：B、C 都搭はくたか 567（東京 14:24）。</p>
   </div>
 
+  <div class="plan-pick" id="planPick">
+    <span><span class="label">建議定案</span><br><b>C · はくたか 567 東京 14:24 → 長野站 Jumbo 16:10 → 約 17:40 抵 2307</b></span>
+    <span class="off" id="planOff" hidden>你現在看的不是建議方案</span>
+    <button class="btn" type="button" id="resetPlan">回到建議方案</button>
+  </div>
   <div class="board">
     <div class="controls">
       <div class="ctrl">
@@ -340,7 +400,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
       <div class="tl" id="timeline" aria-live="polite"></div>
       <aside class="side">
         <div class="verdict">
-          <span class="label">抵達 2307 緩衝（對 18:30）</span>
+          <span class="label">抵達 2307 緩衝（對 19:00）</span>
           <span class="big mono" id="bufBig">—</span>
           <span id="bufPill" class="pill ok">—</span>
         </div>
@@ -366,7 +426,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
       </table>
     </div>
   </div>
-  <p class="note" style="margin-top:12px">計算依據：入境＋提領雪板袋抓 60 分鐘；T3 → 空港第2ビル站走路 15–20 分鐘（有免費接駁車，約 3 分鐘）。新幹線時刻依 JR 東日本 2026 年 9 月時刻表，上野站比東京站晚約 6 分鐘發車。長電巴士參考 25–26 冬季時刻（26–27 冬季時刻預計 11 月公布）。Jumbo 車資是用長電ハイヤー 2023 年跳表費率（起跳 ¥910／1.19 km，之後每 138 m ¥100）推算，湯田中→ほたる溫泉約 24 km，長野站→ほたる溫泉約 54 km，另加雪路與高速費，<b>一定要先請計程車行報價</b>。</p>
+  <p class="note" style="margin-top:12px">計算依據：入境＋提領雪板袋抓 60 分鐘；T3 → 空港第2ビル站走路 15–20 分鐘（有免費接駁車，約 3 分鐘）。新幹線時刻依 JR 東日本 2026 年 9 月時刻表，上野站比東京站晚約 6 分鐘發車；B、C 用的はくたか 567（東京 14:24 → 長野 15:54）12 月實際時刻要再核對。長電巴士參考 25–26 冬季時刻（26–27 冬季時刻預計 11 月公布）。Jumbo 車資是用長電ハイヤー 2023 年跳表費率（起跳 ¥910／1.19 km，之後每 138 m ¥100）推算，湯田中→ほたる溫泉約 24 km，長野站→ほたる溫泉約 54 km，另加雪路與高速費；9 人座 Jumbo 的費率通常比一般車高，實際可能超出這個區間，<b>一定要先請計程車行報價</b>。Gransta 寄物每件 ¥2,000，未列入上面的分攤。</p>
 </section>
 
 <section id="days">
@@ -380,7 +440,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
     <article class="day">
       <div class="when"><span class="d">12.11</span><span class="label">FRI</span><span class="alt">NRT T1 → TAKASAKI</span></div>
       <div>
-        <h3>落地 → 高崎（第一版）</h3>
+        <h3>落地 → 高崎</h3>
         <ul>
           <li><span class="t">14:45</span><span>UA838 抵成田 T1。</span></li>
           <li><span class="t">16:19</span><span>搭 Skyliner（備案 16:39）到日暮里或上野，轉上越新幹線とき 337 或北陸新幹線あさま 623，18:14–18:18 抵高崎，每人約 ¥6,140（第一版數據）。</span></li>
@@ -452,14 +512,15 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
       <div>
         <h3>Robin 先上山；友人照 <a href="#d15">作戰板</a> 移動</h3>
         <div class="opt">
-          <div class="optcard a"><span class="label">A · 長電急行巴士</span>長野站東口 08:15 → 志賀高原山の駅 09:35，轉乘站內接駁巴士到ほたる溫泉。票價 ¥3,000。<br><span class="note">是否直達ほたる溫泉，以 26–27 冬季時刻表為準。</span></div>
-          <div class="optcard b"><span class="label">B · 長電特急＋路線巴士</span>長野 09:53 A特急スノーモンキー → 10:38 湯田中，轉 K 白根火山線巴士到ほたる溫泉（約 50 分鐘）。</div>
+          <div class="optcard a"><span class="label">Robin 早上 ① · 長電急行巴士</span>長野站東口 08:15 → 志賀高原山の駅 09:35，轉乘站內接駁巴士到ほたる溫泉。票價 ¥3,000。<br><span class="note">是否直達ほたる溫泉，以 26–27 冬季時刻表為準。</span></div>
+          <div class="optcard b"><span class="label">Robin 早上 ② · 長電特急＋路線巴士</span>長野 09:53 A特急スノーモンキー → 10:38 湯田中，轉 K 白根火山線巴士到ほたる溫泉（約 50 分鐘）。</div>
         </div>
         <ul style="margin-top:12px">
           <li><span class="t">午後</span><span>在 2307 寄放行李，走幾分鐘到<b>熊之湯雪場</b>滑半天。初滑期 1 日券 ¥7,500，2 日券 ¥14,500。收板後可以去熊の湯ホテル泡翡翠綠色的硫磺泉。</span></li>
-          <li><span class="t">~16:35</span><span>友人抵達（C 方案）→ 泡溫泉 → 晚餐。</span></li>
+          <li><span class="t">行李</span><span><b>建議：友人在 NRT T3 用空港宅急便把行李箱直接寄到橫濱的飯店</b>（12/18 入住時領），上山只帶雪板袋＋3 晚的小包。東京寄物變成每人 1 件、12/15 和 12/18 各一台 Jumbo 就載得下，12/18 在東京站轉車也輕鬆。要先請橫濱飯店同意入住前代收；每件運費出發前查。</span></li>
+          <li><span class="t">~17:40</span><span>友人抵達（C 方案；B 方案約 18:30）→ check-in → 泡溫泉 → 晚餐。友人在東京待到 14 點前，晚餐請飯店排 19:00 前後的梯次。</span></li>
           <li><span class="t">晚餐</span><span>ほたる溫泉一帶冬季幾乎沒有獨立營業的晚餐店，12/15–17 三晚建議直接訂 2307 的含晚餐方案（一泊二食 ¥13,200 起）。想出去吃一晚就搭計程車到一の瀬的 TEPPA ROOM。</span></li>
-          <li><span class="t">18:30</span><span><b>夜滑（選項）</b>：熊之湯夜間滑雪 18:30–21:00，成人 ¥3,000。就在住處旁，友人當天早班機＋長途移動會很累，要滑就先跟飯店把晚餐時間排早。26–27 冬季營業日待公布。</span></li>
+          <li><span class="t">18:30</span><span><b>夜滑（Robin 選項）</b>：熊之湯夜間滑雪 18:30–21:00，成人 ¥3,000，就在住處旁。友人當天清晨落地、17:40 才到，這晚不排全員夜滑，全員夜滑放 12/17。26–27 冬季營業日待公布。</span></li>
         </ul>
       </div>
     </article>
@@ -495,21 +556,25 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
     <article class="day" id="d18">
       <div class="when"><span class="d">12.18</span><span class="label">FRI</span><span class="alt">→ YOKOHAMA</span></div>
       <div>
-        <h3>橫手山滑到下午 → 長電急行巴士 → 19:00–20:00 抵橫濱</h3>
+        <h3>橫手山滑到 14:15 → Jumbo 直達長野 → 約 19:05 抵橫濱 → 紅磚倉庫聖誕市集</h3>
         <ul>
-          <li><span class="t">08:30</span><span>橫手山第一趟纜車。退房時間是 10:00，先把行李寄放在飯店，泡湯要先問飯店能不能讓退房後的房客使用。</span></li>
-          <li><span class="t">14:30</span><span>最後一趟下到飯店，換衣服、拿行李。</span></li>
+          <li><span class="t">08:30</span><span>橫手山第一趟纜車。退房時間 10:00，出門前先退房、行李寄放在飯店。</span></li>
+          <li><span class="t">14:15</span><span>最後一趟下到飯店，換衣服、拿行李。6 個人加雪板袋抓 45 分鐘；退房後能不能借更衣室或泡湯要先問飯店。</span></li>
         </ul>
         <div class="opt">
-          <div class="optcard a"><span class="label">A · 主推 · 經山の駅，約 19:50 抵橫濱</span>14:55 ほたる溫泉搭志賀高原內的接駁巴士或路線巴士（雪場營業時段免費）→ 15:15 前到志賀高原山の駅 → <b>15:35 長電急行巴士</b> → 17:20 長野站東口 → <b>かがやき 512 17:56</b> → 19:20 東京 → JR 東海道線 → <b>約 19:50 抵橫濱</b>。<br><span class="note">巴士準點的話可以改搭はくたか 570（17:37 → 19:12 東京），約 19:45 到橫濱。</span></div>
-          <div class="optcard b"><span class="label">B · 最晚下山 · 直達但會晚到</span><b>15:45 ほたる溫泉直達長野</b>（25–26 冬季唯一從ほたる溫泉發車的回程班次）→ 17:50 長野 → はくたか 572 18:25 → 20:00 東京 → <b>約 20:30 抵橫濱</b>，超過 20:00。<br><span class="note">17:56 那班かがやき只剩 6 分鐘轉乘，雪天巴士容易誤點，不要賭。</span></div>
+          <div class="optcard a"><span class="label">A · 主推 · 滑到 14:15，約 19:05 抵橫濱</span><b>15:05</b> 預約的 Jumbo 從 2307 出發 → 約 16:35 長野站（雪路抓 90 分鐘，下山是白天）→ <b>かがやき 510 17:05</b> → 18:28 東京 → JR 東海道線 → <b>約 19:05 抵橫濱</b>（週五晚尖峰＋雪板袋，抓到 19:20 也正常）。<br><span class="note">塞車或下大雪趕不上：改搭はくたか 570（17:37 → 19:12 東京），約 19:45 到橫濱，市集照樣去得成。</span></div>
+          <div class="optcard b"><span class="label">B · 省錢 · 搭巴士，要 13:15 前下山</span>ほたる溫泉搭場內接駁巴士到山の駅 → <b>14:35 長電急行巴士</b> → 16:20 長野站東口 → 同樣搭 <b>かがやき 510 17:05</b> → 約 19:05 抵橫濱。比 A 少滑約 1 小時。<br><span class="note">12 月急行巴士不能預約座位，6 人＋雪板袋可能要排隊。</span></div>
         </div>
         <div class="opt">
-          <div class="optcard"><span class="label">C · 保險班</span>山の駅 14:35 急行巴士 → 16:20 長野 → かがやき 510 17:05 → 18:28 東京 → 約 19:00 抵橫濱。要 13:30 前下山。</div>
-          <div class="optcard"><span class="label">費用（每人）</span>急行巴士 ¥3,000 ＋ 長野→東京指定席 ¥8,450（かがやき全車指定）＋ 東京→橫濱 JR。6 人加雪板袋搭急行巴士，12 月沒有座位預約，旺季可能坐滿，建議早一班到山の駅排隊。</div>
+          <div class="optcard"><span class="label">費用（每人 · 6 人）</span>A：Jumbo ¥40,000–46,000 ÷ 6 ≈ ¥6,700–7,700；要兩台的話約 ¥13,300–15,300；B：急行巴士 ¥3,000。兩案都要再加長野 → 東京指定席 ¥8,450（かがやき全車指定）＋ 東京 → 橫濱 JR。</div>
+          <div class="optcard"><span class="label">A 案叫車時要確認</span>6 人＋6 個雪板袋＋行李，一台 9 人座 Jumbo 通常要收掉最後一排座位才放得下。叫車時直接講「6 人、スノーボードケース 6 本、スーツケースあり」，放不下就訂兩台。跟 12/15 上山那趟同一條路線，兩趟可以一起預約、一起報價。</div>
         </div>
-        <ul style="margin-top:10px"><li><span class="t">晚餐</span><span>約 19:50 到橫濱：野毛的伸喜（烤雞串，食べログ 3.68，不接受預約）、洋食キムラ 野毛店（3.66），或港未來的中国料理 眺遊楼（3.70，要預約）。</span></li></ul>
-        <p class="note" style="margin-top:8px">回程時刻依長電巴士 25–26 冬季「急行 長野－志賀高原線」（2025/12/6–2026/4/6），26–27 冬季時刻預計 11 月公布，出發前要再核對。從山の駅發車的末班是 17:00（→18:45 長野）和 18:20（→20:05 長野），都趕不上 20:00 前到橫濱。</p>
+        <ul style="margin-top:10px">
+          <li><span class="t">19:05</span><span>抵橫濱站 → 轉みなとみらい線到<b>馬車道</b>（約 5 分）→ 飯店 check-in、放下雪板袋。住宿建議訂在<b>馬車道／桜木町</b>一帶：走路就到紅磚倉庫和野毛，12/19 早上去元町、傍晚回橫濱站搭 N'EX 都順。</span></li>
+          <li><span class="t">19:45</span><span><b>Christmas Market in 横浜赤レンガ倉庫</b>：馬車道站或日本大通り站徒步約 6 分（桜木町站走汽車道約 15 分）。晚餐就在市集吃德式香腸配熱紅酒，看大聖誕樹。2025 年是 11/21–12/25 舉辦，主會場（活動廣場）要購票、新港中央廣場免費；2026 年日期、營業到幾點、要不要預約時段，要等官方公布（列在出發前覆核）。</span></li>
+          <li><span class="t">續攤</span><span>還有力氣就走回野毛：伸喜（烤雞串，食べログ 3.68，不接受預約）、ホッピー仙人（立飲）；或港未來的中国料理 眺遊楼（3.70，要預約）。</span></li>
+        </ul>
+        <p class="note" style="margin-top:8px">かがやき 510（長野 17:05 → 東京 18:28）依 JR 東日本 2026 年 9 月時刻表；B 案巴士時刻依長電巴士 25–26 冬季「急行 長野－志賀高原線」（2025/12/6–2026/4/6），26–27 冬季時刻預計 11 月公布。東京 → 橫濱抓北陸新幹線月台轉東海道線 10 分鐘、車程約 25 分鐘。住桜木町的話，東京站直接搭京浜東北線到桜木町（約 40 分）不用轉車，帶雪板袋比較輕鬆。新幹線指定席建議訂每節車廂最後一排，雪板袋放座椅後方。</p>
       </div>
     </article>
 
@@ -578,22 +643,23 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
   <div class="tools">
     <div class="tool">
       <h3>行事曆與分享</h3>
-      <p>下載 .ics 匯入手機行事曆：每天一筆全日事件，加上 12/15、12/18、12/19 的關鍵時刻提醒。傳給 5 位友人各自匯入。</p>
+      <p>下載 .ics 匯入手機行事曆：每天一筆全日事件，加上 12/15、12/18、12/19 的關鍵時刻提醒（前 45 分鐘通知）。傳給 5 位友人各自匯入。<b>行程改過時，先刪掉舊的「2307 Carve Log」事件再匯入新檔</b>，避免新舊時刻並存。</p>
       <button class="btn pri" type="button" id="icsBtn">下載行程 .ics</button>
       <button class="btn" type="button" id="copyBtn">複製本頁連結</button>
+      <button class="btn" type="button" id="offBtn">下載離線版（.html）</button>
       <p class="note" id="toolMsg" aria-live="polite"></p>
     </div>
     <div class="tool">
       <h3>日文大字卡與短句</h3>
-      <p>全螢幕顯示目的地日文名、地址、電話，另有 7 種情境、89 句日文短句。每一句都能按 🔊 用日語念出來，直接放給對方聽。</p>
+      <p>全螢幕顯示目的地日文名、地址、電話，另有 <span id="phCount">多</span> 句分情境的日文短句。每一句都能按 🔊 用日語念出來，直接放給對方聽。</p>
       <button class="btn pri" type="button" id="dcBtn">目的地大字卡</button>
       <button class="btn" type="button" id="phBtn">情境短句 ＋ 語音</button>
     </div>
     <div class="tool">
       <h3>緊急與洽詢電話</h3>
       <div class="emg">
-        <div><span>救急・消防</span><span class="n">119</span></div>
-        <div><span>警察</span><span class="n">110</span></div>
+        <div><span>救急・消防</span><a href="tel:119">119</a></div>
+        <div><span>警察</span><a href="tel:110">110</a></div>
         <div><span>Hotel &amp; Onsen 2307</span><a href="tel:+81269342905">0269-34-2905</a></div>
         <div><span>橫手山・澀峠雪場</span><a href="tel:+81269342600">0269-34-2600</a></div>
         <div><span>丸沼高原雪場</span><a href="tel:+81278582211">0278-58-2211</a></div>
@@ -609,6 +675,7 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
     <h2>出發前覆核</h2>
     <p>有些資料要到 11 月後才會公布或變動，勾選狀態只存在你這台瀏覽器。</p>
   </div>
+  <div class="ck-progress" aria-live="polite"><span id="ckCount"></span><span class="bar2" aria-hidden="true"><i id="ckBar"></i></span></div>
   <div class="check" id="checkList"></div>
 
   <h3 style="margin:40px 0 10px;font-size:15px">資料來源</h3>
@@ -712,10 +779,11 @@ footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:
 
 <script>
 (function(){
+const PRISTINE='<!doctype html>\n'+document.documentElement.outerHTML;
 const toMin=s=>{const[h,m]=s.split(':').map(Number);return h*60+m};
 const fmt=m=>{m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
 const yen=n=>'¥'+Math.round(n).toLocaleString('en-US');
-const dur=m=>{const h=Math.floor(m/60),r=m%60;return (h?h+'h':'')+(r?String(r).padStart(h?2:1,'0')+'m':(h?'':'0m'))};
+const dur=m=>{if(m<0)return '−'+dur(-m);const h=Math.floor(m/60),r=m%60;return (h?h+'h':'')+(r?String(r).padStart(h?2:1,'0')+'m':(h?'':'0m'))};
 
 /* ---------- 12/15 model ---------- */
 const ROAM={
@@ -723,7 +791,7 @@ const ROAM={
     go:[['07:55','抵 空港第2ビル站','T3 → T2 走路 15–20 分鐘，或搭免費接駁車'],
         ['08:05','N\'EX → 東京','約 55–60 分鐘 · ¥3,140（トクだ値 ¥2,530）']],
     arrive:'09:05',lead:25,
-    roamTxt:'Gransta 寄物（8:30–21:00，L 尺寸 ¥2,000，單件長度上限 2 m）→ 丸之內站舍、KITTE、日本橋 → 在駅弁屋 祭 買車上吃的便當',
+    roamTxt:'Gransta 寄物（8:30–21:00，L 尺寸 ¥2,000，單件長度上限 2 m）→ 丸之內站舍、KITTE 屋頂庭園、日本橋 → 午餐東京拉麵街或日本橋だし場 → 在駅弁屋 祭 買車上吃的便當',
     backTxt:'取行李，走到北陸新幹線月台'},
   ueno:{name:'上野',sub:'Skyliner 41 分 · 新幹線上野上車',board:'上野',boardOff:6,
     go:[['07:55','抵 空港第2ビル站','T3 → T2 走路 15–20 分鐘'],
@@ -748,15 +816,15 @@ const MODE={
   A:{name:'A 長電急行巴士',sub:'¥3,000／人 · 最便宜',tag:'',train:'はくたか 561',tokyo:'11:24',nagano:'12:49',
     last:[['12:49','抵 長野','從新幹線月台走到東口巴士站約 8 分鐘'],['13:10','長電急行巴士 → ほたる溫泉','25–26 冬季只有這一班直達 · 約 1 小時 42 分'],['14:52','ほたる溫泉下車 → 走到 2307','']],
     arrive:'15:00',fare:null,rail:3000,
-    note:'轉乘只有 21 分鐘，班次一延誤就趕不上直達車，下一班只到山の駅。漫遊時間也被壓到最短。改搭かがやき 509（10:22 → 11:41）比較穩，但漫遊時間會更少。'},
-  B:{name:'B 長電特急＋Jumbo',sub:'湯田中轉乘 · 中價',tag:'',train:'はくたか 565',tokyo:'13:24',nagano:'14:49',
-    last:[['14:49','抵 長野','走到地下的長電長野站約 5 分鐘'],['15:32','A特急スノーモンキー → 湯田中','45 分鐘 · ¥1,660＋特急券 ¥100'],['16:25','預約的 Jumbo → ほたる溫泉','約 24 km · 雪路約 50 分鐘']],
-    arrive:'17:15',fare:[18000,21000],rail:1760,
-    note:'備案是 16:46 那班特急，會在 17:31 到湯田中，大約 18:25 才能抵達，幾乎沒有緩衝，只能當緊急用。5 個雪板袋在湯田中下車、上車都要花時間。'},
-  C:{name:'C 長野站 Jumbo 直達',sub:'門到門 · 日落前上山',tag:'RECOMMENDED',train:'はくたか 565',tokyo:'13:24',nagano:'14:49',
-    last:[['14:49','抵 長野','在東口與預約的 Jumbo 會合'],['15:05','Jumbo → 2307','約 54 km · 信州中野 IC 經 R292 · 雪路抓 90 分鐘']],
-    arrive:'16:35',fare:[40000,46000],rail:0,
-    note:'行李直接放上車，路上零轉乘，而且在 16:30 日落前就能開上山。想多逛一小時的話可以改搭はくたか 567（14:24 → 15:54），但會變成約 17:40 抵達，緩衝只剩 50 分鐘，山路全程是夜路。一定要指定有 4WD 和雪胎的車，可以跟長電ハイヤー或長野市內的計程車行預約。'}
+    note:'轉乘只有 21 分鐘，班次一延誤就趕不上直達車，下一班只到山の駅。要在東京多留的話 A 不適合：必須搭 11:24 的新幹線，漫遊時間最短。改搭かがやき 509（10:22 → 11:41）比較穩，但漫遊時間會更少。'},
+  B:{name:'B 長電特急＋Jumbo',sub:'湯田中轉乘 · 中價',tag:'',train:'はくたか 567',tokyo:'14:24',nagano:'15:54',
+    last:[['15:54','抵 長野','走到地下的長電長野站約 5 分鐘，候車約 45 分'],['16:46','長電特急 → 湯田中','17:31 到 · ¥1,660＋特急券 ¥100'],['17:40','預約的 Jumbo → ほたる溫泉','湯田中站前等 · 約 24 km · 雪路約 50 分鐘']],
+    arrive:'18:30',fare:[18000,21000],rail:1760,
+    note:'和 C 搭同一班はくたか 567，東京時間一樣多；Jumbo 只跑湯田中上山那段，車資約 C 的一半。缺點是緩衝只剩 30 分：新幹線延誤超過 45 分鐘就趕不上 16:46 特急，只能在長野站改叫 Jumbo 直達，約 18:30–18:40 到。5 個雪板袋在長野、湯田中各上下車一次。'},
+  C:{name:'C 長野站 Jumbo 直達',sub:'門到門 · 零轉乘',tag:'RECOMMENDED',train:'はくたか 567',tokyo:'14:24',nagano:'15:54',
+    last:[['15:54','抵 長野','在東口與預約的 Jumbo 會合'],['16:10','Jumbo → 2307','約 54 km · 信州中野 IC 經 R292 · 雪路抓 90 分鐘']],
+    arrive:'17:40',fare:[40000,46000],rail:0,
+    note:'東京可以待到 14 點，仍有約 80 分鐘緩衝。行李一次上車、零轉乘。代價是 16:30 左右日落，R292 上山大半是夜間雪路：一定要指定 4WD＋雪胎、熟悉志賀路線的司機（長電ハイヤー或長野市內車行）。不建議再往後延：晚一班到長野的話抵達約 18:30 以後，緩衝不到 30 分鐘。'}
 };
 let st={roam:'tokyo',mode:'C',frac:.5,pax:5};
 try{const s=JSON.parse(localStorage.getItem('c2307')||'null');if(s&&ROAM[s.roam]&&MODE[s.mode])st=Object.assign(st,s)}catch(e){}
@@ -787,8 +855,8 @@ function render(){
   m.last.forEach(l=>steps.push([l[0],l[1],l[2],false]));
   steps.push([m.arrive,'抵 Hotel & Onsen 2307','check-in → 泡溫泉 → 晚餐',true]);
   document.getElementById('timeline').innerHTML=steps.map(s=>`<div class="step${s[3]?' key':''}${s[4]?' '+s[4]:''}"><span class="t">${s[0]}</span><span class="rail" aria-hidden="true"></span><div class="c"><b>${s[1]}</b>${s[2]?`<span>${s[2]}</span>`:''}</div></div>`).join('');
-  const buf=toMin('18:30')-toMin(m.arrive);
-  document.getElementById('bufBig').textContent='+'+dur(buf);
+  const buf=toMin('19:00')-toMin(m.arrive);
+  document.getElementById('bufBig').textContent=(buf>=0?'+':'')+dur(buf);
   const bp=document.getElementById('bufPill');
   const lvl=st.mode==='A'?['warn','轉乘 21 分鐘，最容易斷']:buf>=60?['ok','緩衝足夠']:buf>=30?['warn','偏緊']:['crit','幾乎無緩衝'];
   bp.className='pill '+lvl[0];bp.textContent=lvl[1];
@@ -818,12 +886,19 @@ function render(){
   document.getElementById('cmpBody').innerHTML=Object.entries(MODE).map(([k,v])=>{
     const f=v.fare?v.fare[0]+(v.fare[1]-v.fare[0])*st.frac:0, p=(v.rail||0)+f/pax;
     const ww=roamWindow(r,v);
-    const trade={A:'最便宜，但漫遊時間最短、轉乘最容易斷',B:'中價，湯田中要轉乘，雪板袋上下車兩次',C:'最貴，零轉乘，日落前上山；和 B 搭同一班新幹線'}[k];
-    return `<tr class="${k===st.mode?'on':''}"><td><b>${v.name}</b></td><td class="n">${v.train} ${v.tokyo}</td><td class="n">${v.arrive}</td><td class="n">${yen(p)}</td><td>${trade}<br><span class="note">在${r.name}可漫遊 ${ww.end-ww.start>0?dur(ww.end-ww.start):'—'}</span></td></tr>`;
+    const trade={A:'最便宜，但東京只能逛到 11 點前，13:10 直達巴士轉乘最容易斷',B:'中價，東京時間和 C 一樣；湯田中轉乘、雪板袋上下車兩次，緩衝 30 分',C:'最貴，零轉乘、緩衝最大；上山是夜路，要指定 4WD 雪胎'}[k];
+    return `<tr class="${k===st.mode?'on':''}"><td><b>${v.name}</b></td><td class="n" data-label="新幹線">${v.train} ${v.tokyo}</td><td class="n" data-label="抵 2307">${v.arrive}</td><td class="n" data-label="長野後段每人">${yen(p)}</td><td data-label="取捨"><span>${trade}<br><span class="note">在${r.name}可漫遊 ${ww.end-ww.start>0?dur(ww.end-ww.start):'—'}</span></span></td></tr>`;
   }).join('');
 }
-segButtons(document.getElementById('roamSeg'),ROAM,'roam',render);
-segButtons(document.getElementById('modeSeg'),MODE,'mode',render);
+const planOff=document.getElementById('planOff');
+const render0=render;render=function(){render0();planOff.hidden=(st.mode==='C'&&st.roam==='tokyo')};
+segButtons(document.getElementById('roamSeg'),ROAM,'roam',()=>render());
+segButtons(document.getElementById('modeSeg'),MODE,'mode',()=>render());
+document.getElementById('resetPlan').onclick=()=>{
+  st.roam='tokyo';st.mode='C';save();
+  [['roamSeg','roam'],['modeSeg','mode']].forEach(([id,k])=>[...document.getElementById(id).children].forEach(b=>b.setAttribute('aria-pressed',b.id===k+'-'+st[k])));
+  render();
+};
 const fareEl=document.getElementById('fare'),paxEl=document.getElementById('pax');
 fareEl.value=Math.round(st.frac*100);paxEl.value=st.pax;
 fareEl.oninput=()=>{st.frac=fareEl.value/100;save();render()};
@@ -989,6 +1064,7 @@ const R=[
  ["湯田中・澀", "甜點", "西山製菓店", "西山製菓店 渋温泉", "澀溫泉街的溫泉饅頭老店。", "澀溫泉街", 0, 4.4, 16, "G"],
  ["湯田中・澀", "餐", "猿座カフェ", "猿座カフェ 湯田中", "雞白湯拉麵和披薩，去地獄谷前後吃。", "湯田中 周邊", 0, 4.4, 1501, "G"],
  ["橫濱", "酒", "Bar Sea Guardian II", "バー シーガーディアンII ホテルニューグランド", "英式老酒吧，招牌雞尾酒「Yokohama」。營業 17:00–23:00，禁穿背心與拖鞋。", "元町・中華街站 徒步 1 分", 1, 4.5, 339, "G"],
+ ["橫濱", "景點", "Christmas Market in 横浜赤レンガ倉庫", "横浜赤レンガ倉庫 クリスマスマーケット", "12/18 晚上到橫濱後直接去：德式聖誕市集、熱紅酒、大聖誕樹。2025 年 11/21–12/25 舉辦，主會場要購票、新港中央廣場免費；2026 年資訊待公布。", "馬車道站／日本大通り站 徒步約 6 分", 0, null, null, "G"],
  ["橫濱", "景點", "橫濱美術館", "横浜美術館", "丹下健三設計的建築，2025 年整修後重新開館。", "みなとみらい站 徒步 3 分", 0, 4.2, 2967, "G"],
  ["高崎・片品", "餐", "はらっぱ 高崎 Montres 店", "スパゲッティー専科 はらっぱ 駅ビルモントレー店", "高崎名物湯義大利麵！招牌紅唐辛子大蒜番茄起司湯麵，起司濃郁牽絲、辛香驅寒", "與高崎站共構 (Montres 5F 步行 1 分)", 0, 4.1, 1018, "G"],
  ["高崎・片品", "餐", "清仁軒", "手打ちラーメン清仁軒", "手打極粗彈牙自製麵，濃郁清澄醬油高湯搭配厚切炭燒叉燒肉", "高崎市本町 (車程 5 分)", 0, 4.2, 651, "G"],
@@ -1091,34 +1167,43 @@ renderRecs();
 /* ---------- Checklist ---------- */
 const CK=[
  '長電巴士 26–27 冬季時刻（11 月公布）：13:10 直達ほたる溫泉那班還在不在',
- '預約 Jumbo 計程車（12/15 長野站東口 15:05 ×5 人＋雪板袋）並取得報價',
+ '預約 Jumbo：12/15 長野站東口 16:10 → 2307（5 人＋雪板袋）、12/18 2307 15:05 → 長野站（6 人＋6 雪板袋，確認一台載得下），兩趟一起報價',
  'Hotel 2307：雪季從ほたる溫泉巴士站走過去的路線、晚餐時間、12/11 能不能代收空港宅急便',
  'Gransta／上野寄物處能不能收雪板袋（單件長度上限 2 m、30 kg）',
  '友人 22:25 T3 班機的航空公司報到截止時間',
- 'UA838／UA837 12 月實際時刻（2026 年時刻隨日期變動）',
- '訂住宿：高崎（12/11）、佐久平（12/12–13）、長野（12/14）、橫濱（12/18–19）',
+ 'UA838／UA837 12 月實際時刻與航線（UA837／838 一般是舊金山線，NRT→KHH 這段請對照機票核對）',
+ '訂住宿：高崎（12/11）、佐久平（12/12–13）、長野（12/14）、橫濱（12/18–19，建議馬車道／桜木町）',
  'JR 巴士關東「高峰高原線」26–27 冬季時刻（12/14 08:40 上山、16:18 末班下山）',
- '長電急行巴士 26–27 冬季回程時刻（12/18 山の駅 15:35、ほたる溫泉 15:45）與 ほたる溫泉→山の駅 接駁時刻',
+ '長電急行巴士 26–27 冬季回程時刻（12/18 B 案：山の駅 14:35 → 長野 16:20）與 ほたる溫泉→山の駅 接駁時刻',
  '丸沼高原、高峰山 12/12–13 的開放狀況與上山交通（計程車需預約）',
  '預約 12/12 鎌田⇄丸沼高原 4WD 計程車（關越交通）',
  '初滑票價期間到 12/18：買 1 日券 ¥7,500 或 2 日券 ¥14,500（全山共通）',
  'N\'EX 12/15（週二）早上從空港第2ビル發車的確切時刻',
- '12/18 退房後行李怎麼處理：延後退房或寄放',
+ '12/18 退房後行李寄放，以及能不能借更衣室／泡湯',
  '熊之湯夜滑 26–27 營業日（18:30–21:00 · ¥3,000 · 12 月起依天候）',
  '橫手山 スノーモンスター／雪上車行程 26–27 場次與費用（0269-34-2600）',
- '志賀高原スノーシュー導覽 26–27 行程與名額（約 10 月公布 · 現金付款）'
+ '志賀高原スノーシュー導覽 26–27 行程與名額（約 10 月公布 · 現金付款）',
+ 'Christmas Market in 横浜赤レンガ倉庫 2026：日期、12/18（五）營業到幾點、主會場票價；若分時段，先買 20:00 場，趕不上就逛免費的新港中央廣場',
+ '12/15 晚餐梯次：友人約 17:40 抵達 2307，請飯店排 19:00 前後',
+ 'はくたか 567（東京 14:24 → 長野 15:54）與かがやき 510（長野 17:05 → 東京 18:28）12 月實際時刻，各買指定席',
+ '空港宅急便：友人 12/15 在 NRT T3 把行李箱寄到橫濱飯店（先請飯店同意入住前代收）',
+ 'B 方案備查：長野 16:46 是否為特急、17:31 到湯田中'
 ];
 let ck={};try{ck=JSON.parse(localStorage.getItem('c2307ck')||'{}')}catch(e){}
+/* v12：第 2、9、14 項改成新時刻，舊的勾選不再成立，只清一次 */
+try{if(localStorage.getItem('c2307ckv')!=='12'){[1,8,13].forEach(i=>delete ck[i]);localStorage.setItem('c2307ck',JSON.stringify(ck));localStorage.setItem('c2307ckv','12')}}catch(e){}
 document.getElementById('checkList').innerHTML=CK.map((t,i)=>`<div><input type="checkbox" id="ck${i}" ${ck[i]?'checked':''}><label for="ck${i}">${t}</label></div>`).join('');
-CK.forEach((_,i)=>document.getElementById('ck'+i).onchange=e=>{ck[i]=e.target.checked;try{localStorage.setItem('c2307ck',JSON.stringify(ck))}catch(err){}});
+function ckProgress(){const n=CK.filter((_,i)=>ck[i]).length;document.getElementById('ckCount').textContent='已完成 '+n+' / '+CK.length;document.getElementById('ckBar').style.width=(n/CK.length*100)+'%'}
+CK.forEach((_,i)=>document.getElementById('ck'+i).onchange=e=>{ck[i]=e.target.checked;try{localStorage.setItem('c2307ck',JSON.stringify(ck))}catch(err){}ckProgress()});
+ckProgress();
 /* ---------- 今日高亮 ---------- */
 (function(){
   const q=new URLSearchParams(location.search).get('day');
   let key=q;
   if(!key){
-    const n=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Tokyo'}));
-    if(n.getFullYear()!==2026||n.getMonth()!==11)return;
-    key='12.'+('0'+n.getDate()).slice(-2);
+    const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+    if(p.year!=='2026'||p.month!=='12')return;
+    key='12.'+p.day;
   }
   if(!/^12\.\d\d$/.test(key))return;
   const dd=+key.slice(3);
@@ -1174,24 +1259,50 @@ const ICS_ALL=[
  ['20261212','丸沼高原 雪板日','高崎 06:21 上越線 → 沼田 → 巴士 · 住佐久平（未定）'],
  ['20261213','高峰 Mountain Park 雪板日','佐久平 08:40 JR 巴士 → 09:40 雪場'],
  ['20261214','高峰山 → 長野','末班巴士 16:18 下山 · 住長野（未定）'],
- ['20261215','長野 → 2307 · 熊之湯','友人 5 人 06:35 抵 NRT T3'],
+ ['20261215','長野 → 2307 · 熊之湯','友人 5 人 06:35 抵 NRT T3 · はくたか 567 東京 14:24 · 19:00 前到 2307'],
  ['20261216','橫手山・澀峠 雪板日','頂部 2,307 m · 纜車 8:30–16:30'],
  ['20261217','熊之湯 雪板日','備案：燒額山／奧志賀'],
- ['20261218','2307 → 橫濱','滑到 14:30 · 約 19:50 抵橫濱'],
+ ['20261218','2307 → 橫濱 · 聖誕市集','滑到 14:15 · Jumbo 直達長野 · かがやき 510 · 約 19:05 抵橫濱 · 紅磚倉庫聖誕市集'],
  ['20261219','橫濱 → NRT T3','友人 22:25 起飛'],
  ['20261220','橫濱 → 成田 T1','Robin · UA837 17:30 NRT→KHH']
 ];
 const ICS_T=[
  ['20261211','1445','1530','UA838 抵達 NRT T1','入境後往高崎'],
  ['20261215','0635','0735','友人抵達 NRT T3','入境＋提領雪板袋抓 60 分鐘'],
- ['20261215','1830','1900','抵達 2307 期限','超過就要摸黑上山'],
- ['20261218','1430','1500','收板、換裝、拿行李','2307'],
- ['20261218','1535','1720','志賀高原山の駅 急行巴士 → 長野','主推 A 案'],
- ['20261219','1728','1811','橫濱搭 N\'EX → 成田','目標 20:00 前到 T3'],
+ ['20261215','1424','1554','はくたか 567 東京 → 長野','友人 · 上野 14:30 發 · 長野東口接 Jumbo'],
+ ['20261215','1554','1610','長野站東口 Jumbo 會合','C 方案 · 16:10 出發上山'],
+ ['20261215','1740','1810','友人抵達 2307（C 方案）','期限 19:00；B 方案約 18:30'],
+ ['20261218','1415','1500','收板、換裝、拿行李','2307 · 15:05 Jumbo 出發'],
+ ['20261218','1505','1635','Jumbo 2307 → 長野站','雪路抓 90 分鐘'],
+ ['20261218','1705','1828','かがやき 510 長野 → 東京','轉 JR 東海道線，約 19:05 抵橫濱'],
+ ['20261218','1945','2130','Christmas Market in 横浜赤レンガ倉庫','馬車道站徒步約 6 分；2026 營業時間待公布'],
+ ['20261219','1728','1851','橫濱搭 N\'EX → 成田','約 18:51 抵空港第2ビル，走到 T3 約 20 分'],
  ['20261219','2225','2235','友人 NRT T3 起飛',''],
  ['20261220','1730','1740','UA837 NRT T1 起飛','Robin']
 ];
+/* ---------- 旅途中：下一步倒數 ---------- */
+(function(){
+  const bar=document.getElementById('nextBar');
+  const jst=(d,hm)=>Date.UTC(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6,8),+hm.slice(0,2)-9,+hm.slice(2,4));
+  const q=new URLSearchParams(location.search).get('now');           /* 測試用：?now=2026-12-15T13:30 */
+  const nowMs=()=>q?Date.parse(q+':00+09:00'):Date.now();
+  const EV=ICS_T.map(e=>({s:jst(e[0],e[1]),e:jst(e[0],e[2]),d:e[0],t:e[1],name:e[3],note:e[4]})).sort((a,b)=>a.s-b.s);
+  function tick(){
+    const n=nowMs();
+    if(!(n>=jst('20261210','0000')&&n<=jst('20261220','2359'))){bar.hidden=true;return}
+    const cur=EV.find(x=>x.s<=n&&n<x.e),nx=EV.find(x=>x.s>n);
+    const pick=cur||nx;if(!pick){bar.hidden=true;return}
+    const mins=Math.round((pick.s-n)/60000);
+    const hm=pick.t.slice(0,2)+':'+pick.t.slice(2);
+    const left=cur?'進行中':(mins>=60*24?'':('還有 '+(mins>=60?Math.floor(mins/60)+' 小時 ':'')+(mins%60)+' 分'));
+    bar.innerHTML='<span class="label">'+(cur?'現在':'下一步')+'</span><b>'+(+pick.d.slice(4,6))+'/'+(+pick.d.slice(6))+' '+hm+' · '+esc2x(pick.name)+'</b>'+(left?'<span class="eta">'+left+'</span>':'')+(pick.note?'<span class="eta">'+esc2x(pick.note)+'</span>':'');
+    bar.hidden=false;
+  }
+  function esc2x(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  tick();setInterval(tick,60000);
+})();
 const esc=s=>String(s).replace(/([,;\\])/g,'\\$1').replace(/\n/g,'\\n');
+const uidOf=(...p)=>{let h=5381;for(const c of p.join('|'))h=((h<<5)+h+c.codePointAt(0))>>>0;return 'carve-'+p[0]+'-'+h.toString(36)+'@2307'};
 function nextDay(d){
   const t=new Date(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6,8)+1);
   return t.getFullYear()+('0'+(t.getMonth()+1)).slice(-2)+('0'+t.getDate()).slice(-2);
@@ -1205,10 +1316,10 @@ function utc(d,hm){
 function buildIcs(){
   const now=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
   const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//2307 Carve Log//TW','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:2307 Carve Log'];
-  ICS_ALL.forEach((e,i)=>L.push('BEGIN:VEVENT','UID:carve-d'+i+'@2307','DTSTAMP:'+now,
+  ICS_ALL.forEach(e=>L.push('BEGIN:VEVENT','UID:'+uidOf(e[0],'day',e[1],e[2]),'DTSTAMP:'+now,
     'DTSTART;VALUE=DATE:'+e[0],'DTEND;VALUE=DATE:'+nextDay(e[0]),
     'SUMMARY:'+esc(e[1]),'DESCRIPTION:'+esc(e[2]),'TRANSP:TRANSPARENT','END:VEVENT'));
-  ICS_T.forEach((e,i)=>L.push('BEGIN:VEVENT','UID:carve-t'+i+'@2307','DTSTAMP:'+now,
+  ICS_T.forEach(e=>L.push('BEGIN:VEVENT','UID:'+uidOf(e[0],e[1],e[2],e[3]),'DTSTAMP:'+now,
     'DTSTART:'+utc(e[0],e[1]),'DTEND:'+utc(e[0],e[2]),
     'SUMMARY:'+esc(e[3]),'DESCRIPTION:'+esc(e[4]),
     'BEGIN:VALARM','TRIGGER:-PT45M','ACTION:DISPLAY','DESCRIPTION:'+esc(e[3]),'END:VALARM','END:VEVENT'));
@@ -1216,26 +1327,27 @@ function buildIcs(){
   return L.join('\r\n');
 }
 const toolMsg=document.getElementById('toolMsg');
-document.getElementById('icsBtn').onclick=async()=>{
-  const text=buildIcs(),name='carve-log-2307.ics';
+async function saveFile(name,text,mime,okMsg){
   const host=(typeof window.claude==='object'&&window.claude&&typeof window.claude.use==='function')?window.claude:null;
   if(host){
     try{
       const dl=await host.use('downloads');
-      if(dl){await dl.save({filename:name,data:text});toolMsg.textContent='已儲存 .ics（18 筆事件）。';return}
+      if(dl){await dl.save({filename:name,data:text});toolMsg.textContent=okMsg;return}
     }catch(err){
       if(err&&err.code==='declined'){toolMsg.textContent='已取消下載。';return}
     }
-    try{await navigator.clipboard.writeText(text);toolMsg.textContent='這個預覽無法直接存檔，行事曆內容已複製到剪貼簿，貼進文字檔存成 .ics 即可匯入。'}
+    try{await navigator.clipboard.writeText(text);toolMsg.textContent='這個預覽無法直接存檔，內容已複製到剪貼簿；也可以改用 GitHub Pages 版本下載。'}
     catch(e){toolMsg.textContent='這個預覽無法直接存檔，請改用 GitHub Pages 版本下載。'}
     return;
   }
-  const b=new Blob([text],{type:'text/calendar;charset=utf-8'});
+  const b=new Blob([text],{type:mime});
   const u=URL.createObjectURL(b),a=document.createElement('a');
   a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(u),3000);
-  toolMsg.textContent='已產生 18 筆事件的 .ics。';
-};
+  toolMsg.textContent=okMsg;
+}
+document.getElementById('icsBtn').onclick=()=>saveFile('carve-log-2307.ics',buildIcs(),'text/calendar;charset=utf-8','已產生 '+(ICS_ALL.length+ICS_T.length)+' 筆事件的 .ics。');
+document.getElementById('offBtn').onclick=()=>saveFile('carve-log-2307.html',PRISTINE,'text/html;charset=utf-8','已下載離線版。存在手機的「檔案」裡，山上沒訊號時直接打開（語音與大字卡都能用，雪況預報需要網路）。');
 document.getElementById('copyBtn').onclick=async()=>{
   try{await navigator.clipboard.writeText(location.href);toolMsg.textContent='連結已複製。'}
   catch(e){toolMsg.textContent=location.href}
@@ -1261,6 +1373,7 @@ const DEST=[
  ['湯田中','湯田中駅','','','長電特急終點'],
  ['地獄谷','地獄谷野猿公苑','','','雪猴 · 上林溫泉步行約 30 分'],
  ['高崎駅','高崎駅','','','12/11 住宿 · 12/12 上越線'],
+ ['紅磚倉庫','横浜赤レンガ倉庫（クリスマスマーケット）','神奈川県横浜市中区新港1-1-1','','12/18 晚上 · 馬車道站徒步約 6 分'],
  ['橫濱駅','横浜駅','','','12/18 抵達 · 12/19–20 出發']
 ];
 
@@ -1353,7 +1466,9 @@ const PH=[
   ['辛くしないでください。','請不要做辣的。'],
   ['お会計をお願いします。','請結帳。'],
   ['別々に払えますか？','可以分開付嗎？'],
-  ['持ち帰りできますか？','可以外帶嗎？']
+  ['持ち帰りできますか？','可以外帶嗎？'],
+  ['ホットワインを六つください。','請給我 6 杯熱紅酒。'],
+  ['チケットはどこで買えますか？','票在哪裡買？']
  ]],
  ['misc','其他',[
   ['すみません。','不好意思。'],
@@ -1415,7 +1530,7 @@ function dcRender(){
   const d=DEST[dci];
   dcBody.innerHTML='<div class="jp">'+esc2(d[1])+'</div>'
     +(d[2]?'<div class="ad">'+esc2(d[2])+'</div>':'')
-    +(d[3]?'<div class="tel">TEL '+esc2(d[3])+'</div>':'')
+    +(d[3]?'<div class="tel">TEL <a href="tel:+81'+d[3].replace(/^0/,'').replace(/-/g,'')+'">'+esc2(d[3])+'</a></div>':'')
     +'<div class="zh">'+esc2(d[4])+'</div>';
   dcHint.textContent=d[2]?'':'這張卡還沒填地址，出發前建議補上，或直接讓司機看日文名稱。';
   [...dcSel.children].forEach((b,i)=>b.setAttribute('aria-pressed',i===dci));
@@ -1468,6 +1583,47 @@ document.getElementById('dcBtn').onclick=()=>dcOpen(true,'dest');
 document.getElementById('phBtn').onclick=()=>dcOpen(true,'ph');
 document.getElementById('dcClose').onclick=()=>dcOpen(false);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dcard.hidden)dcOpen(false)});
+document.getElementById('phCount').textContent=PH.reduce((n,c)=>n+c[2].length,0);
+
+/* ---------- 路線條 → 當天行程 ---------- */
+document.querySelectorAll('.day').forEach(a=>{
+  const t=a.querySelector('.when .d');if(!t)return;
+  if(!a.id)a.id='day-'+t.textContent.trim().replace('.','-');
+});
+document.querySelectorAll('.strip li').forEach(li=>{
+  const n=li.querySelector('.d');if(!n)return;
+  const dd=('0'+n.textContent.trim()).slice(-2);
+  const tgt=[...document.querySelectorAll('.day')].find(a=>a.querySelector('.when .d').textContent.trim()==='12.'+dd);
+  if(!tgt)return;
+  const a=document.createElement('a');a.href='#'+tgt.id;a.setAttribute('aria-label','12/'+dd+' 當天行程');
+  while(li.firstChild)a.appendChild(li.firstChild);
+  li.appendChild(a);
+});
+
+/* ---------- 章節導覽：標出目前位置 ---------- */
+(function(){
+  const links=[...document.querySelectorAll('nav.jump a')];
+  const secs=links.map(a=>document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  const nav=document.querySelector('nav.jump ul');
+  let cur=null,tmr=0;
+  function upd(){
+    tmr=0;
+    const y=(document.querySelector('nav.jump').offsetHeight||0)+24;
+    let hit=null;
+    secs.forEach(s=>{if(s.getBoundingClientRect().top<=y)hit=s});
+    if(hit===cur)return;cur=hit;
+    links.forEach(a=>{
+      const on=!!hit&&a.getAttribute('href')==='#'+hit.id;
+      if(on){a.setAttribute('aria-current','true');
+        const l=a.offsetLeft-nav.offsetLeft,r=l+a.offsetWidth;
+        if(l<nav.scrollLeft||r>nav.scrollLeft+nav.clientWidth)nav.scrollTo({left:l-16,behavior:'smooth'});}
+      else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll',()=>{if(!tmr)tmr=setTimeout(upd,80)},{passive:true});
+  window.addEventListener('resize',()=>{cur=undefined;upd()});
+  upd();
+})();
 })();
 </script>
 </body>
