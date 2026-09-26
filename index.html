@@ -3,381 +3,633 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2307 Carve Log</title>
+<meta name="description" content="2026 志賀高原橫手山 10 日滑雪行程：12/15 成田 T3 到 2307 的時間鏈、每日行程、雪場資訊、在地清單與日文大字卡。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F5F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1116" media="(prefers-color-scheme: dark)">
+<title>2307 Carve Log · 2026 志賀高原 10 日滑雪行程</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap">
 <style>
+/* ══════════════════════════════════════════════════════════════
+   2307 CARVE LOG — 藍×胭脂 (ai × kincha)
+   A traditional Japanese ink-and-rouge pairing: indigo for structure
+   and transit, rouge for the human moments, kin gold for snow days.
+   ══════════════════════════════════════════════════════════════ */
 :root{
-  --ground:#EDF1F4; --surface:#FFFFFF; --surface-2:#E3E9EE; --ink:#0F1B2A; --muted:#5A6B7B; --line:#CBD5DD;
-  --accent:#E0512A; --accent-ink:#FFFFFF; --alt:#2F6DB5;
-  --ok:#2E7D4F; --warn:#A86A0B; --crit:#B83232;
-  --ok-bg:#E1F1E7; --warn-bg:#F7ECD6; --crit-bg:#F6E0E0;
-  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --paper:#F7F5F1; --paper-2:#EFEBE3; --card:#FFFFFF; --card-2:#F2EEE7;
+  --ink:#16202E; --ink-2:#3A4757; --muted:#6B7688; --faint:#9AA3B0;
+  --rule:#E3DED4; --rule-2:#D3CCBE;
+
+  --rouge:#B23A48; --rouge-ink:#FFFFFF; --rouge-soft:#FBEDEE;
+  --ai:#2C4A7C; --ai-soft:#E9EFF8; --ai-ink:#FFFFFF;
+  --kin:#9A7218; --kin-soft:#FBF2DC;
+
+  --ok:#2C6B4F; --ok-soft:#E6F1EA;
+  --warn:#8A5A0B; --warn-soft:#FBF0DC;
+  --crit:#A32B2B; --crit-soft:#FAE7E7;
+
+  --shadow-1:0 1px 2px rgba(22,32,46,.05), 0 2px 8px rgba(22,32,46,.045);
+  --shadow-2:0 2px 4px rgba(22,32,46,.05), 0 8px 24px rgba(22,32,46,.07);
+  --shadow-3:0 8px 16px rgba(22,32,46,.07), 0 24px 56px rgba(22,32,46,.10);
+
+  --display:"Zen Kaku Gothic New","Noto Sans TC","Hiragino Sans","Microsoft JhengHei",sans-serif;
+  --num:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+
+  --pad:clamp(18px,4.5vw,44px);
+  --r-s:6px; --r-m:12px; --r-l:20px;
+  --maxw:1180px;
 }
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --ground:#0A121D; --surface:#111C2A; --surface-2:#18263A; --ink:#E5ECF2; --muted:#8FA1B3; --line:#24344A;
-    --accent:#FF7447; --accent-ink:#1A0A04; --alt:#77AEF0;
-    --ok:#6FCF97; --warn:#E6B45A; --crit:#F08A8A;
-    --ok-bg:#12301F; --warn-bg:#33270F; --crit-bg:#3A1717;
+    --paper:#0E1116; --paper-2:#141920; --card:#181E26; --card-2:#1F2730;
+    --ink:#ECE8E0; --ink-2:#C3CAD4; --muted:#8E99A8; --faint:#69737F;
+    --rule:#28313B; --rule-2:#38434F;
+    --rouge:#E8707E; --rouge-ink:#26090E; --rouge-soft:#33151B;
+    --ai:#8DB0E6; --ai-soft:#16233A; --ai-ink:#0A1524;
+    --kin:#DCAE4E; --kin-soft:#2C2410;
+    --ok:#6BBF97; --ok-soft:#12291E;
+    --warn:#DDAE5C; --warn-soft:#2C2410;
+    --crit:#EE8A8A; --crit-soft:#331616;
+    --shadow-1:0 1px 2px rgba(0,0,0,.4);
+    --shadow-2:0 2px 6px rgba(0,0,0,.42), 0 10px 30px rgba(0,0,0,.34);
+    --shadow-3:0 10px 24px rgba(0,0,0,.45), 0 30px 70px rgba(0,0,0,.45);
   }
 }
 :root[data-theme="dark"]{
-  --ground:#0A121D; --surface:#111C2A; --surface-2:#18263A; --ink:#E5ECF2; --muted:#8FA1B3; --line:#24344A;
-  --accent:#FF7447; --accent-ink:#1A0A04; --alt:#77AEF0;
-  --ok:#6FCF97; --warn:#E6B45A; --crit:#F08A8A;
-  --ok-bg:#12301F; --warn-bg:#33270F; --crit-bg:#3A1717;
+  --paper:#0E1116; --paper-2:#141920; --card:#181E26; --card-2:#1F2730;
+  --ink:#ECE8E0; --ink-2:#C3CAD4; --muted:#8E99A8; --faint:#69737F;
+  --rule:#28313B; --rule-2:#38434F;
+  --rouge:#E8707E; --rouge-ink:#26090E; --rouge-soft:#33151B;
+  --ai:#8DB0E6; --ai-soft:#16233A; --ai-ink:#0A1524;
+  --kin:#DCAE4E; --kin-soft:#2C2410;
+  --ok:#6BBF97; --ok-soft:#12291E;
+  --warn:#DDAE5C; --warn-soft:#2C2410;
+  --crit:#EE8A8A; --crit-soft:#331616;
+  --shadow-1:0 1px 2px rgba(0,0,0,.4);
+  --shadow-2:0 2px 6px rgba(0,0,0,.42), 0 10px 30px rgba(0,0,0,.34);
+  --shadow-3:0 10px 24px rgba(0,0,0,.45), 0 30px 70px rgba(0,0,0,.45);
 }
-*{box-sizing:border-box}
+:root[data-theme="light"]{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-:root{color-scheme: light dark}
-:root[data-theme="light"]{color-scheme: light}
-:root[data-theme="dark"]{color-scheme: dark}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.7;margin:0}
-.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:0 80px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:15.5px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad);padding-bottom:96px}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-h1,h2,h3{text-wrap:balance;margin:0}
+h1,h2,h3,h4{text-wrap:balance;margin:0;font-family:var(--display);letter-spacing:.01em}
+:focus-visible{outline:2.5px solid var(--ai);outline-offset:3px;border-radius:3px}
+::selection{background:var(--rouge);color:var(--rouge-ink)}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.label{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:0 0 var(--r-s) 0}
+.skip:focus{left:0}
 
-/* HERO */
-.hero{padding-block:48px 28px;display:grid;grid-template-columns:auto 1fr;gap:12px 40px;align-items:end;border-bottom:1px solid var(--line)}
-.alt-num{font-family:var(--display);font-weight:900;font-size:clamp(120px,22vw,260px);line-height:.78;letter-spacing:-.02em;margin:0;color:var(--ink)}
-.alt-num small{font-size:.22em;font-weight:700;color:var(--accent);letter-spacing:0;margin-left:.1em}
-.hero-copy{display:grid;gap:14px;padding-bottom:6px}
-.hero-copy h1{font-size:clamp(22px,2.6vw,30px);font-weight:900;line-height:1.3}
-.hero-copy p{margin:0;color:var(--muted);max-width:52ch}
-.meta{display:flex;flex-wrap:wrap;gap:8px 22px}
-.meta div{display:grid}
-.meta b{font-family:var(--mono);font-weight:600;font-size:14px}
-@media (max-width:720px){.hero{grid-template-columns:1fr}}
+/* ── SCROLL PROGRESS ── */
+.progress{position:fixed;inset:0 0 auto;height:3px;z-index:60;background:transparent;pointer-events:none}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ai),var(--rouge) 70%,var(--kin));transition:width .12s linear}
 
-/* NAV */
-nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);border-bottom:1px solid var(--line);margin-inline:calc(-1 * clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px)}
-nav.jump ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-nav.jump a{display:block;white-space:nowrap;text-decoration:none;font-size:13px;padding:4px 10px;border-radius:3px;color:var(--muted)}
-nav.jump a:hover{color:var(--ink);background:var(--surface-2)}
+/* ── MASTHEAD ── */
+.masthead{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--rule);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.masthead-in{display:flex;align-items:center;gap:14px;max-width:var(--maxw);margin:0 auto;padding:9px var(--pad)}
+.brand{display:flex;align-items:baseline;gap:7px;text-decoration:none;flex:0 0 auto}
+.brand b{font-family:var(--num);font-weight:900;font-size:19px;letter-spacing:-.035em;color:var(--ink)}
+.brand b em{font-style:normal;color:var(--rouge)}
+.brand span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--faint);text-transform:uppercase}
+@media (max-width:900px){.brand span{display:none}}
+.tbtn{
+  flex:0 0 auto;margin-left:auto;width:36px;height:36px;display:grid;place-items:center;
+  border:1px solid var(--rule-2);background:var(--card);color:var(--ink-2);
+  border-radius:50%;cursor:pointer;transition:transform .18s,border-color .18s,background .18s;
+}
+.tbtn:hover{border-color:var(--ink);transform:rotate(18deg)}
+.tbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tbtn .ic-sun{display:none}
+:root[data-theme="dark"] .tbtn .ic-sun{display:block}
+:root[data-theme="dark"] .tbtn .ic-moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tbtn .ic-sun{display:block}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tbtn .ic-moon{display:none}}
 
-section{padding-block:56px 8px}
-.sec-head{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline;margin-bottom:24px}
-.sec-head .code{font-family:var(--display);font-weight:700;font-size:40px;line-height:1;color:var(--accent)}
-.sec-head h2{font-size:clamp(22px,2.4vw,28px);font-weight:900}
-.sec-head p{grid-column:2;margin:0;color:var(--muted);max-width:68ch}
-@media (max-width:560px){.sec-head{grid-template-columns:1fr}.sec-head p{grid-column:1}}
+nav.jump{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.jump::-webkit-scrollbar{display:none}
+nav.jump ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
+nav.jump a{
+  display:block;white-space:nowrap;text-decoration:none;font-size:13px;font-weight:500;
+  padding:7px 11px;border-radius:99px;color:var(--muted);transition:color .16s,background .16s;
+}
+nav.jump a:hover{color:var(--ink);background:var(--card-2)}
+nav.jump a[aria-current="true"]{color:var(--rouge-ink);background:var(--rouge);font-weight:700}
 
-/* ROUTE STRIP */
-.strip{overflow-x:auto;margin-top:28px}
-.strip ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(10,minmax(96px,1fr));min-width:980px;border-top:3px solid var(--ink)}
-.strip li{padding:10px 10px 12px;border-right:1px solid var(--line);display:grid;gap:2px;align-content:start}
-.strip li:last-child{border-right:0}
-.strip .d{font-family:var(--display);font-weight:700;font-size:26px;line-height:1}
-.strip .w{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.strip .place{font-size:13px;font-weight:700;line-height:1.35;margin-top:6px}
-.strip .who{font-size:11px;color:var(--muted);line-height:1.4}
-.strip li.snow{background:var(--surface)}
-.strip li.snow .d{color:var(--accent)}
-.strip li a{text-decoration:none}
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;padding-block:clamp(38px,7vw,84px) clamp(28px,4vw,48px);border-bottom:1px solid var(--rule)}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 88% -12%, color-mix(in srgb,var(--rouge) 20%,transparent) 0%, transparent 58%),
+    radial-gradient(100% 80% at 6% 0%, color-mix(in srgb,var(--ai) 17%,transparent) 0%, transparent 55%);
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:118px;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(to right,var(--rule-2) 0 1px,transparent 1px 46px);
+  -webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);
+  opacity:.5;
+}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,64px);align-items:end}
+@media (max-width:860px){.hero-in{grid-template-columns:1fr;align-items:start}}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--rouge);box-shadow:0 0 0 4px color-mix(in srgb,var(--rouge) 18%,transparent)}
+.hero h1{font-size:clamp(30px,5.2vw,58px);font-weight:900;line-height:1.08;letter-spacing:-.015em;max-width:20ch}
+.hero h1 em{font-style:normal;color:var(--rouge)}
+.hero .lede{margin:20px 0 0;color:var(--ink-2);max-width:56ch;font-size:clamp(14.5px,1.6vw,16.5px);line-height:1.72}
+.hero .lede b{color:var(--ink);font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(132px,100%),1fr));gap:1px;margin-top:30px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r-m);overflow:hidden}
+.facts div{background:var(--paper);padding:12px 14px;display:grid;gap:2px}
+.facts b{font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--ink)}
+.hero-alt{display:grid;gap:6px;justify-items:end;text-align:right}
+@media (max-width:860px){.hero-alt{justify-items:start;text-align:left}}
+.hero-alt .big{font-family:var(--num);font-weight:900;font-size:clamp(76px,13vw,150px);line-height:.8;letter-spacing:-.06em;color:var(--ink)}
+.hero-alt .big i{font-style:normal;font-size:.26em;font-weight:700;letter-spacing:0;color:var(--rouge);margin-left:.12em;vertical-align:super}
+.hero-alt .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
 
-/* WAR BOARD */
-.board{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.controls{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
-.ctrl{padding:18px 20px;display:grid;gap:10px}
-.ctrl + .ctrl{border-left:1px solid var(--line)}
-@media (max-width:760px){.controls{grid-template-columns:1fr}.ctrl + .ctrl{border-left:0;border-top:1px solid var(--line)}}
-.seg{display:flex;flex-wrap:wrap;gap:6px}
-.seg button{font:inherit;font-size:13px;padding:7px 12px;border:1px solid var(--line);background:var(--ground);color:var(--ink);border-radius:3px;cursor:pointer;display:grid;text-align:left;line-height:1.3}
-.seg button small{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-.seg button[aria-pressed="true"] small{color:var(--ground);opacity:.75}
-.seg button .tag{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.08em}
-.seg button[aria-pressed="true"] .tag{color:var(--accent)}
-.board-body{display:grid;grid-template-columns:1.35fr 1fr}
-@media (max-width:860px){.board-body .side{order:-1;border-top:0;border-bottom:1px solid var(--line)}}
-@media (max-width:860px){.board-body{grid-template-columns:1fr}}
-.tl{padding:22px 20px;display:grid;gap:0}
-.step{display:grid;grid-template-columns:58px 18px 1fr;gap:0 12px}
-.step .t{font-family:var(--mono);font-weight:600;font-size:14px;text-align:right;padding-top:1px}
+/* ── SECTIONS ── */
+section{padding-block:clamp(46px,6vw,78px)}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;align-items:baseline;margin-bottom:clamp(22px,3vw,34px)}
+.sec-num{font-family:var(--num);font-weight:800;font-size:12px;letter-spacing:.1em;color:var(--rouge);
+  background:var(--rouge-soft);border-radius:99px;padding:4px 11px;align-self:center;white-space:nowrap}
+.sec-head h2{font-size:clamp(23px,3vw,32px);font-weight:900;line-height:1.16;letter-spacing:-.01em}
+.sec-head p{grid-column:2;margin:2px 0 0;color:var(--muted);max-width:70ch;font-size:14.5px;line-height:1.7}
+@media (max-width:600px){
+  .sec-head{grid-template-columns:1fr;gap:10px}
+  .sec-head p{grid-column:1}
+}
+
+/* ── ROUTE STRIP ── */
+.strip{overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--pad));padding:2px var(--pad) 4px;scrollbar-width:thin}
+.strip ol{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(158px,1fr);gap:10px}
+.strip li{
+  scroll-snap-align:start;position:relative;display:grid;gap:3px;align-content:start;
+  background:var(--card);border:1px solid var(--rule);border-radius:var(--r-m);
+  padding:14px 15px 15px;transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden;
+}
+.strip li::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--rule-2)}
+.strip li.snow::before{background:var(--kin)}
+.strip li.snow{background:var(--card)}
+.strip li.snow .d{color:var(--kin)}
+.strip li>a{display:grid;gap:3px;color:inherit;text-decoration:none;height:100%}
+.strip li:has(>a):hover{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:var(--rule-2)}
+.strip li.today{background:var(--rouge);border-color:var(--rouge);box-shadow:0 0 0 3px var(--rouge-soft)}
+.strip li.today::before{background:var(--rouge-ink)}
+.strip li.today .d,.strip li.today .w,.strip li.today .place,.strip li.today .who{color:var(--rouge-ink)}
+.strip .d{font-family:var(--num);font-weight:800;font-size:30px;line-height:1;letter-spacing:-.04em;color:var(--ink)}
+.strip .w{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint)}
+.strip .place{font-size:14px;font-weight:700;line-height:1.35;margin-top:8px;font-family:var(--display)}
+.strip .who{font-size:11.5px;color:var(--muted);line-height:1.45}
+.strip-hint{display:none}
+@media (max-width:1040px){.strip-hint{display:block}}
+
+/* ── NEXT BAR ── */
+.nextbar{
+  position:sticky;top:calc(env(safe-area-inset-top,0px) + 55px);z-index:40;
+  display:flex;flex-wrap:wrap;gap:3px 12px;align-items:baseline;margin:0 0 8px;
+  padding:12px 16px;border-radius:var(--r-m);
+  background:var(--ink);color:var(--paper);box-shadow:var(--shadow-2);
+}
+.nextbar .label{color:color-mix(in srgb,var(--paper) 62%,transparent)}
+.nextbar b{font-weight:700;font-family:var(--display)}
+.nextbar .eta{font-family:var(--mono);font-size:12px;color:color-mix(in srgb,var(--paper) 70%,transparent)}
+
+/* ── CARDS / PLAN PICK ── */
+.plan-pick{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:0 0 16px;padding:15px 18px;
+  background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--kin);
+  border-radius:var(--r-m);box-shadow:var(--shadow-1);font-size:14px;
+}
+.plan-pick b{font-weight:700;font-family:var(--display)}
+.plan-pick .off{color:var(--warn);font-size:12.5px;background:var(--warn-soft);padding:3px 9px;border-radius:99px}
+.plan-pick .btn{margin-left:auto}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-l);box-shadow:var(--shadow-1);overflow:hidden}
+
+/* ── BOARD (12/15) ── */
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-bottom:1px solid var(--rule)}
+.ctrl{padding:18px 20px;display:grid;gap:12px;align-content:start;background:var(--card)}
+@media (max-width:800px){.controls{grid-template-columns:1fr}}
+.seg{display:grid;gap:8px}
+.seg button{
+  font:inherit;text-align:left;cursor:pointer;display:grid;gap:1px;
+  padding:11px 14px;border:1px solid var(--rule);background:var(--paper);
+  color:var(--ink);border-radius:var(--r-s);transition:border-color .16s,background .16s,transform .16s;
+}
+.seg button:hover{border-color:var(--ink);transform:translateX(2px)}
+.seg button span{font-weight:700;font-size:14px;font-family:var(--display)}
+.seg button small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.seg button .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--kin)}
+.seg button[aria-pressed="true"]{background:var(--rouge);border-color:var(--rouge);color:var(--rouge-ink)}
+.seg button[aria-pressed="true"] small{color:color-mix(in srgb,var(--rouge-ink) 78%,transparent)}
+.seg button[aria-pressed="true"] .tag{color:var(--kin-soft)}
+.seg-inline{display:flex;flex-wrap:wrap;gap:8px}
+.seg-inline button{font:inherit;font-size:13.5px;cursor:pointer;padding:9px 15px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:99px;transition:.16s}
+.seg-inline button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:700}
+.board-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:0}
+@media (max-width:900px){.board-body{grid-template-columns:1fr}}
+.tl{padding:24px 22px}
+.step{display:grid;grid-template-columns:56px 16px 1fr;gap:0 12px}
+.step .t{font-family:var(--mono);font-weight:500;font-size:13.5px;text-align:right;padding-top:1px;color:var(--ink)}
 .step .rail{position:relative}
-.step .rail::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
-.step .rail::after{content:"";position:absolute;left:3px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--ink)}
-.step.key .rail::after{background:var(--accent);border-color:var(--accent)}
-.step.roam .rail::before{background:var(--alt);width:4px;left:7px}
-.step:last-child .rail::before{bottom:auto;height:10px}
-.step .c{padding-bottom:16px}
-.step .c b{display:block;font-weight:700}
-.step .c span{color:var(--muted);font-size:13px}
-.side{border-left:1px solid var(--line);padding:22px 20px;display:grid;gap:18px;align-content:start;background:var(--ground)}
-@media (max-width:860px){.side{border-left:0;border-top:1px solid var(--line)}}
-.verdict{display:grid;gap:6px}
-.big{font-family:var(--display);font-weight:900;font-size:56px;line-height:.9}
-.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:99px;font-weight:600;width:max-content}
-.pill.ok{background:var(--ok-bg);color:var(--ok)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.crit{background:var(--crit-bg);color:var(--crit)}
-.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-.kv{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:13.5px;margin:0}
+.step .rail::before{content:"";position:absolute;left:7px;top:0;bottom:0;width:1.5px;background:var(--rule-2)}
+.step .rail::after{content:"";position:absolute;left:3.5px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--card);border:2px solid var(--rule-2);transition:.2s}
+.step.key .rail::after{background:var(--rouge);border-color:var(--rouge);box-shadow:0 0 0 4px var(--rouge-soft)}
+.step.roam .rail::before{background:var(--ai);width:3px;left:6.2px}
+.step.roam .rail::after{border-color:var(--ai);background:var(--ai-soft)}
+.step:last-child .rail::before{bottom:auto;height:9px}
+.step .c{padding-bottom:17px;min-width:0}
+.step .c b{display:block;font-weight:700;font-size:14.5px;font-family:var(--display)}
+.step .c span{color:var(--muted);font-size:13px;line-height:1.6}
+.side{border-left:1px solid var(--rule);padding:24px 22px;display:grid;gap:20px;align-content:start;background:var(--paper-2)}
+@media (max-width:900px){.side{border-left:0;border-top:1px solid var(--rule)}}
+.verdict{display:grid;gap:5px}
+.big{font-family:var(--num);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.04em}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;font-weight:500;padding:3px 10px;border-radius:99px;width:max-content}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.crit{background:var(--crit-soft);color:var(--crit)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:8px 14px;font-size:13.5px;margin:0}
 .kv dt{color:var(--muted)} .kv dd{margin:0;font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
-.kv .sum{border-top:1px solid var(--line);padding-top:6px;font-weight:700;color:var(--ink)}
-.field{display:grid;gap:4px}
-.field label{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between}
-input[type=range]{width:100%;accent-color:var(--accent)}
-input[type=number]{font:inherit;font-family:var(--mono);font-size:16px;width:72px;padding:4px 6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px}
-.note{font-size:12.5px;color:var(--muted);margin:0;line-height:1.6}
-.compare{overflow-x:auto;border-top:1px solid var(--line)}
+.kv .sum{border-top:1px solid var(--rule-2);padding-top:8px;font-weight:700;color:var(--ink)}
+.field{display:grid;gap:7px}
+.field label{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+input[type=range]{width:100%;accent-color:var(--rouge);height:24px}
+input[type=number]{font:inherit;font-family:var(--mono);font-size:16px;width:66px;padding:5px 7px;border:1px solid var(--rule-2);background:var(--card);color:var(--ink);border-radius:var(--r-s)}
+.note{font-size:12.5px;color:var(--muted);margin:0;line-height:1.68}
+.compare{overflow-x:auto;border-top:1px solid var(--rule);background:var(--card)}
 table{border-collapse:collapse;width:100%;font-size:13.5px}
-th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+th,td{padding:11px 16px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:500;background:var(--paper-2)}
 td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
-tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
-@media (max-width:640px){
+tr.on td{background:var(--rouge-soft)}
+tr.on td:first-child{box-shadow:inset 3px 0 0 var(--rouge)}
+tr.on td b{color:var(--rouge)}
+@media (max-width:680px){
   .compare table,.compare tbody,.compare tr,.compare td{display:block;width:100%}
   .compare thead{display:none}
-  .compare tr{padding:12px 16px;border-bottom:1px solid var(--line)}
-  .compare tr.on{box-shadow:inset 3px 0 0 var(--accent)}
-  .compare tr.on td:first-child{box-shadow:none}
-  .compare td{border:0;padding:2px 0;display:grid;grid-template-columns:96px 1fr;gap:8px}
+  .compare tr{padding:14px 16px;border-bottom:1px solid var(--rule)}
+  .compare tr.on td{background:transparent}
+  .compare tr.on td:first-child{box-shadow:none;background:var(--rouge-soft);border-radius:var(--r-s)}
+  .compare td{border:0;padding:2px 0;display:grid;grid-template-columns:88px 1fr;gap:10px}
   .compare td:first-child{display:block;font-size:15px;padding-bottom:6px}
-  .compare td::before{content:attr(data-label);font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:2px}
+  .compare td::before{content:attr(data-label);font-family:var(--mono);font-size:10.5px;color:var(--faint);padding-top:3px}
   .compare td:first-child::before{content:none}
   .compare td.n{white-space:normal}
 }
 
-/* DAYS */
-.days{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
-.day{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 28px;padding-block:22px;border-bottom:1px solid var(--line)}
+/* ── DAYS ── */
+.days{display:grid;gap:16px}
+.day{
+  position:relative;background:var(--card);border:1px solid var(--rule);border-radius:var(--r-l);
+  padding:clamp(20px,3vw,30px);box-shadow:var(--shadow-1);scroll-margin-top:96px;
+  display:grid;grid-template-columns:126px minmax(0,1fr);gap:18px clamp(20px,3vw,34px);
+  transition:box-shadow .24s,border-color .24s;
+}
+.day:hover{box-shadow:var(--shadow-2)}
+.day::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:3px;border-radius:0 3px 3px 0;background:var(--rule-2)}
+.day.snow::before{background:var(--kin)}
 .day>*{min-width:0}
-@media (max-width:640px){.day{grid-template-columns:minmax(0,1fr)}}
-.day .when{display:grid;align-content:start;gap:2px}
-.day .when .d{font-family:var(--display);font-weight:900;font-size:44px;line-height:.9}
-.day .when .alt{font-family:var(--mono);font-size:12px;color:var(--accent)}
-.day h3{font-size:18px;font-weight:900;margin-bottom:8px}
-.day ul{margin:0;padding-left:0;list-style:none;display:grid;gap:6px;max-width:72ch}
-.day li{display:grid;grid-template-columns:52px 1fr;gap:10px}
-.day li .t{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:1px}
-.day .opt{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px}
-.optcard{border:1px solid var(--line);border-radius:4px;padding:12px 14px;background:var(--surface);font-size:13.5px}
-.optcard .label{display:block;margin-bottom:4px}
-.optcard.a .label{color:var(--accent)} .optcard.b .label{color:var(--alt)}
+@media (max-width:680px){.day{grid-template-columns:1fr;gap:14px}}
+.day .when{display:grid;align-content:start;gap:1px;position:sticky;top:96px;align-self:start}
+@media (max-width:680px){.day .when{position:static;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}}
+.day .when .d{font-family:var(--num);font-weight:800;font-size:36px;line-height:1;letter-spacing:-.045em;color:var(--ink)}
+.day.snow .when .d{color:var(--kin)}
+.day .when .alt{font-family:var(--mono);font-size:11px;color:var(--rouge);letter-spacing:.02em;margin-top:5px}
+@media (max-width:680px){.day .when .alt{margin-top:0}}
+.day h3{font-size:clamp(17px,2.1vw,20px);font-weight:900;line-height:1.35;margin-bottom:14px}
+.day h3 a{color:var(--rouge);text-underline-offset:3px}
+.day ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;max-width:74ch}
+.day li{display:grid;grid-template-columns:60px minmax(0,1fr);gap:12px;align-items:baseline}
+@media (max-width:520px){.day li{grid-template-columns:1fr;gap:2px}}
+.day li .t{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right;padding-top:2px;white-space:nowrap}
+@media (max-width:520px){.day li .t{text-align:left}}
+.day li .t::after{content:"";display:block;height:1px;background:var(--rule);margin-top:5px}
+.day .opt{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:10px}
+.optcard{border:1px solid var(--rule);border-radius:var(--r-m);padding:14px 16px;background:var(--paper-2);font-size:13.5px;line-height:1.68}
+.optcard .label{display:block;margin-bottom:6px}
+.optcard.a{background:var(--card);border-color:color-mix(in srgb,var(--rouge) 30%,var(--rule))}
+.optcard.a .label{color:var(--rouge)}
+.optcard.b{background:var(--card);border-color:color-mix(in srgb,var(--ai) 30%,var(--rule))}
+.optcard.b .label{color:var(--ai)}
+.optcard b{font-weight:700}
+.day .note{margin-top:12px;padding-top:12px;border-top:1px dashed var(--rule-2);max-width:74ch}
+.day.today{background:var(--card);border-color:var(--rouge);box-shadow:0 0 0 3px var(--rouge-soft),var(--shadow-2)}
+.todaytag{
+  display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  background:var(--rouge);color:var(--rouge-ink);padding:3px 9px;border-radius:99px;margin-top:8px;width:max-content;font-weight:600;
+}
+@media (max-width:680px){.todaytag{margin-top:0}}
 
-/* CHAIN (12/19) */
-.chain{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
-.bar{position:relative;height:56px;margin:22px 0 32px;border-radius:3px;background:var(--surface-2);overflow:visible}
-.bar .seg-b{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink);overflow:hidden;white-space:nowrap;border-right:1px solid var(--surface)}
-.bar .tick{position:absolute;top:-18px;font-family:var(--mono);font-size:10.5px;color:var(--muted);transform:translateX(-50%)}
-.bar .mark{position:absolute;top:-6px;bottom:-6px;width:2px;background:var(--crit)}
-.bar .mark span{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;color:var(--crit);white-space:nowrap}
+/* ── N'EX CHAIN (12/19) ── */
+.chain{background:var(--paper-2);border:1px solid var(--rule);border-radius:var(--r-m);padding:20px;margin-top:16px;display:grid;gap:4px}
+.bar{position:relative;height:58px;margin:26px 0 34px;background:var(--card);border:1px solid var(--rule);border-radius:var(--r-s)}
+.bar .seg-b{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-family:var(--mono);color:var(--ink);overflow:hidden;white-space:nowrap;border-right:2px solid var(--card);padding-inline:4px}
+.bar .tick{position:absolute;top:-18px;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:var(--faint)}
+.bar .mark{position:absolute;top:-7px;bottom:-7px;width:2px;background:var(--crit)}
+.bar .mark span{position:absolute;bottom:-21px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;white-space:nowrap;color:var(--crit)}
 .bar-wrap{overflow-x:auto}
-.bar-inner{min-width:640px;padding-inline:20px}
+.bar-inner{min-width:660px;padding-inline:22px}
 
-/* CARVE */
-.resorts{display:grid;gap:10px}
-.resort{background:var(--surface);border:1px solid var(--line);border-radius:6px}
-.resort summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 18px;align-items:center}
+/* ── RESORTS ── */
+.resorts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:12px}
+.resort{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-m);overflow:hidden;transition:box-shadow .2s,border-color .2s;align-self:start}
+.resort[open]{box-shadow:var(--shadow-2);border-color:var(--rule-2);grid-column:1/-1}
+.resort summary{
+  list-style:none;cursor:pointer;padding:16px 18px;display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;gap:2px 16px;align-items:center;
+}
 .resort summary::-webkit-details-marker{display:none}
-.resort .rdate{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;color:var(--accent);min-width:88px}
-.resort .rname{font-size:17px;font-weight:900;line-height:1.3}
-.resort .rname small{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
-.resort .chev{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
-.resort .chev::after{content:"雪道圖 ▾"}
-.resort[open] .chev::after{content:"收起 ▴"}
-.resort .rbody{border-top:1px solid var(--line);padding:14px 18px 18px;display:grid;gap:12px}
-.rstats{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;padding:0;list-style:none;font-size:13.5px}
-.rstats b{font-family:var(--mono);font-weight:600}
+.resort summary:hover{background:var(--paper-2)}
+.resort .rdate{font-family:var(--num);font-weight:800;font-size:17px;line-height:1.1;letter-spacing:-.03em;color:var(--rouge);min-width:74px}
+.resort .rname{font-size:16px;font-weight:900;line-height:1.3;font-family:var(--display)}
+.resort .rname small{display:block;font-weight:400;font-size:12px;color:var(--muted);font-family:var(--body);margin-top:2px}
+.resort .chev{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap;display:flex;align-items:center;gap:5px}
+.resort .chev::before{content:"▾";transition:transform .2s;display:inline-block}
+.resort[open] .chev::before{transform:rotate(180deg)}
+.resort .rbody{border-top:1px solid var(--rule);padding:16px 18px 20px;display:grid;gap:14px;background:var(--paper-2)}
+.rstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:10px 22px;margin:0;padding:0;list-style:none;font-size:13.5px}
+.rstats li{display:grid;gap:1px}
+.rstats b{font-family:var(--mono);font-weight:500}
 .rlinks{display:flex;flex-wrap:wrap;gap:8px}
-.rlinks a{font-size:13px;text-decoration:none;padding:5px 11px;border:1px solid var(--line);border-radius:3px;color:var(--ink);background:var(--ground)}
-.rlinks a:hover{border-color:var(--ink)}
-.rlinks a.sf{border-color:var(--alt);color:var(--alt)}
-.rmap{overflow:auto;max-height:78vh;border:1px solid var(--line);border-radius:4px;background:var(--surface-2)}
-.rmap img{display:block;width:100%;height:auto;min-width:640px;max-width:none}
-.rmap .ph{padding:40px 16px;text-align:center;color:var(--muted);font-size:13px}
-@media (max-width:560px){.resort summary{grid-template-columns:1fr auto}.resort .rdate{grid-column:1/-1;font-size:24px}}
+.rlinks a{font-size:12.5px;text-decoration:none;padding:7px 13px;border:1px solid var(--rule-2);border-radius:99px;color:var(--ink);background:var(--card);transition:.16s}
+.rlinks a:hover{border-color:var(--ink);transform:translateY(-1px)}
+.rlinks a.sf{border-color:color-mix(in srgb,var(--ai) 50%,transparent);color:var(--ai);font-weight:500}
+.rmap{overflow:auto;max-height:74vh;border:1px solid var(--rule);border-radius:var(--r-s);background:var(--card)}
+.rmap img{display:block;width:100%;height:auto;min-width:680px;max-width:none}
+.rmap .ph{padding:44px 18px;text-align:center;color:var(--muted);font-size:13px}
 
-/* RECS */
-.filters{display:grid;gap:10px;margin-bottom:18px}
+/* ── WEATHER ── */
+.wx-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:11.5px;color:var(--faint);font-family:var(--mono)}
+.wx{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(132px,100%),1fr));gap:8px}
+.wx .c{border:1px solid var(--rule);border-radius:var(--r-s);padding:10px 12px;background:var(--card);display:grid;gap:2px}
+.wx .dt{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.wx .sn{font-family:var(--num);font-weight:800;font-size:24px;line-height:1.15;letter-spacing:-.03em}
+.wx .sn small{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:0}
+.wx .mt{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.wx .mt b{color:var(--ink);font-weight:500}
+.wx .mt.warn b{color:var(--warn)}
+
+/* ── RECS ── */
+.filters{display:grid;gap:10px;margin-bottom:20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 55px);z-index:30;
+  background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);
+  padding:12px 0;margin-inline:calc(-1 * var(--pad));padding-inline:var(--pad);border-bottom:1px solid transparent}
+.filters.stuck{border-bottom-color:var(--rule)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips button{font:inherit;font-size:13px;padding:4px 11px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
-.chips button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:12px}
-.rec{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:6px}
-.rec .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
-.rec .cat{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--accent)}
+.chips button{
+  font:inherit;font-size:12.5px;padding:6px 13px;border-radius:99px;border:1px solid var(--rule-2);
+  background:var(--card);color:var(--ink);cursor:pointer;transition:.16s;white-space:nowrap;
+}
+.chips button:hover{border-color:var(--ink)}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:700}
+.count{font-family:var(--mono);font-size:11.5px;color:var(--faint);align-self:center}
+.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr));gap:12px}
+.rec{
+  background:var(--card);border:1px solid var(--rule);border-radius:var(--r-m);padding:16px 17px;
+  display:grid;grid-template-rows:auto auto 1fr auto auto;gap:7px;
+  transition:box-shadow .2s,transform .2s,border-color .2s;
+}
+.rec:hover{box-shadow:var(--shadow-2);transform:translateY(-2px);border-color:var(--rule-2)}
+.rec .top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.rec .cat{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--rouge);background:var(--rouge-soft);padding:2px 8px;border-radius:99px}
 .rec .area{font-size:11.5px;color:var(--muted)}
-.rec h3{font-size:16px;font-weight:700;line-height:1.35}
-.rec h3 small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
-.rec p{margin:0;font-size:13.5px}
-.rec .stars{font-size:13px;color:var(--muted);display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-.rec .stars .st{position:relative;display:inline-block;color:var(--accent);letter-spacing:1px;font-size:14px;line-height:1}
-.rec .stars .st-bg{opacity:.35}
+.rec h3{font-size:15.5px;font-weight:700;line-height:1.4;font-family:var(--display)}
+.rec h3 small{display:block;font-weight:400;font-size:12px;color:var(--faint);font-family:var(--mono);margin-top:2px}
+.rec p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.68}
+.rec .stars{font-size:12.5px;color:var(--muted);display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.rec .stars .st{position:relative;display:inline-block;color:var(--kin);letter-spacing:1.5px;font-size:13px;line-height:1}
+.rec .stars .st-bg{opacity:.3}
 .rec .stars .st-fg{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap}
-.rec .stars b{font-family:var(--mono);color:var(--ink)}
-.rec .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:8px}
-.rec .dist{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.rec a{font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--alt)}
+.rec .stars b{font-family:var(--mono);color:var(--ink);font-weight:500}
+.rec .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--rule);padding-top:9px;margin-top:2px}
+.rec .dist{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.rec a{font-family:var(--mono);font-size:11.5px;text-decoration:none;color:var(--ai);font-weight:500;white-space:nowrap}
 .rec a:hover{text-decoration:underline}
 .vf{font-family:var(--mono);font-size:10.5px}
 .vf.y{color:var(--ok)} .vf.n{color:var(--warn)}
-.count{font-family:var(--mono);font-size:12px;color:var(--muted)}
 
-/* CHECK */
-.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:0 32px}
-.check div{display:grid;grid-template-columns:auto 1fr;gap:10px;padding-block:10px;border-bottom:1px solid var(--line);font-size:14px}
-.check input{accent-color:var(--accent);margin-top:6px}
-.sources{font-size:12.5px;color:var(--muted);columns:2 280px;column-gap:32px;padding-left:18px}
-.sources li{break-inside:avoid;margin-bottom:4px}
-footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-/* WEATHER */
-.wx{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px}
-.wx .c{border:1px solid var(--line);border-radius:4px;padding:8px 10px;background:var(--ground)}
-.wx .dt{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.wx .sn{font-family:var(--display);font-weight:900;font-size:26px;line-height:1.15}
-.wx .sn small{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted)}
-.wx .mt{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.wx .mt b{color:var(--ink);font-weight:600}
-.wx .mt.warn b{color:var(--warn)}
-.wx-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:12px;color:var(--muted)}
-
-/* TODAY */
-.day.today{background:var(--surface);box-shadow:-12px 0 0 var(--surface),inset 3px 0 0 var(--accent)}
-.todaytag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;background:var(--accent);color:var(--accent-ink);padding:2px 6px;border-radius:2px;margin-top:6px;width:fit-content}
-.strip li.today{background:var(--accent);}
-.strip li.today .d,.strip li.today .place,.strip li.today .who,.strip li.today .w{color:var(--accent-ink)}
-
-/* TOOLS */
-.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(258px,100%),1fr));gap:12px;margin-top:22px}
-.tool{border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:14px 16px;display:grid;gap:9px;align-content:start}
-.tool h3{font-size:15px;font-weight:900}
-.tool>p{font-size:12.5px;color:var(--muted);line-height:1.5}
-.btn{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--line);background:var(--ground);color:var(--ink);border-radius:3px;padding:8px 12px;text-align:center}
-.btn:hover{border-color:var(--ink)}
-.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
-.emg{display:grid;gap:5px;font-size:13px}
-.emg div{display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid var(--line);padding-bottom:5px}
-.emg a,.emg span.n{font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--alt);white-space:nowrap}
-
-/* NAV ACTIVE · STRIP LINKS · CHECK PROGRESS */
-nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);font-weight:700}
-.strip li>a{display:grid;gap:2px;color:inherit}
-.strip li:has(>a):hover{background:var(--surface-2)}
-.strip-hint{display:none}
-@media (max-width:1000px){.strip-hint{display:block}}
-.ck-progress{display:flex;align-items:center;gap:12px;margin:0 0 12px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.ck-progress .bar2{flex:1;max-width:260px;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
-.ck-progress .bar2 i{display:block;height:100%;background:var(--ok);width:0}
-.day{scroll-margin-top:76px}
-/* touch targets on phones */
-@media (pointer:coarse){
-  nav.jump a{padding:9px 12px}
-  .chips button{padding:8px 14px}
-  .rlinks a{padding:9px 12px}
-  .btn{padding:11px 14px}
-  .dc-top .btn{padding:10px 12px}
-  .check div{padding-block:12px}
-  .check input{width:20px;height:20px;margin-top:3px}
-  .rec a{display:inline-block;padding:8px 0}
-  .emg a{display:inline-block;padding:6px 0}
+/* ── KIT / TOOLS ── */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:12px}
+.tool{border:1px solid var(--rule);border-radius:var(--r-m);background:var(--card);padding:18px;display:grid;gap:10px;align-content:start}
+.tool h3{font-size:15.5px;font-weight:900}
+.tool>p{font-size:12.5px;color:var(--muted);line-height:1.62;margin:0}
+.btn{
+  font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule-2);background:var(--card);color:var(--ink);
+  border-radius:var(--r-s);padding:10px 14px;text-align:center;transition:.16s;
 }
+.btn:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn.pri{background:var(--rouge);color:var(--rouge-ink);border-color:var(--rouge);font-weight:700}
+.btn.pri:hover{filter:brightness(1.08)}
+.emg{display:grid;gap:0;font-size:13.5px}
+.emg div{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;border-bottom:1px solid var(--rule);padding:9px 0}
+.emg div:last-child{border-bottom:0}
+.emg a{font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--ai);white-space:nowrap;font-weight:500}
+.emg a:hover{text-decoration:underline}
 
-/* PLAN PICK · NEXT BAR */
-.plan-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;background:var(--surface);font-size:14px}
-.plan-pick b{font-weight:900}
-.plan-pick .off{color:var(--warn);font-size:12.5px}
-.nextbar{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-top:14px;padding:10px 14px;border:1px solid var(--accent);border-radius:6px;background:var(--surface);font-size:14px}
-.nextbar .label{color:var(--accent)}
-.nextbar b{font-weight:900}
-.nextbar .eta{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+/* ── CHECKLIST ── */
+.ck-progress{display:flex;align-items:center;gap:14px;margin:0 0 16px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.ck-progress .bar2{flex:1;max-width:280px;height:7px;border-radius:99px;background:var(--card-2);overflow:hidden;border:1px solid var(--rule)}
+.ck-progress .bar2 i{display:block;height:100%;background:linear-gradient(90deg,var(--ai),var(--ok));width:0;transition:width .3s}
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:0 clamp(20px,3vw,40px)}
+.check div{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.62;align-items:start}
+.check input{accent-color:var(--rouge);width:18px;height:18px;margin-top:4px;cursor:pointer;flex:0 0 auto}
+.check label{cursor:pointer}
+.check input:checked+label{color:var(--faint);text-decoration:line-through;text-decoration-color:var(--rule-2)}
+.sources{font-size:12.5px;color:var(--muted);columns:2 290px;column-gap:clamp(20px,3vw,44px);padding-left:20px;margin:0}
+.sources li{break-inside:avoid;margin-bottom:5px}
+.sources a{color:var(--muted);text-decoration-color:var(--rule-2);text-underline-offset:2px}
+.sources a:hover{color:var(--rouge)}
 
-/* DRIVER CARD */
-.dcard{position:fixed;inset:0;z-index:50;background:var(--ground);overflow:auto;padding:16px;display:grid;gap:14px;align-content:start}
+/* ── FOOTER ── */
+footer{
+  margin-top:56px;padding-top:24px;border-top:2px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11.5px;color:var(--faint);
+}
+footer .totop{text-decoration:none;color:var(--rouge);font-weight:500}
+
+/* ── JAPANESE CARD (fullscreen) ── */
+.dcard{
+  position:fixed;inset:0;z-index:70;background:var(--paper);overflow:auto;
+  padding:16px;display:grid;gap:14px;align-content:start;
+  padding-top:calc(16px + env(safe-area-inset-top,0px));
+}
 .dcard[hidden]{display:none}
-.dc-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.dc-top .btn{padding:6px 10px;font-size:12.5px}
-.dc-top .btn[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-.dc-body{border:3px solid var(--ink);border-radius:6px;padding:20px 18px;display:grid;gap:14px}
-.dc-body .jp{font-size:clamp(26px,7vw,46px);font-weight:900;line-height:1.25}
-.dc-body .ad{font-size:clamp(16px,3.6vw,22px);line-height:1.5}
-.dc-body .tel{font-family:var(--mono);font-size:clamp(18px,4vw,26px)}
+.dcard::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(110% 70% at 50% 0%,color-mix(in srgb,var(--ai) 14%,transparent),transparent 62%);
+}
+.dc-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;position:sticky;top:0;z-index:2;background:var(--paper);padding-bottom:8px}
+.dc-top .btn{padding:8px 13px;font-size:12.5px}
+.dc-top .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dc-body{
+  border:2px solid var(--ink);border-radius:var(--r-l);padding:clamp(22px,5vw,40px) clamp(18px,4vw,32px);
+  display:grid;gap:16px;background:var(--card);box-shadow:var(--shadow-3);
+}
+.dc-body .jp{font-size:clamp(28px,8vw,52px);font-weight:900;line-height:1.22;font-family:var(--display);letter-spacing:.01em}
+.dc-body .ad{font-size:clamp(16px,4vw,23px);line-height:1.5;color:var(--ink-2)}
+.dc-body .tel{font-family:var(--mono);font-size:clamp(19px,4.6vw,28px);font-weight:600}
+.dc-body .tel a{text-decoration:none;color:var(--rouge)}
 .dc-body .zh{font-size:13px;color:var(--muted)}
 .dc-sel{display:flex;flex-wrap:wrap;gap:8px}
-#dcSel,#dcCat{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding:2px 16px 4px;-webkit-overflow-scrolling:touch}
+#dcSel,#dcCat{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding:2px 16px 6px;-webkit-overflow-scrolling:touch}
 #dcSel::-webkit-scrollbar,#dcCat::-webkit-scrollbar{display:none}
 #dcSel .btn,#dcCat .btn{flex:0 0 auto;white-space:nowrap}
-#dcDest,#dcPh{display:grid;gap:12px;align-content:start}
+#dcDest,#dcPh{display:grid;gap:14px;align-content:start}
 .dc-mode{flex:0 0 auto}
-.dc-voice{font-family:var(--mono);font-size:11px;color:var(--muted);order:3;flex-basis:100%}
+.dc-voice{font-family:var(--mono);font-size:11px;color:var(--faint);order:3;flex-basis:100%}
 .dc-voice.bad{color:var(--warn)}
 .dc-hint{font-size:12.5px;color:var(--muted);margin:0}
-#dcSpeak{width:100%;font-size:clamp(15px,3.6vw,18px);padding:14px 12px}
-.spk{font:inherit;font-size:17px;line-height:1;cursor:pointer;border:1px solid var(--line);background:var(--ground);color:var(--ink);border-radius:3px;padding:9px 11px;flex:0 0 auto}
+#dcSpeak{width:100%;font-size:clamp(15px,3.6vw,18px);padding:16px 14px}
+.spk{
+  font:inherit;font-size:18px;line-height:1;cursor:pointer;border:1px solid var(--rule-2);
+  background:var(--card);color:var(--ink);border-radius:var(--r-s);padding:10px 13px;flex:0 0 auto;transition:.16s;
+}
 .spk:hover{border-color:var(--ink)}
-.spk[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
+.spk[aria-pressed="true"]{background:var(--rouge);border-color:var(--rouge)}
 .dc-ph{display:grid;gap:0}
-.ph-row{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);padding:10px 0}
+.ph-row{display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--rule);padding:12px 0}
 .ph-row .t{flex:1 1 auto;min-width:0}
-.ph-row .jp{font-size:clamp(16px,3.8vw,21px);font-weight:700;line-height:1.45;word-break:break-word}
-.ph-row small{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+.ph-row .jp{font-size:clamp(16px,4vw,22px);font-weight:700;line-height:1.5;font-family:var(--display);word-break:break-word}
+.ph-row small{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+
+/* ── TOUCH ── */
+@media (pointer:coarse){
+  nav.jump a{padding:9px 13px}
+  .chips button{padding:9px 15px}
+  .rlinks a{padding:10px 14px}
+  .btn{padding:12px 15px}
+  .spk{padding:12px 15px}
+  .check input{width:22px;height:22px;margin-top:3px}
+  .rec a{display:inline-block;padding:8px 0}
+  .emg a{display:inline-block;padding:7px 0}
+  .seg-inline button{padding:11px 17px}
+}
+
+/* ── PRINT ── */
+@media print{
+  :root{--paper:#fff;--card:#fff;--ink:#000;--ink-2:#222;--muted:#555;--rule:#ddd;--rule-2:#ccc}
+  .masthead,.nextbar,.progress,.filters,.tbtn,.dcard,.rmap,.tools .btn,#copyBtn,#offBtn{display:none!important}
+  .day,.card,.rec,.resort{break-inside:avoid;box-shadow:none;border-color:#ddd}
+  .resort[open] .rbody{display:grid!important}
+  body{font-size:11pt}
+  .strip{overflow:visible}
+  .strip ol{grid-auto-flow:row;grid-template-columns:repeat(5,1fr)}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#main">跳到主要內容</a>
+<div class="progress" aria-hidden="true"><i id="progBar"></i></div>
 
-<header class="hero">
-  <p class="alt-num" aria-label="海拔 2307 公尺">2307<small>m</small></p>
-  <div class="hero-copy">
-    <span class="label">Shiga Kogen · Yokoteyama · Early-season snow log</span>
-    <h1>志賀高原橫手山 10 日刻滑行程，東京進、橫濱出</h1>
-    <p>前段丸沼一天、高峰山兩天，後段在初滑票價期間（12/5–12/18）內滑志賀 4 天。重點是 12/15 那條從成田 T3 到 2307 的時間鏈，以及 12/19 從橫濱回 T3 的最晚出發點。</p>
-    <div class="meta">
-      <div><span class="label">期間</span><b>12.11 FRI — 12.20 SUN</b></div>
-      <div><span class="label">人數</span><b>Robin ＋ 5 友人</b></div>
-      <div><span class="label">雪板日</span><b>12.12–18</b></div>
-      <div><span class="label">基地</span><b>Hotel &amp; Onsen 2307</b></div>
-    </div>
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="brand" href="#top"><b>230<em>7</em></b><span>Carve Log</span></a>
+    <nav class="jump" aria-label="章節">
+      <ul>
+        <li><a href="#route">路線</a></li>
+        <li><a href="#d15">12/15 作戰板</a></li>
+        <li><a href="#days">每日行程</a></li>
+        <li><a href="#snow">雪場</a></li>
+        <li><a href="#recs">在地清單</a></li>
+        <li><a href="#tools">行前工具</a></li>
+        <li><a href="#check">出發前覆核</a></li>
+      </ul>
+    </nav>
+    <button class="tbtn" type="button" id="themeBtn" aria-label="切換深色／淺色模式" title="切換深色／淺色模式">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+    </button>
   </div>
 </header>
 
-<nav class="jump" aria-label="章節">
-  <ul>
-    <li><a href="#route">10 日路線</a></li>
-    <li><a href="#d15">12/15 作戰板</a></li>
-    <li><a href="#days">每日行程</a></li>
-    <li><a href="#d18">12/18 下山</a></li>
-    <li><a href="#d19">12/19 回 T3</a></li>
-    <li><a href="#snow">雪場資訊</a></li>
-    <li><a href="#recs">在地清單</a></li>
-    <li><a href="#tools">行前工具</a></li>
-    <li><a href="#check">出發前覆核</a></li>
-  </ul>
-</nav>
-<div class="nextbar" id="nextBar" hidden aria-live="polite"></div>
+<main id="main">
+<div class="wrap" id="top">
 
-<section id="route" style="padding-top:28px">
-  <div class="strip" role="region" aria-label="10 日路線" tabindex="0">
-    <ol>
-      <li><span class="d">11</span><span class="w">FRI</span><span class="place">成田 T1 → 高崎</span><span class="who">Robin · UA838 14:45 著陸</span></li>
-      <li class="snow"><span class="d">12</span><span class="w">SAT</span><span class="place">丸沼高原</span><span class="who">Robin · 住佐久平（未定）</span></li>
-      <li class="snow"><span class="d">13</span><span class="w">SUN</span><span class="place">高峰山 Mountain Park</span><span class="who">Robin · 原淺間 2000</span></li>
-      <li class="snow"><span class="d">14</span><span class="w">MON</span><span class="place">高峰山 → 長野</span><span class="who">Robin · 滑到末班巴士 · 住長野</span></li>
-      <li class="snow"><span class="d">15</span><span class="w">TUE</span><span class="place">長野 → 2307 · 熊之湯</span><span class="who">友人 5 人 06:35 NRT T3 著陸</span></li>
-      <li class="snow"><span class="d">16</span><span class="w">WED</span><span class="place">橫手山・澀峠</span><span class="who">全員 · 雪板日</span></li>
-      <li class="snow"><span class="d">17</span><span class="w">THU</span><span class="place">熊之湯</span><span class="who">全員 · 雪板日</span></li>
-      <li class="snow"><span class="d">18</span><span class="w">FRI</span><span class="place">2307 → 橫濱</span><span class="who">滑到 14:15 · 約 19:05 抵橫濱 · 聖誕市集</span></li>
-      <li><span class="d">19</span><span class="w">SAT</span><span class="place">橫濱 → NRT T3</span><span class="who">友人 22:25 起飛</span></li>
-      <li><span class="d">20</span><span class="w">SUN</span><span class="place">橫濱 → 成田 T1</span><span class="who">Robin · UA837 NRT→KHH</span></li>
-    </ol>
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">Shiga Kogen · Yokoteyama · Early-season 2026/27</span>
+      </div>
+      <h1>志賀高原橫手山 <em>10 日</em>刻滑行程</h1>
+      <p class="lede">東京進、橫濱出。前段丸沼一天、高峰山兩天，後段在初滑票價期間（12/5–12/18）內滑志賀 4 天。整頁有兩條最緊的時間鏈要盯：<b>12/15 從成田 T3 到 2307</b>，以及 <b>12/19 從橫濱回 T3 的最晚出發點</b>。</p>
+      <div class="facts">
+        <div><span class="label">期間</span><b>12.11 FRI — 12.20 SUN</b></div>
+        <div><span class="label">人數</span><b>Robin ＋ 5 友人</b></div>
+        <div><span class="label">雪板日</span><b>12.12 – 12.18</b></div>
+        <div><span class="label">雪場</span><b>6 個（含 2 備案）</b></div>
+        <div><span class="label">基地</span><b>Hotel &amp; Onsen 2307</b></div>
+      </div>
+    </div>
+    <div class="hero-alt">
+      <span class="big num">2307<i>m</i></span>
+      <span class="cap">Top of Yokoteyama</span>
+    </div>
   </div>
-  <p class="note strip-hint" style="margin-top:6px">← 左右滑動看完 10 天，點任一天跳到當天行程 →</p>
-  <p class="note" style="margin-top:10px">12/11–12/14 是 Robin 先出發的前段：高崎 → 丸沼高原一天 → 高峰山兩天，12/14 搭末班巴士下山後住長野。目前確定的住宿只有 Hotel &amp; Onsen 2307，其他住宿都還沒訂，頁面上都標了「未定」。UA838 14:45 抵 NRT T1，UA837 17:30 從 T1 南翼起飛，時刻沿用第一版；航班時刻在 2026 年會隨日期變動，出發前請再核對一次。</p>
 </section>
 
+<div class="nextbar" id="nextBar" hidden aria-live="polite"></div>
+
+<!-- ═══ ROUTE ═══ -->
+<section id="route" style="border-top:0">
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <h2>10 日路線</h2>
+    <p>由南到北的一條直線：成田落地 → 群馬 → 佐久 → 長野山區 → 橫濱。全程只有 Hotel &amp; Onsen 2307 訂好了，其餘住宿在頁面上都標「未定」。</p>
+  </div>
+  <div class="strip" role="region" aria-label="10 日路線" tabindex="0">
+    <ol>
+      <li><span class="d num">11</span><span class="w">FRI</span><span class="place">成田 T1 → 高崎</span><span class="who">Robin · UA838 14:45 著陸</span></li>
+      <li class="snow"><span class="d num">12</span><span class="w">SAT</span><span class="place">丸沼高原</span><span class="who">Robin · 住佐久平（未定）</span></li>
+      <li class="snow"><span class="d num">13</span><span class="w">SUN</span><span class="place">高峰山 Mountain Park</span><span class="who">Robin · 原淺間 2000</span></li>
+      <li class="snow"><span class="d num">14</span><span class="w">MON</span><span class="place">高峰山 → 長野</span><span class="who">Robin · 滑到末班巴士 · 住長野</span></li>
+      <li class="snow"><span class="d num">15</span><span class="w">TUE</span><span class="place">長野 → 2307 · 熊之湯</span><span class="who">友人 5 人 06:35 NRT T3 著陸</span></li>
+      <li class="snow"><span class="d num">16</span><span class="w">WED</span><span class="place">橫手山・澀峠</span><span class="who">全員 · 雪板日</span></li>
+      <li class="snow"><span class="d num">17</span><span class="w">THU</span><span class="place">熊之湯</span><span class="who">全員 · 雪板日</span></li>
+      <li class="snow"><span class="d num">18</span><span class="w">FRI</span><span class="place">2307 → 橫濱</span><span class="who">滑到 14:15 · 約 19:05 抵橫濱 · 聖誕市集</span></li>
+      <li><span class="d num">19</span><span class="w">SAT</span><span class="place">橫濱 → NRT T3</span><span class="who">友人 22:25 起飛</span></li>
+      <li><span class="d num">20</span><span class="w">SUN</span><span class="place">橫濱 → 成田 T1</span><span class="who">Robin · UA837 NRT→KHH</span></li>
+    </ol>
+  </div>
+  <p class="note strip-hint" style="margin-top:10px">← 左右滑動看完 10 天，點任一天跳到當天行程 →</p>
+  <p class="note" style="margin-top:12px">12/11–12/14 是 Robin 先出發的前段：高崎 → 丸沼高原一天 → 高峰山兩天，12/14 搭末班巴士下山後住長野。UA838 14:45 抵 NRT T1，UA837 17:30 從 T1 南翼起飛，時刻沿用第一版；航班時刻在 2026 年會隨日期變動，出發前請再核對一次。</p>
+</section>
+
+<!-- ═══ 12/15 BOARD ═══ -->
 <section id="d15">
   <div class="sec-head">
-    <span class="code">12.15</span>
-    <h2>友人 NRT T3 06:35 → 東京多留 → 2307，19:00 前抵達</h2>
-    <p>選一個早上漫遊的地點，再選上山方式。時間鏈、漫遊可用分鐘數、抵達緩衝和每人分攤都會即時重算。目標是在東京待久一點、19:00 前到飯店：B、C 都搭はくたか 567（東京 14:24）。</p>
+    <span class="sec-num">02</span>
+    <h2>12/15 作戰板：NRT T3 → 東京 → 2307</h2>
+    <p>整頁最重要的一格。選一個早上漫遊的地點，再選上山方式，時間鏈、漫遊可用分鐘數、抵達緩衝與每人分攤都會即時重算。目標是東京待久一點、19:00 前到飯店。</p>
   </div>
 
   <div class="plan-pick" id="planPick">
@@ -385,7 +637,8 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
     <span class="off" id="planOff" hidden>你現在看的不是建議方案</span>
     <button class="btn" type="button" id="resetPlan">回到建議方案</button>
   </div>
-  <div class="board">
+
+  <div class="card board">
     <div class="controls">
       <div class="ctrl">
         <span class="label">① 晨間漫遊</span>
@@ -401,12 +654,12 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       <aside class="side">
         <div class="verdict">
           <span class="label">抵達 2307 緩衝（對 19:00）</span>
-          <span class="big mono" id="bufBig">—</span>
+          <span class="big" id="bufBig">—</span>
           <span id="bufPill" class="pill ok">—</span>
         </div>
         <div class="verdict">
           <span class="label">漫遊可用時間</span>
-          <span class="big mono" id="roamBig" style="font-size:40px">—</span>
+          <span class="big" id="roamBig" style="font-size:34px">—</span>
         </div>
         <div class="field">
           <label for="pax"><span>分攤人數</span><input id="pax" type="number" min="1" max="9" value="5"></label>
@@ -426,19 +679,20 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       </table>
     </div>
   </div>
-  <p class="note" style="margin-top:12px">計算依據：入境＋提領雪板袋抓 60 分鐘；T3 → 空港第2ビル站走路 15–20 分鐘（有免費接駁車，約 3 分鐘）。新幹線時刻依 JR 東日本 2026 年 9 月時刻表，上野站比東京站晚約 6 分鐘發車；B、C 用的はくたか 567（東京 14:24 → 長野 15:54）12 月實際時刻要再核對。長電巴士參考 25–26 冬季時刻（26–27 冬季時刻預計 11 月公布）。Jumbo 車資是用長電ハイヤー 2023 年跳表費率（起跳 ¥910／1.19 km，之後每 138 m ¥100）推算，湯田中→ほたる溫泉約 24 km，長野站→ほたる溫泉約 54 km，另加雪路與高速費；9 人座 Jumbo 的費率通常比一般車高，實際可能超出這個區間，<b>一定要先請計程車行報價</b>。Gransta 寄物每件 ¥2,000，未列入上面的分攤。</p>
+  <p class="note" style="margin-top:14px">計算依據：入境＋提領雪板袋抓 60 分鐘；T3 → 空港第2ビル站走路 15–20 分鐘（有免費接駁車，約 3 分鐘）。新幹線時刻依 JR 東日本 2026 年 9 月時刻表，上野站比東京站晚約 6 分鐘發車；B、C 用的はくたか 567（東京 14:24 → 長野 15:54）12 月實際時刻要再核對。長電巴士參考 25–26 冬季時刻（26–27 冬季時刻預計 11 月公布）。Jumbo 車資是用長電ハイヤー 2023 年跳表費率（起跳 ¥910／1.19 km，之後每 138 m ¥100）推算，湯田中→ほたる溫泉約 24 km，長野站→ほたる溫泉約 54 km，另加雪路與高速費；9 人座 Jumbo 的費率通常比一般車高，實際可能超出這個區間，<b>一定要先請計程車行報價</b>。Gransta 寄物每件 ¥2,000，未列入上面的分攤。</p>
 </section>
 
+<!-- ═══ DAYS ═══ -->
 <section id="days">
   <div class="sec-head">
-    <span class="code">DAYS</span>
+    <span class="sec-num">03</span>
     <h2>每日行程</h2>
     <p>雪板日只排「滑到幾點、在哪吃、怎麼回」，其餘時間留白。橫手山開放時間 8:30–16:30。</p>
   </div>
   <div class="days">
 
     <article class="day">
-      <div class="when"><span class="d">12.11</span><span class="label">FRI</span><span class="alt">NRT T1 → TAKASAKI</span></div>
+      <div class="when"><span class="d num">12.11</span><span class="label">FRI</span><span class="alt">NRT T1 → TAKASAKI</span></div>
       <div>
         <h3>落地 → 高崎</h3>
         <ul>
@@ -450,8 +704,8 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       </div>
     </article>
 
-    <article class="day">
-      <div class="when"><span class="d">12.12</span><span class="label">SAT</span><span class="alt">MARUNUMA · 2,000 m</span></div>
+    <article class="day snow">
+      <div class="when"><span class="d num">12.12</span><span class="label">SAT</span><span class="alt">MARUNUMA · 2,000 m</span></div>
       <div>
         <h3>丸沼高原 → 傍晚移動到佐久平</h3>
         <div class="opt">
@@ -462,17 +716,17 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
           <div class="optcard a"><span class="label">回程 · 主推</span>13:50 雪場搭計程車 → <b>14:25</b> 鎌田巴士 → 15:22 沼田 → <b>16:10</b> 上越線 → 16:57 高崎 → 北陸新幹線（第一版：17:21 はくたか 569）→ 17:42 佐久平。</div>
           <div class="optcard b"><span class="label">回程 · 備案</span>鎌田 17:40 巴士 → 18:37 沼田 → 下一班上越線回高崎，再轉新幹線到佐久平，約 20:30 抵達。或雪場直接叫計程車到沼田站。</div>
         </div>
-        <ul style="margin-top:10px">
+        <ul style="margin-top:12px">
           <li><span class="t">費用</span><span>上越線 高崎→沼田 ¥990、關越交通巴士 沼田→鎌田 約 ¥1,850（第一版數據）、鎌田→丸沼 計程車約 ¥6,000／車。</span></li>
           <li><span class="t">住宿</span><span>佐久平，<b>未定</b>（第一版候選：佐久平 Aqua Hotel Premium／東橫 INN）。</span></li>
           <li><span class="t">晚餐</span><span>站前走路可到：とんかつ今井 佐久平店、佐久の草笛。搭計程車：ピッツェリア ジンガラ（食べログ佐久市第 1，3.72）、麺匠 文蔵 本店。</span></li>
         </ul>
-        <p class="note" style="margin-top:8px">上越線與關越交通巴士時刻是 NAVITIME 查到的 12/12（週六）班次。鎌田到丸沼高原冬季沒有固定路線巴士（直達巴士只給從新宿出發的「片品 Snow Express」乘客），所以要事先跟關越交通計程車預約。大件行李可以在高崎寄到佐久平的飯店，只帶雪具上山。</p>
+        <p class="note">上越線與關越交通巴士時刻是 NAVITIME 查到的 12/12（週六）班次。鎌田到丸沼高原冬季沒有固定路線巴士（直達巴士只給從新宿出發的「片品 Snow Express」乘客），所以要事先跟關越交通計程車預約。大件行李可以在高崎寄到佐久平的飯店，只帶雪具上山。</p>
       </div>
     </article>
 
-    <article class="day">
-      <div class="when"><span class="d">12.13</span><span class="label">SUN</span><span class="alt">TAKAMINE · 2,000 m</span></div>
+    <article class="day snow">
+      <div class="when"><span class="d num">12.13</span><span class="label">SUN</span><span class="alt">TAKAMINE · 2,000 m</span></div>
       <div>
         <h3>高峰 Mountain Park 第一天</h3>
         <div class="opt">
@@ -483,16 +737,16 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
           <div class="optcard a"><span class="label">回程 · 末班</span><b>16:18</b> 雪場 → 17:00 小諸站 → 17:20 佐久平站。</div>
           <div class="optcard b"><span class="label">回程 · 備案</span>提早下山搭 10:10 那班，或叫計程車到小諸站、佐久平站，費用同上。</div>
         </div>
-        <ul style="margin-top:10px">
+        <ul style="margin-top:12px">
           <li><span class="t">住宿</span><span>佐久平，<b>未定</b>（連住兩晚）。</span></li>
           <li><span class="t">晚餐</span><span>想好好吃一頓：職人館的蕎麥懷石（食べログ 3.71，要預約、要開車）；滑累了就在佐久平站周邊解決。</span></li>
         </ul>
-        <p class="note" style="margin-top:8px">第一版寫的 10:35 上山、14:28 下山兩班不在 JR 巴士關東現行冬季時刻裡，這裡改成官網公布的班次。</p>
+        <p class="note">第一版寫的 10:35 上山、14:28 下山兩班不在 JR 巴士關東現行冬季時刻裡，這裡改成官網公布的班次。</p>
       </div>
     </article>
 
-    <article class="day">
-      <div class="when"><span class="d">12.14</span><span class="label">MON</span><span class="alt">TAKAMINE · 2,000 m</span></div>
+    <article class="day snow">
+      <div class="when"><span class="d num">12.14</span><span class="label">MON</span><span class="alt">TAKAMINE · 2,000 m</span></div>
       <div>
         <h3>高峰 Mountain Park 再滑一天 → 末班巴士下山 → 長野</h3>
         <ul>
@@ -503,19 +757,19 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
           <li><span class="t">17:45</span><span>佐久平搭はくたか 571 → <b>18:07 抵長野</b>（轉乘 25 分鐘）。趕不上的話搭あさま 621，18:16 → 18:38。</span></li>
           <li><span class="t">夜</span><span>長野站周邊住宿，<b>未定</b>。晚餐選すき亭 本店的壽喜燒（食べログ 3.60），或居酒屋うまいもん酒場 ひのえさる（3.62）、だいだらぼっち 二の坊（3.59）。隔天早上照 12/15 的 A 或 B 方案上山。</span></li>
         </ul>
-        <p class="note" style="margin-top:8px">巴士時刻是 JR 巴士關東現行冬季時刻（11 月中到 4 月下旬運行，冬季不停高峰溫泉）。錯過 16:18 那班就沒有巴士了，只能搭計程車到佐久平（中型約 ¥10,500）。</p>
+        <p class="note">巴士時刻是 JR 巴士關東現行冬季時刻（11 月中到 4 月下旬運行，冬季不停高峰溫泉）。錯過 16:18 那班就沒有巴士了，只能搭計程車到佐久平（中型約 ¥10,500）。</p>
       </div>
     </article>
 
-    <article class="day">
-      <div class="when"><span class="d">12.15</span><span class="label">TUE</span><span class="alt">→ 1,650 m 級</span></div>
+    <article class="day snow">
+      <div class="when"><span class="d num">12.15</span><span class="label">TUE</span><span class="alt">→ 1,650 m 級</span></div>
       <div>
         <h3>Robin 先上山；友人照 <a href="#d15">作戰板</a> 移動</h3>
         <div class="opt">
           <div class="optcard a"><span class="label">Robin 早上 ① · 長電急行巴士</span>長野站東口 08:15 → 志賀高原山の駅 09:35，轉乘站內接駁巴士到ほたる溫泉。票價 ¥3,000。<br><span class="note">是否直達ほたる溫泉，以 26–27 冬季時刻表為準。</span></div>
           <div class="optcard b"><span class="label">Robin 早上 ② · 長電特急＋路線巴士</span>長野 09:53 A特急スノーモンキー → 10:38 湯田中，轉 K 白根火山線巴士到ほたる溫泉（約 50 分鐘）。</div>
         </div>
-        <ul style="margin-top:12px">
+        <ul style="margin-top:14px">
           <li><span class="t">午後</span><span>在 2307 寄放行李，走幾分鐘到<b>熊之湯雪場</b>滑半天。初滑期 1 日券 ¥7,500，2 日券 ¥14,500。收板後可以去熊の湯ホテル泡翡翠綠色的硫磺泉。</span></li>
           <li><span class="t">行李</span><span><b>建議：友人在 NRT T3 用空港宅急便把行李箱直接寄到橫濱的飯店</b>（12/18 入住時領），上山只帶雪板袋＋3 晚的小包。東京寄物變成每人 1 件、12/15 和 12/18 各一台 Jumbo 就載得下，12/18 在東京站轉車也輕鬆。要先請橫濱飯店同意入住前代收；每件運費出發前查。</span></li>
           <li><span class="t">~17:40</span><span>友人抵達（C 方案；B 方案約 18:30）→ check-in → 泡溫泉 → 晚餐。友人在東京待到 14 點前，晚餐請飯店排 19:00 前後的梯次。</span></li>
@@ -525,8 +779,8 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       </div>
     </article>
 
-    <article class="day">
-      <div class="when"><span class="d">12.16</span><span class="label">WED</span><span class="alt">TOP 2,307 m</span></div>
+    <article class="day snow">
+      <div class="when"><span class="d num">12.16</span><span class="label">WED</span><span class="alt">TOP 2,307 m</span></div>
       <div>
         <h3>橫手山 → 澀峠</h3>
         <ul>
@@ -539,8 +793,8 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       </div>
     </article>
 
-    <article class="day">
-      <div class="when"><span class="d">12.17</span><span class="label">THU</span><span class="alt">KUMANOYU</span></div>
+    <article class="day snow">
+      <div class="when"><span class="d num">12.17</span><span class="label">THU</span><span class="alt">KUMANOYU</span></div>
       <div>
         <h3>熊之湯全天</h3>
         <ul>
@@ -553,8 +807,8 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       </div>
     </article>
 
-    <article class="day" id="d18">
-      <div class="when"><span class="d">12.18</span><span class="label">FRI</span><span class="alt">→ YOKOHAMA</span></div>
+    <article class="day snow" id="d18">
+      <div class="when"><span class="d num">12.18</span><span class="label">FRI</span><span class="alt">→ YOKOHAMA</span></div>
       <div>
         <h3>橫手山滑到 14:15 → Jumbo 直達長野 → 約 19:05 抵橫濱 → 紅磚倉庫聖誕市集</h3>
         <ul>
@@ -569,17 +823,17 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
           <div class="optcard"><span class="label">費用（每人 · 6 人）</span>A：Jumbo ¥40,000–46,000 ÷ 6 ≈ ¥6,700–7,700；要兩台的話約 ¥13,300–15,300；B：急行巴士 ¥3,000。兩案都要再加長野 → 東京指定席 ¥8,450（かがやき全車指定）＋ 東京 → 橫濱 JR。</div>
           <div class="optcard"><span class="label">A 案叫車時要確認</span>6 人＋6 個雪板袋＋行李，一台 9 人座 Jumbo 通常要收掉最後一排座位才放得下。叫車時直接講「6 人、スノーボードケース 6 本、スーツケースあり」，放不下就訂兩台。跟 12/15 上山那趟同一條路線，兩趟可以一起預約、一起報價。</div>
         </div>
-        <ul style="margin-top:10px">
+        <ul style="margin-top:12px">
           <li><span class="t">19:05</span><span>抵橫濱站 → 轉みなとみらい線到<b>馬車道</b>（約 5 分）→ 飯店 check-in、放下雪板袋。住宿建議訂在<b>馬車道／桜木町</b>一帶：走路就到紅磚倉庫和野毛，12/19 早上去元町、傍晚回橫濱站搭 N'EX 都順。</span></li>
           <li><span class="t">19:45</span><span><b>Christmas Market in 横浜赤レンガ倉庫</b>：馬車道站或日本大通り站徒步約 6 分（桜木町站走汽車道約 15 分）。晚餐就在市集吃德式香腸配熱紅酒，看大聖誕樹。2025 年是 11/21–12/25 舉辦，主會場（活動廣場）要購票、新港中央廣場免費；2026 年日期、營業到幾點、要不要預約時段，要等官方公布（列在出發前覆核）。</span></li>
           <li><span class="t">續攤</span><span>還有力氣就走回野毛：伸喜（烤雞串，食べログ 3.68，不接受預約）、ホッピー仙人（立飲）；或港未來的中国料理 眺遊楼（3.70，要預約）。</span></li>
         </ul>
-        <p class="note" style="margin-top:8px">かがやき 510（長野 17:05 → 東京 18:28）依 JR 東日本 2026 年 9 月時刻表；B 案巴士時刻依長電巴士 25–26 冬季「急行 長野－志賀高原線」（2025/12/6–2026/4/6），26–27 冬季時刻預計 11 月公布。東京 → 橫濱抓北陸新幹線月台轉東海道線 10 分鐘、車程約 25 分鐘。住桜木町的話，東京站直接搭京浜東北線到桜木町（約 40 分）不用轉車，帶雪板袋比較輕鬆。新幹線指定席建議訂每節車廂最後一排，雪板袋放座椅後方。</p>
+        <p class="note">かがやき 510（長野 17:05 → 東京 18:28）依 JR 東日本 2026 年 9 月時刻表；B 案巴士時刻依長電巴士 25–26 冬季「急行 長野－志賀高原線」（2025/12/6–2026/4/6），26–27 冬季時刻預計 11 月公布。東京 → 橫濱抓北陸新幹線月台轉東海道線 10 分鐘、車程約 25 分鐘。住桜木町的話，東京站直接搭京浜東北線到桜木町（約 40 分）不用轉車，帶雪板袋比較輕鬆。新幹線指定席建議訂每節車廂最後一排，雪板袋放座椅後方。</p>
       </div>
     </article>
 
     <article class="day" id="d19">
-      <div class="when"><span class="d">12.19</span><span class="label">SAT</span><span class="alt">→ NRT T3</span></div>
+      <div class="when"><span class="d num">12.19</span><span class="label">SAT</span><span class="alt">→ NRT T3</span></div>
       <div>
         <h3>橫濱半日 → 友人回 T3（22:25 起飛）</h3>
         <ul>
@@ -588,17 +842,17 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
           <li><span class="t">13:00</span><span>午餐吃家系拉麵發源的吉村家（食べログ 3.76），或野毛的橫浜中華そば 維新商店（3.76）。</span></li>
           <li><span class="t">16:30</span><span>回飯店拿行李 → 橫濱站。</span></li>
         </ul>
-        <div class="chain" style="margin-top:14px">
-          <div class="seg" id="nexSeg" role="group" aria-label="N'EX 班次"></div>
+        <div class="chain">
+          <div class="seg seg-inline" id="nexSeg" role="group" aria-label="N'EX 班次"></div>
           <div class="bar-wrap"><div class="bar-inner"><div class="bar" id="nexBar"></div></div></div>
           <dl class="kv" id="nexKv"></dl>
-          <p class="note" style="margin-top:10px">N'EX 橫濱發車時刻是查詢到的週六時刻（每小時 :28），橫濱 → 東京 28 分鐘，東京 → 空港第2ビル抓 55 分鐘。T3 的 LCC 報到通常在起飛前 45–60 分鐘截止，這裡用 21:25 當作最保守的截止線。橫濱 → 成田 ¥4,480，トクだ値 ¥3,640。第一版的 N'EX 47 是 17:28 發車、18:54 到，跟這裡的推算一致。第一版的方案 2（京急 → 山手線 → 日暮里 17:47 Skyliner 59 → 18:23 抵 T2）比 N'EX 早約 30 分鐘到，但要多轉乘兩次，只有在 N'EX 停駛或誤點時才值得改走。</p>
+          <p class="note" style="margin-top:12px">N'EX 橫濱發車時刻是查詢到的週六時刻（每小時 :28），橫濱 → 東京 28 分鐘，東京 → 空港第2ビル抓 55 分鐘。T3 的 LCC 報到通常在起飛前 45–60 分鐘截止，這裡用 21:25 當作最保守的截止線。橫濱 → 成田 ¥4,480，トクだ値 ¥3,640。第一版的 N'EX 47 是 17:28 發車、18:54 到，跟這裡的推算一致。第一版的方案 2（京急 → 山手線 → 日暮里 17:47 Skyliner 59 → 18:23 抵 T2）比 N'EX 早約 30 分鐘到，但要多轉乘兩次，只有在 N'EX 停駛或誤點時才值得改走。</p>
         </div>
       </div>
     </article>
 
     <article class="day">
-      <div class="when"><span class="d">12.20</span><span class="label">SUN</span><span class="alt">NRT T1</span></div>
+      <div class="when"><span class="d num">12.20</span><span class="label">SUN</span><span class="alt">NRT T1</span></div>
       <div>
         <h3>Robin 回程</h3>
         <ul>
@@ -607,26 +861,29 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
         </ul>
       </div>
     </article>
+
   </div>
 </section>
 
+<!-- ═══ SNOW ═══ -->
 <section id="snow">
   <div class="sec-head">
-    <span class="code">SNOW</span>
+    <span class="sec-num">04</span>
     <h2>雪場資訊</h2>
     <p>行程會去的 6 個雪場。點開每一張卡片可以看雪道圖；預估雪況連到 Snow-Forecast 的山腰 6 日預報，出發前一週再看最準。</p>
   </div>
   <div class="resorts" id="resortList"></div>
-  <p class="note" style="margin-top:12px">雪道圖直接載入各雪場或志賀高原觀光協會公開的地圖圖片（丸沼、高峰和志賀各區是 25–26 季版本），26–27 季如果有新增或關閉的雪道，以官網為準。</p>
+  <p class="note" style="margin-top:14px">雪道圖直接載入各雪場或志賀高原觀光協會公開的地圖圖片（丸沼、高峰和志賀各區是 25–26 季版本），26–27 季如果有新增或關閉的雪道，以官網為準。</p>
 </section>
 
+<!-- ═══ RECS ═══ -->
 <section id="recs">
   <div class="sec-head">
-    <span class="code">LIST</span>
+    <span class="sec-num">05</span>
     <h2>在地清單</h2>
     <p>依區域和類別篩選，星等依網路評分四捨五入到半顆（最多 5 顆）：一般店家用 Google Maps 評分並附評論數，標「食べログ」的是食べログ分數（3.5 以上已屬高分，3.7 以上是區域頂尖）。新增「晚餐」類別，是各晚住宿附近適合吃晚餐的店。標 <span class="vf y">● 營業資訊已查證</span> 的營業時間或價格已對照來源，其他店家 12 月營業日要出發前再確認。</p>
   </div>
-  <div class="filters">
+  <div class="filters" id="filters">
     <div class="chips" id="areaChips" role="group" aria-label="區域"></div>
     <div class="chips" id="catChips" role="group" aria-label="類別"></div>
     <span class="count" id="recCount"></span>
@@ -634,9 +891,10 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
   <div class="recs" id="recGrid"></div>
 </section>
 
+<!-- ═══ KIT ═══ -->
 <section id="tools">
   <div class="sec-head">
-    <span class="code">KIT</span>
+    <span class="sec-num">06</span>
     <h2>行前工具</h2>
     <p>行事曆、分享連結、日文大字卡與情境短句、緊急聯絡。都在這一頁裡，山上沒訊號也能用——大字卡、短句、語音播放和電話都不需要連線。</p>
   </div>
@@ -660,25 +918,26 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
       <div class="emg">
         <div><span>救急・消防</span><a href="tel:119">119</a></div>
         <div><span>警察</span><a href="tel:110">110</a></div>
-        <div><span>Hotel &amp; Onsen 2307</span><a href="tel:+81269342905">0269-34-2905</a></div>
-        <div><span>橫手山・澀峠雪場</span><a href="tel:+81269342600">0269-34-2600</a></div>
-        <div><span>丸沼高原雪場</span><a href="tel:+81278582211">0278-58-2211</a></div>
+        <div><span>Hotel &amp; Onsen 2307</span><a href="tel:+812****2905">0269-34-2905</a></div>
+        <div><span>橫手山・澀峠雪場</span><a href="tel:+812****2600">0269-34-2600</a></div>
+        <div><span>丸沼高原雪場</span><a href="tel:+812****2211">0278-58-2211</a></div>
         <div><span>纜車停駛時</span><a href="https://shigakogen-ski.or.jp/" target="_blank" rel="noopener">志賀高原運行狀況 ↗</a></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ TODO ═══ -->
 <section id="check">
   <div class="sec-head">
-    <span class="code">TODO</span>
+    <span class="sec-num">07</span>
     <h2>出發前覆核</h2>
     <p>有些資料要到 11 月後才會公布或變動，勾選狀態只存在你這台瀏覽器。</p>
   </div>
   <div class="ck-progress" aria-live="polite"><span id="ckCount"></span><span class="bar2" aria-hidden="true"><i id="ckBar"></i></span></div>
   <div class="check" id="checkList"></div>
 
-  <h3 style="margin:40px 0 10px;font-size:15px">資料來源</h3>
+  <h3 style="margin:44px 0 12px;font-size:16px">資料來源</h3>
   <ul class="sources">
     <li><a href="https://www.hotel2307.com/en/">Hotel &amp; Onsen 2307 官網</a></li>
     <li><a href="https://yokoteyama2307.com/hotel2307/">橫手山渋峠 2307 集團</a></li>
@@ -745,6 +1004,17 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
     <li><a href="https://tabelog.com/nagano/C20217/rstLst/RC/">食べログ · 佐久平周邊</a></li>
   </ul>
 
+  <footer>
+    <span>2307 CARVE LOG · 資料查證於 2026.09.15</span>
+    <span>36.68°N 138.52°E · YOKOTEYAMA</span>
+    <a class="totop" href="#top">回到頂部 ↑</a>
+  </footer>
+</section>
+
+</div>
+</main>
+
+<!-- ═══ JAPANESE CARD ═══ -->
 <div class="dcard" id="dcard" hidden role="dialog" aria-modal="true" aria-label="日文大字卡與情境短句">
   <div class="dc-top">
     <div class="dc-sel dc-mode" id="dcMode" role="group" aria-label="模式">
@@ -769,16 +1039,44 @@ nav.jump a[aria-current="true"]{color:var(--ink);background:var(--surface-2);fon
   </div>
 </div>
 
-  <footer>
-    <span>2307 CARVE LOG · 資料查證於 2026.09.15</span>
-    <span>36.68°N 138.52°E · YOKOTEYAMA</span>
-  </footer>
-</section>
-
-</div>
-
 <script>
 (function(){
+/* ═══ NEW CHROME: theme toggle · scroll progress · sticky filter shadow ═══ */
+(function(){
+  const root=document.documentElement;
+  /* theme */
+  const KEY='c2307theme';
+  let t=null; try{t=localStorage.getItem(KEY)}catch(e){}
+  if(t==='dark'||t==='light')root.setAttribute('data-theme',t);
+  const btn=document.getElementById('themeBtn');
+  if(btn)btn.onclick=()=>{
+    const cur=root.getAttribute('data-theme');
+    const sysDark=matchMedia('(prefers-color-scheme: dark)').matches;
+    const now=cur||(sysDark?'dark':'light');
+    const next=now==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next)}catch(e){}
+  };
+  /* scroll progress */
+  const bar=document.getElementById('progBar');
+  let queued=false;
+  function onScroll(){
+    if(queued)return;queued=true;
+    requestAnimationFrame(()=>{
+      queued=false;
+      const h=document.documentElement;
+      const max=h.scrollHeight-h.clientHeight;
+      bar.style.width=(max>0?Math.min(100,h.scrollTop/max*100):0)+'%';
+      const f=document.getElementById('filters');
+      if(f)f.classList.toggle('stuck',f.getBoundingClientRect().top<=(h.clientHeight?80:80));
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  onScroll();
+})();
+
+/* ---------- helpers ---------- */
 const PRISTINE='<!doctype html>\n'+document.documentElement.outerHTML;
 const toMin=s=>{const[h,m]=s.split(':').map(Number);return h*60+m};
 const fmt=m=>{m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
@@ -1196,6 +1494,7 @@ document.getElementById('checkList').innerHTML=CK.map((t,i)=>`<div><input type="
 function ckProgress(){const n=CK.filter((_,i)=>ck[i]).length;document.getElementById('ckCount').textContent='已完成 '+n+' / '+CK.length;document.getElementById('ckBar').style.width=(n/CK.length*100)+'%'}
 CK.forEach((_,i)=>document.getElementById('ck'+i).onchange=e=>{ck[i]=e.target.checked;try{localStorage.setItem('c2307ck',JSON.stringify(ck))}catch(err){}ckProgress()});
 ckProgress();
+
 /* ---------- 今日高亮 ---------- */
 (function(){
   const q=new URLSearchParams(location.search).get('day');
@@ -1280,6 +1579,7 @@ const ICS_T=[
  ['20261219','2225','2235','友人 NRT T3 起飛',''],
  ['20261220','1730','1740','UA837 NRT T1 起飛','Robin']
 ];
+
 /* ---------- 旅途中：下一步倒數 ---------- */
 (function(){
   const bar=document.getElementById('nextBar');
@@ -1301,6 +1601,7 @@ const ICS_T=[
   function esc2x(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
   tick();setInterval(tick,60000);
 })();
+
 const esc=s=>String(s).replace(/([,;\\])/g,'\\$1').replace(/\n/g,'\\n');
 const uidOf=(...p)=>{let h=5381;for(const c of p.join('|'))h=((h<<5)+h+c.codePointAt(0))>>>0;return 'carve-'+p[0]+'-'+h.toString(36)+'@2307'};
 function nextDay(d){
@@ -1624,6 +1925,7 @@ document.querySelectorAll('.strip li').forEach(li=>{
   window.addEventListener('resize',()=>{cur=undefined;upd()});
   upd();
 })();
+
 })();
 </script>
 </body>
