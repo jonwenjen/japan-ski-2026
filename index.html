@@ -265,6 +265,31 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .tax-rules li::before{content:counter(tr,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:2px}
 .tax-rules b{font-weight:700}
 
+/* PACK */
+.pk-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:26px 0 14px}
+.pk-bar .ck-progress{margin:0;flex:1 1 260px}
+.pk-bar .acts{display:flex;flex-wrap:wrap;gap:8px}
+section>.opt{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:10px}
+.pack{columns:3 300px;column-gap:32px}
+.pk-grp{border-top:3px solid var(--ink);padding-top:10px;break-inside:avoid;margin-bottom:28px}
+.pk-grp h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:15px;font-weight:900;margin-bottom:4px}
+.pk-grp h3 small{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted)}
+.pk-grp.done h3 small{color:var(--ok)}
+.pk-grp .why{font-size:12px;color:var(--muted);margin:0 0 4px;line-height:1.5}
+.pk-it{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:10px;padding-block:8px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.55}
+.pk-it input{accent-color:var(--accent);margin-top:5px}
+.pk-it label{cursor:pointer}
+.pk-it input:checked+label{color:var(--muted)}
+.pk-it input:checked+label b{font-weight:500}
+.pk-tag{display:inline-block;font-family:var(--mono);font-size:11px;line-height:1.5;padding:0 6px;border-radius:2px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.pk-tag.carry{background:var(--crit-bg);color:var(--crit)}
+.pk-tag.share{background:var(--ok-bg);color:var(--ok)}
+.pk-tag.buy{background:var(--surface-2);color:var(--muted)}
+.pack.open-only .pk-it:has(input:checked){display:none}
+.pk-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin:0}
+.pk-legend .pk-tag{margin-left:0;margin-right:4px}
+@media (pointer:coarse){.pk-it{padding-block:11px}.pk-it input{width:20px;height:20px;margin-top:2px}}
+
 /* CHECK */
 .check{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:0 32px}
 .check div{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:10px;padding-block:10px;border-bottom:1px solid var(--line);font-size:14px}
@@ -436,6 +461,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <li><a href="#recs">在地清單</a></li>
     <li><a href="#tax">退稅</a></li>
     <li><a href="#tools">行前工具</a></li>
+    <li><a href="#pack">行李清單</a></li>
     <li><a href="#check">出發前覆核</a></li>
   </ul>
 </nav>
@@ -515,7 +541,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
       </table>
     </div>
   </div>
-  <p class="note" style="margin-top:12px">計算依據：入境＋提領雪板袋抓 60 分鐘；T3 → 空港第2ビル站走路 15–20 分鐘（有免費接駁車，約 3 分鐘）。新幹線時刻依 JR 東日本 2026 年 9 月時刻表，上野站比東京站晚約 6 分鐘發車；B、C 用的はくたか 567（東京 14:24 → 長野 15:54）12 月實際時刻要再核對。長電巴士參考 25–26 冬季時刻（26–27 冬季時刻預計 11 月公布）。Jumbo 車資是用長電ハイヤー 2023 年跳表費率（起跳 ¥910／1.19 km，之後每 138 m ¥100）推算，湯田中→ほたる溫泉約 24 km，長野站→ほたる溫泉約 54 km，另加雪路與高速費；9 人座 Jumbo 的費率通常比一般車高，實際可能超出這個區間，<b>一定要先請計程車行報價</b>。Gransta 寄物每件 ¥2,000，未列入上面的分攤。</p>
+  <p class="note" style="margin-top:12px">計算依據：入境＋提領雪板袋抓 60 分鐘；T3 → 空港第2ビル站走路 15–20 分鐘（有免費接駁車，約 3 分鐘）。新幹線時刻依 JR 東日本 2026 年 9 月時刻表，上野站比東京站晚約 6 分鐘發車；B、C 用的はくたか 567（東京 14:24 → 長野 15:54）12 月實際時刻要再核對。長電巴士參考 25–26 冬季時刻（26–27 冬季時刻預計 11 月公布）。Jumbo 車資是用長電ハイヤー 2023 年跳表費率（起跳 ¥910／1.19 km，之後每 138 m ¥100）推算，湯田中→ほたる溫泉約 24 km，長野站→ほたる溫泉約 54 km，另加雪路與高速費；9 人座 Jumbo 的費率通常比一般車高，實際可能超出這個區間，<b>一定要先請計程車行報價</b>。行李全程手提：每人行李箱＋雪板袋 2 件，Gransta 寄物每件 ¥2,000（每人約 ¥4,000），未列入上面的分攤；Jumbo 載 5 人＋10 件可能要兩台，車資會跟著加倍。</p>
 </section>
 
 <section id="days">
@@ -556,7 +582,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <li><span class="t">住宿</span><span>佐久平，<b>未定</b>（第一版候選：佐久平 Aqua Hotel Premium／東橫 INN）。</span></li>
           <li><span class="t">晚餐</span><span>站前走路可到：とんかつ今井 佐久平店、佐久の草笛。搭計程車：ピッツェリア ジンガラ（食べログ佐久市第 1，3.72）、麺匠 文蔵 本店。</span></li>
         </ul>
-        <p class="note" style="margin-top:8px">上越線與關越交通巴士時刻是 NAVITIME 查到的 12/12（週六）班次。鎌田到丸沼高原冬季沒有固定路線巴士（直達巴士只給從新宿出發的「片品 Snow Express」乘客），所以要事先跟關越交通計程車預約。大件行李可以在高崎寄到佐久平的飯店，只帶雪具上山。</p>
+        <p class="note" style="margin-top:8px">上越線與關越交通巴士時刻是 NAVITIME 查到的 12/12（週六）班次。鎌田到丸沼高原冬季沒有固定路線巴士（直達巴士只給從新宿出發的「片品 Snow Express」乘客），所以要事先跟關越交通計程車預約。<b>行李全程自己帶</b>：預約計程車時講清楚「スーツケース 1 個、スノーボードケース 1 本」。不想整天拖著行李箱，可以放高崎站的大型投幣置物櫃，16:57 回到高崎時再拿（大型櫃數量少，早上先找）。</p>
       </div>
     </article>
 
@@ -606,7 +632,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
         </div>
         <ul style="margin-top:12px">
           <li><span class="t">午後</span><span>在 2307 寄放行李，走幾分鐘到<b>熊之湯雪場</b>滑半天。初滑期 1 日券 ¥7,500，2 日券 ¥14,500。收板後可以去熊の湯ホテル泡翡翠綠色的硫磺泉。</span></li>
-          <li><span class="t">行李</span><span><b>建議：友人在 NRT T3 用空港宅急便把行李箱直接寄到橫濱的飯店</b>（12/18 入住時領），上山只帶雪板袋＋3 晚的小包。東京寄物變成每人 1 件、12/15 和 12/18 各一台 Jumbo 就載得下，12/18 在東京站轉車也輕鬆。要先請橫濱飯店同意入住前代收；每件運費出發前查。</span></li>
+          <li><span class="t">行李</span><span><b>全程手提，不寄送</b>：每人行李箱＋雪板袋共 2 件，剛好是 JR 免費手提上限（見<a href="#pack">行李清單</a>）。東京漫遊時 5 人 10 件都要寄放，Gransta 每件 ¥2,000，每人約 ¥4,000。長野 → 2307 的 Jumbo 要載 5 人＋10 件，叫車時講清楚件數，放不下就訂兩台。</span></li>
           <li><span class="t">~17:40</span><span>友人抵達（C 方案；B 方案約 18:30）→ check-in → 泡溫泉 → 晚餐。友人在東京待到 14 點前，晚餐請飯店排 19:00 前後的梯次。</span></li>
           <li><span class="t">晚餐</span><span>ほたる溫泉一帶冬季幾乎沒有獨立營業的晚餐店，12/15–17 三晚建議直接訂 2307 的含晚餐方案（一泊二食 ¥13,200 起）。想出去吃一晚就搭計程車到一の瀬的 TEPPA ROOM。</span></li>
           <li><span class="t">18:30</span><span><b>夜滑（Robin 選項）</b>：熊之湯夜間滑雪 18:30–21:00，成人 ¥3,000，就在住處旁。友人當天清晨落地、17:40 才到，這晚不排全員夜滑，全員夜滑放 12/17。26–27 冬季營業日待公布。</span></li>
@@ -652,11 +678,11 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
         </ul>
         <div class="opt">
           <div class="optcard a"><span class="label">A · 主推 · 14:10 從 2307 出發</span><b>14:10</b> 預約的 Jumbo → 約 15:40 長野站（雪路抓 90 分鐘，白天下山）→ <b>長野約 16:11 發車</b>（かがやき，約 84 分）→ <b>約 17:35 東京</b> → JR 東海道線到橫濱 → みなとみらい線 → <b>18:25 到飯店放行李</b>。<br><span class="note">這班的號碼與 12 月實際時刻我查不到（搜尋摘要顯示長野約 16:11 有かがやき、16:20 有はくたか）。<b>16:20 的はくたか到東京約 17:55，趕不上先回飯店</b>，要確認買的是前者。</span></div>
-          <div class="optcard b"><span class="label">B · 巴士 · 目前不建議</span>要搭比 14:35 更早的長電急行巴士才趕得上，25–26 冬季時刻表沒有足夠早的班次。26–27 冬季時刻預計 11 月公布，出來後再算。<br><span class="note">12 月急行巴士不能預約座位，6 人＋雪板袋也可能排隊。</span></div>
+          <div class="optcard b"><span class="label">B · 巴士 · 目前不建議</span>要搭比 14:35 更早的長電急行巴士才趕得上，25–26 冬季時刻表沒有足夠早的班次。26–27 冬季時刻預計 11 月公布，出來後再算。<br><span class="note">12 月急行巴士不能預約座位，6 人＋12 件行李要靠車腹行李艙，滿了可能上不了車。</span></div>
         </div>
         <div class="opt">
-          <div class="optcard"><span class="label">費用（每人 · 6 人）</span>A：Jumbo ¥40,000–46,000 ÷ 6 ≈ ¥6,700–7,700；要兩台的話約 ¥13,300–15,300。另加長野 → 東京指定席 ¥8,450（かがやき全車指定）、東京 → 橫濱 → 大井 → 橫濱的電車、Illumi 門票（去年大人 ¥1,000 起）、酒錢。</div>
-          <div class="optcard"><span class="label">A 案叫車時要確認</span>6 人＋6 個雪板袋，一台 9 人座 Jumbo 通常要收掉最後一排座位才放得下。叫車時直接講「6 人、スノーボードケース 6 本」，放不下就訂兩台。行李箱建議已寄到橫濱（見 12/15），車上只剩雪板袋。跟 12/15 上山那趟同一條路線，可以一起報價。</div>
+          <div class="optcard"><span class="label">費用（每人 · 6 人）</span>A：行李全程手提，6 人＋12 件<b>抓兩台 Jumbo</b>，¥80,000–92,000 ÷ 6 ≈ ¥13,300–15,300；車行確認一台放得下的話是 ¥6,700–7,700。另加長野 → 東京指定席 ¥8,450（かがやき全車指定）、東京 → 橫濱 → 大井 → 橫濱的電車、Illumi 門票（去年大人 ¥1,000 起）、酒錢。</div>
+          <div class="optcard"><span class="label">A 案叫車時要確認</span>6 人＋6 個行李箱＋6 個雪板袋，一台 9 人座 Jumbo 坐滿 6 人後幾乎放不下 12 件。叫車時直接講「6 人、スーツケース 6 個、スノーボードケース 6 本」，車行說放不下就訂兩台。跟 12/15 上山那趟同一條路線，可以一起報價。</div>
         </div>
 
         <h4 style="margin:22px 0 8px;font-size:15px;font-weight:900">夜間時間鏈（預估，全部是估算值）</h4>
@@ -665,8 +691,8 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <div class="optcard w"><span class="label">出發前先確認 3 件事</span>① <b>12/18（五）大井那天有沒有賽馬</b>：東京メガイルミ只在沒有賽馬的日子點燈（2026-27 是最終季，10/31–1/10）。② 今年的最終入場時間（去年 20:00）。③ 長野 16:11 那班的實際時刻與指定席。任何一項不行就走「直奔版」或備案。大井電話 03-3763-2151。</div>
         </div>
         <ul style="margin-top:12px">
-          <li><span class="t">17:35</span><span>抵東京。新幹線月台走到 JR 月台，帶雪板袋抓 10–12 分 → 17:47 搭 JR 東海道線 → 約 <b>18:12 到橫濱</b> → みなとみらい線到<b>日本大通り／馬車道</b>。</span></li>
-          <li><span class="t">18:25</span><span><b>到飯店放行李</b>（辦入住或只放行李，15 分）。行李箱已寄到，所以只放雪板袋。晚回飯店的入住時間要先告訴飯店。</span></li>
+          <li><span class="t">17:35</span><span>抵東京。每人拖行李箱＋雪板袋，從新幹線月台走到 JR 東海道線月台抓 12–15 分 → 17:47 搭 JR 東海道線（週五傍晚人多，行李靠車門邊放；趕不上就搭下一班，後面各晚約 10 分）→ 約 <b>18:12 到橫濱</b> → 行李多，建議橫濱站東口搭計程車到飯店（6 人＋12 件要 2 台，約 10–15 分），省掉みなとみらい線的地下轉乘。</span></li>
+          <li><span class="t">18:25</span><span><b>到飯店放行李</b>（辦入住或只放行李，15 分）：行李箱＋雪板袋全部放下，空手出門。晚回飯店的入住時間要先告訴飯店。</span></li>
           <li><span class="t">18:40</span><span>從飯店出發去大井：日本大通り站 → 橫濱 → 京急經京急蒲田到立会川站再走 12 分；或 JR 到浜松町換東京モノレール到大井競馬場前。單程約 55–65 分（沒有雪板袋比較快）。預估 <b>19:35–19:45 到門口</b>，最終入場 20:00。</span></li>
           <li><span class="t">19:45</span><span><b>東京メガイルミ</b>（大井競馬場，品川區勝島 2-1-2）。逛約 65 分，去年 21:00 熄燈。</span></li>
           <li><span class="t">20:50</span><span>離場，直接回橫濱到<b>日本大通り站</b>，不用再回飯店。單程約 45–60 分，預估 <b>22:00–22:15</b> 到。</span></li>
@@ -677,7 +703,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <li><span class="t">~02:00</span><span>走回飯店（日本大通り站方向約 10–15 分）。12/19 早上元町改 10:00 出門。</span></li>
         </ul>
         <div class="opt">
-          <div class="optcard"><span class="label">想多滑 1 小時 · 直奔大井版（也是趕不上 16:11 的備案）</span>最後一趟 14:15 → <b>15:05</b> Jumbo → <b>かがやき 510 長野 17:05</b> → <b>18:28 東京</b> → 東京站轉 JR 到浜松町 → モノレール到大井競馬場前，<b>19:15–19:30 到門口</b>，雪板袋帶著走（大井置物櫃 ¥100，放不放得下要現場看；或分 2 人先帶回飯店）。逛完 20:45 離場，之後和上面同一條路線。</div>
+          <div class="optcard"><span class="label">想多滑 1 小時 · 直奔大井版（也是趕不上 16:11 的備案）</span>最後一趟 14:15 → <b>15:05</b> Jumbo → <b>かがやき 510 長野 17:05</b> → <b>18:28 東京</b> → 東京站轉 JR 到浜松町 → モノレール到大井競馬場前，<b>19:15–19:30 到門口</b>。<b>行李 12 件帶不進場</b>：大井的投幣置物櫃放不下行李箱＋雪板袋，要分 2 人在東京站叫大型計程車先把全部行李載回橫濱飯店（費用另計、要先叫車），其他人直奔。逛完 20:45 離場，之後和上面同一條路線。</div>
           <div class="optcard"><span class="label">三段判斷 · 依抵東京時間</span>17:50 前 → 先回飯店版。17:50–19:00 → 直奔版。<b>晚於 19:00 或 12/18 是賽馬日 → 放棄 Illumi</b>：回橫濱飯店，<b>19:45 紅磚倉庫聖誕市集</b>（馬車道站徒步約 6 分；2025 年 11/21–12/25，主會場要購票）→ Muscle Bar → 野毛 → 汽車道 → 大さん橋，整段比上面早。</div>
         </div>
         <p class="note" style="margin-top:8px">長野 16:11 的班次、かがやき 510（長野 17:05 → 東京 18:28）依 JR 東日本 2026 年 9 月時刻表與查詢結果，12 月實際時刻要再核對；かがやき 長野 → 東京約 84 分。東京メガイルミ 2026-27 為 2026/10/31–2027/1/10、共 53 天，營業時間與門票沿用去年（16:30–21:00、最終入場 20:00）。橫濱 ↔ 大井的乘車時間是查詢結果加緩衝的估算，出發前用乘換案內實際查一次。住宿建議訂在<b>日本大通り／馬車道／関内</b>：Muscle Bar 和大さん橋都走得到，深夜也能走回飯店。</p>
@@ -865,6 +891,35 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
       </div>
     </div>
   </div>
+</section>
+
+<section id="pack">
+  <div class="sec-head">
+    <span class="code">PACK</span>
+    <h2>行李清單：全程自己提上巴士和新幹線</h2>
+    <p>這趟在日本不寄送行李，每人行李箱＋雪板袋一路手提。先看手提規則，再照分類打包，勾選狀態只存在你這台瀏覽器；按「複製清單」可以貼到 LINE 給友人。</p>
+  </div>
+
+  <div class="opt" style="margin-top:0">
+    <div class="optcard a"><span class="label">JR 全線（新幹線、在來線、N'EX）</span>每人<b>免費帶 2 件</b>：每件三邊和 ≤ 250 cm、長度 ≤ 2 m、重量 ≤ 30 kg；背包、傘等隨身小物不算。<b>行李箱＋雪板袋剛好 2 件</b>，再多一件大袋子就超過。</div>
+    <div class="optcard a"><span class="label">北陸新幹線 E7（はくたか・かがやき）</span>1–12 號車客室內有行李架（深約 80 cm），<b>不用預約、先到先放</b>；東海道新幹線那套「特大行李座位要預約」不適用。6 人 12 件放不完，訂位時選車廂最後一排，椅背後方可以放行李箱，月台排前面先上車。</div>
+    <div class="optcard b"><span class="label">巴士（長電、JR 巴士、關越交通）</span>大件放車腹行李艙，跟司機說「トランクに入れてください」。雪板袋與件數有沒有上限查不到公開規定，12 月尖峰行李艙可能滿，<b>待查</b>。Robin 12/14 上高峰的行李放佐久平站置物櫃。</div>
+    <div class="optcard b"><span class="label">Jumbo・計程車</span>每人 2 件：12/15 友人 5 人 10 件、12/18 全員 6 人 12 件。9 人座 Jumbo 坐滿人後放不了多少行李，叫車時講件數，<b>很可能要兩台</b>。12/18 橫濱站到飯店也建議 2 台計程車。</div>
+    <div class="optcard w"><span class="label">打包原則：兩件綁一起、一手拉</span>雪鞋、安全帽、雪衣褲塞進<b>附輪雪板袋</b>，行李箱只放衣物和溫泉用品；用行李綁帶把雪板袋固定在行李箱上，一手拉兩件、另一手扶樓梯扶手。背包要輕。行動電源、備用電池<b>只能隨身</b>；航空托運的件數與重量依各自機票。</div>
+    <div class="optcard"><span class="label">天氣抓多冷（12 月中，一般值）</span>志賀高原山頂常在 −10 °C 上下，風大時體感更低；ほたる溫泉、熊之湯一帶路面積雪結冰。長野市區約 −2–7 °C，橫濱約 4–12 °C。<b>12/18 深夜大さん橋海風很冷</b>，要羽絨外套。</div>
+  </div>
+
+  <div class="pk-bar">
+    <div class="ck-progress" aria-live="polite"><span id="pkCount"></span><span class="bar2" aria-hidden="true"><i id="pkBar"></i></span></div>
+    <div class="acts">
+      <div class="chips" id="pkFilter" role="group" aria-label="顯示"><button type="button" data-v="all" aria-pressed="true">全部</button><button type="button" data-v="open" aria-pressed="false">只看未打包</button></div>
+      <button class="btn" type="button" id="pkCopy">複製清單</button>
+      <button class="btn" type="button" id="pkReset">全部清除</button>
+    </div>
+  </div>
+  <p class="pk-legend"><span><span class="pk-tag carry">隨身</span>不能托運</span><span><span class="pk-tag share">全隊一份</span>6 人分工帶一份就好</span><span><span class="pk-tag buy">日本可買</span>忘了帶也能補</span></p>
+  <p class="note" id="pkMsg" aria-live="polite" style="min-height:1.6em"></p>
+  <div class="pack" id="packList"></div>
 </section>
 
 <section id="check">
@@ -1381,9 +1436,9 @@ renderRecs();
 /* ---------- Checklist ---------- */
 const CK=[
  '長電巴士 26–27 冬季時刻（11 月公布）：13:10 直達ほたる溫泉那班還在不在',
- '預約 Jumbo：12/15 長野站東口 16:10 → 2307（5 人＋雪板袋）、12/18 2307 14:10 → 長野站（6 人＋6 雪板袋，確認一台載得下），兩趟一起報價',
- 'Hotel 2307：雪季從ほたる溫泉巴士站走過去的路線、晚餐時間、12/11 能不能代收空港宅急便',
- 'Gransta／上野寄物處能不能收雪板袋（單件長度上限 2 m、30 kg）',
+ '預約 Jumbo：12/15 長野站東口 16:10 → 2307（5 人＋5 行李箱＋5 雪板袋）、12/18 2307 14:10 → 長野站（6 人＋6 行李箱＋6 雪板袋），問一台放不放得下、不行就訂兩台，兩趟一起報價',
+ 'Hotel 2307：雪季從ほたる溫泉巴士站走過去的路線（拖行李箱走雪路，問能不能到巴士站接）、晚餐時間',
+ 'Gransta／上野寄物處能不能收雪板袋＋行李箱（5 人 10 件；單件長度上限 2 m、30 kg）',
  '友人 22:25 T3 班機的航空公司報到截止時間',
  'UA838／UA837 12 月實際時刻與航線（UA837／838 一般是舊金山線，NRT→KHH 這段請對照機票核對）',
  '訂住宿：高崎（12/11）、佐久平（12/12–13）、長野（12/14）、橫濱（12/18–19，建議日本大通り／馬車道／関内：Muscle Bar、大さん橋走得到）',
@@ -1400,19 +1455,19 @@ const CK=[
  'Christmas Market in 横浜赤レンガ倉庫 2026：12/18 深夜才經過（市集已打烊），改排 12/19（六）白天 14:30 的話，確認該日開放時段與主會場票價；若分時段先訂票',
  '12/15 晚餐梯次：友人約 17:40 抵達 2307，請飯店排 19:00 前後',
  'はくたか 567（東京 14:24 → 長野 15:54）與かがやき 510（長野 17:05 → 東京 18:28）12 月實際時刻，各買指定席',
- '空港宅急便：友人 12/15 在 NRT T3 把行李箱寄到橫濱飯店（先請飯店同意入住前代收）',
+ '行李全程手提：每人行李箱＋雪板袋共 2 件以內（JR 免費上限：每件三邊和 ≤ 250 cm、長 ≤ 2 m、≤ 30 kg），出發前量雪板袋長度、秤重',
  'B 方案備查：長野 16:46 是否為特急、17:31 到湯田中',
  '大井賽馬場 2026 年 12 月賽事日程：12/18（五）是否賽馬日（賽馬日不點燈）；東京メガイルミ 2026-27 開放日、最終入場時間、票價（03-3763-2151）',
  'マッスルバー横浜 12/18 營業與 6 人訂位（19:00–25:00 · 週一休 · 070-9151-1437），先看官網 SYSTEM 頁的費用',
- '12/18 夜間動線：抵東京 17:50 前先回飯店；17:50–19:00 直奔大井（雪板袋放置物櫃或分 2 人先帶回）；晚於 19:00 放棄 Illumi',
- '橫濱飯店：能否代收宅急便行李箱、離日本大通り站步行距離、12/18 18:25 先放行李（可先辦入住）',
+ '12/18 夜間動線：抵東京 17:50 前先回飯店；17:50–19:00 直奔大井（行李 12 件帶不進場，分 2 人在東京站叫大型計程車先載回飯店）；晚於 19:00 放棄 Illumi',
+ '橫濱飯店：離橫濱站／日本大通り站多遠、12/18 18:25 先放 12 件行李（可先辦入住）、12/19 退房後寄放到 16:30',
  '北陸新幹線 12/18 長野約 16:11 發車班次（かがやき，抵東京約 17:35）的實際時刻與指定席；16:20 はくたか 趕不上先回飯店',
  '退稅：每人先在 Visit Japan Web 登錄護照；確認 NRT T3（12/19）與 T1（12/20）免稅自助機位置，要托運的東西先過自助機',
  '退稅：結帳時問清楚用哪個退稅系統、扣多少手續費、退到哪裡（信用卡選日圓入帳）；收據保留到入帳'
 ];
 let ck={};try{ck=JSON.parse(localStorage.getItem('c2307ck')||'{}')}catch(e){}
-/* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線） */
-try{const CKV=14,CKCH={12:[1,8,13],13:[17],14:[1,8,24]};let v=+localStorage.getItem('c2307ckv')||0;
+/* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線；v15 行李改全程手提） */
+try{const CKV=15,CKCH={12:[1,8,13],13:[17],14:[1,8,24],15:[1,2,3,20,24,25]};let v=+localStorage.getItem('c2307ckv')||0;
 if(v<CKV){for(let k=v+1;k<=CKV;k++)(CKCH[k]||[]).forEach(i=>delete ck[i]);localStorage.setItem('c2307ck',JSON.stringify(ck));localStorage.setItem('c2307ckv',String(CKV))}}catch(e){}
 document.getElementById('checkList').innerHTML=CK.map((t,i)=>`<div><input type="checkbox" id="ck${i}" ${ck[i]?'checked':''}><label for="ck${i}">${t}</label></div>`).join('');
 function ckProgress(){const n=CK.filter((_,i)=>ck[i]).length;document.getElementById('ckCount').textContent='已完成 '+n+' / '+CK.length;document.getElementById('ckBar').style.width=(n/CK.length*100)+'%'}
@@ -1611,6 +1666,7 @@ const PH=[
   ['スノーボードのケースが6本あります。積めますか？','我們有 6 個雪板袋，裝得下嗎？'],
   ['トランクを開けてください。','請開後車廂。'],
   ['ジャンボタクシーを予約しています。','我有預約大型計程車。'],
+  ['六人で、スーツケース六個とスノーボードケース六本です。全部載りますか？','我們 6 個人，6 個行李箱和 6 個雪板袋，放得下嗎？'],
   ['四駆でスタッドレスタイヤの車をお願いします。','麻煩給我四輪驅動＋雪胎的車。'],
   ['ここまで、だいたいいくらかかりますか？','到這裡大概要多少錢？'],
   ['どのくらい時間がかかりますか？','大概要開多久？'],
@@ -1632,8 +1688,8 @@ const PH=[
   ['朝食は何時からですか？','早餐幾點開始？'],
   ['スノーボードはどこに置けばいいですか？','雪板要放哪裡？'],
   ['乾燥室はありますか？','有烘乾室嗎？'],
-  ['宅急便を受け取ってもらえますか？','可以幫我代收宅急便嗎？'],
-  ['荷物を宅急便で送りたいです。','我想用宅急便寄行李。'],
+  ['荷物が多いので、バス停まで迎えに来てもらえますか？','我們行李很多，可以到巴士站接我們嗎？'],
+  ['荷物を部屋まで運ぶのを手伝ってもらえますか？','可以幫忙把行李搬到房間嗎？'],
   ['タクシーを呼んでもらえますか？','可以幫我叫計程車嗎？'],
   ['バス停まではどう行きますか？','到巴士站怎麼走？'],
   ['お湯が出ません。','沒有熱水。']
@@ -1662,6 +1718,7 @@ const PH=[
   ['指定席を六席お願いします。','請給我 6 個指定席。'],
   ['スノーボードを持って乗れますか？','可以帶雪板上車嗎？'],
   ['大きい荷物はどこに置けますか？','大件行李可以放哪裡？'],
+  ['荷物をトランクに入れてもらえますか？','可以把行李放進巴士行李艙嗎？'],
   ['何番のりばですか？','是幾號月台（乘車處）？'],
   ['次は何時ですか？','下一班是幾點？'],
   ['終電は何時ですか？','末班車是幾點？'],
@@ -1996,6 +2053,104 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
       return '<tr'+(on?' class="on"':'')+'><td class="n" data-label="未稅金額">'+yen(x)+'</td><td class="n" data-label="含稅價">'+yen(x*(1+st.rate/100))+'</td><td class="n" data-label="應退稅額">'+yen(q.tax)+'</td><td class="n" data-label="手續費＋損耗">−'+yen(q.fee+q.loss+(st.fix||0))+'</td><td class="n" data-label="實拿"><b>'+yen(q.net)+'</b></td><td class="'+w[1]+'" data-label="判斷">'+w[2]+'</td></tr>'}).join('');
   }
   draw();
+})();
+
+/* ---------- 行李清單 ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  if(!$('packList'))return;
+  const PK=[
+    ['doc','證件・錢・票','',[
+      ['d1','<b>護照</b>（有效期涵蓋回程）','carry'],
+      ['d2','電子機票、航空公司 App；Visit Japan Web 入境與免稅 QR 截圖','carry'],
+      ['d3','<b>信用卡 2 張</b>（不同卡組織，一張放背包、一張放身上）','carry'],
+      ['d4','<b>日圓現金</b>：巴士、溫泉、山上小店與スノーシュー導覽常只收現金','carry'],
+      ['d5','Suica／PASMO（手機版最方便）',''],
+      ['d6','旅平險＋海外突發疾病，確認<b>含滑雪／雪板意外</b>與救援費用',''],
+      ['d7','住宿、Jumbo、新幹線指定席的確認信截圖（山上可能沒訊號）','']
+    ]],
+    ['gear','滑雪板具','雪鞋、安全帽塞進雪板袋，行李箱留給衣物。',[
+      ['g1','<b>雪板</b>：出發前打蠟、修刃',''],
+      ['g2','<b>固定器</b>：鎖緊螺絲、確認角度與前後位置',''],
+      ['g3','<b>雪鞋</b>（boots），鞋帶或 BOA 檢查一次',''],
+      ['g4','<b>附輪雪板袋</b>：長 ≤ 2 m、三邊和 ≤ 250 cm、≤ 30 kg（JR 免費手提上限）',''],
+      ['g5','<b>安全帽</b>',''],
+      ['g6','<b>雪鏡</b>＋低光／黃色鏡片（12 月下雪、起霧多）',''],
+      ['g7','護具：護臀、護膝、護腕',''],
+      ['g8','攜帶式板具工具（stance tool／十字起子）＋備用螺絲','share'],
+      ['g9','刮雪器、塗抹式小蠟','share'],
+      ['g10','板刃保護套，或用舊毛巾包住板刃（避免割破袋子）',''],
+      ['g11','雪板防盜鎖（午餐時板子放外面）',''],
+      ['g12','雪票卡套（手臂或口袋式）','']
+    ]],
+    ['wear','雪場穿著（洋蔥式）','山頂 −10 °C 上下，靠層次調溫，不穿棉。',[
+      ['w1','<b>防水雪衣外套＋雪褲</b>（防水 10k 以上）',''],
+      ['w2','排汗內層上衣 ×3–4（美麗諾羊毛或化纖，<b>不要棉</b>）',''],
+      ['w3','排汗內層褲 ×2',''],
+      ['w4','中層：刷毛或輕羽絨 ×2',''],
+      ['w5','<b>滑雪襪</b>（羊毛、及膝）×5，一天一雙',''],
+      ['w6','<b>雪手套 ×2</b>（一雙會濕，輪流烘）＋薄內層手套',''],
+      ['w7','頭套／脖圍（balaclava）',''],
+      ['w8','薄毛帽（可戴在安全帽內）','']
+    ]],
+    ['snow','下雪天・街上','ほたる溫泉、湯田中、長野路面會結冰；12/18 深夜在海邊。',[
+      ['s1','<b>防水防滑雪靴</b>（不是雪鞋，走路用；鞋底要有深紋）',''],
+      ['s2','鞋底防滑套／簡易冰爪','buy'],
+      ['s3','<b>羽絨外套</b>（橫濱夜遊、大さん橋深夜海風）',''],
+      ['s4','街用保暖手套、圍巾、毛帽',''],
+      ['s5','暖暖包：手握式＋貼式＋腳底用','buy'],
+      ['s6','<b>高係數防曬</b>（雪地反射，陰天也要擦）＋護唇膏',''],
+      ['s7','保濕乳液、護手霜（室內暖氣很乾）','buy'],
+      ['s8','太陽眼鏡',''],
+      ['s9','摺疊傘或輕便雨衣（橫濱可能下雨）','buy'],
+      ['s10','大塑膠袋／防水袋：裝濕雪衣、濕手套，也能套在雪板袋外擋雪','']
+    ]],
+    ['elec','電子','冷天電池掉很快，手機和行動電源放內層口袋。',[
+      ['e1','手機＋充電線',''],
+      ['e2','<b>行動電源</b>（<b>不能托運</b>，冷天放內層口袋）','carry'],
+      ['e3','多孔 USB 充電器（日本插座同台灣 A 型、100 V，不用轉接頭）',''],
+      ['e4','短延長線（房間插座少，6 人共用）','share'],
+      ['e5','網路：eSIM／漫遊／Wi-Fi 機',''],
+      ['e6','耳機或安全帽耳機（纜車上聯絡用）',''],
+      ['e7','運動相機＋備用電池（鋰電池<b>不能托運</b>）＋安全帽座','carry']
+    ]],
+    ['bath','溫泉・住宿・藥品','',[
+      ['b1','換洗衣物（2307 連住 3 晚；能不能洗衣先問飯店）',''],
+      ['b2','盥洗用品、隱形眼鏡與藥水',''],
+      ['b3','小毛巾（日歸溫泉多半要自備或付費租）','buy'],
+      ['b4','<b>個人常備藥</b>：止痛、腸胃、感冒藥','carry'],
+      ['b5','OK 繃、彈性繃帶、運動貼布','share'],
+      ['b6','夾鏈袋、洗衣袋（乾濕分開）','']
+    ]],
+    ['move','移動・手提','每人 2 件＋1 個輕背包，雙手要能空出一隻。',[
+      ['m1','<b>行李箱</b>附 4 輪、尺寸適中（要放進新幹線行李架，深約 80 cm）',''],
+      ['m2','<b>行李綁帶</b>：把雪板袋固定在行李箱上，一手拉兩件',''],
+      ['m3','輕量後背包（隨身物、行動電源、藥品、證件）',''],
+      ['m4','行李吊牌：寫日文住宿名稱與電話',''],
+      ['m5','手提行李秤（JR 每件 ≤ 30 kg；航空托運依機票）','share'],
+      ['m6','回程伴手禮預留空間；要退稅的商品先過機場自助機再托運','']
+    ]]
+  ];
+  let pk={};try{pk=JSON.parse(localStorage.getItem('c2307pk')||'{}')}catch(e){}
+  const save=()=>{try{localStorage.setItem('c2307pk',JSON.stringify(pk))}catch(e){}};
+  const TAG={carry:'隨身',share:'全隊一份',buy:'日本可買'};
+  const ALL=PK.flatMap(g=>g[3]);
+  $('packList').innerHTML=PK.map(g=>'<div class="pk-grp" id="pkg-'+g[0]+'"><h3>'+g[1]+'<small></small></h3>'+(g[2]?'<p class="why">'+g[2]+'</p>':'')+g[3].map(it=>'<div class="pk-it"><input type="checkbox" id="pk-'+it[0]+'"'+(pk[it[0]]?' checked':'')+'><label for="pk-'+it[0]+'">'+it[1]+(it[2]?'<span class="pk-tag '+it[2]+'">'+TAG[it[2]]+'</span>':'')+'</label></div>').join('')+'</div>').join('');
+  function prog(){
+    const n=ALL.filter(it=>pk[it[0]]).length;
+    $('pkCount').textContent='已打包 '+n+' / '+ALL.length;$('pkBar').style.width=(n/ALL.length*100)+'%';
+    PK.forEach(g=>{const d=g[3].filter(it=>pk[it[0]]).length,el=$('pkg-'+g[0]);el.querySelector('h3 small').textContent=d+' / '+g[3].length;el.classList.toggle('done',d===g[3].length)});
+  }
+  $('packList').addEventListener('change',e=>{const id=e.target.id.replace(/^pk-/,'');pk[id]=e.target.checked;if(!pk[id])delete pk[id];save();prog()});
+  $('pkFilter').onclick=e=>{const b=e.target.closest('button');if(!b)return;$('pkFilter').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('packList').classList.toggle('open-only',b.dataset.v==='open')};
+  $('pkReset').onclick=()=>{if(!confirm('清除所有打包勾選？'))return;pk={};save();ALL.forEach(it=>{$('pk-'+it[0]).checked=false});prog();$('pkMsg').textContent='已清除。'};
+  const plain=s=>s.replace(/<[^>]+>/g,'');
+  $('pkCopy').onclick=async()=>{
+    const txt='2307 Carve Log 行李清單（全程手提：每人行李箱＋雪板袋 2 件）\n'+PK.map(g=>'\n【'+g[1]+'】\n'+g[3].map(it=>(pk[it[0]]?'☑ ':'☐ ')+plain(it[1])+(it[2]?'（'+TAG[it[2]]+'）':'')).join('\n')).join('\n')+'\n\n'+location.href.split('#')[0]+'#pack';
+    try{await navigator.clipboard.writeText(txt);$('pkMsg').textContent='清單已複製，可以貼到 LINE。'}
+    catch(e){$('pkMsg').textContent='這個瀏覽器不允許直接複製，請改用 GitHub Pages 版本。'}
+  };
+  prog();
 })();
 
 /* ---------- 章節導覽：標出目前位置 ---------- */
