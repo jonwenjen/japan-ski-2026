@@ -226,6 +226,45 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .vf.y{color:var(--ok)} .vf.n{color:var(--warn)}
 .count{font-family:var(--mono);font-size:12px;color:var(--muted)}
 
+/* TAX REFUND */
+.taxflow{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:3px solid var(--ink);counter-reset:tf}
+.taxflow li{padding:14px 18px 16px 0;display:grid;gap:4px;align-content:start;counter-increment:tf}
+.taxflow li+li{padding-left:18px;border-left:1px solid var(--line)}
+.taxflow li::before{content:"0" counter(tf);font-family:var(--display);font-weight:900;font-size:34px;line-height:1;color:var(--accent)}
+.taxflow b{font-size:14px;font-weight:900}
+.taxflow span{font-size:13px;color:var(--muted);line-height:1.6}
+@media (max-width:720px){.taxflow{grid-template-columns:1fr}.taxflow li,.taxflow li+li{padding:12px 0;border-left:0;border-bottom:1px solid var(--line);grid-template-columns:44px 1fr;column-gap:12px}.taxflow li::before{grid-row:span 2;font-size:28px}}
+.tc-form{padding:22px 20px;display:grid;gap:18px;align-content:start}
+.tc-row{display:grid;gap:8px}
+.tc-amt{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tc-amt .cur{font-family:var(--display);font-weight:900;font-size:34px;line-height:1}
+#txAmt{width:min(220px,100%);font-family:var(--display);font-weight:700;font-size:34px;line-height:1.1;padding:4px 10px}
+.tc-sub{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:13px;color:var(--muted)}
+.tc-sub input[type=number]{width:84px;font-size:14px}
+.tc-sub label{display:inline-flex;align-items:center;gap:6px}
+#txPill{white-space:normal;width:auto;max-width:100%;line-height:1.45;justify-self:start}
+#txPill::before{flex:0 0 7px}
+#txTwd{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.tc-table td.y{color:var(--ok)} .tc-table td.m{color:var(--warn)} .tc-table td.x{color:var(--crit)}
+.tax-sys{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:12px;margin-top:14px}
+.sys{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;gap:8px;align-content:start;transition:border-color .2s}
+.sys:hover{border-color:var(--muted)}
+.sys .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.sys .no{font-family:var(--display);font-weight:900;font-size:22px;line-height:1;color:var(--accent)}
+.sys h3{font-size:16px;font-weight:900;line-height:1.35}
+.sys h3 small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.sys dl{margin:0;display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:4px 10px;font-size:13px}
+.sys dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+.sys dd{margin:0}
+.sys.base{border-color:var(--ink);background:var(--surface-2);grid-column:1/-1}
+@media (min-width:700px){.sys.base dl{grid-template-columns:4.5em minmax(0,1fr) 4.5em minmax(0,1fr)}}
+.tax-h{margin:36px 0 4px;font-size:16px;font-weight:900}
+@media (max-width:860px){#taxCalc .board-body .side{order:0;border-bottom:0;border-top:1px solid var(--line)}}
+.tax-rules{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:0 32px;counter-reset:tr}
+.tax-rules li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding-block:10px;border-bottom:1px solid var(--line);font-size:14px;counter-increment:tr}
+.tax-rules li::before{content:counter(tr,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:2px}
+.tax-rules b{font-weight:700}
+
 /* CHECK */
 .check{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:0 32px}
 .check div{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:10px;padding-block:10px;border-bottom:1px solid var(--line);font-size:14px}
@@ -395,6 +434,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <li><a href="#d19">12/19 回 T3</a></li>
     <li><a href="#snow">雪場資訊</a></li>
     <li><a href="#recs">在地清單</a></li>
+    <li><a href="#tax">退稅</a></li>
     <li><a href="#tools">行前工具</a></li>
     <li><a href="#check">出發前覆核</a></li>
   </ul>
@@ -701,6 +741,97 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <div class="recs" id="recGrid"></div>
 </section>
 
+<section id="tax">
+  <div class="sec-head">
+    <span class="code">TAX</span>
+    <h2>日本退稅：2026/11/1 起改成「先付含稅價、出境再退」</h2>
+    <p>這趟 12/11–12/20 全程走新制（リファンド方式）：店裡不再直接免稅，結帳照付 10%（食品飲料 8%）消費稅，出境時讓海關確認東西有帶走，業者才把稅退給你，<b>而且通常會扣手續費</b>。下面有流程、試算、7 個主要退稅系統、建議門檻和注意事項。</p>
+  </div>
+
+  <ol class="taxflow">
+    <li><b>結帳：出示護照、付含稅價</b><span>免稅店登錄你的護照與購買紀錄，並請你選退款方式（掃 QR 進 App、線上表單或填卡號）。收據留好。</span></li>
+    <li><b>出境：托運前先刷護照</b><span>到機場的免稅手續自助機刷護照，綠燈就完成；紅燈要給海關看商品，所以要托運的東西先別交出去。</span></li>
+    <li><b>入帳：業者確認後退款</b><span>店家或業者收到海關確認資料才退款。信用卡大約 1–2 週，銀行匯款大約 2–4 週，依業者而定。</span></li>
+  </ol>
+
+  <div class="board" id="taxCalc">
+    <div class="board-body">
+      <div class="tc-form">
+        <div class="tc-row">
+          <label class="label" for="txAmt">① 同一店、同一天的消費金額</label>
+          <div class="tc-amt"><span class="cur" aria-hidden="true">¥</span><input id="txAmt" type="number" inputmode="numeric" min="0" step="100" value="33000" aria-describedby="txAmtHint"></div>
+          <div class="chips" id="txQuick" role="group" aria-label="快速"></div>
+          <p class="note" id="txAmtHint">同一家店同一天的收據可以加總；不同店、不同天不能合併。</p>
+        </div>
+        <div class="tc-row">
+          <span class="label">② 上面的金額是</span>
+          <div class="seg" id="txBasis" role="group" aria-label="金額是含稅或未稅"></div>
+        </div>
+        <div class="tc-row">
+          <span class="label">③ 稅率</span>
+          <div class="seg" id="txRate" role="group" aria-label="稅率"></div>
+        </div>
+        <div class="tc-row">
+          <span class="label">④ 退稅業者手續費（以未稅金額計）</span>
+          <div class="seg" id="txFee" role="group" aria-label="手續費"></div>
+          <div class="tc-sub" id="txCusWrap" hidden><label for="txCus">自訂費率 <input id="txCus" type="number" min="0" max="10" step="0.1" value="3"> %</label></div>
+        </div>
+        <div class="tc-row">
+          <span class="label">⑤ 退到哪裡</span>
+          <div class="seg" id="txPay" role="group" aria-label="入帳方式"></div>
+          <div class="tc-sub">
+            <label for="txFix">固定費用 ¥<input id="txFix" type="number" min="0" step="100" value="0"></label>
+            <label for="txFx">匯率 1 円 = NT$<input id="txFx" type="number" min="0" step="0.001" value="0.21"></label>
+          </div>
+        </div>
+      </div>
+      <aside class="side" aria-live="polite">
+        <div class="verdict">
+          <span class="label">預估實拿退稅</span>
+          <span class="big mono" id="txNet">—</span>
+          <span id="txTwd">—</span>
+          <span id="txPill" class="pill ok">—</span>
+        </div>
+        <dl class="kv" id="txKv"></dl>
+        <p class="note" id="txNote"></p>
+      </aside>
+    </div>
+    <div class="compare">
+      <table class="tc-table">
+        <thead><tr><th>未稅金額</th><th>含稅價</th><th>應退稅額</th><th>手續費＋損耗</th><th>實拿</th><th>判斷</th></tr></thead>
+        <tbody id="txTbl"></tbody>
+      </table>
+    </div>
+  </div>
+  <p class="note" style="margin-top:12px">表格依上面 ③–⑤ 的設定，即時算出不同金額的實拿。實拿 ≥ ¥800（約 NT$170）標「值得退」，¥5,000 未稅以上但不到 ¥800 標「順手再退」。業者手續費、入帳損耗、固定費用都是估計值，以結帳時店家告知的為準。</p>
+
+  <div class="opt" style="margin-top:22px">
+    <div class="optcard a"><span class="label">建議門檻 · 未稅多少才退</span><b>法定最低：同一店、同一天、未稅 ¥5,000</b>（含稅約 ¥5,500；8% 食品約 ¥5,400）。<br><b>建議：</b>退到信用卡，<b>10% 商品未稅 ¥10,000 以上</b>、<b>8% 食品未稅 ¥13,000 以上</b>再退，扣掉約 1.5% 手續費後實拿約 ¥800–850 起。<b>只能銀行匯款的業者，10% 商品抓未稅 ¥35,000 以上</b>：國際匯款常有固定手續費，以 ¥2,000 估算（上方「固定費用」可改成你的銀行實際收費）。<br><span class="note">反正出境只要刷一次護照，自助機那步不算額外成本，主要是每筆要在 App 或表單登錄一次。小額的盡量集中在同一家店、同一天買，就能一起過門檻。</span></div>
+    <div class="optcard b"><span class="label">一句話算法</span>含稅價 × <b>9.09%</b>（10% 商品）或 × <b>7.41%</b>（8% 食品飲料）＝應退稅額，再扣業者手續費。<br>例：含稅 ¥33,000 → 未稅 ¥30,000 → 應退 ¥3,000 → PIE VAT 扣 1.5% × ¥30,000 ＝ ¥450 → <b>實拿 ¥2,550</b>，約含稅價的 7.7%。</div>
+  </div>
+
+  <h3 class="tax-h">主要退稅系統（7 個）</h3>
+  <p class="note">新制下退款是店家或其委託業者的事，同一家店只會用一個系統，結帳時看收銀台貼的標示或直接問。「已查證」是有公開資料可對照的，「待查」是查不到公開數字、結帳時要問的。</p>
+  <div class="tax-sys" id="taxSys"></div>
+
+  <h3 class="tax-h">注意事項</h3>
+  <ol class="tax-rules">
+    <li><span><b>門檻是同一店、同一天、未稅 ¥5,000 以上</b>。新制取消一般品／消耗品的區分，也取消消耗品 ¥50 萬上限；免稅品不用再封袋。</span></li>
+    <li><span><b>結帳時出示護照正本</b>（手機照片不行），店家要登錄購買紀錄；Visit Japan Web 先登錄好護照，可以出示免稅 QR 加快手續。資格是入境未滿 6 個月的短期旅客。</span></li>
+    <li><span><b>購買後 90 天內、而且在出境前</b>要通過海關確認。漏刷就是退不到，出境後沒有補辦的方法。</span></li>
+    <li><span><b>先過自助機再托運</b>。雪板、伴手禮如果要托運，先刷護照；紅燈要開箱或拿商品給海關看，不能已經進了托運行李。</span></li>
+    <li><span><b>東西要原樣帶出境</b>。在日本吃掉、用掉、送人的，出境時拿不出來就退不到。行程中就要用的雪具買了還能不能退，新制細節查不到明確說法，結帳時先問店家。</span></li>
+    <li><span><b>實拿不是 10%</b>。含稅價的 9.09% 是上限，政府沒有規定業者能收多少手續費，結帳時問清楚會扣多少。</span></li>
+    <li><span><b>退到信用卡時選日圓、拒絕 DCC</b>（以台幣計價的「動態貨幣轉換」），否則換匯多吃約 3–5%。台灣發卡行收外幣退款的換算也依各行規定。</span></li>
+    <li><span><b>收據與購買紀錄保留到退款入帳</b>。App 申請的，記下每筆的申請編號；入帳超過業者寫的天數就主動聯絡。</span></li>
+    <li><span><b>單價 ¥100 萬以上</b>的商品，店家還要登錄序號等細節，結帳會比較久（這趟大概用不到）。</span></li>
+    <li><span><b>友人 12/19 從 NRT T3、Robin 12/20 從 NRT T1 出境</b>。成田有免稅自助機，但各航廈位置與排隊時間待查；T3 報到截止抓 21:25，有要退稅的人選 N'EX 時多留 20 分鐘。Robin 的 UA837 有約 2.5 小時緩衝，足夠。</span></li>
+  </ol>
+  <div class="opt" style="margin-top:14px">
+    <div class="optcard w"><span class="label">這趟值得退的時機</span>① 12/19 橫濱半日（元町、紅磚倉庫）和 12/20 上午橫濱站，同一店集中買。② 食品伴手禮適用 8%，崎陽軒這類要放托運的，記得先過自助機。③ 如果 12/15 早上在東京想順便買雪具（金額高、退稅最有感，¥80,000 雪板未稅可退約 ¥6,800），先問店家：這週就要在日本使用，新制下還能不能退。</div>
+  </div>
+</section>
+
 <section id="tools">
   <div class="sec-head">
     <span class="code">KIT</span>
@@ -748,6 +879,13 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <h3 style="margin:40px 0 10px;font-size:15px">資料來源</h3>
   <ul class="sources">
     <li><a href="https://www.hotel2307.com/en/">Hotel &amp; Onsen 2307 官網</a></li>
+    <li><a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00021.html">觀光廳 · リファンド方式とは</a></li>
+    <li><a href="https://www.gltjp.com/en/article/item/21542/">GLTJP · 2026/11 免稅新制重點</a></li>
+    <li><a href="https://unseen-japan.com/japan-tax-free-refund-fees/">Unseen Japan · 退稅手續費沒有統一規定</a></li>
+    <li><a href="https://pages.pievat.com/mitsui_divercitytokyo?hsLang=en">PIE VAT · 手續費 1.5%（未稅）</a></li>
+    <li><a href="https://www.aspicjapan.org/asu/service/91148">Ocean Tax Refund 服務說明</a></li>
+    <li><a href="https://paymentnavi.com/?p=177725">SmartDetax／JPrefund × SBPS 無現金退款</a></li>
+    <li><a href="https://www.weareplanet.com/news/planet-becomes-major-investor-japan-tax-free">Planet · 日本免稅業務</a></li>
     <li><a href="https://yokoteyama2307.com/hotel2307/">橫手山渋峠 2307 集團</a></li>
     <li><a href="https://www.snownavi.com/topics/news_26082401">Snownavi · 2026-27 橫手山・澀峠</a></li>
     <li><a href="https://shigakogen-ski.or.jp/winter/ticket/">志賀高原 2026-27 纜車票價</a></li>
@@ -1268,7 +1406,9 @@ const CK=[
  'マッスルバー横浜 12/18 營業與 6 人訂位（19:00–25:00 · 週一休 · 070-9151-1437），先看官網 SYSTEM 頁的費用',
  '12/18 夜間動線：抵東京 17:50 前先回飯店；17:50–19:00 直奔大井（雪板袋放置物櫃或分 2 人先帶回）；晚於 19:00 放棄 Illumi',
  '橫濱飯店：能否代收宅急便行李箱、離日本大通り站步行距離、12/18 18:25 先放行李（可先辦入住）',
- '北陸新幹線 12/18 長野約 16:11 發車班次（かがやき，抵東京約 17:35）的實際時刻與指定席；16:20 はくたか 趕不上先回飯店'
+ '北陸新幹線 12/18 長野約 16:11 發車班次（かがやき，抵東京約 17:35）的實際時刻與指定席；16:20 はくたか 趕不上先回飯店',
+ '退稅：每人先在 Visit Japan Web 登錄護照；確認 NRT T3（12/19）與 T1（12/20）免稅自助機位置，要托運的東西先過自助機',
+ '退稅：結帳時問清楚用哪個退稅系統、扣多少手續費、退到哪裡（信用卡選日圓入帳）；收據保留到入帳'
 ];
 let ck={};try{ck=JSON.parse(localStorage.getItem('c2307ck')||'{}')}catch(e){}
 /* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線） */
@@ -1575,6 +1715,19 @@ const PH=[
   ['お会計を別々にお願いします。','請分開結帳。'],
   ['タクシーを一台呼んでください。','請幫我叫一台計程車。']
  ]],
+ ['tax','購物・退稅',[
+  ['免税手続きはできますか？','可以辦免稅（退稅）嗎？'],
+  ['パスポートはこちらです。','這是我的護照。'],
+  ['税抜きでいくら以上から免税になりますか？','未稅要買多少以上才能退稅？'],
+  ['返金の方法は何がありますか？','有哪些退款方式？'],
+  ['クレジットカードに日本円で返金してください。','請用日圓退到我的信用卡。'],
+  ['手数料はいくらかかりますか？','手續費要扣多少？'],
+  ['どの返金サービスを使っていますか？','你們用哪一家退稅服務？'],
+  ['同じ日なら、別々の会計を合計できますか？','同一天分開結帳的可以合併計算嗎？'],
+  ['日本国内で使っても免税になりますか？','在日本國內先使用也能退稅嗎？'],
+  ['レシートをもう一枚いただけますか？','可以再給我一張收據嗎？'],
+  ['円で払います。','我用日圓付款。']
+ ]],
  ['misc','其他',[
   ['すみません。','不好意思。'],
   ['ありがとうございます。','謝謝。'],
@@ -1758,6 +1911,92 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
   };
   a.after(b);
 });
+
+/* ---------- 退稅試算 ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  if(!$('taxCalc'))return;
+  const SYS=[
+    ['00','官方新制（國稅廳・觀光廳・海關）','所有免稅店共用的骨架',[
+      ['角色','店家登錄購買紀錄 → 出境時海關確認 → 店家或業者退款。不是退款業者，但每一筆都要經過這裡。'],
+      ['退款','依店家選的業者：信用卡、電子錢包、銀行匯款等。'],
+      ['手續費','法規沒有統一規定，由店家／業者自訂。'],
+      ['工具','Visit Japan Web 免稅 QR；成田、羽田、關西、中部、新千歲、福岡、那霸 7 座機場可用。']],true,1],
+    ['01','Global Blue','百貨公司、精品品牌、大型商場',[
+      ['退款','信用卡；也有支付寶、微信支付等即時入帳選項。'],
+      ['手續費','從退稅額中扣，比例依金額與店家而異。'],
+      ['提醒','退到卡片時選日圓，不要 DCC。']],false],
+    ['02','Planet','時尚、精品、商場（投資 Global Tax Free 日本業務）',[
+      ['退款','信用卡、電子錢包等，依店家設定。'],
+      ['手續費','查不到公開費率，結帳時問。'],
+      ['提醒','收銀台看 Planet 標示，照店家給的 QR 申請。']],false],
+    ['03','PIE VAT（Pie Systems Japan）','三井 Outlet、LaLaport、東急 Plaza 等商場',[
+      ['退款','App 掃店家 QR 申請 → 信用卡、PayPal、微信支付、支付寶或銀行。'],
+      ['手續費','未稅總額的 1.5%。'],
+      ['入帳','核准後約 5–10 個工作天。'],
+      ['特色','舊制時同商場同一天的合作店可合併算 ¥5,000；新制是否照舊待查。']],true],
+    ['04','Ocean Tax Refund','中小型店（店家零導入成本）',[
+      ['退款','手機線上申請，可走微信小程式、LINE mini app，不用另裝 App；支援 30 多種貨幣。'],
+      ['手續費','查不到公開費率，結帳時問。'],
+      ['特色','拍護照與收據即可，AI 自動辨識。']],false],
+    ['05','JPrefund／SmartDetax','Smart Technologies & Resources × SB Payment Service',[
+      ['退款','JPrefund 平台申請，經 SBPS 匯款做無現金退款（2026/7 起）。'],
+      ['手續費','查不到公開費率，結帳時問。'],
+      ['特色','結合 SmartDetax 免稅系統的資料串接。']],false],
+    ['06','大型連鎖自營','唐吉訶德、Bic Camera、Yodobashi、百貨公司免稅櫃台',[
+      ['退款','依店家：自行處理或委外，方式與入帳時間各家不同。'],
+      ['手續費','依店家，查不到公開資料，結帳時問。'],
+      ['提醒','舊制下百貨公司多半能跨樓層合併到同一個免稅櫃台；新制是否照舊，結帳時問。']],false]
+  ];
+  $('taxSys').innerHTML=SYS.map(s=>'<article class="sys'+(s[5]?' base':'')+'"><div class="top"><span class="no">'+s[0]+'</span><span class="vf '+(s[4]?'y':'n')+'">'+(s[4]?'已查證':'費率待查')+'</span></div><h3>'+s[1]+'<small>'+s[2]+'</small></h3><dl>'+s[3].map(r=>'<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>').join('')+'</dl></article>').join('');
+
+  const BASIS=[['in','含稅價','收據上的金額'],['ex','未稅價','標價的稅抜']];
+  const RATE=[[10,'10%','一般商品'],[8,'8%','食品・無酒精飲料']];
+  const FEE=[['0','不扣','0% · 店家自營'],['pie','1.5%','PIE VAT 公告'],['cus','自訂','其他業者']];
+  const PAY=[['jpy','信用卡・日圓','損耗 ≈ 0%'],['dcc','信用卡・被 DCC','損耗 ≈ 4%'],['bank','銀行匯款','損耗 ≈ 0.5% ＋固定費']];
+  const PAYPCT={jpy:0,dcc:4,bank:.5};
+  const QUICK=[5500,11000,33000,55000,110000];
+  let st={amt:33000,basis:'in',rate:10,fee:'pie',cus:3,pay:'jpy',fix:0,fx:.21};
+  try{Object.assign(st,JSON.parse(localStorage.getItem('c2307tax')||'{}'))}catch(e){}
+  const save=()=>{try{localStorage.setItem('c2307tax',JSON.stringify(st))}catch(e){}};
+  function seg(el,opts,key){
+    el.innerHTML=opts.map(o=>'<button type="button" data-v="'+o[0]+'" aria-pressed="false">'+o[1]+'<small>'+o[2]+'</small></button>').join('');
+    el.onclick=e=>{const b=e.target.closest('button');if(!b)return;const v=b.dataset.v;st[key]=typeof opts[0][0]==='number'?+v:v;save();draw()};
+  }
+  seg($('txBasis'),BASIS,'basis');seg($('txRate'),RATE,'rate');seg($('txFee'),FEE,'fee');seg($('txPay'),PAY,'pay');
+  $('txQuick').innerHTML=QUICK.map(v=>'<button type="button" data-v="'+v+'" aria-pressed="false">'+yen(v)+'</button>').join('');
+  $('txQuick').onclick=e=>{const b=e.target.closest('button');if(!b)return;st.amt=+b.dataset.v;$('txAmt').value=st.amt;save();draw()};
+  const num=(id,key,min)=>{const el=$(id);el.value=st[key];el.oninput=()=>{const v=parseFloat(el.value);st[key]=isFinite(v)&&v>=min?v:min;save();draw(true)}};
+  num('txAmt','amt',0);num('txCus','cus',0);num('txFix','fix',0);num('txFx','fx',0);
+  const feePct=()=>st.fee==='pie'?1.5:st.fee==='cus'?Math.min(st.cus,10):0;
+  function calc(ex){
+    const tax=Math.floor(ex*st.rate/100);
+    const fee=Math.round(ex*feePct()/100);
+    const loss=Math.round(Math.max(0,tax-fee)*PAYPCT[st.pay]/100);
+    const net=Math.max(0,tax-fee-loss-(st.fix||0));
+    return{ex,tax,fee,loss,net,ok:ex>=5000};
+  }
+  const verdict=r=>!r.ok?['crit','x','未達門檻']:r.net>=800?['ok','y','值得退']:r.net>0?['warn','m','順手再退']:['crit','x','扣完歸零'];
+  function draw(fromInput){
+    const amt=Math.max(0,+st.amt||0);
+    const ex=st.basis==='in'?Math.round(amt*100/(100+st.rate)):Math.round(amt);
+    const r=calc(ex),v=verdict(r);
+    [['txBasis','basis'],['txRate','rate'],['txFee','fee'],['txPay','pay']].forEach(([id,k])=>$(id).querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===String(st[k])))));
+    $('txQuick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(st.basis==='in'&&+b.dataset.v===amt)));
+    $('txCusWrap').hidden=st.fee!=='cus';
+    $('txNet').textContent=r.ok?yen(r.net):'¥0';
+    $('txTwd').textContent=r.ok&&st.fx>0?'約 NT$'+Math.round(r.net*st.fx).toLocaleString('en-US')+' · 含稅價的 '+(r.ex?(r.net/(r.ex*(1+st.rate/100))*100).toFixed(1):'0.0')+'%':'—';
+    const pill=$('txPill');pill.className='pill '+v[0];
+    pill.textContent=!r.ok?'未達 ¥5,000 未稅門檻，還差 '+yen(5000-r.ex):v[2]==='值得退'?'值得退':v[2]==='順手再退'?'可退，但實拿不到 ¥800：同店再買一點或順手再退':'手續費與固定費用把退稅扣光了';
+    const pp=PAYPCT[st.pay];
+    $('txKv').innerHTML='<dt>未稅金額</dt><dd>'+yen(r.ex)+'</dd><dt>應退消費稅（'+st.rate+'%）</dt><dd>'+yen(r.tax)+'</dd><dt>業者手續費（'+feePct()+'%）</dt><dd>−'+yen(r.fee)+'</dd><dt>入帳損耗（'+pp+'%）</dt><dd>−'+yen(r.loss)+'</dd>'+(st.fix?'<dt>固定費用</dt><dd>−'+yen(st.fix)+'</dd>':'')+'<dt class="sum">實拿</dt><dd class="sum">'+(r.ok?yen(r.net):'¥0')+'</dd>';
+    let need=0;for(let x=5000;x<=2000000;x+=100){if(calc(x).net>=800){need=x;break}}
+    $('txNote').textContent='照目前設定，未稅約 '+(need?yen(need):'—')+'（含稅約 '+(need?yen(need*(1+st.rate/100)):'—')+'）以上實拿才會到 ¥800。'+(st.pay==='dcc'?'刷卡退款選日圓可以省下這 4%。':st.pay==='bank'?'銀行匯款的固定費用請依你的銀行填。':'');
+    $('txTbl').innerHTML=[5000,10000,20000,30000,50000,100000].map(x=>{const q=calc(x),w=verdict(q),on=Math.abs(x-r.ex)<1;
+      return '<tr'+(on?' class="on"':'')+'><td class="n" data-label="未稅金額">'+yen(x)+'</td><td class="n" data-label="含稅價">'+yen(x*(1+st.rate/100))+'</td><td class="n" data-label="應退稅額">'+yen(q.tax)+'</td><td class="n" data-label="手續費＋損耗">−'+yen(q.fee+q.loss+(st.fix||0))+'</td><td class="n" data-label="實拿"><b>'+yen(q.net)+'</b></td><td class="'+w[1]+'" data-label="判斷">'+w[2]+'</td></tr>'}).join('');
+  }
+  draw();
+})();
 
 /* ---------- 章節導覽：標出目前位置 ---------- */
 (function(){
