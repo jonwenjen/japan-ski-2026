@@ -225,6 +225,8 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .vf{font-family:var(--mono);font-size:11px}
 .vf.y{color:var(--ok)} .vf.n{color:var(--warn)}
 .count{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.rec .rno{display:inline-block;font-family:var(--display);font-weight:900;font-size:16px;line-height:1;color:var(--ink);margin-right:8px;letter-spacing:0}
+.r19-go{justify-self:start}
 
 /* TAX REFUND */
 .taxflow{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:3px solid var(--ink);counter-reset:tf}
@@ -779,11 +781,13 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <div class="sec-head">
     <span class="code">LIST</span>
     <h2>在地清單</h2>
-    <p>依區域和類別篩選，星等依網路評分四捨五入到半顆（最多 5 顆）：一般店家用 Google Maps 評分並附評論數，標「食べログ」的是食べログ分數（3.5 以上已屬高分，3.7 以上是區域頂尖）。新增「晚餐」類別，是各晚住宿附近適合吃晚餐的店。標 <span class="vf y">● 營業資訊已查證</span> 的營業時間或價格已對照來源，其他店家 12 月營業日要出發前再確認。</p>
+    <p>依區域和類別篩選，星等依網路評分四捨五入到半顆（最多 5 顆）：一般店家用 Google Maps 評分並附評論數，標「食べログ」的是食べログ分數（3.5 以上已屬高分，3.7 以上是區域頂尖）。新增「晚餐」類別，是各晚住宿附近適合吃晚餐的店；「路線」可以只看 12/18 夜遊或 12/19 三條白天路線經過的店，並依走的順序排。標 <span class="vf y">● 營業資訊已查證</span> 的營業時間或價格已對照來源，其他店家 12 月營業日要出發前再確認。</p>
   </div>
   <div class="filters">
     <div class="chips" id="areaChips" role="group" aria-label="區域"></div>
     <div class="chips" id="catChips" role="group" aria-label="類別"></div>
+    <div class="chips" id="routeChips" role="group" aria-label="路線"></div>
+    <p class="note" id="routeNote" hidden>依路線順序排列（卡片左上的編號）；店家編號跟 12/18、12/19 時間軸的順序一致，有些店是路線上可順路選擇的。</p>
     <span class="count" id="recCount"></span>
   </div>
   <div class="recs" id="recGrid"></div>
@@ -1351,8 +1355,8 @@ const R=[
  ["湯田中・澀", "甜點", "西山製菓店", "西山製菓店 渋温泉", "澀溫泉街的溫泉饅頭老店。", "澀溫泉街", 0, 4.4, 16, "G"],
  ["湯田中・澀", "餐", "猿座カフェ", "猿座カフェ 湯田中", "雞白湯拉麵和披薩，去地獄谷前後吃。", "湯田中 周邊", 0, 4.4, 1501, "G"],
  ["橫濱", "酒", "Bar Sea Guardian II", "バー シーガーディアンII ホテルニューグランド", "英式老酒吧，招牌雞尾酒「Yokohama」。營業 17:00–23:00，禁穿背心與拖鞋。", "元町・中華街站 徒步 1 分", 1, 4.5, 339, "G"],
- ["橫濱", "景點", "Christmas Market in 横浜赤レンガ倉庫", "横浜赤レンガ倉庫 クリスマスマーケット", "德式聖誕市集、熱紅酒、大聖誕樹。2025 年 11/21–12/25 舉辦，主會場要購票、新港中央廣場免費；2026 年資訊待公布。12/18 深夜經過時已打烊，改排 12/19 白天。", "馬車道站／日本大通り站 徒步約 6 分", 0, null, null, "G"],
- ["東京", "景點", "東京メガイルミ（大井競馬場）", "東京メガイルミ 大井競馬場", "2026-27 是最終季（之後因賽場整備休止），2026/10/31–2027/1/10，只在沒有賽馬的日子點燈。去年 16:30–21:00、最終入場 20:00、大人 ¥1,000 起（今年待公布）。12/18 要先確認有開。", "大井競馬場前站 徒步 2 分 · 浜松町モノレール 約 8–14 分", 0, null, null, "G"],
+ ["橫濱", "景點", "Christmas Market in 横浜赤レンガ倉庫", "横浜赤レンガ倉庫 クリスマスマーケット", "德式聖誕市集、熱紅酒、真樅木大聖誕樹。<b>2026 年 11/20–12/25</b> 舉辦（共 36 天）；2025 年主會場要購票、新港中央廣場免費，2026 年票務與時段待公布。12/18 深夜經過時已打烊，12/19 白天路線 A 會去。", "馬車道站／日本大通り站 徒步約 6 分", 0, null, null, "G"],
+ ["東京", "景點", "東京メガイルミ（大井競馬場）", "東京メガイルミ 大井競馬場", "2026-27 是最終季（之後因賽場整備休止），2026/10/31–2027/1/10，只在沒有賽馬的日子點燈。去年 16:30–21:00、最終入場 20:00、大人 ¥1,000 起（今年待公布）。12/18 要先確認有開。<b>12/18 晚餐就在場內解決</b>：有大井競馬場原創精釀啤酒與多家餐飲攤位，Muscle Bar 之前沒有其他晚餐時段。", "大井競馬場前站 徒步 2 分 · 浜松町モノレール 約 8–14 分", 0, null, null, "G"],
  ["橫濱", "酒", "マッスルバー横浜", "マッスルバー横浜 南仲通", "19:00–25:00、週一休，店家官網有 SYSTEM 頁列出費用。中区南仲通 1-8 SKビル B1F，去之前先看費用並訂位（070-9151-1437）。", "日本大通り站 2 號出口 徒步 1 分", 1, null, null, "G"],
  ["橫濱", "景點", "汽車道", "汽車道 桜木町", "1911 年開通的臨港鐵道約 500 m，改成跨海面的步道，保留鐵軌與橋梁，桜木町站走到紅磚倉庫約 15 分。", "桜木町站 徒步 1 分", 0, null, null, "G"],
  ["橫濱", "景點", "大さん橋 屋上「くじらのせなか」", "横浜港大さん橋国際客船ターミナル", "屋上廣場 24 小時免費開放（航廈大樓 9:00–21:30），木質波浪甲板夜間有腳下間接照明，可看地標塔與港灣夜景。深夜海風冷。", "日本大通り站 3／4 號出口 徒步約 7 分", 1, null, null, "G"],
@@ -1427,12 +1431,38 @@ const R=[
  ["橫濱", "酒", "クライスラー", "クライスラー 野毛 バー", "野毛的老派酒吧，食べログ 3.75。", "櫻木町站 · ¥2,000–3,000", 0, 3.75, null, "T"],
  ["橫濱", "酒", "ホッピー仙人", "ホッピー仙人 野毛", "野毛名物的立飲 Hoppy 酒吧，食べログ 3.72。", "櫻木町站 · ¥1,000–2,000", 0, 3.72, null, "T"],
  ["橫濱", "甜點", "ジェラート フィレンツェ", "ジェラート フィレンツェ みなとみらい", "食べログ港未來第 2 名的義式冰淇淋。", "みなとみらい · ～¥999", 0, 3.65, null, "T"],
+ ["橫濱", "酒", "都橋商店街（ハーモニカ横丁）", "野毛都橋商店街", "1964 年東京奧運時把路邊攤集中蓋成的彎曲兩層長屋，約 60 家 4–5 人座的小酒館擠在一起，野毛ハイボール、ホッピー仙人都在這一帶。各店營業時間不同，邊走邊找還亮燈的。", "櫻木町站 徒步 5 分 · 大岡川沿岸", 0, null, null, "G"],
+ ["橫濱", "景點", "港の見える丘公園", "港の見える丘公園", "山手高處的展望台，正面看橫濱灣大橋，早上順光。旁邊就是橫濱市イギリス館與山手 111 番館。", "元町・中華街站 6 號出口 徒步 5 分（上坡）", 0, null, null, "G"],
+ ["橫濱", "景點", "山手西洋館「世界のクリスマス」", "山手西洋館 世界のクリスマス", "山手 7 棟洋館各以一個國家的聖誕裝飾佈置，免費參觀。2025 年 12/1–25、9:30–17:00（週五、六到 18:00），2026 年待公布。", "元町・中華街站 徒步 5–15 分", 0, null, null, "G"],
+ ["橫濱", "景點", "山手外國人墓地", "横浜外国人墓地", "開港後來到橫濱的外國人長眠之地，石牆、十字架與山手洋館同框；平常從柵欄外參觀。", "元町・中華街站 徒步 7 分", 0, null, null, "G"],
+ ["橫濱", "景點", "山下公園・氷川丸", "氷川丸 山下公園", "1930 年下水的遠洋客船，可登船參觀船艙與機艙。開館 10:00–17:00（16:30 最後入館），週一休館。", "元町・中華街站 徒步 3 分", 1, null, null, "G"],
+ ["橫濱", "餐", "江戸清 中華街本店", "江戸清 中華街本店", "1894 年創業的豚まん（肉包）老店，一顆約 ¥500、餡料大又多，週末常排隊。中華街內有多家分店，營業時間各店不同。", "元町・中華街站 徒步 5 分", 0, null, null, "G"],
+ ["橫濱", "餐", "鵬天閣 新館", "鵬天閣 新館 焼き小籠包", "中華街的煎小籠包名店，外皮煎脆、咬開會噴湯汁，邊走邊吃。營業時間資料來源不一致，出發前查。", "元町・中華街站 徒步 1 分", 0, null, null, "G"],
+ ["橫濱", "景點", "橫濱關帝廟", "横浜関帝廟", "中華街中心的紅金色廟宇，晚上點燈；路線 B 午餐前後順路拍照。", "元町・中華街站 徒步 5 分", 0, null, null, "G"],
+ ["橫濱", "飲品", "象の鼻テラス", "象の鼻テラス", "象の鼻パーク裡的休息所兼咖啡，招牌「象の鼻ソフト」做成大象臉。營業 10:00–18:00（食物 17:00 LO），無休。正面是 Minato Mirai 天際線。", "日本大通り站 徒步 3 分", 1, null, null, "G"],
+ ["橫濱", "景點", "YOKOHAMA AIR CABIN", "YOKOHAMA AIR CABIN", "桜木町 ⇄ 運河パーク的都市纜車，全長約 630 m、單程約 5 分。單程 ¥1,000、來回 ¥1,800；週末 10:00–22:00（依季節變動）。", "JR 桜木町站 徒步 1 分", 1, null, null, "G"],
+ ["橫濱", "店家", "キタムラ 元町本店", "キタムラ 元町本店", "橫濱「ハマトラ」代表品牌之一的包包老店。營業 10:00–19:00。", "元町・中華街站 徒步 5 分", 1, null, null, "G"],
+ ["橫濱", "店家", "ミハマ 元町本店", "ミハマ 元町本店", "同屬 ハマトラ 的鞋店老舖。營業 10:00–18:30。", "元町・中華街站 徒步 3 分", 1, null, null, "G"],
+ ["橫濱", "伴手禮", "香炉庵 元町本店", "香炉庵 元町本店", "2004 年創業的元町和菓子店，招牌黑糖銅鑼燒一個 ¥195。營業 10:00–19:00。", "元町・中華街站 徒步 3 分", 1, null, null, "G"],
+ ["橫濱", "伴手禮", "霧笛楼 元町仏蘭西菓子店", "霧笛楼 元町仏蘭西菓子店", "橫濱代表性法式餐廳「霧笛楼」附設的甜點店，招牌巧克力蛋糕「橫濱煉瓦」適合當伴手禮。營業 10:30–18:30。", "元町・中華街站 徒步 3 分", 1, null, null, "G"],
+ ["橫濱", "甜點", "えの木てい 本店", "えの木てい 本店 山手", "山手的洋館蛋糕店，在老洋館裡吃蛋糕配紅茶。週六日 11:30–18:00（LO 17:30）、平日 12:00–17:30。", "元町・中華街站 徒步 8 分（上坡）", 1, null, null, "G"],
+ ["橫濱", "飲品", "馬車道十番館", "馬車道十番館", "紅磚洋館風的老派喫茶，1 樓喫茶 10:00–22:00，古典蛋糕配咖啡；樓上是酒吧與法式餐廳。", "馬車道站 徒步 1 分", 1, null, null, "G"],
+ ["橫濱", "店家", "橫濱紅磚倉庫 2 號館", "横浜赤レンガ倉庫 2号館", "1911 年的紅磚倉庫改成的商場，雜貨、器物、橫濱伴手禮都在室內，下雨也能逛。營業 11:00–20:00，各店時間不同。", "馬車道站／日本大通り站 徒步約 6 分", 1, null, null, "G"],
  ["志賀高原", "晚餐", "Hotel & Onsen 2307 館內晚餐", "Hotel&Onsen2307Shigakogen", "ほたる溫泉一帶冬季幾乎沒有獨立晚餐店，12/15–17 建議直接訂含晚餐的方案（一泊二食 ¥13,200 起）。", "飯店內", 0, 3.8, 185, "G"],
  ["志賀高原", "晚餐", "TEPPA ROOM（一の瀬）", "TEPPA ROOM Villa一乃瀬", "想在外面吃一晚：搭計程車到一の瀬，dining bar 配志賀高原啤酒。", "一の瀬 Villa一乃瀬 1F · 計程車約 15 分", 0, 4.4, 94, "G"]
 ];
 const AREAS=['全部','東京','高崎・片品','佐久・小諸','長野','小布施','湯田中・澀','志賀高原','橫濱'];
 const CATS=['全部','晚餐','餐','甜點','飲品','酒','伴手禮','景點','店家'];
-let fa='全部',fc='全部';
+/* 路線篩選：店名 → {路線: 順序} */
+const ROUTES=[['全部',''],['12/18 夜遊','n18'],['12/19 A 聖誕','a19'],['12/19 B 拍照','b19'],['12/19 C 慢逛','c19']];
+const RT={
+ '東京メガイルミ（大井競馬場）':{n18:1},'マッスルバー横浜':{n18:2},'都橋商店街（ハーモニカ横丁）':{n18:3},'野毛ハイボール':{n18:4},'ホッピー仙人':{n18:5},'もつしげ 野毛小路':{n18:6},'クライスラー':{n18:7},'野毛焼きそばセンター まるき':{n18:8},
+ '汽車道':{n18:9,b19:8},'Christmas Market in 横浜赤レンガ倉庫':{n18:10,a19:5},'大さん橋 屋上「くじらのせなか」':{n18:11,b19:10},
+ 'ウチキパン':{a19:1,c19:1},'港の見える丘公園':{a19:2,b19:1},'山手西洋館「世界のクリスマス」':{a19:3},'Hotel New Grand · The Café':{a19:4},
+ '山手外國人墓地':{b19:2},'山下公園・氷川丸':{b19:3},'江戸清 中華街本店':{b19:4,c19:9},'鵬天閣 新館':{b19:5,c19:10},'橫濱關帝廟':{b19:6},'象の鼻テラス':{b19:7},'YOKOHAMA AIR CABIN':{b19:9},
+ '喜久家洋菓子舗':{c19:2},'近沢レース店':{c19:3},'キタムラ 元町本店':{c19:4},'ミハマ 元町本店':{c19:5},'香炉庵 元町本店':{c19:6},'霧笛楼 元町仏蘭西菓子店':{c19:7},'えの木てい 本店':{c19:8},'馬車道十番館':{c19:11},'橫濱紅磚倉庫 2 號館':{c19:12}
+};
+let fa='全部',fc='全部',fr='';
 function chips(el,list,get,set,idp){
   el.innerHTML=list.map((x,i)=>`<button type="button" id="${idp}-${i}" aria-pressed="${x===get()}">${x}</button>`).join('');
   [...el.children].forEach((b,i)=>b.onclick=()=>{set(list[i]);[...el.children].forEach(c=>c.setAttribute('aria-pressed',c===b));renderRecs()});
@@ -1440,11 +1470,18 @@ function chips(el,list,get,set,idp){
 const stars=x=>{const h=Math.round(x*2)/2;return `<span class="st" role="img" aria-label="${h} 顆星"><span class="st-bg">☆☆☆☆☆</span><span class="st-fg" style="width:${h/5*100}%">★★★★★</span></span>`};
 let sortBy='rating';
 const nz=r=>r[7]?(r[9]==='T'?r[7]+0.7:r[7]):0;
+const rk=r=>(RT[r[2]]||{})[fr];
+function renderRouteChips(){
+  const el=document.getElementById('routeChips');
+  el.innerHTML=ROUTES.map(([l,v])=>'<button type="button" data-v="'+v+'" aria-pressed="'+(v===fr)+'">'+l+'</button>').join('');
+}
+function setRecRoute(v){fr=v;if(v){fa='全部';fc='全部';[...document.getElementById('areaChips').children].forEach((c,i)=>c.setAttribute('aria-pressed',AREAS[i]==='全部'));[...document.getElementById('catChips').children].forEach((c,i)=>c.setAttribute('aria-pressed',CATS[i]==='全部'))}renderRouteChips();renderRecs()}
 function renderRecs(){
-  const items=R.filter(r=>(fa==='全部'||r[0]===fa)&&(fc==='全部'||r[1]===fc)).sort((a,b)=>nz(b)-nz(a));
+  const items=R.filter(r=>(fa==='全部'||r[0]===fa)&&(fc==='全部'||r[1]===fc)&&(!fr||rk(r))).sort((a,b)=>fr?rk(a)-rk(b):nz(b)-nz(a));
+  document.getElementById('routeNote').hidden=!fr;
   document.getElementById('recCount').textContent=items.length+' / '+R.length+' 筆';
   document.getElementById('recGrid').innerHTML=items.map(r=>`<article class="rec">
-    <div class="top"><span class="cat">${r[1]}</span><span class="area">${r[0]}</span></div>
+    <div class="top"><span class="cat">${fr?'<b class="rno">'+String(rk(r)).padStart(2,'0')+'</b>':''}${r[1]}</span><span class="area">${r[0]}</span></div>
     <h3>${r[2]}<small>${r[3]}</small></h3>
     <p>${r[4]}</p>
     <div class="stars">${r[7]?stars(r[7])+(r[9]==='T'?` <b>${r[7].toFixed(2)}</b> <span>食べログ</span>`:` <b>${r[7].toFixed(1)}</b> <span>Google · ${r[8].toLocaleString('en-US')} 則</span>`):'<span>評分待查</span>'}</div>
@@ -1453,6 +1490,8 @@ function renderRecs(){
 }
 chips(document.getElementById('areaChips'),AREAS,()=>fa,v=>fa=v,'area');
 chips(document.getElementById('catChips'),CATS,()=>fc,v=>fc=v,'cat');
+renderRouteChips();
+document.getElementById('routeChips').onclick=e=>{const b=e.target.closest('button');if(b)setRecRoute(b.dataset.v)};
 renderRecs();
 
 /* ---------- Checklist ---------- */
@@ -2108,8 +2147,8 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
       steps:[['10:00','港の見える丘公園','俯瞰橫濱灣大橋，早上順光',true,'photo'],
         ['10:30','山手外國人墓地 → 山手本通り洋館外觀','石板坡道、尖頂洋館，人少好拍',false,'photo'],
         ['11:15','下坡到元町 → 山下公園・氷川丸','1930 年的遠洋客船停在岸邊，和海面同框',false,'photo'],
-        ['12:15','中華街午餐','善隣門、關帝廟的紅金色是好背景；小籠包、豚まん邊走邊吃',false],
-        ['13:45','日本大通り → 象の鼻パーク','正面拍 Minato Mirai 天際線',false,'photo'],
+        ['12:15','中華街午餐','江戸清的豚まん、鵬天閣的煎小籠包邊走邊吃；關帝廟的紅金色是好背景',false],
+        ['13:45','日本大通り → 象の鼻パーク','正面拍 Minato Mirai 天際線；象の鼻テラス的大象臉霜淇淋',false,'photo'],
         ['14:15','紅磚倉庫外觀 → 汽車道（白天版）','跟 12/18 深夜同一條路對照',false,'photo'],
         ['14:45','YOKOHAMA AIR CABIN 來回','運河パーク ⇄ 桜木町，單程約 5 分，空中拍港灣；來回 ¥1,800（週末 10:00–22:00）',true,'photo'],
         ['15:40','大さん橋屋上「くじらのせなか」','白天版的木質波浪甲板；日落約 16:30，這時光線偏暖',true,'photo'],
@@ -2117,9 +2156,9 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
     slow:{name:'C 小店・咖啡・慢逛',sub:'元町 · 山手 · 馬車道',vibe:'元町老店、洋館裡的蛋糕下午茶、馬車道的老派喫茶，最後在紅磚倉庫館內逛雜貨，節奏最慢、最不怕下雨。',
       walk:'約 4 km（最少）',cost:'兩間咖啡蛋糕每人約 ¥1,500–2,500',rain:['ok','雨天最適合：大多在室內'],
       steps:[['10:00','元町 ウチキパン','早餐麵包（9:00 開）',false],
-        ['10:20','元町ショッピングストリート','喜久家洋菓子舗的蘭姆球（10:15 開）、近沢レース店的蕾絲手帕，橫濱老牌包鞋小店慢慢逛',true],
+        ['10:20','元町ショッピングストリート','喜久家洋菓子舗的蘭姆球（10:15 開）、近沢レース店的蕾絲手帕、キタムラ（包）與ミハマ（鞋）兩家 ハマトラ 老店，伴手禮買香炉庵的黑糖銅鑼燒、霧笛楼的「橫濱煉瓦」',true],
         ['11:45','山手 えの木てい 本店','洋館裡的蛋糕與紅茶（週六 11:30–18:00）',true],
-        ['13:00','中華街午餐','小籠包、豚まん、杏仁豆腐，邊走邊吃',false],
+        ['13:00','中華街午餐','江戸清的豚まん、鵬天閣的煎小籠包，邊走邊吃',false],
         ['14:15','馬車道十番館','紅磚洋館風的老派喫茶，1 樓喫茶 10:00–22:00，古典蛋糕配咖啡',true],
         ['15:15','紅磚倉庫館內小店','室內雜貨、器物、橫濱伴手禮；外面就是聖誕市集，想看可以順便走一圈',false],
         ['16:10','走回飯店','約 10–15 分',false]]}
@@ -2133,7 +2172,8 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
     seg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===cur)));
     const steps=r.steps.concat([['16:30','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX',true]]);
     $('r19Tl').innerHTML=steps.map(s=>'<div class="step'+(s[3]?' key':'')+(s[4]?' '+s[4]:'')+'"><span class="t">'+s[0]+'</span><span class="rail" aria-hidden="true"></span><div class="c"><b>'+s[1]+'</b>'+(s[2]?'<span>'+s[2]+'</span>':'')+'</div></div>').join('');
-    $('r19Side').innerHTML='<div class="verdict"><span class="label">這條路線</span><h4>'+r.name.slice(2)+'</h4><span class="pill '+r.rain[0]+'">'+r.rain[1]+'</span></div><p class="vibe">'+r.vibe+'</p><dl class="kv"><dt>步行（估）</dt><dd>'+r.walk+'</dd><dt>主要花費</dt><dd style="text-align:right;font-family:var(--body)">'+r.cost+'</dd><dt class="sum">回飯店</dt><dd class="sum">16:30</dd></dl><p class="note">三條路線的終點都是飯店：16:30 拿行李，17:28 全員搭同一班 N\'EX，Robin 東京站下車。</p>';
+    $('r19Side').innerHTML='<div class="verdict"><span class="label">這條路線</span><h4>'+r.name.slice(2)+'</h4><span class="pill '+r.rain[0]+'">'+r.rain[1]+'</span></div><p class="vibe">'+r.vibe+'</p><dl class="kv"><dt>步行（估）</dt><dd>'+r.walk+'</dd><dt>主要花費</dt><dd style="text-align:right;font-family:var(--body)">'+r.cost+'</dd><dt class="sum">回飯店</dt><dd class="sum">16:30</dd></dl><p class="note">三條路線的終點都是飯店：16:30 拿行李，17:28 全員搭同一班 N\'EX，Robin 東京站下車。</p><button class="btn r19-go" type="button" data-r="'+cur+'19">看這條路線的店家 →</button>';
+    $('r19Side').querySelector('.r19-go').onclick=e=>{setRecRoute(e.currentTarget.dataset.r.replace('xmas19','a19').replace('photo19','b19').replace('slow19','c19'));document.getElementById('recs').scrollIntoView({behavior:'smooth'})};
   }
   draw();
 })();
