@@ -265,6 +265,14 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .tax-rules li::before{content:counter(tr,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:2px}
 .tax-rules b{font-weight:700}
 
+/* 12/19 ROUTES */
+.r19-ctl{grid-template-columns:1fr}
+#r19Side h4{margin:0;font-family:var(--display);font-weight:900;font-size:30px;line-height:1.05}
+#r19Side .vibe{margin:0;font-size:14px;line-height:1.6}
+#r19Side .kv{grid-template-columns:auto minmax(0,1fr)}
+#r19Side .kv dt{white-space:nowrap}
+.step.photo .rail::before{background:var(--alt);width:4px;left:7px}
+
 /* PACK */
 .pk-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:26px 0 14px}
 .pk-bar .ck-progress{margin:0;flex:1 1 260px}
@@ -479,8 +487,8 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
       <li class="snow"><span class="d">16</span><span class="w">WED</span><span class="place">橫手山・澀峠</span><span class="who">全員 · 雪板日</span></li>
       <li class="snow"><span class="d">17</span><span class="w">THU</span><span class="place">熊之湯</span><span class="who">全員 · 雪板日</span></li>
       <li class="snow"><span class="d">18</span><span class="w">FRI</span><span class="place">2307 → 橫濱飯店 → 大井 Illumi → 夜遊</span><span class="who">滑到 13:15 · 東京 17:35 · 玩到深夜</span></li>
-      <li><span class="d">19</span><span class="w">SAT</span><span class="place">橫濱 → NRT T3</span><span class="who">友人 22:25 起飛</span></li>
-      <li><span class="d">20</span><span class="w">SUN</span><span class="place">橫濱 → 成田 T1</span><span class="who">Robin · UA837 NRT→KHH</span></li>
+      <li><span class="d">19</span><span class="w">SAT</span><span class="place">橫濱半日 → NRT T3</span><span class="who">友人 22:25 起飛 · Robin 移到東京</span></li>
+      <li><span class="d">20</span><span class="w">SUN</span><span class="place">東京 → 成田 T1</span><span class="who">Robin · UA837 NRT→KHH</span></li>
     </ol>
   </div>
   <p class="note strip-hint" style="margin-top:6px">← 左右滑動看完 10 天，點任一天跳到當天行程 →</p>
@@ -714,19 +722,32 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <article class="day" id="d19">
       <div class="when"><span class="d">12.19</span><span class="label">SAT</span><span class="alt">→ NRT T3</span></div>
       <div>
-        <h3>橫濱半日 → 友人回 T3（22:25 起飛）</h3>
+        <h3>橫濱半日三選一 → 16:30 回飯店拿行李 → 友人回 T3（22:25 起飛）、Robin 移到東京</h3>
         <ul>
-          <li><span class="t">10:00</span><span>元町：ウチキパン（1888 年創業，9:00 開）→ 喜久家洋菓子舗的蘭姆球（10:15 開）→ 近沢レース店。12/18 玩到深夜，早上睡晚一點再出門。</span></li>
-          <li><span class="t">11:00</span><span>Hotel New Grand「The Café」：海鮮焗烤 ¥3,289、拿坡里義大利麵 ¥2,340、布丁 à la mode ¥2,024，三道都是在這裡誕生的。可在 TableCheck 訂位。</span></li>
-          <li><span class="t">13:00</span><span>午餐吃家系拉麵發源的吉村家（食べログ 3.76），或野毛的橫浜中華そば 維新商店（3.76）。</span></li>
-          <li><span class="t">14:30</span><span><b>選項：聖誕市集（白天版）</b>。12/18 深夜經過紅磚倉庫時市集已打烊，想補就午餐後走過去（馬車道站徒步約 6 分），逛到 15:45 回飯店拿行李。日期與開放時段 2026 年待公布。</span></li>
-          <li><span class="t">16:30</span><span>回飯店拿行李 → 橫濱站。</span></li>
+          <li><span class="t">10:00</span><span><b>全員退房，行李箱寄放在飯店櫃台</b>，只背背包出門（12/18 玩到 02:00，早上睡飽）。三條路線都從飯店附近出發、都在 <b>16:30 回飯店拿行李</b>。</span></li>
+        </ul>
+        <div class="board" id="r19" style="margin-top:12px">
+          <div class="controls r19-ctl">
+            <div class="ctrl">
+              <span class="label">選一條白天路線</span>
+              <div class="seg" id="r19Seg" role="group" aria-label="12/19 白天路線"></div>
+            </div>
+          </div>
+          <div class="board-body">
+            <div class="tl" id="r19Tl" aria-live="polite"></div>
+            <aside class="side" id="r19Side"></aside>
+          </div>
+        </div>
+        <ul style="margin-top:14px">
+          <li><span class="t">16:45</span><span><b>拿好行李出發</b>：みなとみらい線（日本大通り／馬車道 → 橫濱，約 8 分，走電梯），或 2 台計程車到橫濱站（約 10–15 分）。</span></li>
+          <li><span class="t">17:05</span><span>到橫濱站，找 N'EX 月台。Robin 想帶崎陽軒燒賣的話在站內買，選常溫真空包裝比較好帶上飛機。</span></li>
+          <li><span class="t">17:28</span><span><b>全員搭同一班 N'EX</b>：Robin 17:56 在<b>東京站</b>下車，入住東京（未定，建議八重洲／日本橋，隔天 N'EX 直達）；友人續搭到空港第2ビル，走到 T3。</span></li>
         </ul>
         <div class="chain" style="margin-top:14px">
           <div class="seg" id="nexSeg" role="group" aria-label="N'EX 班次"></div>
           <div class="bar-wrap"><div class="bar-inner"><div class="bar" id="nexBar"></div></div></div>
           <dl class="kv" id="nexKv"></dl>
-          <p class="note" style="margin-top:10px">N'EX 橫濱發車時刻是查詢到的週六時刻（每小時 :28），橫濱 → 東京 28 分鐘，東京 → 空港第2ビル抓 55 分鐘。T3 的 LCC 報到通常在起飛前 45–60 分鐘截止，這裡用 21:25 當作最保守的截止線。橫濱 → 成田 ¥4,480，トクだ値 ¥3,640。第一版的 N'EX 47 是 17:28 發車、18:54 到，跟這裡的推算一致。第一版的方案 2（京急 → 山手線 → 日暮里 17:47 Skyliner 59 → 18:23 抵 T2）比 N'EX 早約 30 分鐘到，但要多轉乘兩次，只有在 N'EX 停駛或誤點時才值得改走。</p>
+          <p class="note" style="margin-top:10px">Robin 搭同一班到東京站要買 N'EX 橫濱 → 東京的指定席（N'EX 全車指定）。N'EX 橫濱發車時刻是查詢到的週六時刻（每小時 :28），橫濱 → 東京 28 分鐘，東京 → 空港第2ビル抓 55 分鐘。T3 的 LCC 報到通常在起飛前 45–60 分鐘截止，這裡用 21:25 當作最保守的截止線。橫濱 → 成田 ¥4,480，トクだ値 ¥3,640。第一版的 N'EX 47 是 17:28 發車、18:54 到，跟這裡的推算一致。第一版的方案 2（京急 → 山手線 → 日暮里 17:47 Skyliner 59 → 18:23 抵 T2）比 N'EX 早約 30 分鐘到，但要多轉乘兩次，只有在 N'EX 停駛或誤點時才值得改走。</p>
         </div>
       </div>
     </article>
@@ -734,10 +755,10 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <article class="day">
       <div class="when"><span class="d">12.20</span><span class="label">SUN</span><span class="alt">NRT T1</span></div>
       <div>
-        <h3>Robin 回程</h3>
+        <h3>Robin 東京 → 成田 T1</h3>
         <ul>
-          <li><span class="t">上午</span><span>在橫濱站崎陽軒買燒賣當伴手禮（冷藏款只能放托運行李，要注意）。</span></li>
-          <li><span class="t">13:28</span><span>橫濱搭 N'EX → 約 14:55 抵成田空港站（T1）。UA837 17:30 從 T1 南翼起飛，緩衝約 2 小時 35 分。</span></li>
+          <li><span class="t">上午</span><span>東京自由時間。行李箱寄飯店櫃台，或退房後放東京站的大型置物櫃／Gransta 寄物，逛丸之內、KITTE、東京站一番街，伴手禮在站內買齊。</span></li>
+          <li><span class="t">13:30</span><span>東京站搭 N'EX（13:30–14:00 間的班次待查，約 55–60 分）→ 約 <b>14:30–15:00 抵成田空港站（T1）</b>。UA837 17:30 從 T1 南翼起飛，留約 2.5–3 小時；要退稅的先過免稅自助機再托運。</span></li>
         </ul>
       </div>
     </article>
@@ -855,7 +876,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <li><span><b>友人 12/19 從 NRT T3、Robin 12/20 從 NRT T1 出境</b>。成田有免稅自助機，但各航廈位置與排隊時間待查；T3 報到截止抓 21:25，有要退稅的人選 N'EX 時多留 20 分鐘。Robin 的 UA837 有約 2.5 小時緩衝，足夠。</span></li>
   </ol>
   <div class="opt" style="margin-top:14px">
-    <div class="optcard w"><span class="label">這趟值得退的時機</span>① 12/19 橫濱半日（元町、紅磚倉庫）和 12/20 上午橫濱站，同一店集中買。② 食品伴手禮適用 8%，崎陽軒這類要放托運的，記得先過自助機。③ 如果 12/15 早上在東京想順便買雪具（金額高、退稅最有感，¥80,000 雪板未稅可退約 ¥6,800），先問店家：這週就要在日本使用，新制下還能不能退。</div>
+    <div class="optcard w"><span class="label">這趟值得退的時機</span>① 12/19 橫濱半日（元町、紅磚倉庫）、Robin 12/20 上午在東京站一帶，同一店集中買。② 食品伴手禮適用 8%，崎陽軒這類要放托運的，記得先過自助機。③ 如果 12/15 早上在東京想順便買雪具（金額高、退稅最有感，¥80,000 雪板未稅可退約 ¥6,800），先問店家：這週就要在日本使用，新制下還能不能退。</div>
   </div>
 </section>
 
@@ -1442,7 +1463,7 @@ const CK=[
  'Gransta／上野寄物處或大型置物櫃：12/15 寄 5 個行李箱',
  '友人 22:25 T3 班機的航空公司報到截止時間',
  'UA838／UA837 12 月實際時刻與航線（UA837／838 一般是舊金山線，NRT→KHH 這段請對照機票核對）',
- '訂住宿：高崎（12/11）、佐久平（12/12–13）、長野（12/14）、橫濱（12/18–19，建議日本大通り／馬車道／関内：Muscle Bar、大さん橋走得到）',
+ '訂住宿：高崎（12/11）、佐久平（12/12–13）、長野（12/14）、橫濱（12/18 一晚，建議日本大通り／馬車道／関内：Muscle Bar、大さん橋走得到）、東京（Robin 12/19 一晚，建議東京站八重洲／日本橋）',
  'JR 巴士關東「高峰高原線」26–27 冬季時刻（12/14 08:40 上山、16:18 末班下山）',
  '長電急行巴士 26–27 冬季回程時刻：12/18 有沒有比 14:35 更早、能趕上長野 16:11 新幹線的班次（沒有就用 Jumbo）',
  '丸沼高原、高峰山 12/12–13 的開放狀況與上山交通（計程車需預約）',
@@ -1466,11 +1487,13 @@ const CK=[
  '退稅：每人先在 Visit Japan Web 登錄護照；確認 NRT T3（12/19）與 T1（12/20）免稅自助機位置，要托運的東西先過自助機',
  '退稅：結帳時問清楚用哪個退稅系統、扣多少手續費、退到哪裡（信用卡選日圓入帳）；收據保留到入帳',
  '雪具租借（志賀）：問 Hotel 2307 合作的租借店、營業時間、12/15 晚上能否先取、12/16–18 連租價格、上級板加價、12/18 歸還地點；每人報身高、體重、鞋碼、站姿',
- '雪具租借（Robin 前段）：12/12 丸沼、12/13–14 高峰現場租借的營業時間與價格，能否預約'
+ '雪具租借（Robin 前段）：12/12 丸沼、12/13–14 高峰現場租借的營業時間與價格，能否預約',
+ '12/19 白天路線：山手西洋館「世界のクリスマス」2026 日期時段、紅磚倉庫聖誕市集週六入場券；路線 A 先訂 The Café',
+ 'Robin：12/19 N\'EX 橫濱 → 東京指定席（和友人同一班 17:28）、12/20 東京 → 成田 T1 的 N\'EX 班次'
 ];
 let ck={};try{ck=JSON.parse(localStorage.getItem('c2307ck')||'{}')}catch(e){}
-/* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線；v15 行李改全程手提；v16 改每人 1 行李箱、雪板用租的） */
-try{const CKV=16,CKCH={12:[1,8,13],13:[17],14:[1,8,24],15:[1,2,3,20,24,25],16:[1,3,20,24,25]};let v=+localStorage.getItem('c2307ckv')||0;
+/* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線；v15 行李改全程手提；v16 改每人 1 行李箱、雪板用租的；v17 Robin 12/19 改住東京） */
+try{const CKV=17,CKCH={12:[1,8,13],13:[17],14:[1,8,24],15:[1,2,3,20,24,25],16:[1,3,20,24,25],17:[6]};let v=+localStorage.getItem('c2307ckv')||0;
 if(v<CKV){for(let k=v+1;k<=CKV;k++)(CKCH[k]||[]).forEach(i=>delete ck[i]);localStorage.setItem('c2307ck',JSON.stringify(ck));localStorage.setItem('c2307ckv',String(CKV))}}catch(e){}
 document.getElementById('checkList').innerHTML=CK.map((t,i)=>`<div><input type="checkbox" id="ck${i}" ${ck[i]?'checked':''}><label for="ck${i}">${t}</label></div>`).join('');
 function ckProgress(){const n=CK.filter((_,i)=>ck[i]).length;document.getElementById('ckCount').textContent='已完成 '+n+' / '+CK.length;document.getElementById('ckBar').style.width=(n/CK.length*100)+'%'}
@@ -1543,8 +1566,8 @@ const ICS_ALL=[
  ['20261216','橫手山・澀峠 雪板日','頂部 2,307 m · 纜車 8:30–16:30'],
  ['20261217','熊之湯 雪板日','備案：燒額山／奧志賀'],
  ['20261218','2307 → 橫濱飯店 → 大井 Illumi → 橫濱夜遊','滑到 13:15 · Jumbo 14:10 · 長野約 16:11 發 · 東京 17:35 · 飯店放行李 18:25 · 大井 Tokyo Mega Illumi · Muscle Bar · 野毛 · 汽車道 · 大さん橋'],
- ['20261219','橫濱 → NRT T3','友人 22:25 起飛'],
- ['20261220','橫濱 → 成田 T1','Robin · UA837 17:30 NRT→KHH']
+ ['20261219','橫濱半日 → NRT T3／Robin → 東京','三選一：聖誕活動／漫步拍照／小店咖啡 · 16:30 回飯店拿行李 · 17:28 N\'EX · 友人 22:25 起飛'],
+ ['20261220','東京 → 成田 T1','Robin · UA837 17:30 NRT→KHH']
 ];
 const ICS_T=[
  ['20261211','1445','1530','UA838 抵達 NRT T1','入境後往高崎'],
@@ -1559,8 +1582,11 @@ const ICS_T=[
  ['20261218','1945','2050','東京メガイルミ（大井競馬場）','品川區勝島2-1-2 · 最終入場 20:00 · 先確認 12/18 有點燈（賽馬日不點燈）'],
  ['20261218','2215','2330','Muscle Bar Yokohama','中区南仲通1-8 SKビル B1F · 19:00–25:00 · 日本大通り站 2 號出口 1 分'],
  ['20261218','2345','2359','野毛梯子酒 → 汽車道 → 紅磚倉庫 → 大さん橋','深夜 · 屋上「くじらのせなか」24 小時開放 · 走回飯店約 02:00'],
- ['20261219','1728','1851','橫濱搭 N\'EX → 成田','約 18:51 抵空港第2ビル，走到 T3 約 20 分'],
+ ['20261219','1000','1030','退房 · 行李寄放飯店','全員 · 白天三選一：聖誕活動／漫步拍照／小店咖啡'],
+ ['20261219','1630','1645','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX'],
+ ['20261219','1728','1851','橫濱搭 N\'EX → 成田','約 18:51 抵空港第2ビル，走到 T3 約 20 分 · Robin 17:56 東京站下車'],
  ['20261219','2225','2235','友人 NRT T3 起飛',''],
+ ['20261220','1330','1430','東京 → 成田 T1（N\'EX）','Robin · 13:30–14:00 間的班次待查'],
  ['20261220','1730','1740','UA837 NRT T1 起飛','Robin']
 ];
 /* ---------- 旅途中：下一步倒數 ---------- */
@@ -1660,7 +1686,10 @@ const DEST=[
  ['マッスルバー','マッスルバー横浜','神奈川県横浜市中区南仲通1-8 SKビルB1F','070-9151-1437','12/18 · 日本大通り站 2 號出口 1 分'],
  ['紅磚倉庫','横浜赤レンガ倉庫','神奈川県横浜市中区新港1-1-1','','12/18 深夜・12/19 白天市集 · 馬車道站徒步約 6 分'],
  ['大さん橋','横浜港大さん橋国際客船ターミナル','神奈川県横浜市中区海岸通1-1-4','045-211-2304','12/18 深夜 · 屋上「くじらのせなか」24 小時開放'],
- ['橫濱駅','横浜駅','','','12/18 抵達 · 12/19–20 出發']
+ ['橫濱駅','横浜駅','','','12/18 抵達 · 12/19 出發（N\'EX）'],
+ ['赤レンガ','横浜赤レンガ倉庫','','','12/19 聖誕市集 · 館內小店'],
+ ['港の見える丘','港の見える丘公園','','','12/19 路線 A、B 起點 · 山手西洋館'],
+ ['東京駅','東京駅 八重洲口','','','Robin 12/19 住宿附近 · 12/20 N\'EX'],
 ];
 
 const PH=[
@@ -2058,6 +2087,53 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
     $('txNote').textContent='照目前設定，未稅約 '+(need?yen(need):'—')+'（含稅約 '+(need?yen(need*(1+st.rate/100)):'—')+'）以上實拿才會到 ¥800。'+(st.pay==='dcc'?'刷卡退款選日圓可以省下這 4%。':st.pay==='bank'?'銀行匯款的固定費用請依你的銀行填。':'');
     $('txTbl').innerHTML=[5000,10000,20000,30000,50000,100000].map(x=>{const q=calc(x),w=verdict(q),on=Math.abs(x-r.ex)<1;
       return '<tr'+(on?' class="on"':'')+'><td class="n" data-label="未稅金額">'+yen(x)+'</td><td class="n" data-label="含稅價">'+yen(x*(1+st.rate/100))+'</td><td class="n" data-label="應退稅額">'+yen(q.tax)+'</td><td class="n" data-label="手續費＋損耗">−'+yen(q.fee+q.loss+(st.fix||0))+'</td><td class="n" data-label="實拿"><b>'+yen(q.net)+'</b></td><td class="'+w[1]+'" data-label="判斷">'+w[2]+'</td></tr>'}).join('');
+  }
+  draw();
+})();
+
+/* ---------- 12/19 白天三選一 ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  if(!$('r19Seg'))return;
+  const R={
+    xmas:{name:'A 聖誕活動',sub:'西洋館聖誕 · 紅磚市集',vibe:'山手 7 棟洋館各用一個國家的聖誕裝飾佈置，下午接全日本最大的聖誕市集，最有節日感。',
+      walk:'約 5 km',cost:'The Café 午餐 ¥2,300–3,300＋市集小吃與熱紅酒',rain:['warn','雨天：洋館室內 OK，市集在戶外'],
+      steps:[['10:00','元町 ウチキパン','1888 年創業的麵包店（9:00 開），買早餐邊走邊吃',false],
+        ['10:30','港の見える丘公園 → 山手西洋館「世界のクリスマス」','7 棟洋館各以一國的聖誕裝飾佈置、免費參觀；挑 3–4 棟：橫濱市イギリス館、山手 111 番館、エリスマン邸、ベーリック・ホール（2025 年 12/1–25，9:30–17:00，週五、六到 18:00；2026 待公布）',true],
+        ['12:30','下坡到 Hotel New Grand「The Café」','海鮮焗烤 ¥3,289、拿坡里義大利麵 ¥2,340、布丁 à la mode ¥2,024，三道都在這裡誕生；TableCheck 訂位',false],
+        ['14:00','山下公園 → 紅磚倉庫 Christmas Market','2026/11/20–12/25；德國風木屋攤位、熱紅酒、真樅木大聖誕樹。週六人多，主會場可能要事先買入場券（待查）',true],
+        ['15:50','離開市集，走回飯店','約 10–15 分',false]]},
+    photo:{name:'B 漫步拍照',sub:'港灣全景 · 空中纜車',vibe:'白天把 12/18 深夜走過的港灣再走一次：山手高處看海灣大橋、中華街、象の鼻的天際線，最後在大さん橋等傍晚的光。',
+      walk:'約 8 km（最多）',cost:'AIR CABIN 來回 ¥1,800＋中華街午餐',rain:['crit','雨天不建議：大多在戶外'],
+      steps:[['10:00','港の見える丘公園','俯瞰橫濱灣大橋，早上順光',true,'photo'],
+        ['10:30','山手外國人墓地 → 山手本通り洋館外觀','石板坡道、尖頂洋館，人少好拍',false,'photo'],
+        ['11:15','下坡到元町 → 山下公園・氷川丸','1930 年的遠洋客船停在岸邊，和海面同框',false,'photo'],
+        ['12:15','中華街午餐','善隣門、關帝廟的紅金色是好背景；小籠包、豚まん邊走邊吃',false],
+        ['13:45','日本大通り → 象の鼻パーク','正面拍 Minato Mirai 天際線',false,'photo'],
+        ['14:15','紅磚倉庫外觀 → 汽車道（白天版）','跟 12/18 深夜同一條路對照',false,'photo'],
+        ['14:45','YOKOHAMA AIR CABIN 來回','運河パーク ⇄ 桜木町，單程約 5 分，空中拍港灣；來回 ¥1,800（週末 10:00–22:00）',true,'photo'],
+        ['15:40','大さん橋屋上「くじらのせなか」','白天版的木質波浪甲板；日落約 16:30，這時光線偏暖',true,'photo'],
+        ['16:20','走回飯店','約 10 分',false]]},
+    slow:{name:'C 小店・咖啡・慢逛',sub:'元町 · 山手 · 馬車道',vibe:'元町老店、洋館裡的蛋糕下午茶、馬車道的老派喫茶，最後在紅磚倉庫館內逛雜貨，節奏最慢、最不怕下雨。',
+      walk:'約 4 km（最少）',cost:'兩間咖啡蛋糕每人約 ¥1,500–2,500',rain:['ok','雨天最適合：大多在室內'],
+      steps:[['10:00','元町 ウチキパン','早餐麵包（9:00 開）',false],
+        ['10:20','元町ショッピングストリート','喜久家洋菓子舗的蘭姆球（10:15 開）、近沢レース店的蕾絲手帕，橫濱老牌包鞋小店慢慢逛',true],
+        ['11:45','山手 えの木てい 本店','洋館裡的蛋糕與紅茶（週六 11:30–18:00）',true],
+        ['13:00','中華街午餐','小籠包、豚まん、杏仁豆腐，邊走邊吃',false],
+        ['14:15','馬車道十番館','紅磚洋館風的老派喫茶，1 樓喫茶 10:00–22:00，古典蛋糕配咖啡',true],
+        ['15:15','紅磚倉庫館內小店','室內雜貨、器物、橫濱伴手禮；外面就是聖誕市集，想看可以順便走一圈',false],
+        ['16:10','走回飯店','約 10–15 分',false]]}
+  };
+  let cur='xmas';try{const v=localStorage.getItem('c2307r19');if(R[v])cur=v}catch(e){}
+  const seg=$('r19Seg');
+  seg.innerHTML=Object.entries(R).map(([k,v])=>'<button type="button" data-k="'+k+'" aria-pressed="false"><span>'+v.name+'</span><small>'+v.sub+'</small></button>').join('');
+  seg.onclick=e=>{const b=e.target.closest('button');if(!b)return;cur=b.dataset.k;try{localStorage.setItem('c2307r19',cur)}catch(err){}draw()};
+  function draw(){
+    const r=R[cur];
+    seg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===cur)));
+    const steps=r.steps.concat([['16:30','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX',true]]);
+    $('r19Tl').innerHTML=steps.map(s=>'<div class="step'+(s[3]?' key':'')+(s[4]?' '+s[4]:'')+'"><span class="t">'+s[0]+'</span><span class="rail" aria-hidden="true"></span><div class="c"><b>'+s[1]+'</b>'+(s[2]?'<span>'+s[2]+'</span>':'')+'</div></div>').join('');
+    $('r19Side').innerHTML='<div class="verdict"><span class="label">這條路線</span><h4>'+r.name.slice(2)+'</h4><span class="pill '+r.rain[0]+'">'+r.rain[1]+'</span></div><p class="vibe">'+r.vibe+'</p><dl class="kv"><dt>步行（估）</dt><dd>'+r.walk+'</dd><dt>主要花費</dt><dd style="text-align:right;font-family:var(--body)">'+r.cost+'</dd><dt class="sum">回飯店</dt><dd class="sum">16:30</dd></dl><p class="note">三條路線的終點都是飯店：16:30 拿行李，17:28 全員搭同一班 N\'EX，Robin 東京站下車。</p>';
   }
   draw();
 })();
