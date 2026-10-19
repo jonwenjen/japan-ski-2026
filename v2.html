@@ -282,6 +282,31 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .idea .optcard>b{font-size:15px;font-weight:900;line-height:1.4}
 .idea .optcard p{margin:0;font-size:14px;line-height:1.65}
 .idea .optcard small{font-size:12px;color:var(--muted);line-height:1.55;border-top:1px dashed var(--line);padding-top:6px}
+section>.opt.idea{grid-template-columns:repeat(6,minmax(0,1fr))}
+.idea>.optcard{grid-column:span 2}
+.idea>.optcard.half{grid-column:span 3}
+.idea>.optcard.duo{grid-column:1/-1}
+.idea .duo>p{max-width:48em}
+.du-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:6px}
+.du-opt{display:grid;gap:12px;align-content:start;padding:14px 16px 12px;background:var(--ground);border:1px solid var(--line);border-radius:4px}
+.du-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.du-k{display:grid;justify-items:center;font-family:var(--display);font-weight:900;font-size:44px;line-height:.8;color:var(--alt)}
+.du-k span{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.14em;line-height:1;color:var(--muted);margin-bottom:6px}
+.du-top b{display:block;font-size:15px;font-weight:900;line-height:1.4;margin-bottom:8px}
+.du-pills{display:flex;flex-wrap:wrap;gap:6px}
+.du-steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.du-steps li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14px;line-height:1.6}
+.du-steps .t{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted);padding-top:1px}
+@media (max-width:999px){
+  section>.opt.idea{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .idea>.optcard,.idea>.optcard.half{grid-column:span 1}
+  .idea>.optcard:first-child,.idea>.optcard.duo{grid-column:1/-1}
+}
+@media (max-width:720px){.du-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:660px){
+  section>.opt.idea{grid-template-columns:minmax(0,1fr)}
+  .idea>.optcard,.idea>.optcard.half,.idea>.optcard:first-child{grid-column:auto}
+}
 
 /* BOOKING TIMELINE */
 .bk{list-style:none;margin:12px 0 0;padding:0;border-top:3px solid var(--ink)}
@@ -802,18 +827,64 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <div class="sec-head">
     <span class="code">IDEAS</span>
     <h2>行程建議：9 個可以加碼或替換的地方</h2>
-    <p>主行程沒有改動。下面是查證後覺得值得考慮的調整，選好告訴我，我再把每日行程、時間鏈、行事曆和覆核清單一起改。最推薦 ① 和 ③：不多花錢，又省時間、降低風險。</p>
+    <p>主行程沒有改動。下面是查證後覺得值得考慮的調整，選好告訴我，我再把每日行程、時間鏈、行事曆和覆核清單一起改。最推薦 ① 和 ③：不多花錢，又省時間、降低風險。⑥ 和 ⑦ 各有兩個方案，到時候再二選一。</p>
   </div>
   <div class="opt idea">
     <div class="optcard a"><span class="label">① 12/11 · Robin · 推薦</span><b>改住沼田，12/12 多睡約一小時</b><p>高崎 18:30 下新幹線後轉上越線約 50 分到沼田（約 19:40），住站附近（例：ホテルリブマックス BUDGET 群馬沼田，徒步約 8 分）。12/12 不用趕 06:21 的車，走到沼田站搭 07:20 巴士；行李箱寄飯店，回程 15:22 到沼田、16:10 上車前取回，不用拖上山。</p><small>代價：沼田的晚餐選擇比高崎少；關越交通冬季時刻 12/1 公布後再確認。</small></div>
     <div class="optcard b"><span class="label">② 12/13 · Robin · 體驗升級</span><b>住一晚高峰温泉（雲上ランプの宿）</b><p>標高 2,000 m 的溫泉旅館，冬季從高峰マウンテンリゾート搭雪上車約 15 分接送。滑完直接上山泡湯、看星空，12/14 早上不用搭 08:35 巴士，第一趟纜車就能滑。</p><small>代價：房價與 12 月空房待查（0267-25-2000），行李箱要一起帶上山。不住的話也能日歸泡湯（含雪上車約 ¥1,500，舊資料），但要趕 16:00 末班車。</small></div>
     <div class="optcard a"><span class="label">③ 12/16 ⇄ 12/17 · 全員 · 推薦</span><b>天候對調規則</b><p>橫手山頂 2,307 m 容易因強風停上段纜車，12 月中旬也可能還沒全區開放。前一晚看預報，風大就把 12/16 橫手山和 12/17 熊之湯對調；熊之湯是朝北的碗狀地形，比較避風。</p><small>代價：無。橫手山早割券季內任一天都能用，對調不影響雪票。</small></div>
-    <div class="optcard b"><span class="label">④ 12/17 · 全員 · 刻滑加碼</span><b>去燒額山跑寬壓雪坡</b><p>1998 長野冬奧大迴轉賽場，寬幅壓雪坡最適合練刻滑，初滑期 12/4–12/18。這天改買全山 1 日券 ¥7,500（不買熊之湯單場），搭志賀高原內巴士過去，傍晚回 2307，晚上照樣夜滑熊之湯。</p><small>代價：單程約 40–50 分（26–27 時刻待公布）；早季開放的雪道以官網為準。</small></div>
-    <div class="optcard b"><span class="label">⑤ 12/18 · 全員 · 換一種玩法</span><b>早上不滑，改雪猴＋善光寺</b><p>09:00 Jumbo 包車到地獄谷（冬天早上最常看到猴子泡湯），步道約 30 分 → 中午到長野逛善光寺、吃蕎麥 → 14 點多搭新幹線，約 16 點到東京、17 點前到橫濱。不必等臨時列車かがやき 536 公布，到橫濱天還亮，晚上去大井也不趕。</p><small>代價：少滑半天；Jumbo 要包車等候（另請報價）；地獄谷有沒有地方寄行李箱要先問（0269-33-4379）。</small></div>
-    <div class="optcard b"><span class="label">⑥ 12/18 晚 · 全員 · 備案</span><b>太累就改輕鬆版夜晚</b><p>滑到 13:15、移動 3.5 小時再玩到深夜，12/18 是整趟最長的一天。如果大家太累，或 12/18 大井有賽馬：不去大井，改紅磚倉庫聖誕市集＋ヨルノヨ 2026（17:00–21:00）＋ Muscle Bar，省掉往返大井約 2 小時。</p><small>代價：看不到東京メガイルミ最終季。</small></div>
-    <div class="optcard b"><span class="label">⑦ 12/19 · 友人</span><b>晚一班 N'EX，多留一小時看點燈</b><p>改搭 18:28 的 N'EX（約 19:51 到空港第2ビル、20:10 左右到 T3），可以在紅磚市集和港邊待到日落後點燈。離 21:25 報到截止約 75 分。</p><small>代價：緩衝從約 2 小時降到 1 小時多；Robin 一樣在東京站下車。</small></div>
-    <div class="optcard"><span class="label">⑧ 全員 · 順路景點</span><b>不用改行程就能順路去的</b><p>地獄谷雪猴（湯田中）、善光寺與仲見世（長野站搭車約 10 分）、小布施的栗子點心與北齋館、澀溫泉九湯巡り、橫手山頂ヒュッテ的麵包、熊の湯的翡翠綠溫泉、渋峠ホテルの縣境。都已收進<a href="#recs">在地清單</a>，選區域就看得到。</p><small>營業時間以各店公告為準，標「營業資訊已查證」的才對過來源。</small></div>
-    <div class="optcard"><span class="label">⑨ 任一天 · 想休息的人</span><b>休息日方案</b><p>滑累了想休一天的人：搭巴士下山到湯田中 → 地獄谷看雪猴 → 澀溫泉街泡外湯、買溫泉饅頭 → 傍晚回 2307 和大家吃晚餐。也可以報名志賀高原ガイド組合的雪鞋健行（0269-34-2133）。</p><small>代價：巴士時刻要等 26–27 冬季時刻；雪鞋行程需預約、多為現金付款。</small></div>
+    <div class="optcard b half"><span class="label">④ 12/17 · 全員 · 刻滑加碼</span><b>去燒額山跑寬壓雪坡</b><p>1998 長野冬奧大迴轉賽場，寬幅壓雪坡最適合練刻滑，初滑期 12/4–12/18。這天改買全山 1 日券 ¥7,500（不買熊之湯單場），搭志賀高原內巴士過去，傍晚回 2307，晚上照樣夜滑熊之湯。</p><small>代價：單程約 40–50 分（26–27 時刻待公布）；早季開放的雪道以官網為準。</small></div>
+    <div class="optcard b half"><span class="label">⑤ 12/18 · 全員 · 換一種玩法</span><b>早上不滑，改雪猴＋善光寺</b><p>09:00 Jumbo 包車到地獄谷（冬天早上最常看到猴子泡湯），步道約 30 分 → 中午到長野逛善光寺、吃蕎麥 → 14 點多搭新幹線，約 16 點到東京、17 點前到橫濱。不必等臨時列車かがやき 536 公布，到橫濱天還亮，晚上去大井也不趕。</p><small>代價：少滑半天；Jumbo 要包車等候（另請報價）；地獄谷有沒有地方寄行李箱要先問（0269-33-4379）。</small></div>
+    <div class="optcard b duo"><span class="label">⑥ 12/18 晚 · 全員 · 備案 · 二選一</span><b>太累或大井有賽馬：兩種輕鬆版夜晚</b><p>滑到 13:15、移動 3.5 小時再玩到 02:00，12/18 是整趟最長的一天。搭新幹線時看大家的狀況決定；如果 12/18 是賽馬日，就只能走 A。</p>
+      <div class="du-grid">
+        <div class="du-opt">
+          <div class="du-top"><span class="du-k"><span>方案</span>A</span><div><b>不去大井，留在橫濱看燈</b><div class="du-pills"><span class="pill ok">賽馬日也可</span><span class="pill mute">最晚約 00:00 回飯店</span></div></div></div>
+          <ol class="du-steps">
+            <li><span class="t">18:25</span><span>到飯店放行李，跟主行程一樣。</span></li>
+            <li><span class="t">18:45</span><span>走去<b>紅磚倉庫聖誕市集</b>（日本大通り站一帶走約 10 分），晚餐就吃攤位的德國香腸配熱紅酒。去年 12 月中營業到 22:00。</span></li>
+            <li><span class="t">20:00</span><span>沿海走到<b>大さん橋</b>、山下公園看 <b>ヨルノヨ 2026</b>（17:00–21:00，去年免費入場）。くじらのせなか趁還有燈光時走，不用等到 01:00。</span></li>
+            <li><span class="t">21:15</span><span><b>Muscle Bar</b>（日本大通り站 2 號出口 1 分），坐到 22:30。</span></li>
+            <li><span class="t">22:30</span><span>還有體力就去野毛續攤一小時，不然直接走回飯店。</span></li>
+          </ol>
+          <small>代價：看不到東京メガイルミ最終季（大井競馬場整修，下一季起暫停）。如果事先知道當天有賽馬，可以照「直奔版」的車次多滑 1 小時（14:15 收板、かがやき 510），19:30 左右到飯店，19:45 再出門去紅磚。</small>
+        </div>
+        <div class="du-opt">
+          <div class="du-top"><span class="du-k"><span>方案</span>B</span><div><b>照去大井，看完 Illumi 就收工</b><div class="du-pills"><span class="pill warn">賽馬日不適用</span><span class="pill mute">約 23:30 回飯店</span></div></div></div>
+          <ol class="du-steps">
+            <li><span class="t">15:40</span><span>在長野站買駅弁，晚餐在新幹線上解決（後面不去野毛，沒有正餐）。</span></li>
+            <li><span class="t">18:40</span><span>照主行程從飯店出發，19:45–20:50 逛<b>東京メガイルミ</b>。場內有輕食攤（上一季有吉拿棒、熱可可）。</span></li>
+            <li><span class="t">22:15</span><span>回到日本大通り站，<b>Muscle Bar</b> 坐一小時就走，或直接回飯店。</span></li>
+            <li><span class="t">23:30</span><span>回飯店睡覺，比主行程早約 2.5 小時。汽車道和大さん橋改在 12/19 白天走（「B 漫步拍照」路線兩站都有）。</span></li>
+          </ol>
+          <small>代價：往返大井約 2 小時的交通照舊；沒有野毛，也看不到 ヨルノヨ 和紅磚市集的燈。</small>
+        </div>
+      </div>
+    </div>
+    <div class="optcard b duo"><span class="label">⑦ 12/19 · 友人 · 備案 · 二選一</span><b>想看橫濱點燈再去機場</b><p>主行程 16:30 回飯店拿行李、搭 17:28 N'EX，約 19:11 到 T3。可是日落約 16:30，ヨルノヨ 17:00 才點燈；12/18 從大井回到橫濱也已過 22:00，所以主行程看不到 ヨルノヨ 和紅磚市集的燈。</p>
+      <div class="du-grid">
+        <div class="du-opt">
+          <div class="du-top"><span class="du-k"><span>方案</span>A</span><div><b>全員改搭 18:28 N'EX，多留 1 小時</b><div class="du-pills"><span class="pill ok">看得到點燈</span><span class="pill warn">報到前約 75 分</span></div></div></div>
+          <ol class="du-steps">
+            <li><span class="t">16:30</span><span>在大さん橋看日落，17:00 <b>ヨルノヨ</b> 點燈（大さん橋、山下公園），紅磚市集也亮了。</span></li>
+            <li><span class="t">17:30</span><span>回飯店拿行李 → 17:45 出發 → 約 18:05 到橫濱站。</span></li>
+            <li><span class="t">18:28</span><span><b>N'EX</b> → 約 19:51 到空港第2ビル → 約 20:11 到 T3。</span></li>
+            <li><span class="t">18:56</span><span>Robin 在東京站下車，東京的夜晚整段往後挪 1 小時。</span></li>
+          </ol>
+          <small>代價：比「20:00 前到 T3」的目標晚約 10 分，報到前的緩衝從約 2 小時 15 分降到約 75 分。12 月週六晚上 T3 報到可能排長隊，N'EX 一誤點就沒有餘裕。想保守的人照搭 17:28、和 Robin 一起走，N'EX 指定席各自劃位。</small>
+        </div>
+        <div class="du-opt">
+          <div class="du-top"><span class="du-k"><span>方案</span>B</span><div><b>照搭 17:28，多留 15 分看日落</b><div class="du-pills"><span class="pill mute">只看得到日落</span><span class="pill ok">報到前約 2 小時 15 分</span></div></div></div>
+          <ol class="du-steps">
+            <li><span class="t">16:30</span><span>下午最後一站排在港邊（大さん橋或紅磚倉庫），看完日落再走。</span></li>
+            <li><span class="t">16:45</span><span>回飯店拿行李（先請櫃台把行李箱排在門口）→ 16:50 出發 → 約 17:10 到橫濱站。</span></li>
+            <li><span class="t">17:28</span><span><b>N'EX</b>，跟主行程一樣約 19:11 到 T3，比「20:00 前到 T3」早約 50 分。</span></li>
+          </ol>
+          <small>代價：在橫濱站的轉乘時間從約 23 分縮成約 18 分，崎陽軒要白天先買好。想看點燈又不想壓縮緩衝，就把 12/18 晚改成 ⑥ 方案 A。</small>
+        </div>
+      </div>
+    </div>
+    <div class="optcard half"><span class="label">⑧ 全員 · 順路景點</span><b>不用改行程就能順路去的</b><p>地獄谷雪猴（湯田中）、善光寺與仲見世（長野站搭車約 10 分）、小布施的栗子點心與北齋館、澀溫泉九湯巡り、橫手山頂ヒュッテ的麵包、熊の湯的翡翠綠溫泉、渋峠ホテルの縣境。都已收進<a href="#recs">在地清單</a>，選區域就看得到。</p><small>營業時間以各店公告為準，標「營業資訊已查證」的才對過來源。</small></div>
+    <div class="optcard half"><span class="label">⑨ 任一天 · 想休息的人</span><b>休息日方案</b><p>滑累了想休一天的人：搭巴士下山到湯田中 → 地獄谷看雪猴 → 澀溫泉街泡外湯、買溫泉饅頭 → 傍晚回 2307 和大家吃晚餐。也可以報名志賀高原ガイド組合的雪鞋健行（0269-34-2133）。</p><small>代價：巴士時刻要等 26–27 冬季時刻；雪鞋行程需預約、多為現金付款。</small></div>
   </div>
 </section>
 
