@@ -277,6 +277,12 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 #r19Side .kv dt{white-space:nowrap}
 .step.photo .rail::before{background:var(--alt);width:4px;left:7px}
 
+/* IDEAS */
+.idea .optcard{display:grid;gap:6px;align-content:start}
+.idea .optcard>b{font-size:15px;font-weight:900;line-height:1.4}
+.idea .optcard p{margin:0;font-size:14px;line-height:1.65}
+.idea .optcard small{font-size:12px;color:var(--muted);line-height:1.55;border-top:1px dashed var(--line);padding-top:6px}
+
 /* BOOKING TIMELINE */
 .bk{list-style:none;margin:12px 0 0;padding:0;border-top:3px solid var(--ink)}
 .bk-it{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:4px 16px;padding:12px 0 12px 12px;border-bottom:1px solid var(--line);align-items:start}
@@ -487,6 +493,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <li><a href="#days">每日行程</a></li>
     <li><a href="#d18">12/18 下山</a></li>
     <li><a href="#d19">12/19 回 T3</a></li>
+    <li><a href="#ideas">行程建議</a></li>
     <li><a href="#snow">雪場資訊</a></li>
     <li><a href="#recs">在地清單</a></li>
     <li><a href="#tax">退稅</a></li>
@@ -791,6 +798,25 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   </div>
 </section>
 
+<section id="ideas">
+  <div class="sec-head">
+    <span class="code">IDEAS</span>
+    <h2>行程建議：9 個可以加碼或替換的地方</h2>
+    <p>主行程沒有改動。下面是查證後覺得值得考慮的調整，選好告訴我，我再把每日行程、時間鏈、行事曆和覆核清單一起改。最推薦 ① 和 ③：不多花錢，又省時間、降低風險。</p>
+  </div>
+  <div class="opt idea">
+    <div class="optcard a"><span class="label">① 12/11 · Robin · 推薦</span><b>改住沼田，12/12 多睡約一小時</b><p>高崎 18:30 下新幹線後轉上越線約 50 分到沼田（約 19:40），住站附近（例：ホテルリブマックス BUDGET 群馬沼田，徒步約 8 分）。12/12 不用趕 06:21 的車，走到沼田站搭 07:20 巴士；行李箱寄飯店，回程 15:22 到沼田、16:10 上車前取回，不用拖上山。</p><small>代價：沼田的晚餐選擇比高崎少；關越交通冬季時刻 12/1 公布後再確認。</small></div>
+    <div class="optcard b"><span class="label">② 12/13 · Robin · 體驗升級</span><b>住一晚高峰温泉（雲上ランプの宿）</b><p>標高 2,000 m 的溫泉旅館，冬季從高峰マウンテンリゾート搭雪上車約 15 分接送。滑完直接上山泡湯、看星空，12/14 早上不用搭 08:35 巴士，第一趟纜車就能滑。</p><small>代價：房價與 12 月空房待查（0267-25-2000），行李箱要一起帶上山。不住的話也能日歸泡湯（含雪上車約 ¥1,500，舊資料），但要趕 16:00 末班車。</small></div>
+    <div class="optcard a"><span class="label">③ 12/16 ⇄ 12/17 · 全員 · 推薦</span><b>天候對調規則</b><p>橫手山頂 2,307 m 容易因強風停上段纜車，12 月中旬也可能還沒全區開放。前一晚看預報，風大就把 12/16 橫手山和 12/17 熊之湯對調；熊之湯是朝北的碗狀地形，比較避風。</p><small>代價：無。橫手山早割券季內任一天都能用，對調不影響雪票。</small></div>
+    <div class="optcard b"><span class="label">④ 12/17 · 全員 · 刻滑加碼</span><b>去燒額山跑寬壓雪坡</b><p>1998 長野冬奧大迴轉賽場，寬幅壓雪坡最適合練刻滑，初滑期 12/4–12/18。這天改買全山 1 日券 ¥7,500（不買熊之湯單場），搭志賀高原內巴士過去，傍晚回 2307，晚上照樣夜滑熊之湯。</p><small>代價：單程約 40–50 分（26–27 時刻待公布）；早季開放的雪道以官網為準。</small></div>
+    <div class="optcard b"><span class="label">⑤ 12/18 · 全員 · 換一種玩法</span><b>早上不滑，改雪猴＋善光寺</b><p>09:00 Jumbo 包車到地獄谷（冬天早上最常看到猴子泡湯），步道約 30 分 → 中午到長野逛善光寺、吃蕎麥 → 14 點多搭新幹線，約 16 點到東京、17 點前到橫濱。不必等臨時列車かがやき 536 公布，到橫濱天還亮，晚上去大井也不趕。</p><small>代價：少滑半天；Jumbo 要包車等候（另請報價）；地獄谷有沒有地方寄行李箱要先問（0269-33-4379）。</small></div>
+    <div class="optcard b"><span class="label">⑥ 12/18 晚 · 全員 · 備案</span><b>太累就改輕鬆版夜晚</b><p>滑到 13:15、移動 3.5 小時再玩到深夜，12/18 是整趟最長的一天。如果大家太累，或 12/18 大井有賽馬：不去大井，改紅磚倉庫聖誕市集＋ヨルノヨ 2026（17:00–21:00）＋ Muscle Bar，省掉往返大井約 2 小時。</p><small>代價：看不到東京メガイルミ最終季。</small></div>
+    <div class="optcard b"><span class="label">⑦ 12/19 · 友人</span><b>晚一班 N'EX，多留一小時看點燈</b><p>改搭 18:28 的 N'EX（約 19:51 到空港第2ビル、20:10 左右到 T3），可以在紅磚市集和港邊待到日落後點燈。離 21:25 報到截止約 75 分。</p><small>代價：緩衝從約 2 小時降到 1 小時多；Robin 一樣在東京站下車。</small></div>
+    <div class="optcard"><span class="label">⑧ 全員 · 順路景點</span><b>不用改行程就能順路去的</b><p>地獄谷雪猴（湯田中）、善光寺與仲見世（長野站搭車約 10 分）、小布施的栗子點心與北齋館、澀溫泉九湯巡り、橫手山頂ヒュッテ的麵包、熊の湯的翡翠綠溫泉、渋峠ホテルの縣境。都已收進<a href="#recs">在地清單</a>，選區域就看得到。</p><small>營業時間以各店公告為準，標「營業資訊已查證」的才對過來源。</small></div>
+    <div class="optcard"><span class="label">⑨ 任一天 · 想休息的人</span><b>休息日方案</b><p>滑累了想休一天的人：搭巴士下山到湯田中 → 地獄谷看雪猴 → 澀溫泉街泡外湯、買溫泉饅頭 → 傍晚回 2307 和大家吃晚餐。也可以報名志賀高原ガイド組合的雪鞋健行（0269-34-2133）。</p><small>代價：巴士時刻要等 26–27 冬季時刻；雪鞋行程需預約、多為現金付款。</small></div>
+  </div>
+</section>
+
 <section id="snow">
   <div class="sec-head">
     <span class="code">SNOW</span>
@@ -1016,6 +1042,10 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <h3 style="margin:40px 0 10px;font-size:15px">資料來源</h3>
   <ul class="sources">
     <li><a href="https://www.hotel2307.com/en/">Hotel &amp; Onsen 2307 官網</a></li>
+    <li><a href="https://www.yamakei-online.com/yama-ya/detail.php?id=4457">山と溪谷 · 高峰温泉（冬季雪上車）</a></li>
+    <li><a href="https://www.princehotels.co.jp/ski/shiga/winter/lift/">志賀高原プリンス · 燒額山 2026-27 票價與初滑期</a></li>
+    <li><a href="https://www.walkerplus.com/article/1002854/">Walkerplus · 地獄谷野猿公苑 交通與步道</a></li>
+    <li><a href="https://www.jalan.net/yad356518">じゃらん · ホテルリブマックス BUDGET 群馬沼田</a></li>
     <li><a href="https://www.lift-ticket.jp/view/item/000000000655">lift-ticket.jp · 橫手山・澀峠早割 1 日券</a></li>
     <li><a href="https://www.snownavi.com/topics/news_26091101">snownavi · 2026-27 熊の湯（早割與開幕）</a></li>
     <li><a href="https://shigakogen-ski.or.jp/winter/ticket/">志賀高原 2026-27 全山共通券</a></li>
@@ -1325,7 +1355,7 @@ const RS=[
   sf:'https://www.snow-forecast.com/resorts/ShigaKogenKumanoyu/6day/mid',
   map:'https://www.shigakogen.gr.jp/manage/wp-content/uploads/2024/11/kumanoyuMap.jpg'},
  {date:'備案',name:'燒額山',ll:'36.726,138.506',sub:'志賀高原 · 1998 長野冬奧大迴轉賽場',
-  stats:[['交通','志賀高原內接駁巴士（營業時段免費）'],['全山票','可用']],
+  stats:[['交通','志賀高原內接駁巴士（營業時段免費）'],['全山票','可用'],['初滑期','12/4–12/18'],['夜滑','¥3,000']],
   links:[['官網','https://www.princehotels.co.jp/ski/shiga/winter/'],['纜車運行','https://shigakogen-ski.or.jp/lift/yakebitaiyama/']],
   sf:'https://www.snow-forecast.com/resorts/Shiga-Kogen-Yakebitaiyama/6day/mid',
   map:'https://www.shigakogen.gr.jp/manage/wp-content/uploads/2025/11/Yakebimap-1-scaled-1.jpg'},
@@ -1398,6 +1428,7 @@ const R=[
  ["湯田中・澀", "酒", "玉村本店", "玉村本店 志賀高原ビール", "酒藏「縁喜」和志賀高原啤酒是同一家。營業 9:00–17:30，週日公休（依 NEWT 資料）。", "澀溫泉 旁", 1, 4.4, 171, "G"],
  ["湯田中・澀", "景點", "志賀高原ロマン美術館", "志賀高原ロマン美術館", "黑川紀章設計，收藏羅馬玻璃。營業 9:00–17:00，週四休館。", "湯田中站 車程 約 5 分", 1, 4.0, 158, "G"],
  ["湯田中・澀", "伴手禮", "道の駅 北信州やまのうち", "道の駅 北信州やまのうち", "在地蘋果加工品和信州味噌。營業 8:30–18:00。", "湯田中站 車程 約 5 分", 1, 3.7, 2464, "G"],
+ ["志賀高原", "景點", "燒額山（刻滑寬坡）", "志賀高原 焼額山スキー場", "1998 長野冬奧大迴轉賽場，寬幅壓雪坡適合練刻滑。初滑期 12/4–12/18，夜滑 ¥3,000，全山共通券可用。", "ほたる溫泉 志賀高原內巴士約 40–50 分", 1, null, null, "G"],
  ["志賀高原", "餐", "橫手山頂ヒュッテ", "横手山頂ヒュッテ", "號稱日本最高的麵包店，招牌是羅宋湯套餐配現烤麵包。", "橫手山 山頂 · 纜車直達", 0, 4.2, 1340, "G"],
  ["志賀高原", "景點", "澀峠 國道最高點", "渋峠 国道最高地点", "標高 2,172 m 的長野群馬縣界，雪季從雪場這一側滑過去。", "橫手山 → 澀峠 纜車", 0, 4.5, 239, "G"],
  ["志賀高原", "景點", "熊の湯ホテル 日歸溫泉", "熊の湯ホテル 日帰り温泉", "翡翠綠色的硫磺泉，滑完長滑道直接去泡。", "熊之湯雪場 旁", 0, 3.9, 543, "G"],
@@ -1415,6 +1446,7 @@ const R=[
  ["高崎・片品", "伴手禮", "登利平 鳥めし", "登利平 高崎駅", "群馬人的鐵路便當「鳥めし」，12/12 早上帶上上越線。", "高崎站 站內", 0, 4.1, 594, "G"],
  ["高崎・片品", "景點", "少林山達磨寺", "少林山達磨寺", "高崎達磨不倒翁的發源寺，可以買開眼用的達磨。", "高崎站 巴士 約 20 分", 0, 4.2, 3652, "G"],
  ["高崎・片品", "酒", "土田酒造（譽國光）", "土田酒造 誉国光 川場", "川場村的酒藏，有試飲間，招牌是「麹九割九分」。營業 9:30–17:00。", "沼田 車程 約 20 分", 1, 3.8, 756, "G"],
+ ["佐久・小諸", "景點", "高峰温泉（雲上ランプの宿）", "高峰温泉", "標高 2,000 m 的溫泉旅館，冬季從高峰マウンテンリゾート搭雪上車約 15 分。可住宿或日歸泡湯（含雪上車約 ¥1,500，舊資料）；房價與營業先打 0267-25-2000 確認。", "高峰マウンテンリゾート 雪上車 15 分", 0, null, null, "G"],
  ["佐久・小諸", "景點", "軽井沢プリンスホテルスキー場", "軽井沢プリンスホテルスキー場", "10/31 開幕（東區，西區 12/19 起），人工造雪、9:00–16:30。高崎或佐久平搭北陸新幹線一站到軽井沢；丸沼、高峰雪不夠時的備案。26–27 票價待公布。", "軽井沢站南口 徒步約 10–15 分", 1, null, null, "G"],
  ["佐久・小諸", "餐", "佐久の草笛", "佐久の草笛 そば", "佐久最有名的蕎麥麵店，份量大，假日要排隊。", "佐久平站 車程 約 10 分", 0, 4.0, 2191, "G"],
  ["佐久・小諸", "景點", "小諸城址 懷古園", "小諸城址 懐古園", "重要文化財城門與石垣。營業 9:00–17:00，12–3 月週三休。", "小諸站 徒步 3 分", 1, 4.1, 4342, "G"],
