@@ -277,6 +277,24 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 #r19Side .kv dt{white-space:nowrap}
 .step.photo .rail::before{background:var(--alt);width:4px;left:7px}
 
+/* BOOKING TIMELINE */
+.bk{list-style:none;margin:12px 0 0;padding:0;border-top:3px solid var(--ink)}
+.bk-it{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:4px 16px;padding:12px 0 12px 12px;border-bottom:1px solid var(--line);align-items:start}
+.bk-it.hi{box-shadow:inset 3px 0 0 var(--accent)}
+.bk-d b{display:block;font-family:var(--display);font-weight:900;font-size:26px;line-height:1}
+.bk-d small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
+.bk-c b{display:block;font-weight:700;font-size:14px;line-height:1.45}
+.bk-c span{display:block;font-size:13px;color:var(--muted);line-height:1.55}
+.bk-s{display:grid;justify-items:end;gap:4px}
+.bk-s small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.bk-it.now .bk-d b{color:var(--accent)}
+.bk-it.past{opacity:.45}
+.pill.mute{background:var(--surface-2);color:var(--muted)}
+.bk-today{display:flex;align-items:center;gap:10px;padding:8px 0;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em}
+.bk-today::after{content:"";flex:1;height:2px;background:var(--accent)}
+.bk-acts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px}
+@media (max-width:560px){.bk-it{grid-template-columns:52px minmax(0,1fr)}.bk-d b{font-size:22px}.bk-s{grid-column:2;display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-items:start}}
+
 /* PACK */
 .pk-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:26px 0 14px}
 .pk-bar .ck-progress{margin:0;flex:1 1 260px}
@@ -595,6 +613,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <li><span class="t">晚餐</span><span>站前走路可到：とんかつ今井 佐久平店、佐久の草笛。搭計程車：ピッツェリア ジンガラ（食べログ佐久市第 1，3.72）、麺匠 文蔵 本店。</span></li>
         </ul>
         <p class="note" style="margin-top:8px">上越線高崎 06:21 → 沼田 07:09 已對照 JR 東日本時刻表；關越交通巴士是現行夏季時刻（沼田 07:20 是尾瀨戶倉行，經過鎌田），<b>12/1 起改冬季時刻，尚未公布</b>，鎌田回程 14:25、17:40 兩班也要等冬季時刻確認。鎌田到丸沼高原冬季沒有固定路線巴士（直達巴士只給從新宿出發的「片品 Snow Express」乘客），所以要事先跟關越交通計程車預約。<b>行李全程自己帶</b>：只有 1 個行李箱＋背包，計程車、巴士都放得下。不想整天拖著行李箱，可以放高崎站的大型投幣置物櫃，16:57 回到高崎時再拿（大型櫃數量少，早上先找）。雪板與雪鞋在丸沼現場租（板＋雪鞋約 ¥5,500，往年價格）。</p>
+        <div class="opt"><div class="optcard w"><span class="label">早季雪況備案 · 12/12–14</span>丸沼 26–27 開幕日還沒公布（去年 12/5），高峰 11/21 預開；12 月上旬若只開少數雪道，改去<b>軽井沢プリンス</b>（10/31 已開，人工造雪，9:00–16:30）：高崎或佐久平搭北陸新幹線一站到軽井沢，站南口走約 10–15 分。出發前一週看各雪場開放雪道再決定。</div></div>
       </div>
     </article>
 
@@ -640,12 +659,12 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
         <h3>Robin 先上山；友人照 <a href="#d15">作戰板</a> 移動</h3>
         <div class="opt">
           <div class="optcard a"><span class="label">Robin 早上 ① · 長電急行巴士</span>長野站東口 08:15 → 志賀高原山の駅 09:35，轉乘站內接駁巴士到ほたる溫泉。票價 ¥3,000。<br><span class="note">是否直達ほたる溫泉，以 26–27 冬季時刻表為準。</span></div>
-          <div class="optcard b"><span class="label">Robin 早上 ② · 長電特急＋路線巴士</span>長野 09:53 A特急スノーモンキー → 10:38 湯田中，轉 K 白根火山線巴士到ほたる溫泉（約 50 分鐘）。</div>
+          <div class="optcard b"><span class="label">Robin 早上 ② · 長電特急＋路線巴士</span>長野 09:53 A特急スノーモンキー → 10:38 湯田中，轉 K 白根火山線巴士到ほたる溫泉（約 50 分鐘）。<br><span class="note">順路看雪猴：湯田中轉巴士到「スノーモンキーパーク」站，步道約 30 分到<b>地獄谷野猿公苑</b>（冬季約 9:00–16:00、¥800，雪地要防滑），看 1 小時再回站搭巴士上山，約 13:30–14:00 到 2307。</span></div>
           <div class="optcard b"><span class="label">Robin ③ · 午後直達巴士</span>上午逛善光寺 → <b>13:10 長野站東口急行巴士</b>直達ほたる溫泉（2025–26 時刻；另一份資料寫 26–27 是 14:43 到、¥3,000），14:50 前後到飯店，熊之湯滑 1.5 小時。<br><span class="note">26–27 冬季時刻長電已發速報，本文待核對。</span></div>
           <div class="optcard"><span class="label">Robin ④ · 和友人共乘 Jumbo</span>白天在長野、小布施慢逛（行李寄長野站），<b>15:54 在長野站接友人</b>，6 人一起搭 16:10 Jumbo（車資 ¥40,000–46,000 ÷ 6 ≈ 每人 ¥6,700–7,700，比 5 人分攤便宜）。代價是 12/15 不滑；Jumbo 要能載 6 人＋6 個行李箱。</div>
         </div>
         <ul style="margin-top:12px">
-          <li><span class="t">午後</span><span>在 2307 寄放行李，走幾分鐘到<b>熊之湯雪場</b>，在山麓租板（板＋雪鞋約 ¥4,500，往年價格）滑半天。順便問租借店：12/15 晚上能不能先幫友人取 3 天份。初滑期 1 日券 ¥7,500，2 日券 ¥14,500。收板後可以去熊の湯ホテル泡翡翠綠色的硫磺泉。</span></li>
+          <li><span class="t">午後</span><span>在 2307 寄放行李，走幾分鐘到<b>熊之湯雪場</b>，在山麓租板（板＋雪鞋約 ¥4,500，往年價格）滑半天。順便問租借店：12/15 晚上能不能先幫友人取 3 天份。雪票買法見<a href="#lift">雪票策略</a>。收板後可以去熊の湯ホテル泡翡翠綠色的硫磺泉。</span></li>
           <li><span class="t">行李</span><span><b>全程手提，不寄送</b>：每人 1 個行李箱＋1 個背包（見<a href="#pack">行李清單</a>），雪板在志賀租。東京漫遊時 5 個行李箱寄 Gransta（每件 ¥2,000）或大型置物櫃；長野 → 2307 的 Jumbo 載 5 人＋5 個行李箱，叫車時講清楚件數。</span></li>
           <li><span class="t">~17:40</span><span>友人抵達（C 方案；B 方案約 18:30）→ check-in → 泡溫泉 → 晚餐。友人在東京待到 14 點前，晚餐請飯店排 19:00 前後的梯次。</span></li>
           <li><span class="t">晚餐</span><span>ほたる溫泉一帶冬季幾乎沒有獨立營業的晚餐店，12/15–17 三晚建議直接訂 2307 的含晚餐方案（一泊二食 ¥13,200 起）。想出去吃一晚就搭計程車到一の瀬的 TEPPA ROOM。</span></li>
@@ -663,8 +682,8 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <li><span class="t">08:30</span><span>第一趟纜車。平日早上的壓雪面最適合練刻滑，先在澀峠山頂的緩坡做直線換刃練習。</span></li>
           <li><span class="t">11:30</span><span>橫手山頂ヒュッテ：號稱日本最高的麵包店，招牌是羅宋湯套餐。人多的話 11:00 前就去。</span></li>
           <li><span class="t">14:00</span><span>回到橫手山側繞纜車，澀峠第 1 纜車上方的寬坡人最少。16:30 纜車停駛前收板。</span></li>
-          <li><span class="t">加購</span><span><b>スノーモンスター（樹冰）行程</b>：橫手山山頂一帶的樹冰，雪場有雪上車行程，過去也辦過夜間星空版。26–27 場次、費用要打 0269-34-2600 問，開幕後才會公布。</span></li>
-          <li><span class="t">加購</span><span><b>スノーシュー導覽</b>（適合不滑雪的同行者）：志賀高原ビジターセンター，森林路線約 1.5 小時 ¥6,000、山頂路線 ¥12,000，含雪鞋租借與保險，現金付款、每位嚮導最多 5 人，26–27 行程約 10 月公布。</span></li>
+          <li><span class="t">加購</span><span><b>スノーモンスター（樹冰）</b>：橫手山山頂一帶的樹冰通常要到 1–2 月才長得完整，<b>12 月中旬多半還沒成形</b>，雪上車行程往年也排在 1–2 月，這趟大概搭不到；開幕後打 0269-34-2600 問今年有沒有開。</span></li>
+          <li><span class="t">加購</span><span><b>スノーシュー導覽</b>（適合不滑雪的同行者）：志賀高原ビジターセンター，森林路線約 1.5 小時 ¥6,000、山頂路線 ¥12,000，含雪鞋租借與保險，現金付款、每位嚮導最多 5 人；26–27 行程與名額待公布，也可以問志賀高原ガイド組合（0269-34-2133）。</span></li>
         </ul>
       </div>
     </article>
@@ -692,7 +711,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <li><span class="t">13:15</span><span><b>最後一趟下到飯店</b>，<b>歸還租借的板與雪鞋</b>、換衣服、拿行李，抓 50 分鐘；退房後能不能借更衣室或泡湯要先問飯店。<b>比「直奔大井」版早約 1 小時收板</b>（原本 14:15）。</span></li>
         </ul>
         <div class="opt">
-          <div class="optcard a"><span class="label">A · 主推 · 14:10 從 2307 出發</span><b>14:10</b> 預約的 Jumbo → 約 15:40 長野站（雪路抓 90 分鐘，白天下山）→ <b>かがやき 536 長野 16:11 → 東京 17:36</b> → JR 東海道線到橫濱 → みなとみらい線 → <b>18:25 到飯店放行李</b>。<br><span class="note"><b>風險：かがやき 536 是臨時列車</b>，2026 年 9–11 月公布的運轉日剛好都沒有週五；2025 年 12 月則週五有開。JR 冬季臨時列車通常 10 月中旬公布，<b>公布後確認 12/18（五）有沒有開</b>。沒開就改<b>定期列車あさま 624（長野 15:52 → 東京 17:28）</b>：最後一趟 13:00、13:55 Jumbo 出發，長野留約 25 分轉乘。16:20 的はくたか 568（到東京約 17:52）也要看運轉日，且趕不上先回飯店。</span></div>
+          <div class="optcard a"><span class="label">A · 主推 · 14:10 從 2307 出發</span><b>14:10</b> 預約的 Jumbo → 約 15:40 長野站（雪路抓 90 分鐘，白天下山）→ <b>かがやき 536 長野 16:11 → 東京 17:36</b> → JR 東海道線到橫濱 → みなとみらい線 → <b>18:25 到飯店放行李</b>。<br><span class="note"><b>風險：かがやき 536 是臨時列車</b>，2026 年 9–11 月公布的運轉日剛好都沒有週五；2025 年 12 月則週五有開。JR 冬季臨時列車截至 10/19 還沒公布（去年是 10/17），<b>公布後確認 12/18（五）有沒有開</b>。沒開就改<b>定期列車あさま 624（長野 15:52 → 東京 17:28）</b>：最後一趟 13:00、13:55 Jumbo 出發，長野留約 25 分轉乘。16:20 的はくたか 568（到東京約 17:52）也要看運轉日，且趕不上先回飯店。</span></div>
           <div class="optcard b"><span class="label">B · 巴士 · 目前不建議</span>要搭比 14:35 更早的長電急行巴士才趕得上，25–26 冬季時刻表沒有足夠早的班次。26–27 冬季時刻預計 11 月公布，出來後再算。<br><span class="note">12 月急行巴士不能預約座位，6 個行李箱要靠車腹行李艙，尖峰可能排隊。</span></div>
         </div>
         <div class="opt">
@@ -703,7 +722,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
         <h4 style="margin:22px 0 8px;font-size:15px;font-weight:900">夜間時間鏈（預估，全部是估算值）</h4>
         <div class="opt" style="margin-top:0">
           <div class="optcard w"><span class="label">先回飯店再去大井：要提早約 1 小時</span>從最終入場 20:00 反推：19:40 到大井門口 ← 18:40 從飯店出發（飯店到大井約 60 分）← 18:25 到飯店放行李 ← 17:36 抵東京（東京換 JR 到橫濱約 50 分）← かがやき 536 長野 16:11 發車 ← 14:10 從 2307 出發 ← <b>13:15 最後一趟</b>。門口到最終入場只剩 <b>約 20 分緩衝</b>。</div>
-          <div class="optcard w"><span class="label">出發前先確認 3 件事</span>① <b>12/18（五）大井那天有沒有賽馬</b>：東京メガイルミ只在沒有賽馬的日子點燈（2026-27 是最終季，10/31–1/10）。② 今年的最終入場時間（去年 20:00）。③ <b>かがやき 536（長野 16:11）12/18 有沒有開</b>（臨時列車，10 月中旬公布），沒開改あさま 624。任何一項不行就走「直奔版」或備案。大井電話 03-3763-2151。</div>
+          <div class="optcard w"><span class="label">出發前先確認 3 件事</span>① <b>12/18（五）大井那天有沒有賽馬</b>：東京メガイルミ只在沒有賽馬的日子點燈（2026-27 是最終季，10/31–1/10）。大井 12 月已知 12/24–26、12/29–31 有賽，12/18 還查不到官方日程（非官方整理顯示當天有開）。② 今年的最終入場時間（去年 20:00）。③ <b>かがやき 536（長野 16:11）12/18 有沒有開</b>（臨時列車，截至 10/19 還沒公布），沒開改あさま 624。任何一項不行就走「直奔版」或備案。大井電話 03-3763-2151。</div>
         </div>
         <ul style="margin-top:12px">
           <li><span class="t">17:36</span><span>抵東京。每人拖 1 個行李箱，從新幹線月台走到 JR 東海道線月台抓 10–12 分 → 17:47 搭 JR 東海道線（週五傍晚人多，行李箱靠車門邊放）→ 約 <b>18:12 到橫濱</b> → みなとみらい線到<b>日本大通り／馬車道</b>（走電梯）；或橫濱站東口搭 2 台計程車到飯店，約 10–15 分。</span></li>
@@ -779,7 +798,20 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <p>行程會去的 6 個雪場。點開每一張卡片可以看雪道圖；預估雪況連到 Snow-Forecast 的山腰 6 日預報，出發前一週再看最準。</p>
   </div>
   <div class="resorts" id="resortList"></div>
-  <p class="note" style="margin-top:12px">雪道圖直接載入各雪場或志賀高原觀光協會公開的地圖圖片（丸沼、高峰和志賀各區是 25–26 季版本），26–27 季如果有新增或關閉的雪道，以官網為準。</p>
+  <p class="note" style="margin-top:12px">雪道圖直接載入各雪場或志賀高原觀光協會公開的地圖圖片（丸沼、高峰和志賀各區是 25–26 季版本），26–27 季如果有新增或關閉的雪道，以官網為準。橫手山・澀峠與熊之湯都預定 11/14 開幕，12 月中旬是否全區開放看積雪。</p>
+  <h3 id="lift" class="tax-h" style="scroll-margin-top:76px">雪票策略（2026–27 已公布價格）</h3>
+  <p class="note">志賀高原全山共通券 2026–27 營業 12/5–5/5；初滑期 12/5–12/18 大人 1 日 ¥7,500、2 日 ¥14,500（之後窗口 ¥9,500、網購 ¥8,500）。這趟只滑橫手山和熊之湯，<b>買單場券比全山券省</b>：</p>
+  <div class="board" style="margin-top:12px"><div class="compare" style="border-top:0"><table>
+    <thead><tr><th>日期</th><th>雪場</th><th>建議買</th><th>每人</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td data-label="日期" class="n">12/15</td><td data-label="雪場">熊之湯（Robin 半天）</td><td data-label="建議買">熊之湯單場券</td><td data-label="每人" class="n">¥7,000 以內</td><td data-label="備註">熊之湯早割 ¥6,200 要 12/19 起才能用；半日券價格待查</td></tr>
+      <tr class="on"><td data-label="日期" class="n">12/16</td><td data-label="雪場">橫手山・澀峠</td><td data-label="建議買"><b>橫手山早割 1 日券</b></td><td data-label="每人" class="n">¥5,500</td><td data-label="備註"><b>10/31 前網購</b>（lift-ticket.jp／snownavi），窗口兌換，季內任一天可用；定價 ¥7,000</td></tr>
+      <tr><td data-label="日期" class="n">12/17</td><td data-label="雪場">熊之湯</td><td data-label="建議買">熊之湯 1 日券</td><td data-label="每人" class="n">¥7,000</td><td data-label="備註">想跑燒額山等其他雪場就改買全山 1 日 ¥7,500</td></tr>
+      <tr class="on"><td data-label="日期" class="n">12/18</td><td data-label="雪場">橫手山（滑到 13:15）</td><td data-label="建議買"><b>橫手山早割 1 日券</b></td><td data-label="每人" class="n">¥5,500</td><td data-label="備註">去年旺季（12/20 起）4 小時券 ¥5,700，早割 1 日券不比它貴，滑半天也划算</td></tr>
+      <tr><td data-label="日期" class="n">合計</td><td data-label="雪場">12/16–18 三天</td><td data-label="建議買">單場券組合</td><td data-label="每人" class="n"><b>¥18,000</b></td><td data-label="備註">全山初滑 2 日＋1 日＝¥22,000 → <b>每人省 ¥4,000，6 人省 ¥24,000</b></td></tr>
+    </tbody>
+  </table></div></div>
+  <p class="note" style="margin-top:10px">Hotel &amp; Onsen 2307 住客另有橫手山纜車券優惠，先問飯店價格是否比早割更低。夜滑券另計。早割要用日本網站購買，海外信用卡刷不過的話就到窗口買定價。</p>
 </section>
 
 <section id="recs">
@@ -959,11 +991,24 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <h2>出發前覆核</h2>
     <p>有些資料要到 11 月後才會公布或變動，勾選狀態只存在你這台瀏覽器。</p>
   </div>
-  <h3 id="transit" style="margin:0 0 6px;font-size:16px;font-weight:900;scroll-margin-top:76px">交通查核（2026/10/14 更新）</h3>
-  <p class="note" style="margin-bottom:12px">逐段對照 JR 東日本時刻表、京成、各巴士公司與航班資料：已查證 7 段、已修正 5 段、待查 11 段、有風險 1 段。「待查」多半是冬季時刻還沒公布（巴士 11 月、JR 臨時列車 10 月中旬），公布後再對一次。</p>
+  <h3 id="booking" style="margin:0 0 6px;font-size:16px;font-weight:900;scroll-margin-top:76px">預訂時間軸</h3>
+  <p class="note">依截止日排序，「今天」以日本時間計算。JR 指定席在乘車日一個月前 10:00 發售，えきねっと可在前一週 14:00 起事前受付。按下面的按鈕可以把這些日期存成手機行事曆提醒。</p>
+  <ol class="bk" id="bkList"></ol>
+  <div class="bk-acts"><button class="btn" type="button" id="bkIcs">下載訂票提醒 .ics</button><span class="note" id="bkMsg" aria-live="polite"></span></div>
+
+  <h3 style="margin:34px 0 6px;font-size:16px;font-weight:900">省錢與省心（2026/10/19 查）</h3>
+  <div class="opt" style="margin:8px 0 34px">
+    <div class="optcard a"><span class="label">雪票 · 每人省約 ¥4,000</span>12/16、12/18 用<b>橫手山早割 1 日券 ¥5,500</b>，12/17 買熊之湯 1 日券 ¥7,000，三天 ¥18,000；全山初滑券要 ¥22,000。<b>早割 10/31 截止</b>，見<a href="#lift">雪票策略</a>。</div>
+    <div class="optcard a"><span class="label">N'EX 來回票 · 友人每人省約 ¥2,400</span>外國護照限定的 N'EX 東京來回票 ¥5,200、14 天內有效：12/15 機場 → 東京、12/19 橫濱 → 機場剛好一來一回（兩趟單買約 ¥3,140＋¥4,500）。多個來源寫橫濱在適用範圍內，買前在 JR 東日本官網確認。Robin 12/11 進、12/20 出也能用，但省得不多。</div>
+    <div class="optcard b"><span class="label">JR 周遊券 · 不用買</span>原本的長野・新潟周遊券 3/13 已停售，新的 JR EAST PASS 5 日 ¥35,000。粗估 Robin 用得最多的 5 天 JR 車資約 ¥25,000–29,000、友人 3 天約 ¥25,000，都比周遊券便宜。</div>
+    <div class="optcard b"><span class="label">座位先保住 · えきねっと早期予約</span>乘車日 3 個月前起申請、申請當下就保留座位（不能選位），只適用あさま、とき等新幹線，<b>はくたか、かがやき不適用</b>：Robin 12/11 あさま 623 在 11/3 前申請；12/18 可先保あさま 624，等かがやき 536 公布再改。</div>
+  </div>
+
+  <h3 id="transit" style="margin:0 0 6px;font-size:16px;font-weight:900;scroll-margin-top:76px">交通查核（2026/10/19 更新）</h3>
+  <p class="note" style="margin-bottom:12px">逐段對照 JR 東日本時刻表、京成、各巴士公司與航班資料：已查證 8 段、已修正 4 段、待查 10 段、有風險 2 段。「待查」多半是冬季時刻還沒公布（巴士 11 月中到 12 月初、JR 臨時列車 10 月下旬），公布後再對一次。</p>
   <div class="board" style="margin-bottom:28px"><div class="compare tc-transit" style="border-top:0"><table>
     <thead><tr><th>日期</th><th>區段</th><th>班次時刻</th><th>狀態</th><th>依據</th></tr></thead>
-    <tbody><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">UA838 高雄 → 成田 T1</td><td data-label="班次時刻" class="n">09:55 → 14:45</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">第三方航班資料，對照機票</td></tr><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">Skyliner 成田空港 → 上野</td><td data-label="班次時刻" class="n">16:19 前後</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">16 點班次查不到，約每 20–40 分一班</td></tr><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">あさま 623 上野 → 高崎</td><td data-label="班次時刻" class="n">17:46 → 18:30</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">原寫 18:14–18:18 抵高崎</td></tr><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">備案 とき 337 上野 → 高崎</td><td data-label="班次時刻" class="n">18:18 → 19:01</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">上越線 高崎 → 沼田</td><td data-label="班次時刻" class="n">06:21 → 07:09</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表（721M，平日假日同）</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">關越交通 沼田 → 鎌田</td><td data-label="班次時刻" class="n">07:20（尾瀨戶倉行）</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">夏季時刻；12/1 起冬季時刻未公布</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">關越交通 鎌田 → 沼田</td><td data-label="班次時刻" class="n">14:25 → 15:22</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">等冬季時刻</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">上越線 沼田 → 高崎</td><td data-label="班次時刻" class="n">16:10 → 約 16:57</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">發車已查到，到站推算</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">はくたか 571 高崎 → 佐久平</td><td data-label="班次時刻" class="n">17:20 → 17:44</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">原寫はくたか 569 17:21，該車不停佐久平</td></tr><tr><td data-label="日期" class="n">12/13–14</td><td data-label="區段">JR 巴士 佐久平 → 高峰</td><td data-label="班次時刻" class="n">08:35–08:40 → 09:40</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">現行時刻，冬季待公布</td></tr><tr><td data-label="日期" class="n">12/13–14</td><td data-label="區段">JR 巴士 高峰 → 佐久平</td><td data-label="班次時刻" class="n">16:00–16:13 → 約 17:10</td><td data-label="狀態"><span class="pill crit">有風險</span></td><td data-label="依據">冬季時刻 11/16 起（JR 巴士公告）；末班可能提早到 16:00，以 16:00 規劃</td></tr><tr><td data-label="日期" class="n">12/14</td><td data-label="區段">はくたか 571 佐久平 → 長野</td><td data-label="班次時刻" class="n">17:45 → 約 18:07</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">佐久平發車已查到，長野到站推算</td></tr><tr><td data-label="日期" class="n">12/14</td><td data-label="區段">備案 あさま 621 佐久平 → 長野</td><td data-label="班次時刻" class="n">18:16 → 18:38</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">N'EX 4 號 空港第2ビル → 東京</td><td data-label="班次時刻" class="n">08:15 → 09:20</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">原寫 08:05，沒有這班</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">Skyliner 空港第2ビル → 上野</td><td data-label="班次時刻" class="n">8 點前後</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">平日班次查不到（週末 08:32）</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">はくたか 567 東京 → 長野</td><td data-label="班次時刻" class="n">14:24 → 15:54</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">長電急行巴士 長野 → 志賀</td><td data-label="班次時刻" class="n">08:15 → 09:35 · 13:10 → ほたる</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">25–26 時刻；26–27 預計 11 月公布</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">長電特急 長野 → 湯田中</td><td data-label="班次時刻" class="n">16:46 → 17:31</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">2026 時刻查不到；運賃 ¥1,660 已查證</td></tr><tr><td data-label="日期" class="n">12/18</td><td data-label="區段">かがやき 536 長野 → 東京</td><td data-label="班次時刻" class="n">16:11 → 17:36</td><td data-label="狀態"><span class="pill crit">有風險</span></td><td data-label="依據">臨時列車：9–11 月週五都不開，12 月運轉日 10 月中旬公布</td></tr><tr><td data-label="日期" class="n">12/18</td><td data-label="區段">備案 あさま 624 長野 → 東京</td><td data-label="班次時刻" class="n">15:52 → 17:28</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">定期列車，JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/18</td><td data-label="區段">かがやき 510 長野 → 東京</td><td data-label="班次時刻" class="n">17:05 → 18:28</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/19</td><td data-label="區段">N'EX 橫濱 → 空港第2ビル</td><td data-label="班次時刻" class="n">17:28 → 約 18:51</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">每小時 :28 發；週六由第三方資料確認</td></tr><tr><td data-label="日期" class="n">12/20</td><td data-label="區段">N'EX 31 號 東京 → 成田空港</td><td data-label="班次時刻" class="n">14:03 → 14:58</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表；早一班 29 號 13:33、晚一班 33 號 14:33</td></tr><tr><td data-label="日期" class="n">12/20</td><td data-label="區段">UA837 成田 T1 → 高雄</td><td data-label="班次時刻" class="n">17:55 → 21:25</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">10/25 起冬季班表，原寫 17:30</td></tr></tbody>
+    <tbody><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">UA838 高雄 → 成田 T1</td><td data-label="班次時刻" class="n">09:55 → 14:45</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">第三方航班資料，對照機票</td></tr><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">Skyliner 成田空港 → 上野</td><td data-label="班次時刻" class="n">16:19 前後</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">16 點班次查不到，約每 20–40 分一班</td></tr><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">あさま 623 上野 → 高崎</td><td data-label="班次時刻" class="n">17:46 → 18:30</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">原寫 18:14–18:18 抵高崎</td></tr><tr><td data-label="日期" class="n">12/11</td><td data-label="區段">備案 とき 337 上野 → 高崎</td><td data-label="班次時刻" class="n">18:18 → 19:01</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">上越線 高崎 → 沼田</td><td data-label="班次時刻" class="n">06:21 → 07:09</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表（721M，平日假日同）</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">關越交通 沼田 → 鎌田</td><td data-label="班次時刻" class="n">07:20（尾瀨戶倉行）</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">夏季時刻；12/1 起冬季時刻未公布</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">關越交通 鎌田 → 沼田</td><td data-label="班次時刻" class="n">14:25 → 15:22</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">等冬季時刻</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">上越線 沼田 → 高崎</td><td data-label="班次時刻" class="n">16:10 → 約 16:57</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">發車已查到，到站推算</td></tr><tr><td data-label="日期" class="n">12/12</td><td data-label="區段">はくたか 571 高崎 → 佐久平</td><td data-label="班次時刻" class="n">17:20 → 17:44</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">原寫はくたか 569 17:21，該車不停佐久平</td></tr><tr><td data-label="日期" class="n">12/13–14</td><td data-label="區段">JR 巴士 佐久平 → 高峰</td><td data-label="班次時刻" class="n">08:35–08:40 → 09:40</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">現行時刻，冬季待公布</td></tr><tr><td data-label="日期" class="n">12/13–14</td><td data-label="區段">JR 巴士 高峰 → 佐久平</td><td data-label="班次時刻" class="n">16:00–16:13 → 約 17:10</td><td data-label="狀態"><span class="pill crit">有風險</span></td><td data-label="依據">冬季時刻 11/16 起（JR 巴士公告）；末班可能提早到 16:00，以 16:00 規劃</td></tr><tr><td data-label="日期" class="n">12/14</td><td data-label="區段">はくたか 571 佐久平 → 長野</td><td data-label="班次時刻" class="n">17:45 → 約 18:07</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">佐久平發車已查到，長野到站推算</td></tr><tr><td data-label="日期" class="n">12/14</td><td data-label="區段">備案 あさま 621 佐久平 → 長野</td><td data-label="班次時刻" class="n">18:16 → 18:38</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">N'EX 4 號 空港第2ビル → 東京</td><td data-label="班次時刻" class="n">08:15 → 09:20</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">原寫 08:05，沒有這班</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">Skyliner 空港第2ビル → 上野</td><td data-label="班次時刻" class="n">8 點前後</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">平日班次查不到（週末 08:32）</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">はくたか 567 東京 → 長野</td><td data-label="班次時刻" class="n">14:24 → 15:54</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">長電急行巴士 長野 → 志賀</td><td data-label="班次時刻" class="n">08:15 → 09:35 · 13:10 → ほたる</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">25–26 時刻；26–27 預計 11 月公布</td></tr><tr><td data-label="日期" class="n">12/15</td><td data-label="區段">長電特急 長野 → 湯田中</td><td data-label="班次時刻" class="n">16:46 → 17:31</td><td data-label="狀態"><span class="pill warn">待查</span></td><td data-label="依據">2026 時刻查不到；運賃 ¥1,660 已查證</td></tr><tr><td data-label="日期" class="n">12/18</td><td data-label="區段">かがやき 536 長野 → 東京</td><td data-label="班次時刻" class="n">16:11 → 17:36</td><td data-label="狀態"><span class="pill crit">有風險</span></td><td data-label="依據">臨時列車：9–11 月週五都不開；截至 10/19 JR 冬季臨時列車還沒公布（去年 10/17）</td></tr><tr><td data-label="日期" class="n">12/18</td><td data-label="區段">備案 あさま 624 長野 → 東京</td><td data-label="班次時刻" class="n">15:52 → 17:28</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">定期列車，JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/18</td><td data-label="區段">かがやき 510 長野 → 東京</td><td data-label="班次時刻" class="n">17:05 → 18:28</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表</td></tr><tr><td data-label="日期" class="n">12/19</td><td data-label="區段">N'EX 橫濱 → 空港第2ビル</td><td data-label="班次時刻" class="n">17:28 → 約 18:51</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">每小時 :28 發；週六由第三方資料確認</td></tr><tr><td data-label="日期" class="n">12/20</td><td data-label="區段">N'EX 31 號 東京 → 成田空港</td><td data-label="班次時刻" class="n">14:03 → 14:58</td><td data-label="狀態"><span class="pill ok">已查證</span></td><td data-label="依據">JR 東日本時刻表；早一班 29 號 13:33、晚一班 33 號 14:33</td></tr><tr><td data-label="日期" class="n">12/20</td><td data-label="區段">UA837 成田 T1 → 高雄</td><td data-label="班次時刻" class="n">17:55 → 21:25</td><td data-label="狀態"><span class="pill ok">已修正</span></td><td data-label="依據">10/25 起冬季班表，原寫 17:30</td></tr></tbody>
   </table></div></div>
   <div class="ck-progress" aria-live="polite"><span id="ckCount"></span><span class="bar2" aria-hidden="true"><i id="ckBar"></i></span></div>
   <div class="check" id="checkList"></div>
@@ -971,6 +1016,14 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <h3 style="margin:40px 0 10px;font-size:15px">資料來源</h3>
   <ul class="sources">
     <li><a href="https://www.hotel2307.com/en/">Hotel &amp; Onsen 2307 官網</a></li>
+    <li><a href="https://www.lift-ticket.jp/view/item/000000000655">lift-ticket.jp · 橫手山・澀峠早割 1 日券</a></li>
+    <li><a href="https://www.snownavi.com/topics/news_26091101">snownavi · 2026-27 熊の湯（早割與開幕）</a></li>
+    <li><a href="https://shigakogen-ski.or.jp/winter/ticket/">志賀高原 2026-27 全山共通券</a></li>
+    <li><a href="https://www.princehotels.co.jp/press/202610_05/">軽井沢プリンス 10/31 開幕</a></li>
+    <li><a href="https://www.jreast.co.jp/en/multi/nex/tickets/">JR 東日本 · N'EX 票種</a></li>
+    <li><a href="https://www.jreast.co.jp/press/2025/20260128_ho03.pdf">JR 東日本 · 訪日周遊券改版（2026/1/28）</a></li>
+    <li><a href="https://travel.watch.impress.co.jp/docs/news/2005415.html">えきねっと 早期予約</a></li>
+    <li><a href="https://www.tokyocitykeiba.com/news/69693/">東京シティ競馬 · 2026 開催日程</a></li>
     <li><a href="https://timetables.jreast.co.jp/2610/train/130/130981.html">JR 東日本 · かがやき 536 運轉日</a></li>
     <li><a href="https://timetables.jreast.co.jp/2608/train/035/039101.html">JR 東日本 · あさま 624</a></li>
     <li><a href="https://timetables.jreast.co.jp/2608/train/095/098581.html">JR 東日本 · かがやき 510</a></li>
@@ -1252,7 +1305,7 @@ renderNex();
 /* ---------- Resorts ---------- */
 const RS=[
  {date:'12.12',name:'丸沼高原',ll:'36.795,139.373',sub:'群馬・片品村 · 日光白根山麓',
-  stats:[['頂部','2,000 m（纜車直上）'],['最長滑道','約 4 km'],['交通','高崎 06:21 → 沼田 07:20 巴士 → 鎌田 → 計程車']],
+  stats:[['頂部','2,000 m（纜車直上）'],['最長滑道','約 4 km'],['26–27 開幕','未公布（去年 12/5）'],['交通','高崎 06:21 → 沼田 07:20 巴士 → 鎌田 → 計程車']],
   links:[['官網','https://www.marunuma.jp/winter/'],['雪道與纜車狀態','https://www.marunuma.jp/winter/course-map/']],
   sf:'https://www.snow-forecast.com/resorts/MarunumaKogen/6day/mid',
   map:'https://www.marunuma.jp/winter/wp/wp-content/uploads/2025/10/2026wcoursemap.jpg'},
@@ -1262,12 +1315,12 @@ const RS=[
   sf:'https://www.snow-forecast.com/resorts/Asama-2000-Park/6day/mid',
   map:'https://asama2000.com/wp-content/themes/asama/assets/img/slope/map_04.jpg'},
  {date:'12.16 · 12.18',name:'橫手山・澀峠',ll:'36.687,138.518',sub:'志賀高原 · Hotel & Onsen 2307 所在地',
-  stats:[['頂部','2,307 m'],['落差','602 m'],['纜車','7 條'],['營業','8:30–16:30'],['26–27 開幕','目標 11 月中']],
+  stats:[['頂部','2,307 m'],['落差','602 m'],['纜車','7 條'],['營業','8:30–16:30'],['26–27 開幕','11/14 預定'],['1 日券','¥7,000（早割 ¥5,500，10/31 前）']],
   links:[['官網','https://yokoteyama2307.com/'],['纜車運行','https://shigakogen-ski.or.jp/lift/yokoteyama-shibutoge/']],
   sf:'https://www.snow-forecast.com/resorts/Yokoteyama/6day/mid',
   map:'https://www.shigakogen.gr.jp/manage/wp-content/uploads/2024/11/yokoteMap.jpg'},
  {date:'12.15 · 12.17',name:'熊之湯',ll:'36.700,138.510',sub:'志賀高原 · 從橫手山可一路滑下來',
-  stats:[['連接','橫手山 → 熊之湯 4,000 m 長滑道'],['全山票','可用']],
+  stats:[['連接','橫手山 → 熊之湯 4,000 m 長滑道'],['全山票','可用'],['26–27 開幕','11/14 預定'],['1 日券','¥7,000（早割 ¥6,200 只限 12/19 起）']],
   links:[['官網','https://www.kumanoyu.co.jp/lift/'],['纜車運行','https://shigakogen-ski.or.jp/lift/kumanoyu/']],
   sf:'https://www.snow-forecast.com/resorts/ShigaKogenKumanoyu/6day/mid',
   map:'https://www.shigakogen.gr.jp/manage/wp-content/uploads/2024/11/kumanoyuMap.jpg'},
@@ -1362,6 +1415,7 @@ const R=[
  ["高崎・片品", "伴手禮", "登利平 鳥めし", "登利平 高崎駅", "群馬人的鐵路便當「鳥めし」，12/12 早上帶上上越線。", "高崎站 站內", 0, 4.1, 594, "G"],
  ["高崎・片品", "景點", "少林山達磨寺", "少林山達磨寺", "高崎達磨不倒翁的發源寺，可以買開眼用的達磨。", "高崎站 巴士 約 20 分", 0, 4.2, 3652, "G"],
  ["高崎・片品", "酒", "土田酒造（譽國光）", "土田酒造 誉国光 川場", "川場村的酒藏，有試飲間，招牌是「麹九割九分」。營業 9:30–17:00。", "沼田 車程 約 20 分", 1, 3.8, 756, "G"],
+ ["佐久・小諸", "景點", "軽井沢プリンスホテルスキー場", "軽井沢プリンスホテルスキー場", "10/31 開幕（東區，西區 12/19 起），人工造雪、9:00–16:30。高崎或佐久平搭北陸新幹線一站到軽井沢；丸沼、高峰雪不夠時的備案。26–27 票價待公布。", "軽井沢站南口 徒步約 10–15 分", 1, null, null, "G"],
  ["佐久・小諸", "餐", "佐久の草笛", "佐久の草笛 そば", "佐久最有名的蕎麥麵店，份量大，假日要排隊。", "佐久平站 車程 約 10 分", 0, 4.0, 2191, "G"],
  ["佐久・小諸", "景點", "小諸城址 懷古園", "小諸城址 懐古園", "重要文化財城門與石垣。營業 9:00–17:00，12–3 月週三休。", "小諸站 徒步 3 分", 1, 4.1, 4342, "G"],
  ["佐久・小諸", "酒", "Manz Wine 小諸葡萄酒廠", "マンズワイン小諸ワイナリー", "免費試飲、日式庭園，約 40 款葡萄酒。營業 9:00–16:30。", "小諸 IC 1 km", 1, 4.0, 368, "G"],
@@ -1547,7 +1601,7 @@ const CK=[
  '長電急行巴士 26–27 冬季回程時刻：12/18 有沒有比 14:35 更早、能趕上長野 16:11 新幹線的班次（沒有就用 Jumbo）',
  '丸沼高原、高峰山 12/12–13 的開放狀況與上山交通（計程車需預約）',
  '預約 12/12 鎌田⇄丸沼高原 4WD 計程車（關越交通）',
- '初滑票價期間到 12/18：買 1 日券 ¥7,500 或 2 日券 ¥14,500（全山共通）',
+ '雪票：10/31 前網購橫手山・澀峠早割 1 日券 ¥5,500 ×2（12/16、12/18），12/17 熊之湯買單場 1 日券 ¥7,000；先問 2307 住客價',
  'N\'EX 12/15（週二）早上從空港第2ビル發車的確切時刻',
  '12/18 退房後行李寄放，以及能不能借更衣室／泡湯',
  '熊之湯夜滑 26–27 營業日（18:30–21:00 · ¥3,000 · 12 月起依天候）',
@@ -1574,11 +1628,14 @@ const CK=[
  '長電巴士 26–27 冬季速報（9/4 已發）：12/15 13:10 直達ほたる、12/18 有沒有 15:05 ほたる → 長野的急行',
  '長電ハイヤー／湯田中計程車：夜間是否只能用 App（Uber／GO）叫車，先裝好 App',
  'JR 巴士高峰高原線 11/16 起冬季時刻：末班是 16:00 還是 16:13',
- '12/20 東京都庭園美術館 Marimekko（最後一天）日時指定票；芝公園聖誕市集 KKday 入場券（Robin 12/19 若去）'
+ '12/20 東京都庭園美術館 Marimekko（最後一天）日時指定票；芝公園聖誕市集 KKday 入場券（Robin 12/19 若去）',
+ 'N\'EX 東京來回票（外國護照 ¥5,200、14 天）：友人 12/15 進、12/19 從橫濱出，買前確認橫濱在適用範圍',
+ 'えきねっと早期予約：Robin 12/11 あさま 623（11/3 前）；12/18 あさま 624 先保座（11/10 前）',
+ '12/12–14 雪況備案：丸沼／高峰雪不夠就改軽井沢プリンス（10/31 已開）'
 ];
 let ck={};try{ck=JSON.parse(localStorage.getItem('c2307ck')||'{}')}catch(e){}
-/* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線；v15 行李改全程手提；v16 改每人 1 行李箱、雪板用租的；v17 Robin 12/19 改住東京；v18 交通查核修正） */
-try{const CKV=18,CKCH={12:[1,8,13],13:[17],14:[1,8,24],15:[1,2,3,20,24,25],16:[1,3,20,24,25],17:[6],18:[5,7,26]};let v=+localStorage.getItem('c2307ckv')||0;
+/* 項目內容改過時，舊的勾選不再成立：每個版本只清一次（v12 改第 2、9、14 項；v13 改市集那項；v14 改 12/18 的 Jumbo、巴士與夜間動線；v15 行李改全程手提；v16 改每人 1 行李箱、雪板用租的；v17 Robin 12/19 改住東京；v18 交通查核修正；v19 雪票改單場早割） */
+try{const CKV=19,CKCH={12:[1,8,13],13:[17],14:[1,8,24],15:[1,2,3,20,24,25],16:[1,3,20,24,25],17:[6],18:[5,7,26],19:[11]};let v=+localStorage.getItem('c2307ckv')||0;
 if(v<CKV){for(let k=v+1;k<=CKV;k++)(CKCH[k]||[]).forEach(i=>delete ck[i]);localStorage.setItem('c2307ck',JSON.stringify(ck));localStorage.setItem('c2307ckv',String(CKV))}}catch(e){}
 document.getElementById('checkList').innerHTML=CK.map((t,i)=>`<div><input type="checkbox" id="ck${i}" ${ck[i]?'checked':''}><label for="ck${i}">${t}</label></div>`).join('');
 function ckProgress(){const n=CK.filter((_,i)=>ck[i]).length;document.getElementById('ckCount').textContent='已完成 '+n+' / '+CK.length;document.getElementById('ckBar').style.width=(n/CK.length*100)+'%'}
@@ -2222,6 +2279,67 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
     $('r19Side').querySelector('.r19-go').onclick=e=>{setRecRoute(e.currentTarget.dataset.r.replace('xmas19','a19').replace('photo19','b19').replace('slow19','c19'));document.getElementById('recs').scrollIntoView({behavior:'smooth'})};
   }
   draw();
+})();
+
+/* ---------- 預訂時間軸 ---------- */
+(function(){
+  const list=document.getElementById('bkList');if(!list)return;
+  /* [事前受付／開始日, 截止或發售日, 發售時刻(可空), 事項, 說明, 誰, 重要] */
+  const BOOK=[
+    ['20260801','20261031','','橫手山・澀峠早割 1 日券 ¥5,500','12/16、12/18 每人 2 張；lift-ticket.jp／snownavi 網購、窗口兌換（定價 ¥7,000）','全員',1],
+    ['20260911','20261103','2350','Robin：早期予約 あさま 623（12/11）','えきねっと早期予約，申請當下就保留座位（不能選位）；23:50 截止，之後改走一般發售','Robin',0],
+    ['20260918','20261110','2350','12/18 保底：早期予約 あさま 624 ×6','かがやき 536 還沒確定前先保座位；新幹線 e チケット乘車前一般可改班，以えきねっと規定為準','全員',0],
+    ['20261015','20261031','','JR 冬季臨時列車公布（預計）','去年 10/17 公布；確認かがやき 536 在 12/18（五）有沒有開','全員',1],
+    ['20261020','20261110','','紅磚倉庫聖誕市集 優先入場券','10 月下旬～11 月上旬公布、WEB 限定；12/19 路線 A','全員',0],
+    ['20261104','20261111','1000','Robin 12/11 あさま 623 發售','沒用早期予約的話；事前受付 11/4 14:00 起','Robin',0],
+    ['20261105','20261112','1000','Robin 12/12 はくたか 571 高崎 → 佐久平','事前受付 11/5 14:00 起','Robin',0],
+    ['20261107','20261114','1000','Robin 12/14 はくたか 571 佐久平 → 長野','事前受付 11/7 14:00 起','Robin',0],
+    ['20261108','20261115','1000','友人 12/15 はくたか 567 ×5 ＋ N\'EX 4 號','事前受付 11/8 14:00 起；N\'EX 東京來回票（¥5,200）一起買','友人',1],
+    ['20261116','20261116','','JR 巴士高峰高原線冬季時刻上路','確認 12/13–14 末班是 16:00 還是 16:13','Robin',0],
+    ['20261111','20261118','1000','12/18 長野 → 東京 ×6','かがやき 536（有開的話）或あさま 624；事前受付 11/11 14:00 起','全員',1],
+    ['20261112','20261119','1000','12/19 N\'EX 17:28 ×6','Robin 到東京、友人到 T3；事前受付 11/12 14:00 起','全員',0],
+    ['20261113','20261120','1000','Robin 12/20 N\'EX 31 號','事前受付 11/13 14:00 起','Robin',0],
+    ['20261019','20261130','','預約 Jumbo ×2 與 12/12 4WD 計程車','12/15 5 人＋5 箱、12/18 6 人＋6 箱一起報價；12/12 鎌田 ⇄ 丸沼','全員',1],
+    ['20261019','20261130','','Hotel 2307：晚餐梯次、租板、住客纜車價','友人 12/15 約 17:40 到；連租 3 天板；住客橫手山券是否比早割便宜','全員',0],
+    ['20261201','20261201','','關越交通冬季時刻上路','確認 12/12 沼田 07:20、鎌田 14:25 兩班','Robin',0],
+    ['20261205','20261205','','長電巴士冬季時刻上路（約 12/5）','12/15 Robin 巴士；12/18 有沒有 15:05 ほたる發的急行','全員',0],
+    ['20261101','20261210','','東京メガイルミ 12/18 門票','先確認 12/18 不是賽馬日；票價浮動制，前售較便宜','全員',0],
+    ['20261204','20261210','','出發前一週：雪況與開放雪道','決定 12/12–14 要不要改軽井沢プリンス；看 Snow-Forecast 與各雪場官網','全員',0]
+  ];
+  const q=new URLSearchParams(location.search).get('now');
+  const nowMs=q?Date.parse(q+':00+09:00'):Date.now();
+  const day=s=>Date.UTC(+s.slice(0,4),+s.slice(4,6)-1,+s.slice(6,8));
+  const t=new Date(nowMs+9*3600e3),today=Date.UTC(t.getUTCFullYear(),t.getUTCMonth(),t.getUTCDate());
+  const WD='日一二三四五六';
+  const md=ms=>{const d=new Date(ms);return (d.getUTCMonth()+1)+'/'+d.getUTCDate()};
+  const esc3=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const rows=BOOK.map(b=>({b,s:day(b[0]),e:day(b[1])})).sort((x,y)=>x.e-y.e||x.s-y.s);
+  let html='',marked=false;
+  rows.forEach(({b,s,e})=>{
+    if(!marked&&e>=today){html+='<li class="bk-today">今天 '+md(today)+'（'+WD[new Date(today).getUTCDay()]+'）</li>';marked=true}
+    const left=Math.round((e-today)/864e5),until=Math.round((s-today)/864e5);
+    let cls,pill;
+    if(e<today){cls='past';pill='<span class="pill mute">已過</span>'}
+    const tm=b[2]?' '+b[2].slice(0,2)+':'+b[2].slice(2):'',sale=b[2]&&b[2]!=='2350';
+    if(e>=today&&s<=today){cls='now';pill='<span class="pill '+(left<=3?'crit':left<=10?'warn':'ok')+'">'+(sale?(left===0?'今天'+tm+' 發售':left+' 天後發售'):(left===0?'今天截止':'剩 '+left+' 天'))+'</span>'}
+    else if(e>=today){cls='soon';pill='<span class="pill mute">'+until+' 天後'+(sale?'可事前受付':'開始')+'</span>'}
+    html+='<li class="bk-it '+cls+(b[6]?' hi':'')+'"><div class="bk-d"><b>'+md(e)+'</b><small>（'+WD[new Date(e).getUTCDay()]+'）'+tm+'</small></div><div class="bk-c"><b>'+esc3(b[3])+'</b><span>'+esc3(b[4])+'</span></div><div class="bk-s">'+pill+'<small>'+b[5]+'</small></div></li>';
+  });
+  if(!marked)html+='<li class="bk-today">今天 '+md(today)+'（'+WD[new Date(today).getUTCDay()]+'）</li>';
+  list.innerHTML=html;
+  document.getElementById('bkIcs').onclick=()=>{
+    const now=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+    const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//2307 Carve Log//TW','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:2307 訂票提醒'];
+    BOOK.forEach(b=>{
+      const head=['BEGIN:VEVENT','UID:'+uidOf('book',b[1],b[3]),'DTSTAMP:'+now];
+      if(b[2]){const e2=('0'+((+b[2].slice(0,2)+(b[2]==='2350'?0:1))%24)).slice(-2)+(b[2]==='2350'?'59':b[2].slice(2));
+        L.push(...head,'DTSTART:'+utc(b[1],b[2]),'DTEND:'+utc(b[1],e2),'SUMMARY:'+esc('【訂票】'+b[3]),'DESCRIPTION:'+esc(b[4]),'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:'+esc(b[3]),'END:VALARM','END:VEVENT');}
+      else L.push(...head,'DTSTART;VALUE=DATE:'+b[1],'DTEND;VALUE=DATE:'+nextDay(b[1]),'SUMMARY:'+esc('【截止】'+b[3]),'DESCRIPTION:'+esc(b[4]),'TRANSP:TRANSPARENT','BEGIN:VALARM','TRIGGER:-PT15H','ACTION:DISPLAY','DESCRIPTION:'+esc(b[3]),'END:VALARM','END:VEVENT');
+    });
+    L.push('END:VCALENDAR');
+    const msg=document.getElementById('bkMsg');
+    Promise.resolve(saveFile('carve-log-booking.ics',L.join('\r\n'),'text/calendar;charset=utf-8','已產生 '+BOOK.length+' 筆訂票提醒（.ics）。')).then(()=>{msg.textContent=document.getElementById('toolMsg').textContent});
+  };
 })();
 
 /* ---------- 行李清單 ---------- */
