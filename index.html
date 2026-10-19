@@ -271,10 +271,15 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 
 /* 12/19 ROUTES */
 .r19-ctl{grid-template-columns:1fr}
-#r19Side h4{margin:0;font-family:var(--display);font-weight:900;font-size:30px;line-height:1.05}
-#r19Side .vibe{margin:0;font-size:14px;line-height:1.6}
-#r19Side .kv{grid-template-columns:auto minmax(0,1fr)}
-#r19Side .kv dt{white-space:nowrap}
+.rside h4{margin:0;font-family:var(--display);font-weight:900;font-size:30px;line-height:1.05}
+.rside .vibe{margin:0;font-size:14px;line-height:1.6}
+.rside .kv{grid-template-columns:auto minmax(0,1fr)}
+.rside .kv dt{white-space:nowrap}
+.rside .when b{color:var(--ink)}
+.controls.solo{grid-template-columns:1fr}
+.day .board{scroll-margin-top:76px}
+.nex-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.nex-head b{font-family:var(--mono);font-size:14px}
 .step.photo .rail::before{background:var(--alt);width:4px;left:7px}
 
 /* IDEAS */
@@ -282,31 +287,12 @@ tr.on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .idea .optcard>b{font-size:15px;font-weight:900;line-height:1.4}
 .idea .optcard p{margin:0;font-size:14px;line-height:1.65}
 .idea .optcard small{font-size:12px;color:var(--muted);line-height:1.55;border-top:1px dashed var(--line);padding-top:6px}
-section>.opt.idea{grid-template-columns:repeat(6,minmax(0,1fr))}
-.idea>.optcard{grid-column:span 2}
-.idea>.optcard.half{grid-column:span 3}
-.idea>.optcard.duo{grid-column:1/-1}
-.idea .duo>p{max-width:48em}
-.du-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:6px}
-.du-opt{display:grid;gap:12px;align-content:start;padding:14px 16px 12px;background:var(--ground);border:1px solid var(--line);border-radius:4px}
-.du-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
-.du-k{display:grid;justify-items:center;font-family:var(--display);font-weight:900;font-size:44px;line-height:.8;color:var(--alt)}
-.du-k span{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.14em;line-height:1;color:var(--muted);margin-bottom:6px}
-.du-top b{display:block;font-size:15px;font-weight:900;line-height:1.4;margin-bottom:8px}
-.du-pills{display:flex;flex-wrap:wrap;gap:6px}
-.du-steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.du-steps li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14px;line-height:1.6}
-.du-steps .t{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted);padding-top:1px}
-@media (max-width:999px){
-  section>.opt.idea{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .idea>.optcard,.idea>.optcard.half{grid-column:span 1}
-  .idea>.optcard:first-child,.idea>.optcard.duo{grid-column:1/-1}
-}
-@media (max-width:720px){.du-grid{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:660px){
-  section>.opt.idea{grid-template-columns:minmax(0,1fr)}
-  .idea>.optcard,.idea>.optcard.half,.idea>.optcard:first-child{grid-column:auto}
-}
+section>.opt.idea{grid-template-columns:repeat(3,minmax(0,1fr))}
+.idea .goto{display:flex;flex-wrap:wrap;gap:6px}
+.idea .goto .btn{padding:6px 10px}
+.idea .goto .btn[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+@media (max-width:999px){section>.opt.idea{grid-template-columns:repeat(2,minmax(0,1fr))}.idea>.optcard:first-child{grid-column:1/-1}}
+@media (max-width:660px){section>.opt.idea{grid-template-columns:minmax(0,1fr)}}
 
 /* BOOKING TIMELINE */
 .bk{list-style:none;margin:12px 0 0;padding:0;border-top:3px solid var(--ink)}
@@ -737,7 +723,7 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <article class="day" id="d18">
       <div class="when"><span class="d">12.18</span><span class="label">FRI</span><span class="alt">→ YOKOHAMA · ŌI</span></div>
       <div>
-        <h3>滑到 13:15 → 先回橫濱飯店放行李 → 大井 Tokyo Mega Illumi → 橫濱夜遊：Muscle Bar・野毛・汽車道・大さん橋</h3>
+        <h3>上午滑橫手山 → 下山回橫濱 → 晚上路線四選一（主推：先回飯店放行李，再去大井 Tokyo Mega Illumi、橫濱夜遊）</h3>
         <ul>
           <li><span class="t">08:30</span><span>橫手山第一趟纜車。退房時間 10:00，出門前先退房、行李寄放在飯店。</span></li>
           <li><span class="t">13:15</span><span><b>最後一趟下到飯店</b>，<b>歸還租借的板與雪鞋</b>、換衣服、拿行李，抓 50 分鐘；退房後能不能借更衣室或泡湯要先問飯店。<b>比「直奔大井」版早約 1 小時收板</b>（原本 14:15）。</span></li>
@@ -751,26 +737,22 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           <div class="optcard"><span class="label">A 案叫車時要確認</span>6 人＋6 個行李箱＋6 個背包，一台 9 人座 Jumbo 通常要收掉最後一排座位放行李箱。叫車時直接講「6 人、スーツケース 6 個」，背包抱在腿上，車行說放不下就訂兩台。跟 12/15 上山那趟同一條路線，可以一起報價。</div>
         </div>
 
-        <h4 style="margin:22px 0 8px;font-size:15px;font-weight:900">夜間時間鏈（預估，全部是估算值）</h4>
+        <h4 style="margin:22px 0 8px;font-size:15px;font-weight:900">晚上路線四選一（時間都是估算值）</h4>
         <div class="opt" style="margin-top:0">
-          <div class="optcard w"><span class="label">先回飯店再去大井：要提早約 1 小時</span>從最終入場 20:00 反推：19:40 到大井門口 ← 18:40 從飯店出發（飯店到大井約 60 分）← 18:25 到飯店放行李 ← 17:36 抵東京（東京換 JR 到橫濱約 50 分）← かがやき 536 長野 16:11 發車 ← 14:10 從 2307 出發 ← <b>13:15 最後一趟</b>。門口到最終入場只剩 <b>約 20 分緩衝</b>。</div>
           <div class="optcard w"><span class="label">出發前先確認 3 件事</span>① <b>12/18（五）大井那天有沒有賽馬</b>：東京メガイルミ只在沒有賽馬的日子點燈（2026-27 是最終季，10/31–1/10）。大井 12 月已知 12/24–26、12/29–31 有賽，12/18 還查不到官方日程（非官方整理顯示當天有開）。② 今年的最終入場時間（去年 20:00）。③ <b>かがやき 536（長野 16:11）12/18 有沒有開</b>（臨時列車，截至 10/19 還沒公布），沒開改あさま 624。任何一項不行就走「直奔版」或備案。大井電話 03-3763-2151。</div>
+          <div class="optcard"><span class="label">怎麼選 · 看抵東京時間和當天狀況</span>17:50 前到東京 → <b>大井＋夜遊</b>。想多滑 1 小時，或 17:50–19:00 才到東京 → <b>直奔大井</b>。晚於 19:00、12/18 是賽馬日，或大家太累不想跑大井 → <b>橫濱看燈</b>。想看 Illumi 但不想熬夜 → <b>Illumi 就收</b>。選了哪條，下面的時間表、行事曆匯出和旅途中的「下一步」提示都會跟著改。</div>
         </div>
-        <ul style="margin-top:12px">
-          <li><span class="t">17:36</span><span>抵東京。每人拖 1 個行李箱，從新幹線月台走到 JR 東海道線月台抓 10–12 分 → 17:47 搭 JR 東海道線（週五傍晚人多，行李箱靠車門邊放）→ 約 <b>18:12 到橫濱</b> → みなとみらい線到<b>日本大通り／馬車道</b>（走電梯）；或橫濱站東口搭 2 台計程車到飯店，約 10–15 分。</span></li>
-          <li><span class="t">18:25</span><span><b>到飯店放行李</b>（辦入住或只放行李，15 分）：行李箱放下，只背輕背包出門。晚回飯店的入住時間要先告訴飯店。</span></li>
-          <li><span class="t">18:40</span><span>從飯店出發去大井：日本大通り站 → 橫濱 → 京急經京急蒲田到立会川站再走 12 分；或 JR 到浜松町換東京モノレール到大井競馬場前。單程約 55–65 分（放下行李箱後比較快）。預估 <b>19:35–19:45 到門口</b>，最終入場 20:00。</span></li>
-          <li><span class="t">19:45</span><span><b>東京メガイルミ</b>（大井競馬場，品川區勝島 2-1-2）。逛約 65 分，去年 21:00 熄燈。</span></li>
-          <li><span class="t">20:50</span><span>離場，直接回橫濱到<b>日本大通り站</b>，不用再回飯店。單程約 45–60 分，預估 <b>22:00–22:15</b> 到。</span></li>
-          <li><span class="t">22:15</span><span><b>Muscle Bar Yokohama</b>（中区南仲通 1-8 SKビル B1F；營業 19:00–25:00、週一休；日本大通り站 2 號出口 1 分）。坐到約 23:30。費用制度在店家官網的 SYSTEM 頁，先看。電話 070-9151-1437。</span></li>
-          <li><span class="t">23:30</span><span>走去野毛（約 20 分，或搭 JR 關內 → 桜木町 1 站）。23:50–00:50 <b>野毛梯子酒</b>。各家營業時間差很大（例如野毛ハイボール 24:00 打烊、週四休），先在 Google Maps 挑 2–3 間 00:00 後還開的。</span></li>
-          <li><span class="t">00:50</span><span>從桜木町站走<b>汽車道</b>（1911 年開通的舊臨港鐵道，約 500 m 的海上步道，保留鐵軌與橋梁）到<b>紅磚倉庫</b>，約 15–20 分，預估 <b>01:10 到</b>。聖誕市集早已打烊，只看夜景（市集改排 12/19 白天，見下）。</span></li>
-          <li><span class="t">01:10</span><span>沿海走約 10–15 分到<b>大さん橋</b>，上屋上「<b>くじらのせなか</b>」：24 小時免費開放的木質波浪甲板，夜間腳下有間接照明，躺著看地標塔與港灣夜景。摩天輪的燈幾點熄要到現場才知道。12 月深夜海風很冷，帶羽絨外套與手套。</span></li>
-          <li><span class="t">~02:00</span><span>走回飯店（日本大通り站方向約 10–15 分）。12/19 早上元町改 10:00 出門。</span></li>
-        </ul>
-        <div class="opt">
-          <div class="optcard"><span class="label">想多滑 1 小時 · 直奔大井版（也是趕不上かがやき 536 的備案）</span>最後一趟 14:15 → <b>15:05</b> Jumbo → <b>かがやき 510 長野 17:05</b> → <b>18:28 東京</b> → 東京站轉 JR 到浜松町 → モノレール到大井競馬場前，<b>19:15–19:30 到門口</b>。<b>6 個行李箱要先處理</b>：東京站 → JR 到<b>浜松町</b>（約 6 分）把行李箱放モノレール轉乘口附近的置物櫃（大型櫃數量待查）→ モノレール 8 分到大井競馬場前，逛完回浜松町取行李再往橫濱；櫃子不夠就分 1–2 人先帶回飯店。逛完 20:45 離場，之後和上面同一條路線。</div>
-          <div class="optcard"><span class="label">三段判斷 · 依抵東京時間</span>17:50 前 → 先回飯店版。17:50–19:00 → 直奔版。<b>晚於 19:00 或 12/18 是賽馬日 → 放棄 Illumi</b>：回橫濱飯店，<b>19:45 紅磚倉庫聖誕市集</b>（馬車道站徒步約 6 分；2026 年 11/20–12/25，有 WEB 限定優先入場券）→ <b>ヨルノヨ 2026</b>（12/4–12/30、17:00–21:00，大さん橋與山下公園的光雕）→ Muscle Bar → 野毛 → 汽車道 → 大さん橋，整段比上面早。</div>
+        <div class="board" id="n18" style="margin-top:12px">
+          <div class="controls solo">
+            <div class="ctrl">
+              <span class="label">選一條晚上路線</span>
+              <div class="seg" id="n18Seg" role="group" aria-label="12/18 晚上路線"></div>
+            </div>
+          </div>
+          <div class="board-body">
+            <div class="tl" id="n18Tl" aria-live="polite"></div>
+            <aside class="side rside" id="n18Side"></aside>
+          </div>
         </div>
         <p class="note" style="margin-top:8px">另一份資料提到 26–27 有 15:05 ほたる溫泉發、16:44 到長野的直達急行巴士（¥3,000），可接かがやき 510 走直奔版、省掉 Jumbo；2025–26 時刻表沒有這班，等 26–27 時刻表確認。東京メガイルミ 2026-27 最終季 10/31–1/10，賽馬日與 12/26、27、1/1 不開，16:30–21:00、最終入場 20:00，票價浮動制。かがやき 536（長野 16:11 → 東京 17:36，臨時列車）、かがやき 510（長野 17:05 → 東京 18:28，已查證）、あさま 624（長野 15:52 → 東京 17:28，定期列車）都對照了 JR 東日本 2026 年時刻表；12 月實際運轉日以冬季公告為準。東京メガイルミ 2026-27 為 2026/10/31–2027/1/10、共 53 天，營業時間與門票沿用去年（16:30–21:00、最終入場 20:00）。橫濱 ↔ 大井的乘車時間是查詢結果加緩衝的估算，出發前用乘換案內實際查一次。住宿建議訂在<b>日本大通り／馬車道／関内</b>：Muscle Bar 和大さん橋都走得到，深夜也能走回飯店。</p>
       </div>
@@ -779,9 +761,9 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
     <article class="day" id="d19">
       <div class="when"><span class="d">12.19</span><span class="label">SAT</span><span class="alt">→ NRT T3</span></div>
       <div>
-        <h3>橫濱半日三選一 → 16:30 回飯店拿行李 → 友人回 T3（22:25 起飛）、Robin 移到東京</h3>
+        <h3>橫濱半日三選一 → 傍晚去機場三選一 → 友人回 T3（22:25 起飛）、Robin 移到東京</h3>
         <ul>
-          <li><span class="t">10:00</span><span><b>全員退房，行李箱寄放在飯店櫃台</b>，只背背包出門（12/18 玩到 02:00，早上睡飽）。三條路線都從飯店附近出發、都在 <b>16:30 回飯店拿行李</b>。</span></li>
+          <li><span class="t">10:00</span><span><b>全員退房，行李箱寄放在飯店櫃台</b>，只背背包出門（12/18 晚上玩得晚，早上睡飽）。三條路線都從飯店附近出發；幾點回飯店拿行李，看下面選的傍晚路線（16:30／16:45／17:30）。</span></li>
         </ul>
         <div class="board" id="r19" style="margin-top:12px">
           <div class="controls r19-ctl">
@@ -792,17 +774,26 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
           </div>
           <div class="board-body">
             <div class="tl" id="r19Tl" aria-live="polite"></div>
-            <aside class="side" id="r19Side"></aside>
+            <aside class="side rside" id="r19Side"></aside>
+          </div>
+        </div>
+        <div class="board" id="e19" style="margin-top:14px">
+          <div class="controls solo">
+            <div class="ctrl">
+              <span class="label">選傍晚怎麼去機場</span>
+              <div class="seg" id="e19Seg" role="group" aria-label="12/19 傍晚路線"></div>
+            </div>
+          </div>
+          <div class="board-body">
+            <div class="tl" id="e19Tl" aria-live="polite"></div>
+            <aside class="side rside" id="e19Side"></aside>
           </div>
         </div>
         <ul style="margin-top:14px">
-          <li><span class="t">16:45</span><span><b>拿好行李出發</b>：みなとみらい線（日本大通り／馬車道 → 橫濱，約 8 分，走電梯），或 2 台計程車到橫濱站（約 10–15 分）。</span></li>
-          <li><span class="t">17:05</span><span>到橫濱站，找 N'EX 月台。Robin 想帶崎陽軒燒賣的話在站內買，選常溫真空包裝比較好帶上飛機。</span></li>
-          <li><span class="t">17:28</span><span><b>全員搭同一班 N'EX</b>：Robin 17:56 在<b>東京站</b>下車，入住東京（未定，建議八重洲／日本橋，隔天 N'EX 直達）；友人續搭到空港第2ビル，走到 T3。</span></li>
-          <li><span class="t">18:30</span><span><b>Robin 東京週六夜三選一</b>（入住後出門）：<br>① <b>丸之內・日比谷步行</b>：丸之內仲通燈飾（11/12–2/14）、「MARUNOUCHI BRIGHT HOLIDAY」哈利波特聖誕（到 12/25）→ 走到東京ミッドタウン日比谷，《アベンジャーズ／ドゥームズデイ》8 m 主題樹（16:00–23:00，電影 12/18 上映）。<br>② <b>六本木</b>：けやき坂燈飾與東京鐵塔同框、六本木 Hills 聖誕市集（約 11/21–12/25）、森美術館「森万里子：燦燦」（10/31–3/28，開館時間待公布）。<br>③ <b>芝公園 東京聖誕市集</b>：東京鐵塔下（12/4–12/25，11:00–22:00，建議 KKday 預購入場）。</span></li>
+          <li><span class="t">晚上</span><span><b>Robin 東京週六夜三選一</b>（入住後出門）：<br>① <b>丸之內・日比谷步行</b>：丸之內仲通燈飾（11/12–2/14）、「MARUNOUCHI BRIGHT HOLIDAY」哈利波特聖誕（到 12/25）→ 走到東京ミッドタウン日比谷，《アベンジャーズ／ドゥームズデイ》8 m 主題樹（16:00–23:00，電影 12/18 上映）。<br>② <b>六本木</b>：けやき坂燈飾與東京鐵塔同框、六本木 Hills 聖誕市集（約 11/21–12/25）、森美術館「森万里子：燦燦」（10/31–3/28，開館時間待公布）。<br>③ <b>芝公園 東京聖誕市集</b>：東京鐵塔下（12/4–12/25，11:00–22:00，建議 KKday 預購入場）。</span></li>
         </ul>
         <div class="chain" style="margin-top:14px">
-          <div class="seg" id="nexSeg" role="group" aria-label="N'EX 班次"></div>
+          <div class="nex-head"><span class="label">N'EX 到 T3 · 依上面選的傍晚路線</span><b id="nexLbl"></b></div>
           <div class="bar-wrap"><div class="bar-inner"><div class="bar" id="nexBar"></div></div></div>
           <dl class="kv" id="nexKv"></dl>
           <p class="note" style="margin-top:10px">Robin 搭同一班到東京站要買 N'EX 橫濱 → 東京的指定席（N'EX 全車指定）。N'EX 橫濱發車時刻是查詢到的週六時刻（每小時 :28），橫濱 → 東京 28 分鐘，東京 → 空港第2ビル抓 55 分鐘。T3 的 LCC 報到通常在起飛前 45–60 分鐘截止，這裡用 21:25 當作最保守的截止線。橫濱 → 成田約 ¥4,500（2026/3 JR 調價後的確切金額以えきねっと為準；東京 → 成田是 ¥3,140）。N'EX 橫濱每小時 :28 發車已對照 JR 東日本平日時刻，週六由第三方時刻資料確認。第一版的 N'EX 47 是 17:28 發車、18:54 到，跟這裡的推算一致。第一版的方案 2（京急 → 山手線 → 日暮里 17:47 Skyliner 59 → 18:23 抵 T2）比 N'EX 早約 30 分鐘到，但要多轉乘兩次，只有在 N'EX 停駛或誤點時才值得改走。</p>
@@ -827,64 +818,18 @@ nav.jump a[aria-current="true"]::after{transform:scaleX(1)}
   <div class="sec-head">
     <span class="code">IDEAS</span>
     <h2>行程建議：9 個可以加碼或替換的地方</h2>
-    <p>主行程沒有改動。下面是查證後覺得值得考慮的調整，選好告訴我，我再把每日行程、時間鏈、行事曆和覆核清單一起改。最推薦 ① 和 ③：不多花錢，又省時間、降低風險。⑥ 和 ⑦ 各有兩個方案，到時候再二選一。</p>
+    <p>主行程沒有改動。下面是查證後覺得值得考慮的調整，選好告訴我，我再把每日行程、時間鏈、行事曆和覆核清單一起改。最推薦 ① 和 ③：不多花錢，又省時間、降低風險。⑥ 和 ⑦ 已經做成每日行程裡的路線選擇，點按鈕就能切換。</p>
   </div>
   <div class="opt idea">
     <div class="optcard a"><span class="label">① 12/11 · Robin · 推薦</span><b>改住沼田，12/12 多睡約一小時</b><p>高崎 18:30 下新幹線後轉上越線約 50 分到沼田（約 19:40），住站附近（例：ホテルリブマックス BUDGET 群馬沼田，徒步約 8 分）。12/12 不用趕 06:21 的車，走到沼田站搭 07:20 巴士；行李箱寄飯店，回程 15:22 到沼田、16:10 上車前取回，不用拖上山。</p><small>代價：沼田的晚餐選擇比高崎少；關越交通冬季時刻 12/1 公布後再確認。</small></div>
     <div class="optcard b"><span class="label">② 12/13 · Robin · 體驗升級</span><b>住一晚高峰温泉（雲上ランプの宿）</b><p>標高 2,000 m 的溫泉旅館，冬季從高峰マウンテンリゾート搭雪上車約 15 分接送。滑完直接上山泡湯、看星空，12/14 早上不用搭 08:35 巴士，第一趟纜車就能滑。</p><small>代價：房價與 12 月空房待查（0267-25-2000），行李箱要一起帶上山。不住的話也能日歸泡湯（含雪上車約 ¥1,500，舊資料），但要趕 16:00 末班車。</small></div>
     <div class="optcard a"><span class="label">③ 12/16 ⇄ 12/17 · 全員 · 推薦</span><b>天候對調規則</b><p>橫手山頂 2,307 m 容易因強風停上段纜車，12 月中旬也可能還沒全區開放。前一晚看預報，風大就把 12/16 橫手山和 12/17 熊之湯對調；熊之湯是朝北的碗狀地形，比較避風。</p><small>代價：無。橫手山早割券季內任一天都能用，對調不影響雪票。</small></div>
-    <div class="optcard b half"><span class="label">④ 12/17 · 全員 · 刻滑加碼</span><b>去燒額山跑寬壓雪坡</b><p>1998 長野冬奧大迴轉賽場，寬幅壓雪坡最適合練刻滑，初滑期 12/4–12/18。這天改買全山 1 日券 ¥7,500（不買熊之湯單場），搭志賀高原內巴士過去，傍晚回 2307，晚上照樣夜滑熊之湯。</p><small>代價：單程約 40–50 分（26–27 時刻待公布）；早季開放的雪道以官網為準。</small></div>
-    <div class="optcard b half"><span class="label">⑤ 12/18 · 全員 · 換一種玩法</span><b>早上不滑，改雪猴＋善光寺</b><p>09:00 Jumbo 包車到地獄谷（冬天早上最常看到猴子泡湯），步道約 30 分 → 中午到長野逛善光寺、吃蕎麥 → 14 點多搭新幹線，約 16 點到東京、17 點前到橫濱。不必等臨時列車かがやき 536 公布，到橫濱天還亮，晚上去大井也不趕。</p><small>代價：少滑半天；Jumbo 要包車等候（另請報價）；地獄谷有沒有地方寄行李箱要先問（0269-33-4379）。</small></div>
-    <div class="optcard b duo"><span class="label">⑥ 12/18 晚 · 全員 · 備案 · 二選一</span><b>太累或大井有賽馬：兩種輕鬆版夜晚</b><p>滑到 13:15、移動 3.5 小時再玩到 02:00，12/18 是整趟最長的一天。搭新幹線時看大家的狀況決定；如果 12/18 是賽馬日，就只能走 A。</p>
-      <div class="du-grid">
-        <div class="du-opt">
-          <div class="du-top"><span class="du-k"><span>方案</span>A</span><div><b>不去大井，留在橫濱看燈</b><div class="du-pills"><span class="pill ok">賽馬日也可</span><span class="pill mute">最晚約 00:00 回飯店</span></div></div></div>
-          <ol class="du-steps">
-            <li><span class="t">18:25</span><span>到飯店放行李，跟主行程一樣。</span></li>
-            <li><span class="t">18:45</span><span>走去<b>紅磚倉庫聖誕市集</b>（日本大通り站一帶走約 10 分），晚餐就吃攤位的德國香腸配熱紅酒。去年 12 月中營業到 22:00。</span></li>
-            <li><span class="t">20:00</span><span>沿海走到<b>大さん橋</b>、山下公園看 <b>ヨルノヨ 2026</b>（17:00–21:00，去年免費入場）。くじらのせなか趁還有燈光時走，不用等到 01:00。</span></li>
-            <li><span class="t">21:15</span><span><b>Muscle Bar</b>（日本大通り站 2 號出口 1 分），坐到 22:30。</span></li>
-            <li><span class="t">22:30</span><span>還有體力就去野毛續攤一小時，不然直接走回飯店。</span></li>
-          </ol>
-          <small>代價：看不到東京メガイルミ最終季（大井競馬場整修，下一季起暫停）。如果事先知道當天有賽馬，可以照「直奔版」的車次多滑 1 小時（14:15 收板、かがやき 510），19:30 左右到飯店，19:45 再出門去紅磚。</small>
-        </div>
-        <div class="du-opt">
-          <div class="du-top"><span class="du-k"><span>方案</span>B</span><div><b>照去大井，看完 Illumi 就收工</b><div class="du-pills"><span class="pill warn">賽馬日不適用</span><span class="pill mute">約 23:30 回飯店</span></div></div></div>
-          <ol class="du-steps">
-            <li><span class="t">15:40</span><span>在長野站買駅弁，晚餐在新幹線上解決（後面不去野毛，沒有正餐）。</span></li>
-            <li><span class="t">18:40</span><span>照主行程從飯店出發，19:45–20:50 逛<b>東京メガイルミ</b>。場內有輕食攤（上一季有吉拿棒、熱可可）。</span></li>
-            <li><span class="t">22:15</span><span>回到日本大通り站，<b>Muscle Bar</b> 坐一小時就走，或直接回飯店。</span></li>
-            <li><span class="t">23:30</span><span>回飯店睡覺，比主行程早約 2.5 小時。汽車道和大さん橋改在 12/19 白天走（「B 漫步拍照」路線兩站都有）。</span></li>
-          </ol>
-          <small>代價：往返大井約 2 小時的交通照舊；沒有野毛，也看不到 ヨルノヨ 和紅磚市集的燈。</small>
-        </div>
-      </div>
-    </div>
-    <div class="optcard b duo"><span class="label">⑦ 12/19 · 友人 · 備案 · 二選一</span><b>想看橫濱點燈再去機場</b><p>主行程 16:30 回飯店拿行李、搭 17:28 N'EX，約 19:11 到 T3。可是日落約 16:30，ヨルノヨ 17:00 才點燈；12/18 從大井回到橫濱也已過 22:00，所以主行程看不到 ヨルノヨ 和紅磚市集的燈。</p>
-      <div class="du-grid">
-        <div class="du-opt">
-          <div class="du-top"><span class="du-k"><span>方案</span>A</span><div><b>全員改搭 18:28 N'EX，多留 1 小時</b><div class="du-pills"><span class="pill ok">看得到點燈</span><span class="pill warn">報到前約 75 分</span></div></div></div>
-          <ol class="du-steps">
-            <li><span class="t">16:30</span><span>在大さん橋看日落，17:00 <b>ヨルノヨ</b> 點燈（大さん橋、山下公園），紅磚市集也亮了。</span></li>
-            <li><span class="t">17:30</span><span>回飯店拿行李 → 17:45 出發 → 約 18:05 到橫濱站。</span></li>
-            <li><span class="t">18:28</span><span><b>N'EX</b> → 約 19:51 到空港第2ビル → 約 20:11 到 T3。</span></li>
-            <li><span class="t">18:56</span><span>Robin 在東京站下車，東京的夜晚整段往後挪 1 小時。</span></li>
-          </ol>
-          <small>代價：比「20:00 前到 T3」的目標晚約 10 分，報到前的緩衝從約 2 小時 15 分降到約 75 分。12 月週六晚上 T3 報到可能排長隊，N'EX 一誤點就沒有餘裕。想保守的人照搭 17:28、和 Robin 一起走，N'EX 指定席各自劃位。</small>
-        </div>
-        <div class="du-opt">
-          <div class="du-top"><span class="du-k"><span>方案</span>B</span><div><b>照搭 17:28，多留 15 分看日落</b><div class="du-pills"><span class="pill mute">只看得到日落</span><span class="pill ok">報到前約 2 小時 15 分</span></div></div></div>
-          <ol class="du-steps">
-            <li><span class="t">16:30</span><span>下午最後一站排在港邊（大さん橋或紅磚倉庫），看完日落再走。</span></li>
-            <li><span class="t">16:45</span><span>回飯店拿行李（先請櫃台把行李箱排在門口）→ 16:50 出發 → 約 17:10 到橫濱站。</span></li>
-            <li><span class="t">17:28</span><span><b>N'EX</b>，跟主行程一樣約 19:11 到 T3，比「20:00 前到 T3」早約 50 分。</span></li>
-          </ol>
-          <small>代價：在橫濱站的轉乘時間從約 23 分縮成約 18 分，崎陽軒要白天先買好。想看點燈又不想壓縮緩衝，就把 12/18 晚改成 ⑥ 方案 A。</small>
-        </div>
-      </div>
-    </div>
-    <div class="optcard half"><span class="label">⑧ 全員 · 順路景點</span><b>不用改行程就能順路去的</b><p>地獄谷雪猴（湯田中）、善光寺與仲見世（長野站搭車約 10 分）、小布施的栗子點心與北齋館、澀溫泉九湯巡り、橫手山頂ヒュッテ的麵包、熊の湯的翡翠綠溫泉、渋峠ホテルの縣境。都已收進<a href="#recs">在地清單</a>，選區域就看得到。</p><small>營業時間以各店公告為準，標「營業資訊已查證」的才對過來源。</small></div>
-    <div class="optcard half"><span class="label">⑨ 任一天 · 想休息的人</span><b>休息日方案</b><p>滑累了想休一天的人：搭巴士下山到湯田中 → 地獄谷看雪猴 → 澀溫泉街泡外湯、買溫泉饅頭 → 傍晚回 2307 和大家吃晚餐。也可以報名志賀高原ガイド組合的雪鞋健行（0269-34-2133）。</p><small>代價：巴士時刻要等 26–27 冬季時刻；雪鞋行程需預約、多為現金付款。</small></div>
+    <div class="optcard b"><span class="label">④ 12/17 · 全員 · 刻滑加碼</span><b>去燒額山跑寬壓雪坡</b><p>1998 長野冬奧大迴轉賽場，寬幅壓雪坡最適合練刻滑，初滑期 12/4–12/18。這天改買全山 1 日券 ¥7,500（不買熊之湯單場），搭志賀高原內巴士過去，傍晚回 2307，晚上照樣夜滑熊之湯。</p><small>代價：單程約 40–50 分（26–27 時刻待公布）；早季開放的雪道以官網為準。</small></div>
+    <div class="optcard b"><span class="label">⑤ 12/18 · 全員 · 換一種玩法</span><b>早上不滑，改雪猴＋善光寺</b><p>09:00 Jumbo 包車到地獄谷（冬天早上最常看到猴子泡湯），步道約 30 分 → 中午到長野逛善光寺、吃蕎麥 → 14 點多搭新幹線，約 16 點到東京、17 點前到橫濱。不必等臨時列車かがやき 536 公布，到橫濱天還亮，晚上去大井也不趕。</p><small>代價：少滑半天；Jumbo 要包車等候（另請報價）；地獄谷有沒有地方寄行李箱要先問（0269-33-4379）。</small></div>
+    <div class="optcard b"><span class="label">⑥ 12/18 晚 · 全員 · 路線四選一</span><b>晚上四條路線，當天再選</b><p>主推「大井＋夜遊」之外，還有「直奔大井」「橫濱看燈」「Illumi 就收」。太累、12/18 是賽馬日，或趕不上かがやき 536 時切換；12/18 的時間表、行事曆和「下一步」提示都會跟著改。</p><div class="goto" data-key="n18" role="group" aria-label="12/18 晚上路線"></div><small>代價：選「橫濱看燈」就看不到東京メガイルミ最終季；其他三條都要 12/18 不是賽馬日。</small></div>
+    <div class="optcard b"><span class="label">⑦ 12/19 傍晚 · 友人 · 路線三選一</span><b>去機場前要不要多留一下</b><p>「準時出發」搭 17:28 N'EX，最穩；「看點燈再走」改搭 18:28，等 17:00 ヨルノヨ 點燈；「看日落再走」照搭 17:28，只多留 15 分。12/19 的時間表、N'EX 時間軸和行事曆都會跟著改。</p><div class="goto" data-key="e19" role="group" aria-label="12/19 傍晚路線"></div><small>代價：「看點燈再走」到 T3 後離報到截止只剩約 74 分。</small></div>
+    <div class="optcard"><span class="label">⑧ 全員 · 順路景點</span><b>不用改行程就能順路去的</b><p>地獄谷雪猴（湯田中）、善光寺與仲見世（長野站搭車約 10 分）、小布施的栗子點心與北齋館、澀溫泉九湯巡り、橫手山頂ヒュッテ的麵包、熊の湯的翡翠綠溫泉、渋峠ホテルの縣境。都已收進<a href="#recs">在地清單</a>，選區域就看得到。</p><small>營業時間以各店公告為準，標「營業資訊已查證」的才對過來源。</small></div>
+    <div class="optcard"><span class="label">⑨ 任一天 · 想休息的人</span><b>休息日方案</b><p>滑累了想休一天的人：搭巴士下山到湯田中 → 地獄谷看雪猴 → 澀溫泉街泡外湯、買溫泉饅頭 → 傍晚回 2307 和大家吃晚餐。也可以報名志賀高原ガイド組合的雪鞋健行（0269-34-2133）。</p><small>代價：巴士時刻要等 26–27 冬季時刻；雪鞋行程需預約、多為現金付款。</small></div>
   </div>
 </section>
 
@@ -1371,14 +1316,171 @@ fareEl.oninput=()=>{st.frac=fareEl.value/100;save();render()};
 paxEl.oninput=()=>{st.pax=Math.min(9,Math.max(1,+paxEl.value||1));save();render()};
 render();
 
+/* ---------- 路線選擇：12/18 晚上、12/19 白天與傍晚 ---------- */
+const ROUTE={n18:'oi',r19:'xmas',e19:'ontime'};
+try{for(const k in ROUTE){const v=localStorage.getItem('c2307'+k);if(v)ROUTE[k]=v}}catch(e){}
+const routeFns=[];
+function setRouteSel(k,v){ROUTE[k]=v;try{localStorage.setItem('c2307'+k,v)}catch(e){}routeFns.forEach(f=>f(k))}
+const stepsHtml=steps=>steps.map(s=>'<div class="step'+(s[3]?' key':'')+(s[4]?' '+s[4]:'')+'"><span class="t">'+s[0]+'</span><span class="rail" aria-hidden="true"></span><div class="c"><b>'+s[1]+'</b>'+(s[2]?'<span>'+s[2]+'</span>':'')+'</div></div>').join('');
+const R19N={xmas:'聖誕活動',photo:'漫步拍照',slow:'小店・咖啡・慢逛'};
+/* steps：[時刻, 標題, 說明, 關鍵點, class]；ics：[日期, 開始, 結束, 標題, 說明] */
+const N18_HEAD=[['20261218','1315','1410','收板、換裝、拿行李','2307 · 14:10 Jumbo 出發'],
+ ['20261218','1410','1540','Jumbo 2307 → 長野站','雪路抓 90 分鐘'],
+ ['20261218','1611','1736','かがやき 536 長野 16:11 → 東京 17:36','臨時列車：先確認 12/18 有開；沒開改あさま 624（15:52 → 17:28）']];
+const ICS_OI=['20261218','1945','2050','東京メガイルミ（大井競馬場）','品川區勝島2-1-2 · 最終入場 20:00 · 先確認 12/18 有點燈（賽馬日不點燈）'];
+const N18={
+ oi:{name:'大井＋夜遊',sub:'主推 · 約 02:00 回飯店',pill:['warn','賽馬日不點燈'],
+  vibe:'先回飯店放行李，再去大井看最終季的東京メガイルミ；回橫濱接 Muscle Bar、野毛梯子酒，深夜走汽車道到大さん橋。',
+  kv:[['最後一趟','13:15'],['到飯店','18:25'],['大井門口','19:40'],['回飯店','約 02:00']],
+  when:'17:50 前到東京，而且 12/18 不是賽馬日。',
+  note:'從最終入場 20:00 反推，到大井門口只剩約 20 分緩衝。かがやき 536 沒開就改あさま 624：最後一趟 13:00、13:55 Jumbo 出發。',
+  steps:[['13:15','最後一趟下到飯店','還板與雪鞋、換衣服、拿行李，抓 50 分鐘',false],
+   ['14:10','Jumbo 2307 → 長野站','雪路抓 90 分鐘，約 15:40 到',false],
+   ['16:11','かがやき 536 長野 → 東京 17:36','臨時列車，先確認 12/18 有開',true],
+   ['17:47','JR 東海道線 東京 → 橫濱','約 18:12 到橫濱，轉みなとみらい線到日本大通り／馬車道；或東口搭 2 台計程車',false],
+   ['18:25','到飯店放行李','只背輕背包出門；晚回飯店的入住時間先告訴飯店',true],
+   ['18:40','出發去大井','京急到立会川走 12 分，或 JR 浜松町轉モノレール；約 19:35–19:45 到門口',false],
+   ['19:45','東京メガイルミ','最終入場 20:00，逛約 65 分，去年 21:00 熄燈',true],
+   ['20:50','離場回橫濱','直接到日本大通り站，約 22:00–22:15 到',false],
+   ['22:15','Muscle Bar Yokohama','日本大通り站 2 號出口 1 分；19:00–25:00，坐到約 23:30',true],
+   ['23:50','野毛梯子酒','從 Muscle Bar 走約 20 分；先在 Google Maps 挑 2–3 間 00:00 後還開的',false],
+   ['00:50','汽車道 → 紅磚倉庫','舊臨港鐵道的海上步道，約 01:10 到；市集已打烊，只看夜景',false,'roam'],
+   ['01:10','大さん橋「くじらのせなか」','24 小時開放的木質甲板；深夜海風冷，帶羽絨外套',false,'roam'],
+   ['02:00','走回飯店','12/19 早上 10:00 出門',true]],
+  day:['20261218','2307 → 橫濱飯店 → 大井 Illumi → 橫濱夜遊','滑到 13:15 · Jumbo 14:10 · かがやき 536 長野 16:11 · 東京 17:36 · 飯店放行李 18:25 · 大井 Tokyo Mega Illumi · Muscle Bar · 野毛 · 汽車道 · 大さん橋'],
+  ics:N18_HEAD.concat([['20261218','1825','1840','橫濱飯店放行李','日本大通り／馬車道一帶 · 18:40 出發去大井'],ICS_OI,
+   ['20261218','2215','2330','Muscle Bar Yokohama','中区南仲通1-8 SKビル B1F · 19:00–25:00 · 日本大通り站 2 號出口 1 分'],
+   ['20261218','2345','2359','野毛梯子酒 → 汽車道 → 紅磚倉庫 → 大さん橋','深夜 · 屋上「くじらのせなか」24 小時開放 · 走回飯店約 02:00']])},
+ direct:{name:'直奔大井',sub:'多滑 1 小時 · 約 02:00',pill:['warn','賽馬日不點燈'],
+  vibe:'多滑 1 小時再下山；到東京不回橫濱，直接去大井，行李箱先寄在浜松町的置物櫃。',
+  kv:[['最後一趟','14:15'],['到東京','18:28'],['大井門口','19:15–19:30'],['回飯店','約 02:00']],
+  when:'想多滑 1 小時；或 17:50–19:00 才到東京（例如趕不上かがやき 536）。',
+  note:'浜松町モノレール轉乘口附近的大型置物櫃數量待查，不夠就分 1–2 人先把行李帶回飯店。',
+  steps:[['14:15','最後一趟下到飯店','比主推多滑 1 小時；還板、換衣服、拿行李',false],
+   ['15:05','Jumbo 2307 → 長野站','雪路抓 90 分鐘，約 16:35 到',false],
+   ['17:05','かがやき 510 長野 → 東京 18:28','定期列車，已對照時刻表',true],
+   ['18:35','JR 東京 → 浜松町','約 6 分；行李箱寄モノレール轉乘口附近的置物櫃',false],
+   ['19:00','東京モノレール → 大井競馬場前','約 8 分，19:15–19:30 到門口',false],
+   ['19:30','東京メガイルミ','最終入場 20:00，逛到 20:45',true],
+   ['20:45','回浜松町取行李 → 橫濱','JR 約 35 分，帶著行李箱約 22:15 回到飯店',false],
+   ['22:35','Muscle Bar Yokohama','放好行李再出門，坐到約 23:45',true],
+   ['00:05','野毛 → 汽車道 → 大さん橋','跟主推同一段，野毛少待一點',false,'roam'],
+   ['02:00','走回飯店','',true]],
+  day:['20261218','2307 → 直奔大井 Illumi → 橫濱夜遊','滑到 14:15 · Jumbo 15:05 · かがやき 510 長野 17:05 · 東京 18:28 · 浜松町寄行李 · 大井 Tokyo Mega Illumi · Muscle Bar · 野毛 · 汽車道 · 大さん橋'],
+  ics:[['20261218','1415','1505','收板、換裝、拿行李','2307 · 15:05 Jumbo 出發'],
+   ['20261218','1505','1635','Jumbo 2307 → 長野站','雪路抓 90 分鐘'],
+   ['20261218','1705','1828','かがやき 510 長野 17:05 → 東京 18:28','定期列車'],
+   ['20261218','1835','1900','浜松町寄行李箱','モノレール轉乘口附近的置物櫃 · 19:00 モノレール → 大井競馬場前'],
+   ['20261218','1930','2045','東京メガイルミ（大井競馬場）','品川區勝島2-1-2 · 最終入場 20:00 · 先確認 12/18 有點燈（賽馬日不點燈）'],
+   ['20261218','2045','2215','浜松町取行李 → 橫濱飯店','JR 約 35 分'],
+   ['20261218','2235','2345','Muscle Bar Yokohama','中区南仲通1-8 SKビル B1F · 19:00–25:00 · 日本大通り站 2 號出口 1 分'],
+   ['20261218','2350','2359','野毛 → 汽車道 → 大さん橋','深夜 · 走回飯店約 02:00']]},
+ lights:{name:'橫濱看燈',sub:'賽馬日也可 · 約 00:00',pill:['ok','賽馬日也可'],
+  vibe:'不去大井，整晚在飯店附近走路：紅磚倉庫聖誕市集、ヨルノヨ 光雕、Muscle Bar，省掉往返大井約 2 小時。',
+  kv:[['最後一趟','13:15'],['到飯店','18:25'],['晚上交通','全程走路'],['回飯店','最晚約 00:00']],
+  when:'晚於 19:00 才到東京、12/18 是賽馬日，或大家太累不想跑大井。',
+  note:'看不到東京メガイルミ最終季（大井競馬場整修，下一季起暫停）。事先知道是賽馬日的話，可以照「直奔大井」的車次多滑 1 小時（14:15 收板、かがやき 510），19:30 左右到飯店，19:45 再去紅磚。',
+  steps:[['13:15','最後一趟 → 14:10 Jumbo','跟主推一樣，約 15:40 到長野站',false],
+   ['16:11','かがやき 536 長野 → 東京 17:36','沒開改あさま 624',true],
+   ['18:25','到飯店放行李','',true],
+   ['18:45','紅磚倉庫聖誕市集','日本大通り站一帶走約 10 分；晚餐吃攤位的德國香腸配熱紅酒，去年 12 月中營業到 22:00',true],
+   ['20:00','大さん橋・山下公園：ヨルノヨ 2026','17:00–21:00 的光雕，去年免費；くじらのせなか趁還有燈光時走',true,'roam'],
+   ['21:15','Muscle Bar Yokohama','日本大通り站 2 號出口 1 分，坐到 22:30',true],
+   ['22:30','野毛續攤（看體力）','不想去就直接走回飯店',false],
+   ['00:00','回飯店','比主推早約 2 小時',true]],
+  day:['20261218','2307 → 橫濱：紅磚聖誕市集・ヨルノヨ','滑到 13:15 · Jumbo 14:10 · かがやき 536 長野 16:11 · 東京 17:36 · 飯店放行李 18:25 · 紅磚倉庫聖誕市集 · ヨルノヨ 2026 · Muscle Bar · 野毛（看體力）'],
+  ics:N18_HEAD.concat([['20261218','1825','1845','橫濱飯店放行李','日本大通り／馬車道一帶'],
+   ['20261218','1845','2000','紅磚倉庫聖誕市集','晚餐吃攤位 · 去年 12 月中營業到 22:00'],
+   ['20261218','2000','2100','ヨルノヨ 2026（大さん橋・山下公園）','17:00–21:00 光雕'],
+   ['20261218','2115','2230','Muscle Bar Yokohama','中区南仲通1-8 SKビル B1F · 日本大通り站 2 號出口 1 分'],
+   ['20261218','2230','2359','野毛續攤（看體力）','最晚約 00:00 回飯店']])},
+ short:{name:'Illumi 就收',sub:'最早睡 · 約 23:30',pill:['warn','賽馬日不點燈'],
+  vibe:'照主推去大井看最終季，回橫濱只喝一杯就收工，比主推早約 2.5 小時睡。',
+  kv:[['最後一趟','13:15'],['到飯店','18:25'],['大井門口','19:40'],['回飯店','約 23:30']],
+  when:'想看 Illumi，但不想熬到半夜。',
+  note:'沒有野毛和深夜港邊；汽車道和大さん橋改在 12/19 白天走，「B 漫步拍照」路線兩站都有。',
+  steps:[['13:15','最後一趟 → 14:10 Jumbo','約 15:40 到長野站',false],
+   ['15:40','長野站買駅弁','晚餐在新幹線上吃，後面不去野毛就沒有正餐',false],
+   ['16:11','かがやき 536 長野 → 東京 17:36','沒開改あさま 624',true],
+   ['18:25','到飯店放行李','',true],
+   ['18:40','出發去大井','約 19:35–19:45 到門口',false],
+   ['19:45','東京メガイルミ','最終入場 20:00；場內有輕食攤（上一季有吉拿棒、熱可可）',true],
+   ['20:50','離場回橫濱','約 22:15 到日本大通り站',false],
+   ['22:15','Muscle Bar 一杯就走','或直接回飯店',false],
+   ['23:30','回飯店睡覺','比主推早約 2.5 小時',true]],
+  day:['20261218','2307 → 橫濱飯店 → 大井 Illumi（早收）','滑到 13:15 · Jumbo 14:10 · かがやき 536 長野 16:11 · 東京 17:36 · 飯店放行李 18:25 · 大井 Tokyo Mega Illumi · Muscle Bar 一杯 · 約 23:30 回飯店'],
+  ics:N18_HEAD.concat([['20261218','1825','1840','橫濱飯店放行李','日本大通り／馬車道一帶 · 18:40 出發去大井'],ICS_OI,
+   ['20261218','2215','2315','Muscle Bar 一杯就走','約 23:30 回飯店']])}
+};
+const E19={
+ ontime:{name:'準時出發',sub:'17:28 N\'EX · 主推',nex:'a',pill:['ok','報到前 2h14m'],
+  vibe:'16:30 回飯店拿行李，全員搭 17:28 的 N\'EX；Robin 在東京站下車，友人直達成田。',
+  kv:[['回飯店拿行李','16:30'],['N\'EX','17:28'],['到 T3（約）','19:11'],['距報到截止','2h14m']],
+  when:'主推。緩衝最大，12 月週六晚上 T3 報到排隊也不怕。',note:'',
+  keepWalk:true,back:'16:30',brief:'16:30 回飯店拿行李，17:28 全員搭同一班 N\'EX，Robin 東京站下車。',
+  handoff:[['16:30','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX',true]],
+  steps:[['16:30','回飯店拿寄放的行李','',true],
+   ['16:45','出發去橫濱站','みなとみらい線（日本大通り／馬車道 → 橫濱，約 8 分，走電梯），或 2 台計程車約 10–15 分',false],
+   ['17:05','到橫濱站，找 N\'EX 月台','崎陽軒燒賣在站內買，選常溫真空包裝比較好帶上飛機',false],
+   ['17:28','全員搭 N\'EX','全車指定席；Robin 買到東京、友人買到成田',true],
+   ['17:56','Robin 東京站下車','入住東京（建議八重洲／日本橋），再出門逛週六夜',false],
+   ['18:51','友人到空港第2ビル','走到 T3 約 20 分，約 19:11 到',false],
+   ['21:25','T3 報到截止（保守估計）','',true],
+   ['22:25','友人起飛','',false]],
+  day:'16:30 回飯店拿行李 · 17:28 N\'EX',
+  ics:[['20261219','1630','1645','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX'],
+   ['20261219','1728','1851','橫濱搭 N\'EX → 成田','約 18:51 抵空港第2ビル，走到 T3 約 20 分 · Robin 17:56 東京站下車']]},
+ lights:{name:'看點燈再走',sub:'18:28 N\'EX · 報到前 1h14m',nex:'b',pill:['warn','報到前 1h14m'],
+  vibe:'在港邊等到天黑：16:30 日落、17:00 ヨルノヨ 點燈，紅磚市集也亮了；全員改搭晚一班 18:28 的 N\'EX。',
+  kv:[['回飯店拿行李','17:30'],['N\'EX','18:28'],['到 T3（約）','20:11'],['距報到截止','1h14m']],
+  when:'大家都想看橫濱點燈，也接受報到前只剩 1 小時出頭。',
+  note:'比「20:00 前到 T3」的目標晚約 10 分；12 月週六晚上 T3 報到可能排長隊，N\'EX 一誤點就沒有餘裕。想保守的人照搭 17:28、和 Robin 一起走，指定席各自劃位。',
+  keepWalk:false,back:'17:30',brief:'在港邊等到 17:00 點燈，17:30 回飯店拿行李，全員改搭 18:28 的 N\'EX。',
+  handoff:[['16:30','留在港邊看日落','大さん橋或山下公園，17:00 ヨルノヨ 點燈',false,'roam'],['17:30','回飯店拿寄放的行李','17:45 出發去橫濱站 · 18:28 N\'EX',true]],
+  steps:[['16:30','大さん橋看日落','',false,'roam'],
+   ['17:00','ヨルノヨ 點燈','大さん橋、山下公園的光雕（17:00–21:00）；紅磚市集也亮了',true,'roam'],
+   ['17:30','回飯店拿寄放的行李','17:45 出發，約 18:05 到橫濱站',true],
+   ['18:28','全員搭 N\'EX','指定席改劃這班',true],
+   ['18:56','Robin 東京站下車','東京的夜晚整段往後挪 1 小時',false],
+   ['19:51','友人到空港第2ビル','走到 T3 約 20 分，約 20:11 到',false],
+   ['21:25','T3 報到截止（保守估計）','到 T3 後只剩 1 小時出頭',true],
+   ['22:25','友人起飛','',false]],
+  day:'港邊等 17:00 點燈 · 17:30 回飯店拿行李 · 18:28 N\'EX',
+  ics:[['20261219','1630','1715','港邊看日落・ヨルノヨ 點燈','大さん橋・山下公園 · 17:00 點燈'],
+   ['20261219','1730','1745','回飯店拿寄放的行李','17:45 出發去橫濱站 · 18:28 N\'EX'],
+   ['20261219','1828','1951','橫濱搭 N\'EX → 成田','約 19:51 抵空港第2ビル，走到 T3 約 20 分 · Robin 18:56 東京站下車 · 21:25 報到截止']]},
+ sunset:{name:'看日落再走',sub:'17:28 N\'EX · 多留 15 分',nex:'a',pill:['ok','報到前 2h14m'],
+  vibe:'照搭 17:28，只把回飯店延後 15 分：下午最後一站排在港邊，看完 16:30 的日落再走。',
+  kv:[['回飯店拿行李','16:45'],['N\'EX','17:28'],['到 T3（約）','19:11'],['距報到截止','2h14m']],
+  when:'想看日落，但不想壓縮報到前的緩衝。',
+  note:'看不到 17:00 才開始的 ヨルノヨ；橫濱站的轉乘時間從約 23 分縮成約 18 分，崎陽軒要白天先買好。想看點燈又不想壓縮緩衝，就把 12/18 晚上選「橫濱看燈」。',
+  keepWalk:false,back:'16:45',brief:'最後一站排在港邊，看完 16:30 的日落再走，16:45 回飯店拿行李，照搭 17:28。',
+  handoff:[['16:30','港邊看日落','大さん橋或紅磚倉庫',false,'roam'],['16:45','回飯店拿寄放的行李','16:50 出發去橫濱站 · 17:28 N\'EX',true]],
+  steps:[['16:30','港邊看日落','最後一站排在大さん橋或紅磚倉庫',false,'roam'],
+   ['16:45','回飯店拿寄放的行李','先請櫃台把行李箱排在門口，16:50 出發',true],
+   ['17:10','到橫濱站','轉乘時間約 18 分',false],
+   ['17:28','全員搭 N\'EX','',true],
+   ['17:56','Robin 東京站下車','',false],
+   ['18:51','友人到空港第2ビル','約 19:11 到 T3',false],
+   ['21:25','T3 報到截止（保守估計）','',true],
+   ['22:25','友人起飛','',false]],
+  day:'港邊看日落 · 16:45 回飯店拿行李 · 17:28 N\'EX',
+  ics:[['20261219','1630','1645','港邊看日落','大さん橋或紅磚倉庫 · 16:45 回飯店'],
+   ['20261219','1645','1650','回飯店拿寄放的行李','16:50 出發去橫濱站 · 17:28 N\'EX'],
+   ['20261219','1728','1851','橫濱搭 N\'EX → 成田','約 18:51 抵空港第2ビル，走到 T3 約 20 分 · Robin 17:56 東京站下車']]}
+};
+if(!N18[ROUTE.n18])ROUTE.n18='oi';
+if(!R19N[ROUTE.r19])ROUTE.r19='xmas';
+if(!E19[ROUTE.e19])ROUTE.e19='ontime';
+
 /* ---------- 12/19 N'EX ---------- */
 const NEX={
   a:{name:'N\'EX 17:28',sub:'主推 · 報到前寬鬆',dep:'17:28'},
   b:{name:'N\'EX 18:28',sub:'會超過 20:00 目標',dep:'18:28'}
 };
-let nex='a';
 function renderNex(){
-  const d=toMin(NEX[nex].dep);
+  const nex=E19[ROUTE.e19].nex,d=toMin(NEX[nex].dep);
+  document.getElementById('nexLbl').textContent=NEX[nex].name+' · '+E19[ROUTE.e19].name;
   const segs=[
     ['橫濱 → 東京',d,d+28,'var(--alt)'],
     ['東京 → 空港第2ビル',d+28,d+28+55,'var(--alt)'],
@@ -1396,11 +1498,7 @@ function renderNex(){
   document.getElementById('nexKv').innerHTML=
     `<dt>橫濱發車</dt><dd>${fmt(d)}</dd><dt>抵 空港第2ビル（約）</dt><dd>${fmt(d+83)}</dd><dt>抵 T3 報到區（約）</dt><dd>${fmt(t3)}</dd><dt>對「20:00 前到 T3」目標</dt><dd>${t3<=toMin('20:00')?'提早 '+dur(toMin('20:00')-t3):'<span class="pill crit">晚 '+dur(t3-toMin('20:00'))+'</span>'}</dd><dt class="sum">距報到截止</dt><dd class="sum">${dur(slack)} <span class="pill ${slack>=90?'ok':slack>=45?'warn':'crit'}">${slack>=90?'寬鬆':slack>=45?'可接受':'危險'}</span></dd>`;
 }
-segButtons(document.getElementById('nexSeg'),NEX,'nexsel',()=>{});
-[...document.getElementById('nexSeg').children].forEach((b,i)=>{
-  const k=Object.keys(NEX)[i];b.setAttribute('aria-pressed',k===nex);
-  b.onclick=()=>{nex=k;[...b.parentNode.children].forEach(c=>c.setAttribute('aria-pressed',c===b));renderNex()};
-});
+routeFns.push(k=>{if(k==='e19')renderNex()});
 renderNex();
 
 /* ---------- Resorts ---------- */
@@ -1810,8 +1908,6 @@ const ICS_ALL=[
  ['20261215','長野 → 2307 · 熊之湯','友人 5 人 06:35 抵 NRT T3 · はくたか 567 東京 14:24 · 19:00 前到 2307'],
  ['20261216','橫手山・澀峠 雪板日','頂部 2,307 m · 纜車 8:30–16:30'],
  ['20261217','熊之湯 雪板日','備案：燒額山／奧志賀'],
- ['20261218','2307 → 橫濱飯店 → 大井 Illumi → 橫濱夜遊','滑到 13:15 · Jumbo 14:10 · かがやき 536 長野 16:11 · 東京 17:36 · 飯店放行李 18:25 · 大井 Tokyo Mega Illumi · Muscle Bar · 野毛 · 汽車道 · 大さん橋'],
- ['20261219','橫濱半日 → NRT T3／Robin → 東京','三選一：聖誕活動／漫步拍照／小店咖啡 · 16:30 回飯店拿行李 · 17:28 N\'EX · 友人 22:25 起飛'],
  ['20261220','東京 → 成田 T1','Robin · UA837 17:55 NRT→KHH（冬季班表，以機票為準）']
 ];
 const ICS_T=[
@@ -1820,29 +1916,25 @@ const ICS_T=[
  ['20261215','1424','1554','はくたか 567 東京 → 長野','友人 · 上野 14:30 發 · 長野東口接 Jumbo'],
  ['20261215','1554','1610','長野站東口 Jumbo 會合','C 方案 · 16:10 出發上山'],
  ['20261215','1740','1810','友人抵達 2307（C 方案）','期限 19:00；B 方案約 18:30'],
- ['20261218','1315','1410','收板、換裝、拿行李','2307 · 14:10 Jumbo 出發（想多滑 1 小時改走直奔大井版）'],
- ['20261218','1410','1540','Jumbo 2307 → 長野站','雪路抓 90 分鐘'],
- ['20261218','1611','1736','かがやき 536 長野 16:11 → 東京 17:36','臨時列車：先確認 12/18 有開；沒開改あさま 624（15:52 → 17:28）'],
- ['20261218','1825','1840','橫濱飯店放行李','日本大通り／馬車道一帶 · 18:40 出發去大井'],
- ['20261218','1945','2050','東京メガイルミ（大井競馬場）','品川區勝島2-1-2 · 最終入場 20:00 · 先確認 12/18 有點燈（賽馬日不點燈）'],
- ['20261218','2215','2330','Muscle Bar Yokohama','中区南仲通1-8 SKビル B1F · 19:00–25:00 · 日本大通り站 2 號出口 1 分'],
- ['20261218','2345','2359','野毛梯子酒 → 汽車道 → 紅磚倉庫 → 大さん橋','深夜 · 屋上「くじらのせなか」24 小時開放 · 走回飯店約 02:00'],
- ['20261219','1000','1030','退房 · 行李寄放飯店','全員 · 白天三選一：聖誕活動／漫步拍照／小店咖啡'],
- ['20261219','1630','1645','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX'],
- ['20261219','1728','1851','橫濱搭 N\'EX → 成田','約 18:51 抵空港第2ビル，走到 T3 約 20 分 · Robin 17:56 東京站下車'],
  ['20261219','2225','2235','友人 NRT T3 起飛',''],
  ['20261220','1403','1458','N\'EX 31 號 東京 → 成田空港（T1）','Robin · 早一班 29 號 13:33、晚一班 33 號 14:33'],
  ['20261220','1755','1805','UA837 NRT T1 起飛','Robin · 冬季班表 17:55 → 高雄 21:25，以機票為準']
 ];
+function icsAll(){
+  return ICS_ALL.concat([N18[ROUTE.n18].day,['20261219','橫濱半日 → NRT T3／Robin → 東京','白天：'+R19N[ROUTE.r19]+' · '+E19[ROUTE.e19].day+' · 友人 22:25 起飛']]).sort((a,b)=>a[0].localeCompare(b[0]));
+}
+function icsT(){
+  return ICS_T.concat(N18[ROUTE.n18].ics,[['20261219','1000','1030','退房 · 行李寄放飯店','全員 · 白天路線：'+R19N[ROUTE.r19]]],E19[ROUTE.e19].ics).sort((a,b)=>(a[0]+a[1]).localeCompare(b[0]+b[1]));
+}
 /* ---------- 旅途中：下一步倒數 ---------- */
 (function(){
   const bar=document.getElementById('nextBar');
   const jst=(d,hm)=>Date.UTC(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6,8),+hm.slice(0,2)-9,+hm.slice(2,4));
   const q=new URLSearchParams(location.search).get('now');           /* 測試用：?now=2026-12-15T13:30 */
   const nowMs=()=>q?Date.parse(q+':00+09:00'):Date.now();
-  const EV=ICS_T.map(e=>({s:jst(e[0],e[1]),e:jst(e[0],e[2]),d:e[0],t:e[1],name:e[3],note:e[4]})).sort((a,b)=>a.s-b.s);
+  const evs=()=>icsT().map(e=>({s:jst(e[0],e[1]),e:jst(e[0],e[2]),d:e[0],t:e[1],name:e[3],note:e[4]})).sort((a,b)=>a.s-b.s);
   function tick(){
-    const n=nowMs();
+    const n=nowMs(),EV=evs();
     if(!(n>=jst('20261210','0000')&&n<=jst('20261220','2359'))){bar.hidden=true;return}
     const cur=EV.find(x=>x.s<=n&&n<x.e),nx=EV.find(x=>x.s>n);
     const pick=cur||nx;if(!pick){bar.hidden=true;return}
@@ -1853,7 +1945,7 @@ const ICS_T=[
     bar.hidden=false;
   }
   function esc2x(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
-  tick();setInterval(tick,60000);
+  tick();setInterval(tick,60000);routeFns.push(tick);
 })();
 const esc=s=>String(s).replace(/([,;\\])/g,'\\$1').replace(/\n/g,'\\n');
 const uidOf=(...p)=>{let h=5381;for(const c of p.join('|'))h=((h<<5)+h+c.codePointAt(0))>>>0;return 'carve-'+p[0]+'-'+h.toString(36)+'@2307'};
@@ -1870,10 +1962,10 @@ function utc(d,hm){
 function buildIcs(){
   const now=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
   const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//2307 Carve Log//TW','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:2307 Carve Log'];
-  ICS_ALL.forEach(e=>L.push('BEGIN:VEVENT','UID:'+uidOf(e[0],'day',e[1],e[2]),'DTSTAMP:'+now,
+  icsAll().forEach(e=>L.push('BEGIN:VEVENT','UID:'+uidOf(e[0],'day',e[1],e[2]),'DTSTAMP:'+now,
     'DTSTART;VALUE=DATE:'+e[0],'DTEND;VALUE=DATE:'+nextDay(e[0]),
     'SUMMARY:'+esc(e[1]),'DESCRIPTION:'+esc(e[2]),'TRANSP:TRANSPARENT','END:VEVENT'));
-  ICS_T.forEach(e=>L.push('BEGIN:VEVENT','UID:'+uidOf(e[0],e[1],e[2],e[3]),'DTSTAMP:'+now,
+  icsT().forEach(e=>L.push('BEGIN:VEVENT','UID:'+uidOf(e[0],e[1],e[2],e[3]),'DTSTAMP:'+now,
     'DTSTART:'+utc(e[0],e[1]),'DTEND:'+utc(e[0],e[2]),
     'SUMMARY:'+esc(e[3]),'DESCRIPTION:'+esc(e[4]),
     'BEGIN:VALARM','TRIGGER:-PT45M','ACTION:DISPLAY','DESCRIPTION:'+esc(e[3]),'END:VALARM','END:VEVENT'));
@@ -1900,7 +1992,7 @@ async function saveFile(name,text,mime,okMsg){
   setTimeout(()=>URL.revokeObjectURL(u),3000);
   toolMsg.textContent=okMsg;
 }
-document.getElementById('icsBtn').onclick=()=>saveFile('carve-log-2307.ics',buildIcs(),'text/calendar;charset=utf-8','已產生 '+(ICS_ALL.length+ICS_T.length)+' 筆事件的 .ics。');
+document.getElementById('icsBtn').onclick=()=>saveFile('carve-log-2307.ics',buildIcs(),'text/calendar;charset=utf-8','已產生 '+(icsAll().length+icsT().length)+' 筆事件的 .ics。');
 document.getElementById('offBtn').onclick=()=>saveFile('carve-log-2307.html',PRISTINE,'text/html;charset=utf-8','已下載離線版。存在手機的「檔案」裡，山上沒訊號時直接打開（語音與大字卡都能用，雪況預報需要網路）。');
 document.getElementById('copyBtn').onclick=async()=>{
   try{await navigator.clipboard.writeText(location.href);toolMsg.textContent='連結已複製。'}
@@ -2369,19 +2461,49 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
         ['15:15','紅磚倉庫館內小店','室內雜貨、器物、橫濱伴手禮；外面就是聖誕市集，想看可以順便走一圈',false],
         ['16:10','走回飯店','約 10–15 分',false]]}
   };
-  let cur='xmas';try{const v=localStorage.getItem('c2307r19');if(R[v])cur=v}catch(e){}
   const seg=$('r19Seg');
   seg.innerHTML=Object.entries(R).map(([k,v])=>'<button type="button" data-k="'+k+'" aria-pressed="false"><span>'+v.name+'</span><small>'+v.sub+'</small></button>').join('');
-  seg.onclick=e=>{const b=e.target.closest('button');if(!b)return;cur=b.dataset.k;try{localStorage.setItem('c2307r19',cur)}catch(err){}draw()};
+  seg.onclick=e=>{const b=e.target.closest('button');if(b)setRouteSel('r19',b.dataset.k)};
   function draw(){
-    const r=R[cur];
+    const cur=ROUTE.r19,r=R[cur],ev=E19[ROUTE.e19];
     seg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===cur)));
-    const steps=r.steps.concat([['16:30','回飯店拿寄放的行李','16:45 出發去橫濱站 · 17:28 N\'EX',true]]);
-    $('r19Tl').innerHTML=steps.map(s=>'<div class="step'+(s[3]?' key':'')+(s[4]?' '+s[4]:'')+'"><span class="t">'+s[0]+'</span><span class="rail" aria-hidden="true"></span><div class="c"><b>'+s[1]+'</b>'+(s[2]?'<span>'+s[2]+'</span>':'')+'</div></div>').join('');
-    $('r19Side').innerHTML='<div class="verdict"><span class="label">這條路線</span><h4>'+r.name.slice(2)+'</h4><span class="pill '+r.rain[0]+'">'+r.rain[1]+'</span></div><p class="vibe">'+r.vibe+'</p><dl class="kv"><dt>步行（估）</dt><dd>'+r.walk+'</dd><dt>主要花費</dt><dd style="text-align:right;font-family:var(--body)">'+r.cost+'</dd><dt class="sum">回飯店</dt><dd class="sum">16:30</dd></dl><p class="note">三條路線的終點都是飯店：16:30 拿行李，17:28 全員搭同一班 N\'EX，Robin 東京站下車。</p><button class="btn r19-go" type="button" data-r="'+cur+'19">看這條路線的店家 →</button>';
+    $('r19Tl').innerHTML=stepsHtml((ev.keepWalk?r.steps:r.steps.slice(0,-1)).concat(ev.handoff));
+    $('r19Side').innerHTML='<div class="verdict"><span class="label">這條路線</span><h4>'+r.name.slice(2)+'</h4><span class="pill '+r.rain[0]+'">'+r.rain[1]+'</span></div><p class="vibe">'+r.vibe+'</p><dl class="kv"><dt>步行（估）</dt><dd>'+r.walk+'</dd><dt>主要花費</dt><dd style="text-align:right;font-family:var(--body)">'+r.cost+'</dd><dt class="sum">回飯店</dt><dd class="sum">'+ev.back+'</dd></dl><p class="note">傍晚接「'+ev.name+'」：'+ev.brief+'</p><button class="btn r19-go" type="button" data-r="'+cur+'19">看這條路線的店家 →</button>';
     $('r19Side').querySelector('.r19-go').onclick=e=>{setRecRoute(e.currentTarget.dataset.r.replace('xmas19','a19').replace('photo19','b19').replace('slow19','c19'));document.getElementById('recs').scrollIntoView({behavior:'smooth'})};
   }
+  routeFns.push(k=>{if(k==='r19'||k==='e19')draw()});
   draw();
+})();
+
+/* ---------- 12/18 晚上、12/19 傍晚：路線選擇 ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const DATA={n18:N18,e19:E19};
+  function board(key,extra){
+    const seg=$(key+'Seg'),data=DATA[key];if(!seg)return;
+    seg.innerHTML=Object.entries(data).map(([k,v])=>'<button type="button" data-k="'+k+'" aria-pressed="false"><span>'+v.name+'</span><small>'+v.sub+'</small></button>').join('');
+    seg.onclick=e=>{const b=e.target.closest('button');if(b)setRouteSel(key,b.dataset.k)};
+    function draw(){
+      const r=data[ROUTE[key]];
+      seg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===ROUTE[key])));
+      $(key+'Tl').innerHTML=stepsHtml(r.steps);
+      $(key+'Side').innerHTML='<div class="verdict"><span class="label">這條路線</span><h4>'+r.name+'</h4><span class="pill '+r.pill[0]+'">'+r.pill[1]+'</span></div><p class="vibe">'+r.vibe+'</p><dl class="kv">'+r.kv.map((x,i)=>{const s=i===r.kv.length-1?' class="sum"':'';return '<dt'+s+'>'+x[0]+'</dt><dd'+s+'>'+x[1]+'</dd>'}).join('')+'</dl><p class="note when"><b>什麼時候選：</b>'+r.when+'</p>'+(r.note?'<p class="note">'+r.note+'</p>':'')+(extra||'');
+    }
+    routeFns.push(k=>{if(k===key)draw()});
+    draw();
+  }
+  board('n18','<button class="btn n18-go" type="button">看 12/18 夜遊的店家 →</button>');
+  board('e19');
+  $('n18Side').addEventListener('click',e=>{if(e.target.closest('.n18-go')){setRecRoute('n18');$('recs').scrollIntoView({behavior:'smooth'})}});
+  /* 行程建議 ⑥ ⑦：快捷切換，按下後捲到該日的路線板 */
+  document.querySelectorAll('.goto[data-key]').forEach(g=>{
+    const key=g.dataset.key,data=DATA[key];
+    const mark=()=>g.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===ROUTE[key])));
+    g.innerHTML=Object.entries(data).map(([k,v])=>'<button type="button" class="btn" data-k="'+k+'">'+v.name+'</button>').join('');
+    g.onclick=e=>{const b=e.target.closest('button');if(!b)return;setRouteSel(key,b.dataset.k);$(key).scrollIntoView({behavior:'smooth',block:'start'})};
+    routeFns.push(k=>{if(k===key)mark()});
+    mark();
+  });
 })();
 
 /* ---------- 預訂時間軸 ---------- */
@@ -2400,7 +2522,7 @@ document.querySelectorAll('.emg a[href^="tel:"]').forEach(a=>{
     ['20261108','20261115','1000','友人 12/15 はくたか 567 ×5 ＋ N\'EX 4 號','事前受付 11/8 14:00 起；N\'EX 東京來回票（¥5,200）一起買','友人',1],
     ['20261116','20261116','','JR 巴士高峰高原線冬季時刻上路','確認 12/13–14 末班是 16:00 還是 16:13','Robin',0],
     ['20261111','20261118','1000','12/18 長野 → 東京 ×6','かがやき 536（有開的話）或あさま 624；事前受付 11/11 14:00 起','全員',1],
-    ['20261112','20261119','1000','12/19 N\'EX 17:28 ×6','Robin 到東京、友人到 T3；事前受付 11/12 14:00 起','全員',0],
+    ['20261112','20261119','1000','12/19 N\'EX ×6（17:28；選「看點燈再走」改 18:28）','Robin 到東京、友人到 T3；事前受付 11/12 14:00 起','全員',0],
     ['20261113','20261120','1000','Robin 12/20 N\'EX 31 號','事前受付 11/13 14:00 起','Robin',0],
     ['20261019','20261130','','預約 Jumbo ×2 與 12/12 4WD 計程車','12/15 5 人＋5 箱、12/18 6 人＋6 箱一起報價；12/12 鎌田 ⇄ 丸沼','全員',1],
     ['20261019','20261130','','Hotel 2307：晚餐梯次、租板、住客纜車價','友人 12/15 約 17:40 到；連租 3 天板；住客橫手山券是否比早割便宜','全員',0],
